@@ -1,0 +1,27 @@
+{
+  "name": "LASACTF",
+  "homepage": "https://github.com/smo-key/lasactf-web",
+  "authors": [
+    "Arthur Pachachura <pachachura.arthur@gmail.com>"
+  ],
+  "description": "Capture The Flag (CTF) Security Competition hosted by LASA High School",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "CTF",
+    "LASA"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0"
+  }
+}
