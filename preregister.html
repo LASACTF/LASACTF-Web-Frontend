@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>LASACTF - Registration</title>
 
     <!-- Bootstrap -->
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -45,6 +45,9 @@
               <label for="inputPassword" class="col-sm-3 control-label">Password<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+              <div class="col-sm-8">
+                <input type="password" class="form-control space" id="inputConfirmPassword" placeholder="Confirm Password">
               </div>
             </div>
             <div class="form-group">
@@ -149,17 +152,17 @@
             <div class="form-group">
               <div class="col-xs-1"></div>
               <div class="col-xs-10">
-                <h3 class="left">What do you expect to see in LASACTF?</h3>
-
+                <h3 class="left">What do you expect in LASACTF?</h3>
+                <textarea class="form-control" id="inputExpect" rows="3"></textarea>
               </div>
               <div class="col-xs-1"></div>
             </div>
-            <br>
+            <br><br>
             <div class="col-xs-1"></div>
             <div class="col-xs-10">
               <button type="submit" class="btn purple sm expand"><i class="material-icons"></i>SUBMIT AND CONFIRM</button>
             </div>
-            <div class="col-xs-1"></div>
+            <br><br><br><br>
           </form>
         </div>
       </div>
