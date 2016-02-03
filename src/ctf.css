@@ -56,6 +56,13 @@ h3, .h3
 {
   font-size: 1.8em;
 }
+div.asterisk
+{
+  font-size: 0.7em;
+  //padding-top: 12px;
+  vertical-align: top;
+  color: rgb(224, 64, 221);
+}
 
 /** BUTTONS **/
 
@@ -72,6 +79,15 @@ h3, .h3
   width: 380px;
   text-align: left;
 }
+.btn.sm
+{
+  font-size: 20px;
+  padding: 2px 9px 2px 9px;
+}
+.btn.expand
+{
+  width: 100%;
+}
 .btn:active
 {
   box-shadow: inset 0 4px 8px rgba(0,0,0,.25);
@@ -81,6 +97,12 @@ h3, .h3
   font-size: 40px;
   vertical-align: middle;
   padding-bottom: 10px;
+  padding-right: 12px;
+}
+.btn.sm i
+{
+  font-size: 26px;
+  padding-bottom: 2px;
   padding-right: 12px;
 }
 
@@ -137,6 +159,8 @@ form .form-group label
 {
   font-size: 24px;
   font-weight: 100;
+  margin-top: -4px!important;
+  margin-bottom: 4px!important;
 }
 form .form-group input.form-control
 {
@@ -146,12 +170,46 @@ form .form-group input.form-control
   color: #fff!important;
   border-radius: 0;
   border: 2px solid rgb(97, 97, 97);
+}
+form .form-group .form-control
+{
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
   -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
 }
-form .form-group input.form-control:active,
-form .form-group input.form-control:focus
+form .form-group .form-control::-webkit-input-placeholder,
+form .form-group .form-control::-webkit-input-placeholder
+{ -webkit-transition: color ease-in-out .15s; }
+form .form-group .form-control:-moz-placeholder,
+form .form-group .form-control:-moz-placeholder
+{ -moz-transition: color ease-in-out .15s; }
+form .form-group .form-control::-moz-placeholder,
+form .form-group .form-control::-moz-placeholder
+{ -moz-transition: color ease-in-out .15s; }
+form .form-group .form-control::-ms-input-placeholder,
+form .form-group .form-control::-ms-input-placeholder
+{ -o-transition: color ease-in-out .15s; }
+
+form .form-group .form-control:focus::-webkit-input-placeholder,
+form .form-group .form-control:active::-webkit-input-placeholder
+{ color: #eee; }
+form .form-group .form-control:focus:-moz-placeholder,
+form .form-group .form-control:active:-moz-placeholder
+{ color: #eee; }
+form .form-group .form-control:focus::-moz-placeholder,
+form .form-group .form-control:active::-moz-placeholder
+{ color: #eee; }
+form .form-group .form-control:focus::-ms-input-placeholder,
+form .form-group .form-control:active::-ms-input-placeholder
+{ color: #eee; }
+
+form .form-group .form-control option
+{
+  background-color: rgb(97, 97, 97)!important;
+}
+form .form-group .form-control:active,
+form .form-group .form-control:focus,
+form .form-group .form-control.focus
 {
   box-shadow: 0px 0px 16px rgba(224,64,251,.5);
   background-color: rgb(224,64,251);
@@ -165,6 +223,7 @@ form .form-group select.form-control
   border-radius: 0;
   box-shadow: none!important;
   border: 2px solid rgb(97, 97, 97);
+  padding: 6px 0px 6px 9px;
 }
 form .form-group select.form-control.large
 {
