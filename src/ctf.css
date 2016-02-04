@@ -37,6 +37,10 @@ img.logo
 {
   width: 280px;
 }
+.hidden
+{
+  display: none;
+}
 
 /** TEXT **/
 
