@@ -262,3 +262,38 @@ form .form-group textarea.form-control
 {
   font-size: 20px;
 }
+form .form-group .help-block
+{
+  text-align: left;
+  font-size: 20px;
+}
+
+/** FORM STATUS **/
+form .form-group.has-success .form-control
+{
+  background-color: #388E3C;
+  color: #fff;
+  border: 2px solid #388E3C;
+}
+form .form-group.has-success .control-label,
+form .form-group.has-success .help-block
+{
+  color: #00C853;
+}
+form .form-group.has-failure .form-control
+{
+  background-color: #D84315;
+  color: #fff;
+  border: 2px solid #D84315;
+}
+form .form-group.has-failure .control-label,
+form .form-group.has-failure .help-block
+{
+  color: #FF3D00;
+}
+form .form-group.has-success div.asterisk,
+form .form-group.has-failure div.asterisk,
+form .form-group.has-warning div.asterisk
+{
+  color: #fff;
+}

@@ -35,25 +35,30 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <form class="form-horizontal" id="registration-form">
-            <div class="form-group">
+            <div class="form-group has-success">
               <label for="inputUsername" class="col-sm-3 control-label">Username<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+                <span id="helpBlock1" class="help-block">All good!</span>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group has-failure">
               <label for="inputPassword" class="col-sm-3 control-label">Password<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password">
               </div>
               <div class="col-sm-8">
                 <input type="password" class="form-control spacetop" id="inputConfirmPassword" placeholder="Confirm Password">
+                <span id="helpBlock2" class="help-block">Passwords do not match.</span>
               </div>
             </div>
             <div class="form-group">
-              <label for="inputFirstName" class="col-sm-3 control-label">Your Name</label>
-              <div class="col-sm-8">
-                <input type="name" class="form-control" id="inputFirstName" placeholder="Name (Not required)">
+              <label for="inputFirstName" class="col-sm-3 control-label">Your Name<div class="text asterisk">*</div></label>
+              <div class="col-sm-4">
+                <input type="city" class="form-control" id="inputFirstName" placeholder="First">
+              </div>
+              <div class="col-sm-4">
+                <input type="state" class="form-control" id="inputLastName" placeholder="Last">
               </div>
             </div>
             <div class="form-group">
@@ -91,7 +96,7 @@
             <div class="form-group">
               <label for="inputCity" class="col-sm-3 control-label">Location<div class="text asterisk">*</div></label>
               <div class="col-sm-5">
-                <input type="city" class="form-control" id="inputCity" placeholder="City (not required)">
+                <input type="city" class="form-control" id="inputCity" placeholder="City">
               </div>
               <div class="col-sm-3">
                 <input type="state" class="form-control" id="inputState" placeholder="State/Region">
