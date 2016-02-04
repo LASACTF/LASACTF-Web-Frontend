@@ -27,6 +27,32 @@ function validatePassword() {
 	$('#inputPassword').parent().parent().addClass('has-success');
 	$('#helpPassword').text('');
 }
+
+function genericEmptyCheck(field, help) {
+	if(field.val().length == 0) {
+		field.parent().parent().addClass('has-failure');
+		field.parent().parent().removeClass('has-success');
+		help.text('This field is required');
+	}
+	else {
+		valid = true;
+		if(arguments.length > 2) {
+			var i;
+			for(i = 2; i < arguments.length; i++)
+			{
+				if (!arguments[i].hasClass('hidden') && arguments[i].val().length == 0) {
+					valid = false;
+					break;
+				}
+			}
+		}
+		if(valid) {
+			field.parent().parent().removeClass('has-failure');
+			field.parent().parent().addClass('has-success');
+		}
+		help.text('');
+	}
+}
 //Registration page submission
 $(function() {
 	$('#inputUsername').on('blur',function(e){
@@ -69,6 +95,22 @@ $(function() {
     $('#inputConfirmPassword').on('blur',function(e){
 		validatePassword();
   });
+  
+  $('#inputFirstName').on('blur',function(e){
+	 genericEmptyCheck($('#inputFirstName'), $('#helpFirstName'), $('#inputLastName')); 
+  });  
+  
+  $('#inputLastName').on('blur',function(e){
+	 genericEmptyCheck($('#inputLastName'), $('#helpLastName'), $('#inputFirstName')); 
+  });
+  
+  $('#inputAffiliation').on('blur',function(e){
+	 genericEmptyCheck($('#inputAffiliation'), $('#helpAffiliation')); 
+  });
+  
+  $('#inputStatus').on('blur', function(e) {
+	$('#inputStatus').parent().parent().addClass('has-success');  
+});
   
   $( "#registration-form" ).submit(function( event ) {
     event.preventDefault();
