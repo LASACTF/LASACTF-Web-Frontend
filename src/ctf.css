@@ -219,16 +219,33 @@ form .form-group .form-control::-ms-input-placeholder
 
 form .form-group .form-control:focus::-webkit-input-placeholder,
 form .form-group .form-control:active::-webkit-input-placeholder
-{ color: #eee; }
+{ color: #eee!important; }
 form .form-group .form-control:focus:-moz-placeholder,
 form .form-group .form-control:active:-moz-placeholder
-{ color: #eee; }
+{ color: #eee!important; }
 form .form-group .form-control:focus::-moz-placeholder,
 form .form-group .form-control:active::-moz-placeholder
-{ color: #eee; }
+{ color: #eee!important; }
 form .form-group .form-control:focus::-ms-input-placeholder,
 form .form-group .form-control:active::-ms-input-placeholder
-{ color: #eee; }
+{ color: #eee!important; }
+
+form .form-group.has-success .form-control::-webkit-input-placeholder
+{ color: #ccc; }
+form .form-group.has-success .form-control:-moz-placeholder
+{ color: #ccc; }
+form .form-group.has-success .form-control::-moz-placeholder
+{ color: #ccc; }
+form .form-group.has-success .form-control::-ms-input-placeholder
+{ color: #ccc; }
+form .form-group.has-failure .form-control::-webkit-input-placeholder
+{ color: #ccc; }
+form .form-group.has-failure .form-control.failure:-moz-placeholder
+{ color: #ccc; }
+form .form-group.has-failure .form-control::-moz-placeholder
+{ color: #ccc; }
+form .form-group.has-failure .form-control::-ms-input-placeholder
+{ color: #ccc; }
 
 form .form-group .form-control option
 {
