@@ -120,6 +120,20 @@ div.asterisk
 {
   background-color: #d500f9;
 }
+.btn.disabled
+{
+  background-color: #ccc;
+  border: 4px #ccc solid;
+}
+.btn.disabled:hover,
+.btn.disabled:active,
+.btn.disabled:focus
+{
+  background-color: #ccc;
+  border: 4px #ccc solid;
+  box-shadow: none!important;
+  cursor: default;
+}
 
 .btn.white
 {
@@ -239,6 +253,10 @@ form .form-group .form-control.large
   margin-top: 3px;
   height: 42px;
   font-size: 20px;
+}
+form .form-group .form-control.spacetop
+{
+  margin-top: 4px;
 }
 form .form-group textarea.form-control
 {
