@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-          <form class="form-horizontal">
+          <form class="form-horizontal" id="registration-form">
             <div class="form-group">
               <label for="inputUsername" class="col-sm-3 control-label">Username<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
@@ -68,14 +68,13 @@
                 <input type="text" class="form-control" id="inputAffiliation" placeholder="Your High School / University / Other">
               </div>
               <div class="col-sm-8">
-                <select class="form-control sm">
-                  <option>High School</option>
-                  <option>High School Equivalent (homeschooled, etc.)</option>
-                  <option>Higher Education (college, university, etc.)</option>
-                  <option>Corporation / Non-Profit</option>
-                  <option>Middle School or Equivalent</option>
-                  <option>Military/Specialized Education (that is not a high school equivalent)</option>
-                  <option>Other / International (not listed above)</option>
+                <select class="form-control sm" id="inputSchoolType">
+                  <option value="high">High School</option>
+                  <option value="high">High School Equivalent (homeschooled, etc.)</option>
+                  <option value="college">Higher Education (college, university, etc.)</option>
+                  <option value="corp">Corporation / Non-Profit</option>
+                  <option value="middle">Middle School or Equivalent</option>
+                  <option value="other">Other (not listed above)</option>
                 </select>
               </div>
             </div>
@@ -83,9 +82,9 @@
               <label for="inputStatus" class="col-sm-3 control-label">Account Type<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <select class="form-control large" id="inputStatus">
-                  <option>Competitor (Students only)</option>
-                  <option>Instructor (For classroom teachers)</option>
-                  <option>Unranked Competitor (No prizes will be awarded)</option>
+                  <option value="comp">Competitor (Students only)</option>
+                  <option value="instructor">Instructor (For classroom teachers)</option>
+                  <option value="unrankedcomp">Unranked Competitor (No prizes will be awarded)</option>
                 </select>
               </div>
             </div>
@@ -98,11 +97,9 @@
                 <input type="state" class="form-control" id="inputState" placeholder="State/Region">
               </div>
               <div class="col-sm-8">
-                <select class="form-control sm">
-                  <option>Continential United States</option>
-                  <option>Alaska, Hawaii, or US Territory</option>
-                  <option>European Union</option>
-                  <option>International (Other)</option>
+                <select class="form-control sm" id="inputCountry">
+                  <option value="us">United States</option>
+                  <option value="i">International (Other)</option>
                 </select>
               </div>
             </div>
@@ -110,7 +107,7 @@
             <div class="form-group">
               <div class="col-xs-1"></div>
               <div class="col-xs-10">
-                <h3 class="left">How many CTFs did you participate in prior to LASACTF?</h3>
+                <h3 class="left">How many CTFs have you participated in prior to LASACTF?</h3>
                 <select class="form-control large" id="inputCTFs">
                   <option></option>
                   <option>None</option>
@@ -131,7 +128,6 @@
                   <option>Novice</option>
                   <option>Intermediate</option>
                   <option>Experienced</option>
-                  <option>Highly experienced</option>
                 </select>
               </div>
               <div class="col-xs-1"></div>
@@ -139,21 +135,15 @@
             <div class="form-group">
               <div class="col-xs-1"></div>
               <div class="col-xs-10">
-                <h3 class="left">If you have participated in earlier CTFs, what is the type of problem you are best at?</h3>
+                <h3 class="left">If you have participated in earlier CTFs, what category of problems are best at?</h3>
                 <select class="form-control large" id="inputSection">
                   <option></option>
                   <option>Not sure / Never participated before</option>
+                  <option>Algorithm</option>
                   <option>Binary Exploitation</option>
-                  <option>HACKING</option>
+                  <option>Crytography</option>
+                  <option>Web Exploitation</option>
                 </select>
-              </div>
-              <div class="col-xs-1"></div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-1"></div>
-              <div class="col-xs-10">
-                <h3 class="left">What do you expect in LASACTF?</h3>
-                <textarea class="form-control" id="inputExpect" rows="3"></textarea>
               </div>
               <div class="col-xs-1"></div>
             </div>
@@ -170,6 +160,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery-placeholder/jquery.placeholder.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- JS --->
