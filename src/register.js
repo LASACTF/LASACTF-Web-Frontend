@@ -5,11 +5,11 @@ function cleanStatus() {
 }
 
 function validatePassword() {
-		if($('#inputPassword').val().length < 6) {
-		$('#inputPassword').parent().parent().addClass('has-failure');
-		$('#inputPassword').parent().parent().removeClass('has-success');
-		$('#helpPassword').text('Passwords must be at least 6 characters');
-		return;
+    if($('#inputPassword').val().length < 6) {
+        $('#inputPassword').parent().parent().addClass('has-failure');
+        $('#inputPassword').parent().parent().removeClass('has-success');
+        $('#helpPassword').text('Passwords must be at least 6 characters');
+        return;
 	}
 	if($('#inputPassword').val().length > 50) {
 		$('#inputPassword').parent().parent().addClass('has-failure');
@@ -68,6 +68,13 @@ $(function() {
 		$('#helpUsername').text('Usernames cannot be more than 20 characters');
 		return;
 	}
+    if(/\s/g.exec($('#inputUsername').val()) != null)
+    {
+        $('#inputUsername').parent().parent().addClass('has-failure');
+		$('#inputUsername').parent().parent().removeClass('has-success');
+		$('#helpUsername').text('Usernames may not contain whitespace');
+		return;
+    }
     $.ajax({
        url: 'https://lasactf.com/api/user/check_username',
        data: {
@@ -81,7 +88,7 @@ $(function() {
 		else {
 			$('#inputUsername').parent().parent().addClass('has-failure');
 			$('#inputUsername').parent().parent().removeClass('has-success');
-			$('#helpUsername').text('That username is already taken :(');
+			$('#helpUsername').text('That username is already taken!');
 		}
        },
        type: 'POST'
@@ -139,6 +146,7 @@ $(function() {
       eligibility = "eligible";
     }
 	var formFailed = false;
+    /** TODO TEST FOR FORM FAILURE **/
     if (!formFailed){
       $.ajax({
          url: 'https://lasactf.com/api/user/create_simple',
