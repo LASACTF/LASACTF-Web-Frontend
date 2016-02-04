@@ -35,36 +35,40 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <form class="form-horizontal" id="registration-form">
-            <div class="form-group has-success">
+            <div class="form-group">
               <label for="inputUsername" class="col-sm-3 control-label">Username<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <input type="username" class="form-control" id="inputUsername" placeholder="Username">
-                <span id="helpBlock1" class="help-block">All good!</span>
+                <span id="helpUsername" class="help-block"></span>
               </div>
             </div>
-            <div class="form-group has-failure">
+            <div class="form-group">
               <label for="inputPassword" class="col-sm-3 control-label">Password<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password">
               </div>
               <div class="col-sm-8">
                 <input type="password" class="form-control spacetop" id="inputConfirmPassword" placeholder="Confirm Password">
-                <span id="helpBlock2" class="help-block">Passwords do not match.</span>
+                <span id="helpPassword" class="help-block"></span>
               </div>
             </div>
             <div class="form-group">
               <label for="inputFirstName" class="col-sm-3 control-label">Your Name<div class="text asterisk">*</div></label>
               <div class="col-sm-4">
                 <input type="city" class="form-control" id="inputFirstName" placeholder="First">
+				<span id="helpFirstName" class="help-block"></span>
               </div>
               <div class="col-sm-4">
                 <input type="state" class="form-control" id="inputLastName" placeholder="Last">
+				<span id="helpLastName" class="help-block"></span>
               </div>
+			  
             </div>
             <div class="form-group">
               <label for="inputEmail" class="col-sm-3 control-label">Email<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
                 <input type="email" class="form-control" id="inputEmail" placeholder="lasactf@example.com">
+				<span id="helpEmailName" class="help-block"></span>
               </div>
             </div>
             <div class="form-group">
@@ -72,6 +76,7 @@
               <div class="col-sm-8">
                 <input type="text" class="form-control" id="inputAffiliation" placeholder="Your High School / University / Other">
               </div>
+			  <div class="col-sm-3"></div>
               <div class="col-sm-8">
                 <select class="form-control sm" id="inputSchoolType">
                   <option value="high">High School</option>
@@ -82,6 +87,7 @@
                   <option value="other">Other (not listed above)</option>
                 </select>
               </div>
+			  <span id="helpAffiliation" class="help-block"></span>
             </div>
             <div class="form-group">
               <label for="inputStatus" class="col-sm-3 control-label">Account Type<div class="text asterisk">*</div></label>
@@ -97,16 +103,20 @@
               <label for="inputCity" class="col-sm-3 control-label">Location<div class="text asterisk">*</div></label>
               <div class="col-sm-5">
                 <input type="city" class="form-control" id="inputCity" placeholder="City">
+				<span id="helpCity" class="help-block"></span>
               </div>
               <div class="col-sm-3">
                 <input type="state" class="form-control" id="inputState" placeholder="State/Region">
+				<span id="helpState" class="help-block"></span>
               </div>
+			  <div class="col-sm-3"></div>
               <div class="col-sm-8">
                 <select class="form-control sm" id="inputCountry">
                   <option value="us">United States</option>
                   <option value="i">International (Other)</option>
                 </select>
                 <input type="state" class="form-control spacetop" id="inputState" placeholder="Country, if not US">
+				<span id="helpCountry" class="help-block"></span>
               </div>
             </div>
             <br>

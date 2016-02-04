@@ -1,7 +1,75 @@
 $('input, textarea').placeholder();
 
+function cleanStatus() {
+	
+}
+
+function validatePassword() {
+		if($('#inputPassword').val().length < 6) {
+		$('#inputPassword').parent().parent().addClass('has-failure');
+		$('#inputPassword').parent().parent().removeClass('has-success');
+		$('#helpPassword').text('Passwords must be at least 6 characters');
+		return;
+	}
+	if($('#inputPassword').val().length > 50) {
+		$('#inputPassword').parent().parent().addClass('has-failure');
+		$('#inputPassword').parent().parent().removeClass('has-success');
+		$('#helpPassword').text('Passwords cannot be more than 50 characters');
+		return;
+	}
+	if($('#inputPassword').val() != $('#inputConfirmPassword').val()) {
+		$('#inputPassword').parent().parent().addClass('has-failure');
+		$('#inputPassword').parent().parent().removeClass('has-success');
+		$('#helpPassword').text('Passwords must match');
+		return;
+	}
+	$('#inputPassword').parent().parent().removeClass('has-failure');
+	$('#inputPassword').parent().parent().addClass('has-success');
+	$('#helpPassword').text('');
+}
 //Registration page submission
 $(function() {
+	$('#inputUsername').on('blur',function(e){
+	if($('#inputUsername').val().length < 3) {
+		$('#inputUsername').parent().parent().addClass('has-failure');
+		$('#inputUsername').parent().parent().removeClass('has-success');
+		$('#helpUsername').text('Usernames must be at least 3 characters');
+		return;
+	}
+	if($('#inputUsername').val().length > 20) {
+		$('#inputUsername').parent().parent().addClass('has-failure');
+		$('#inputUsername').parent().parent().removeClass('has-success');
+		$('#helpUsername').text('Usernames cannot be more than 20 characters');
+		return;
+	}
+    $.ajax({
+       url: 'https://lasactf.com/api/user/check_username',
+       data: {
+          "username": $('#inputUsername').val(),       },
+       success: function(data) {
+        if(data['status']==1) {
+			$('#inputUsername').parent().parent().addClass('has-success');
+			$('#inputUsername').parent().parent().removeClass('has-failure');
+			$('#helpUsername').text('');
+		}
+		else {
+			$('#inputUsername').parent().parent().addClass('has-failure');
+			$('#inputUsername').parent().parent().removeClass('has-success');
+			$('#helpUsername').text('That username is already taken :(');
+		}
+       },
+       type: 'POST'
+    });
+  });
+  
+  $('#inputPassword').on('blur',function(e){
+	  validatePassword();
+  });
+  
+    $('#inputConfirmPassword').on('blur',function(e){
+		validatePassword();
+  });
+  
   $( "#registration-form" ).submit(function( event ) {
     event.preventDefault();
     var username = $('#registration-form').find('input[id="inputUsername"]').val();
@@ -24,10 +92,12 @@ $(function() {
 
     var eligibility = "ineligible";
     console.log(country,schooltype,status);
+	cleanStatus();
     if (country == "us" && schooltype == "high" && status == "comp"){
       eligibility = "eligible";
     }
-    if (password == confirmpassword){
+	var formFailed = false;
+    if (!formFailed){
       $.ajax({
          url: 'https://lasactf.com/api/user/create_simple',
          data: {
