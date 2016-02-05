@@ -41,6 +41,10 @@ img.logo
 {
   display: none;
 }
+.right
+{
+  text-align: right;
+}
 button:focus,
 img:focus {
   outline: 0!important;
@@ -99,7 +103,12 @@ div.asterisk
 }
 .purple-a400
 {
-  color: #D500F9
+  color: #D500F9;
+}
+a
+{
+  color: #E040FB;
+  text-decoration: underline;
 }
 
 /** BUTTONS **/
@@ -228,8 +237,7 @@ form .form-group .form-control.sm
 {
   margin-top: 4px;
 }
-form .form-group .form-control,
-.navbar .nav li.button .btn
+form .form-group .form-control
 {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
@@ -421,13 +429,12 @@ body.compete
 
 .navbar .nav li.button div.user-dropdown
 {
-  height: 340px;
-  width: 340px;
+  width: 400px;
   background-color: #616161;
   position: absolute;
   right: 0;
   top: 71px;
-  padding: 0 24px;
+  padding: 6px 6px;
   box-shadow: 4px 4px 12px #212121;
   z-index: -4;
   border: none!important;
@@ -438,10 +445,9 @@ body.compete
   width: 100%;
   font-size: 25px;
   text-align: left;
-  padding: 2px 12px;
-  background-color: #616161;E
-  color: #fff!important;
-  border: none;
+  padding: 0px 6px;
+  margin: 4px 0;
+  background-color: #616161;
 }
 .navbar .nav li.button div.user-dropdown button:hover,
 .navbar .nav li.button div.user-dropdown button:active,
@@ -454,4 +460,21 @@ body.compete
 {
   margin-top: -2px;
   font-size: 26px;
+}
+.navbar .nav li.button div.user-dropdown a
+{
+  color: #fff;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.navbar .nav li.button .btn
+{
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
+}
+.navbar .nav li.button div.user-dropdown button div
+{
+  padding: 0;
+  margin: 0;
 }
