@@ -9,6 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,7 +64,7 @@
                 <input type="state" class="form-control required" id="inputLastName" placeholder="Last">
 				<span id="helpLastName" class="help-block"></span>
               </div>
-			  
+
             </div>
             <div class="form-group">
               <label for="inputEmail" class="col-sm-3 control-label">Email<div class="text asterisk">*</div></label>
@@ -160,6 +162,11 @@
                 </select>
               </div>
               <div class="col-xs-1"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-8">
+                <div class="g-recaptcha" data-sitekey="6LfJXBcTAAAAADfW4xT0SCyV2BKBgVcUfJmDdgCe"></div>
+              </div>
             </div>
             <br><br>
             <div class="col-xs-1"></div>
