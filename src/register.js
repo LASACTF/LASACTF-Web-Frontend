@@ -268,5 +268,8 @@ $(function() {
          type: 'POST'
       });
     }
+	else {
+		$('#helpError').text("Please enter all required information");
+	}
   });
 });
