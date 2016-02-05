@@ -200,8 +200,10 @@ $(function() {
 		if(!$(this).parent().parent().hasClass('has-success')) {
 			formFailed = true;
 			console.log($(this));
-			$(this).parent().parent().addClass('has-failure');
-			$(this).parent().parent().removeClass('has-success');
+			if($(this).val().length == 0) {
+				$(this).parent().parent().addClass('has-failure');
+				$(this).parent().parent().removeClass('has-success');
+			}
 		}
 	});
 
