@@ -104,7 +104,6 @@
               <label for="inputCity" class="col-sm-3 control-label">Location<div class="text asterisk">*</div></label>
               <div class="col-sm-4">
                 <input type="city" class="form-control required" id="inputCity" placeholder="City">
-
               </div>
               <div class="col-sm-4">
                 <input type="state" class="form-control required" id="inputState" placeholder="State/Region">
@@ -171,9 +170,11 @@
                 <div class="g-recaptcha" data-sitekey="6LfJXBcTAAAAADfW4xT0SCyV2BKBgVcUfJmDdgCe"></div>
               </div>
             </div>
-            <br>
             <div class="col-xs-1"></div>
             <div class="col-xs-10">
+              <div class="form-group has-failure">
+                <span id="helpError" class="help-block ">There's an error in your submission. Why don't you fix it?</span>
+              </div>
               <button type="submit" class="btn purple sm expand"><i class="material-icons">&#xE5CA;</i>SUBMIT AND CONFIRM</button>
             </div>
             <br><br><br><br>
