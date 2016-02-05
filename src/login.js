@@ -11,7 +11,13 @@ $(function() {
           "password": password,
        },
        success: function(data) {
-        console.log(data);
+        if (data.status == 0){
+          $('#inputGroup').addClass('has-failure');
+          $('#helpBlock').text(data.message);
+        }
+        else{
+          window.location.href = "profile.html";
+        }
        },
        type: 'POST'
     });

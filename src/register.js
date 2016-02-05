@@ -1,7 +1,7 @@
 $('input, textarea').placeholder();
 
 function cleanStatus() {
-	
+
 }
 
 function validateEmail(email) {
@@ -138,29 +138,29 @@ $(function() {
        type: 'POST'
     });
   });
-  
+
   $('#inputPassword').on('blur',function(e){
 	  validatePassword();
   });
-  
+
     $('#inputConfirmPassword').on('blur',function(e){
 		validatePassword();
   });
-  
+
   $('#inputFirstName').on('blur',function(e){
-	 genericEmptyCheck($('#inputFirstName'), $('#helpFirstName'), $('#inputLastName')); 
-  });  
-  
+	 genericEmptyCheck($('#inputFirstName'), $('#helpFirstName'), $('#inputLastName'));
+  });
+
   $('#inputLastName').on('blur',function(e){
-	 genericEmptyCheck($('#inputLastName'), $('#helpLastName'), $('#inputFirstName')); 
+	 genericEmptyCheck($('#inputLastName'), $('#helpLastName'), $('#inputFirstName'));
   });
-  
+
   $('#inputAffiliation').on('blur',function(e){
-	 genericEmptyCheck($('#inputAffiliation'), $('#helpAffiliation')); 
+	 genericEmptyCheck($('#inputAffiliation'), $('#helpAffiliation'));
   });
-  
+
   $('#inputStatus').on('blur', function(e) {
-	$('#inputStatus').parent().parent().addClass('has-success');  
+	$('#inputStatus').parent().parent().addClass('has-success');
 });
 
   $('#inputEmail').on('blur', function(e) {
@@ -200,7 +200,7 @@ $(function() {
   $('#inputInternational').on('blur', function(e) {
   		locationCheck();
   });
-  
+
   $( "#registration-form" ).submit(function( event ) {
     event.preventDefault();
     var username = $('#registration-form').find('input[id="inputUsername"]').val();
@@ -256,8 +256,10 @@ $(function() {
             "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status})
          },
          success: function(data) {
-          window.location.href = "login.html"
-         },
+					if (data.success == 1){
+					 	window.location.href = "login.html";
+					}
+				 },
          type: 'POST'
       });
     }
