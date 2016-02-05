@@ -64,10 +64,13 @@ h3, .h3
 {
   font-size: 1.8em;
 }
+h4, .h4
+{
+  font-size: 1.5em;
+}
 div.asterisk
 {
   font-size: 0.7em;
-  //padding-top: 12px;
   vertical-align: top;
   color: rgb(224, 64, 221);
 }
@@ -344,4 +347,67 @@ form .form-group.has-warning div.asterisk
 .g-recaptcha div {
 
   margin: 0 auto!important;
+}
+
+/*** COMPETE ***/
+
+body.compete
+{
+  background-color: #424242;
+}
+
+/** NAVBAR **/
+.navbar
+{
+  background-color: #212121;
+  height: 66px;
+}
+.navbar.profile
+{
+  border-bottom: 3px solid #9c27b0;
+}
+.navbar .navbar-header .navbar-brand img
+{
+  height: 48px;
+}
+.navbar .navbar-brand
+{
+  margin-top: -8px;
+  height: 66px;
+}
+.navbar .navbar-nav
+{
+  height: 66px;
+}
+.navbar .nav li.text
+{
+  margin: 20px auto;
+  vertical-align: middle;
+  padding: 0 auto;
+}
+.navbar .nav li.button
+{
+  height: 66px;
+  margin: -7px;
+}
+.navbar .nav li.button .btn
+{
+  font-size: 26px;
+  height: 100%;
+  padding: 0 32px 4px 32px;
+}
+.navbar .nav li.button .btn i
+{
+  font-size: 32px;
+  padding: 0;
+}
+.navbar .nav li.button .btn.profile,
+.navbar .nav li.button .btn.profile:focus,
+.navbar .nav li.button .btn.profile:hover,
+.navbar .nav li.button .btn.profile:active
+{
+  color: #fff;
+  border: none!important;
+  background-color: #9c27b0;
+  box-shadow: none;
 }
