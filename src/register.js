@@ -63,6 +63,19 @@ function genericEmptyCheck(field, help) {
 		help.text('');
 	}
 }
+
+function locationCheck() {
+	if($('#inputState').val().length != 0 && $('#inputCity').val().length != 0 && ($('#inputInternational').hasClass('hidden') || $('#inputInternational').val().length != 0)) {
+		$('#inputState').parent().parent().removeClass('has-failure');
+		$('#inputState').parent().parent().addClass('has-success');
+		$('#helpLocation').text('');
+	}
+	else {
+		$('#inputState').parent().parent().addClass('has-failure');
+		$('#inputState').parent().parent().removeClass('has-success');
+		$('#helpLocation').text('All location information is required');
+	}
+}
 //Registration page submission
 $(function() {
 	$('#inputUsername').on('blur',function(e){
@@ -133,7 +146,7 @@ $(function() {
   	if($('#inputEmail').val().length > 100) {
   		$('#inputEmail').parent().parent().addClass('has-failure');
   		$('#inputEmail').parent().parent().removeClass('has-success');
-  		$('#helpEmail').text('email must be less than 100 characters');
+  		$('#helpEmail').text('Invalid email address');
   	}
   	else if(validateEmail($('#inputEmail').val())){
   		$('#inputEmail').parent().parent().addClass('has-success');
@@ -143,28 +156,28 @@ $(function() {
   	else {
   		$('#inputEmail').parent().parent().addClass('has-failure');
   		$('#inputEmail').parent().parent().removeClass('has-success');
-  		$('#helpEmail').text('must be a valid email address');
+  		$('#helpEmail').text('Invalid email address');
   	}
   });
 
   $('#inputCountry').on('change', function(e) {
   	if($('#inputCountry').val() == 'us') {
   		$('#inputInternational').addClass('hidden');
-  		genericEmptyCheck($('#inputCountry'), $('#helpCountry'), $('#inputCity'), $('#inputState'));
+  		locationCheck();
   	}
   	else {
   		$('#inputInternational').removeClass('hidden');
-  		genericEmptyCheck($('#inputInternational'), $('#helpCountry'), $('#inputCity'), $('#inputState'));
+  		locationCheck();
   	}
   });
   $('#inputCity').on('blur', function(e) {
-  		genericEmptyCheck($('#inputCity'), $('#helpCity'), $('#inputState'), $('#inputInternational'));
+  		locationCheck();
   });
   $('#inputState').on('blur', function(e) {
-  		genericEmptyCheck($('#inputState'), $('#helpState'), $('#inputCity'), $('#inputInternational'));
+  		locationCheck();
   });
   $('#inputInternational').on('blur', function(e) {
-  		genericEmptyCheck($('#inputInternational'), $('#helpCountry'), $('#inputCity'), $('#inputState'));
+  		locationCheck();
   });
 
   $( "#registration-form" ).submit(function( event ) {
