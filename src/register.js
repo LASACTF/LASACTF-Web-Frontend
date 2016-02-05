@@ -4,6 +4,11 @@ function cleanStatus() {
 	
 }
 
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
 function validatePassword() {
     if($('#inputPassword').val().length < 6) {
         $('#inputPassword').parent().parent().addClass('has-failure');
@@ -33,6 +38,11 @@ function genericEmptyCheck(field, help) {
 		field.parent().parent().addClass('has-failure');
 		field.parent().parent().removeClass('has-success');
 		help.text('This field is required');
+	}
+	else if(field.val().length > 32) {
+		field.parent().parent().addClass('has-failure');
+		field.parent().parent().removeClass('has-success');
+		help.text('No more than 32 characters are allowed');
 	}
 	else {
 		valid = true;
@@ -65,7 +75,7 @@ $(function() {
 	if($('#inputUsername').val().length > 20) {
 		$('#inputUsername').parent().parent().addClass('has-failure');
 		$('#inputUsername').parent().parent().removeClass('has-success');
-		$('#helpUsername').text('Usernames cannot be more than 20 characters');
+		$('#helpUsername').text('Usernames cannot be more than 32 characters');
 		return;
 	}
     if(/\s/g.exec($('#inputUsername').val()) != null)
@@ -118,6 +128,44 @@ $(function() {
   $('#inputStatus').on('blur', function(e) {
 	$('#inputStatus').parent().parent().addClass('has-success');  
 });
+
+  $('#inputEmail').on('blur', function(e) {
+  	if($('#inputEmail').val().length > 100) {
+  		$('#inputEmail').parent().parent().addClass('has-failure');
+  		$('#inputEmail').parent().parent().removeClass('has-success');
+  		$('#helpEmail').text('email must be less than 100 characters');
+  	}
+  	else if(validateEmail($('#inputEmail').val())){
+  		$('#inputEmail').parent().parent().addClass('has-success');
+  		$('#inputEmail').parent().parent().removeClass('has-failure');
+  		$('#helpEmail').text('');
+  	}
+  	else {
+  		$('#inputEmail').parent().parent().addClass('has-failure');
+  		$('#inputEmail').parent().parent().removeClass('has-success');
+  		$('#helpEmail').text('must be a valid email address');
+  	}
+  });
+
+  $('#inputCountry').on('change', function(e) {
+  	if($('#inputCountry').val() == 'us') {
+  		$('#inputInternational').addClass('hidden');
+  		genericEmptyCheck($('#inputCountry'), $('#helpCountry'), $('#inputCity'), $('#inputState'));
+  	}
+  	else {
+  		$('#inputInternational').removeClass('hidden');
+  		genericEmptyCheck($('#inputInternational'), $('#helpCountry'), $('#inputCity'), $('#inputState'));
+  	}
+  });
+  $('#inputCity').on('blur', function(e) {
+  		genericEmptyCheck($('#inputCity'), $('#helpCity'), $('#inputState'), $('#inputInternational'));
+  });
+  $('#inputState').on('blur', function(e) {
+  		genericEmptyCheck($('#inputState'), $('#helpState'), $('#inputCity'), $('#inputInternational'));
+  });
+  $('#inputInternational').on('blur', function(e) {
+  		genericEmptyCheck($('#inputInternational'), $('#helpCountry'), $('#inputCity'), $('#inputState'));
+  });
   
   $( "#registration-form" ).submit(function( event ) {
     event.preventDefault();
@@ -134,6 +182,7 @@ $(function() {
     var city = $('#registration-form').find('input[id="inputCity"]').val();
     var state = $('#registration-form').find('input[id="inputState"]').val();
     var country = $('#registration-form').find('select[id="inputCountry"]').val();
+    var international = $('#registration-form').find('input[id="international"]').val();
 
     var ctf = $('#registration-form').find('select[id="inputCTFs"]').val();
     var experience = $('#registration-form').find('select[id="inputExperience"]').val();
@@ -146,7 +195,16 @@ $(function() {
       eligibility = "eligible";
     }
 	var formFailed = false;
-    /** TODO TEST FOR FORM FAILURE **/
+	$('.required').each(function() {
+		if($(this).hasClass('hidden')) return;
+		if(!$(this).parent().parent().hasClass('has-success')) {
+			formFailed = true;
+			console.log($(this));
+			$(this).parent().parent().addClass('has-failure');
+			$(this).parent().parent().removeClass('has-success');
+		}
+	});
+
     if (!formFailed){
       $.ajax({
          url: 'https://lasactf.com/api/user/create_simple',
@@ -159,7 +217,7 @@ $(function() {
             "lastname": "test",
             "eligibility": eligibility,
             "affiliation":affiliation,
-            "extra":JSON.stringify({"city":city,"state":state,"country":country, "ctf":ctf,"experience":experience,"selection":selection,"status":status})
+            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status})
          },
          success: function(data) {
           window.location.href = "login.html"

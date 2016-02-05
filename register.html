@@ -38,28 +38,28 @@
             <div class="form-group">
               <label for="inputUsername" class="col-sm-3 control-label">Username<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
-                <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+                <input type="username" class="form-control required" id="inputUsername" placeholder="Username">
                 <span id="helpUsername" class="help-block"></span>
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="col-sm-3 control-label">Password<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" class="form-control required" id="inputPassword" placeholder="Password">
               </div>
               <div class="col-sm-8">
-                <input type="password" class="form-control spacetop" id="inputConfirmPassword" placeholder="Confirm Password">
+                <input type="password" class="form-control spacetop required" id="inputConfirmPassword" placeholder="Confirm Password">
                 <span id="helpPassword" class="help-block"></span>
               </div>
             </div>
             <div class="form-group">
               <label for="inputFirstName" class="col-sm-3 control-label">Your Name<div class="text asterisk">*</div></label>
               <div class="col-sm-4">
-                <input type="city" class="form-control" id="inputFirstName" placeholder="First">
+                <input type="city" class="form-control required" id="inputFirstName" placeholder="First">
 				<span id="helpFirstName" class="help-block"></span>
               </div>
               <div class="col-sm-4">
-                <input type="state" class="form-control" id="inputLastName" placeholder="Last">
+                <input type="state" class="form-control required" id="inputLastName" placeholder="Last">
 				<span id="helpLastName" class="help-block"></span>
               </div>
 			  
@@ -67,14 +67,14 @@
             <div class="form-group">
               <label for="inputEmail" class="col-sm-3 control-label">Email<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
-                <input type="email" class="form-control" id="inputEmail" placeholder="lasactf@example.com">
-				<span id="helpEmailName" class="help-block"></span>
+                <input type="email" class="form-control required" id="inputEmail" placeholder="lasactf@example.com">
+				<span id="helpEmail" class="help-block"></span>
               </div>
             </div>
             <div class="form-group">
               <label for="inputAffiliation" class="col-sm-3 control-label">Affiliation<div class="text asterisk">*</div></label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputAffiliation" placeholder="Your High School / University / Other">
+                <input type="text" class="form-control required" id="inputAffiliation" placeholder="Your High School / University / Other">
               </div>
               <div class="col-sm-8">
                 <select class="form-control sm" id="inputSchoolType">
@@ -101,11 +101,11 @@
             <div class="form-group">
               <label for="inputCity" class="col-sm-3 control-label">Location<div class="text asterisk">*</div></label>
               <div class="col-sm-5">
-                <input type="city" class="form-control" id="inputCity" placeholder="City">
+                <input type="city" class="form-control required" id="inputCity" placeholder="City">
 				<span id="helpCity" class="help-block"></span>
               </div>
               <div class="col-sm-3">
-                <input type="state" class="form-control" id="inputState" placeholder="State/Region">
+                <input type="state" class="form-control required" id="inputState" placeholder="State/Region">
 				<span id="helpState" class="help-block"></span>
               </div>
 			  <div class="col-sm-3"></div>
@@ -114,7 +114,7 @@
                   <option value="us">United States</option>
                   <option value="i">International (Other)</option>
                 </select>
-                <input type="state" class="form-control spacetop" id="inputState" placeholder="Country, if not US">
+                <input type="state" class="form-control spacetop required hidden" id="inputInternational" placeholder="Country, if not US">
 				<span id="helpCountry" class="help-block"></span>
               </div>
             </div>
