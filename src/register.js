@@ -65,15 +65,36 @@ function genericEmptyCheck(field, help) {
 }
 
 function locationCheck() {
-	if($('#inputState').val().length != 0 && $('#inputCity').val().length != 0 && ($('#inputInternational').hasClass('hidden') || $('#inputInternational').val().length != 0)) {
-		$('#inputState').parent().parent().removeClass('has-failure');
-		$('#inputState').parent().parent().addClass('has-success');
-		$('#helpLocation').text('');
+	if($('#inputState').val().length > 32 || $('#inputCity').val().length > 32 || (!$('#inputInternational').hasClass('hidden') && $('#inputInternational').val().length > 32)) {
+		$('#inputState').parent().parent().addClass('has-failure');
+			$('#inputState').parent().parent().removeClass('has-success');
+			$('#helpLocation').text('These fields may only have up to 32 characters in them');
+			return;
+	}
+	if($('#inputInternational').hasClass('hidden')) {
+		if($('#inputState').val().length != 0 && $('#inputCity').val().length != 0) {
+			$('#inputState').parent().parent().removeClass('has-failure');
+			$('#inputState').parent().parent().addClass('has-success');
+			$('#helpLocation').text('');
+		}
+		else {
+			$('#inputState').parent().parent().addClass('has-failure');
+			$('#inputState').parent().parent().removeClass('has-success');
+			$('#helpLocation').text('Please enter a city and state');
+		}
 	}
 	else {
-		$('#inputState').parent().parent().addClass('has-failure');
-		$('#inputState').parent().parent().removeClass('has-success');
-		$('#helpLocation').text('All location information is required');
+		if($('#inputInternational').val().length != 0) {
+			$('#inputState').parent().parent().removeClass('has-failure');
+			$('#inputState').parent().parent().addClass('has-success');
+			$('#helpLocation').text('');
+		}
+		else
+		{
+			$('#inputState').parent().parent().addClass('has-failure');
+			$('#inputState').parent().parent().removeClass('has-success');
+			$('#helpLocation').text('Please enter a country');
+		}
 	}
 }
 //Registration page submission
