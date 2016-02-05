@@ -41,6 +41,10 @@ img.logo
 {
   display: none;
 }
+button:focus,
+img:focus {
+  outline: 0!important;
+}
 
 /** TEXT **/
 
@@ -224,7 +228,8 @@ form .form-group .form-control.sm
 {
   margin-top: 4px;
 }
-form .form-group .form-control
+form .form-group .form-control,
+.navbar .nav li.button .btn
 {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
@@ -401,13 +406,32 @@ body.compete
   font-size: 32px;
   padding: 0;
 }
-.navbar .nav li.button .btn.profile,
-.navbar .nav li.button .btn.profile:focus,
-.navbar .nav li.button .btn.profile:hover,
-.navbar .nav li.button .btn.profile:active
+.navbar .nav li.button .btn.profile.active
 {
   color: #fff;
   border: none!important;
   background-color: #9c27b0;
   box-shadow: none;
+}
+.navbar .nav li.button .btn.profile:hover
+{
+  background-color: #757575;
+}
+
+.navbar .nav li.button div.user-dropdown
+{
+  height: 340px;
+  width: 340px;
+  background-color: #757575;
+  position: absolute;
+  right: 0;
+  top: 72px;
+  padding: 0 24px;
+}
+
+.navbar .nav li.button div.user-dropdown button
+{
+  width: 100%;
+  font-size: 24px;
+  text-align: left;
 }
