@@ -253,11 +253,16 @@ $(function() {
             "lastname": "test",
             "eligibility": eligibility,
             "affiliation":affiliation,
-            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status})
-         },
+            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status}),
+						"g-recaptcha-response": grecaptcha.getResponse()
+				 },
          success: function(data) {
 					if (data.success == 1){
 					 	window.location.href = "login.html";
+					}
+					else{
+						console.log(data);
+						grecaptcha.reset()
 					}
 				 },
          type: 'POST'
