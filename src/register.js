@@ -106,7 +106,7 @@ $(function() {
 		$('#helpUsername').text('Usernames must be at least 3 characters');
 		return;
 	}
-	if($('#inputUsername').val().length > 20) {
+	if($('#inputUsername').val().length > 32) {
 		$('#inputUsername').parent().parent().addClass('has-failure');
 		$('#inputUsername').parent().parent().removeClass('has-success');
 		$('#helpUsername').text('Usernames cannot be more than 32 characters');
