@@ -258,10 +258,10 @@ $(function() {
 				 },
          success: function(data) {
 					if (data.success == 1){
-					 	window.location.href = "login.html";
+					 	window.location.href = "/login.html";
 					}
 					else{
-						console.log(data);
+            $('#helpError').text("Error:" + data.message);
 						grecaptcha.reset()
 					}
 				 },
