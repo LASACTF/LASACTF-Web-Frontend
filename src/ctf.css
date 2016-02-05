@@ -178,7 +178,8 @@ a:visited
   background-color: rgb(224, 64, 251);
   border: 4px rgb(224, 64, 251) solid;
 }
-.btn.purple:hover
+.btn.purple:hover,
+.btn.purple:focus
 {
   background-color: #d500f9;
 }
