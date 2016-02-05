@@ -133,7 +133,7 @@ $(function() {
   	if($('#inputEmail').val().length > 100) {
   		$('#inputEmail').parent().parent().addClass('has-failure');
   		$('#inputEmail').parent().parent().removeClass('has-success');
-  		$('#helpEmail').text('email must be less than 100 characters');
+  		$('#helpEmail').text('Invalid email address');
   	}
   	else if(validateEmail($('#inputEmail').val())){
   		$('#inputEmail').parent().parent().addClass('has-success');
@@ -143,7 +143,7 @@ $(function() {
   	else {
   		$('#inputEmail').parent().parent().addClass('has-failure');
   		$('#inputEmail').parent().parent().removeClass('has-success');
-  		$('#helpEmail').text('must be a valid email address');
+  		$('#helpEmail').text('Invalid email address');
   	}
   });
 
