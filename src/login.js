@@ -11,12 +11,12 @@ $(function() {
           "password": password,
        },
        success: function(data) {
-        if (data.status == 0){
-          $('#inputGroup').addClass('has-failure');
-          $('#helpBlock').text(data.message);
+        if (data.status == 1){
+          window.location.href = "profile.html";
         }
         else{
-          window.location.href = "profile.html";
+          $('#inputGroup').addClass('has-failure');
+          $('#helpBlock').text(data.message);
         }
        },
        type: 'POST'

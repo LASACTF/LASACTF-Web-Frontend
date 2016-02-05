@@ -257,7 +257,7 @@ $(function() {
 						"g-recaptcha-response": grecaptcha.getResponse()
 				 },
          success: function(data) {
-					if (data.success == 1){
+					if (data.status == 1){
 					 	window.location.href = "/login.html";
 					}
 					else{
