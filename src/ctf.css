@@ -412,26 +412,46 @@ body.compete
   border: none!important;
   background-color: #9c27b0;
   box-shadow: none;
+  z-index: 1;
 }
 .navbar .nav li.button .btn.profile:hover
 {
-  background-color: #757575;
+  background-color: #616161;
 }
 
 .navbar .nav li.button div.user-dropdown
 {
   height: 340px;
   width: 340px;
-  background-color: #757575;
+  background-color: #616161;
   position: absolute;
   right: 0;
-  top: 72px;
+  top: 71px;
   padding: 0 24px;
+  box-shadow: 4px 4px 12px #212121;
+  z-index: -4;
+  border: none!important;
 }
 
 .navbar .nav li.button div.user-dropdown button
 {
   width: 100%;
-  font-size: 24px;
+  font-size: 25px;
   text-align: left;
+  padding: 2px 12px;
+  background-color: #616161;E
+  color: #fff!important;
+  border: none;
+}
+.navbar .nav li.button div.user-dropdown button:hover,
+.navbar .nav li.button div.user-dropdown button:active,
+.navbar .nav li.button div.user-dropdown button:focus
+{
+  background-color: #757575;
+  color: #fff;
+}
+.navbar .nav li.button div.user-dropdown button i
+{
+  margin-top: -2px;
+  font-size: 26px;
 }
