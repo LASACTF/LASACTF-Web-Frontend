@@ -97,6 +97,14 @@ div.asterisk
 {
   color: #bdbdbd;
 }
+.gray-600
+{
+  color: #757575;
+}
+.gray-700
+{
+  color: #616161;
+}
 .purple-a200
 {
   color: #E040FB;
@@ -105,10 +113,20 @@ div.asterisk
 {
   color: #D500F9;
 }
-a
+
+/** LINKS **/
+a,
+a:visited
 {
-  color: #E040FB;
+  color: #E040FB!;
   text-decoration: underline;
+}
+
+.forgotpass:hover,
+.forgotpass:active,
+.forgotpass:focus
+{
+  color: #bdbdbd!important;
 }
 
 /** BUTTONS **/
@@ -120,6 +138,7 @@ a
   padding: 6px 18px 6px 18px;
   margin-bottom: 6px;
   margin-top: 6px;
+  text-decoration: none;
 }
 .btn.wide
 {
@@ -236,12 +255,6 @@ form .form-group input.form-control
 form .form-group .form-control.sm
 {
   margin-top: 4px;
-}
-form .form-group .form-control
-{
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
-  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s;
 }
 form .form-group .form-control::-webkit-input-placeholder,
 form .form-group .form-control::-webkit-input-placeholder
@@ -467,14 +480,18 @@ body.compete
   padding: 0px 0px;
   margin: 0px 0px;
 }
-.navbar .nav li.button .btn
-{
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
-  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
-}
 .navbar .nav li.button div.user-dropdown button div
 {
   padding: 0;
   margin: 0;
+}
+
+/** TRANSITIONS **/
+a,
+.btn,
+form .form-group .form-control
+{
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,background-color ease-in-out .15s,color ease-in-out .15s;
 }
