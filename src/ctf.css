@@ -525,10 +525,31 @@ a.noselect
 
 div.leftbar
 {
-  width: 100%;
+  /*width: 100%;
   height: 100%;
   display: block;
-  background-color: #757575;
+  background-color: #757575;*/
+
+  bottom: 0;
+  position: relative;
+  display: table-cell;
+}
+.compete#cont-super
+{
+  background-color: #424242;
+  bottom: 0;
+  position: relative;
+  max-width: 100%;
+  left: 0;
+}
+.compete#cont-cover
+{
+  background-color: #424242;
+  bottom: 0;
+  position: relative;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 /** TRANSITIONS **/
