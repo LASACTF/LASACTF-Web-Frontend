@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>LASACTF - Login</title>
+    <title>LASACTF - Profile</title>
 
     <!-- Bootstrap -->
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
   <body class='compete'>
     <nav class="navbar profile">
-      <div class="container navbar-container">
+      <div class="container navbar-container" id="cont-measure">
         <div class="navbar-header">
           <!-- BRAND -->
           <a class="navbar-brand" href="/compete/">
@@ -39,13 +39,13 @@
           <li class="button"><button type="submit" class="btn profile active" id="profile"><i class="material-icons">&#xE853;</i> username</button>
 
             <div class="user-dropdown hidden" id="dropdown">
-              <div href="#"><button class="btn"><i class="material-icons">&#xE90D;</i> YOUR ACCOUNT</button></div>
-              <div href="#"><button class="btn"><i class="material-icons">&#xE7FB;</i> TEAM HACKERS</button></div>
-              <div href="#"><button class="btn"><i class="material-icons">&#xE7FB;</i> CLASSROOM</button></div>
-              <div href="#"><button class="btn"><div class="col-xs-8"><i class="material-icons">&#xE8B8;</i> MANAGEMENT</div><div class="col-xs-4 right"><i class="material-icons gray-400">&#xE879;</i></div></button></div>
-              <div href="#"><button class="btn"><div class="col-xs-8"><i class="material-icons">&#xE868;</i> SUBMIT A BUG</div><div class="col-xs-4 right"><i class="material-icons gray-400">&#xE879;</i></div></button></div>
-              <div chref="/about"><button class="btn"><div class="col-xs-8"><i class="material-icons">&#xE88F;</i> ABOUT LASACTF</div><div class="col-xs-4 right"><i class="material-icons gray-400">&#xE879;</i></div></button></div>
-              <div href="#"><button class="btn"><i class="material-icons">&#xE8AC;</i> LOG OUT</button></div>
+              <button class="btn"><i class="material-icons">&#xE90D;</i> YOUR ACCOUNT</button>
+              <button class="btn"><i class="material-icons">&#xE7FB;</i> TEAM HACKERS</button>
+              <button class="btn"><i class="material-icons">&#xE7FB;</i> CLASSROOM</button>
+              <button class="btn"><div class="col-xs-8"><i class="material-icons">&#xE8B8;</i> MANAGEMENT</div><div class="col-xs-4 right"><i class="material-icons gray-400">&#xE879;</i></div></button>
+              <button class="btn"><div class="col-xs-8"><i class="material-icons">&#xE868;</i> SUBMIT A BUG</div><div class="col-xs-4 right"><i class="material-icons gray-400">&#xE879;</i></div></button>
+              <button class="btn"><div class="col-xs-8"><i class="material-icons">&#xE88F;</i> ABOUT LASACTF</div><div class="col-xs-4 right"><i class="material-icons gray-400">&#xE879;</i></div></button>
+              <button class="btn"><i class="material-icons">&#xE8AC;</i> LOG OUT</button>
             </div>
 
           </li>
@@ -53,8 +53,14 @@
 
       </div>
     </nav>
-    <div class="container" id="cont-super">
-
+    <div class="compete" id="cont-super">
+      <div class="compete" id="left-panel">
+          <ul class="nav">
+            <li><button class="btn active"><i class="material-icons">&#xE90D;</i> YOUR ACCOUNT</button></li>
+            <li><button class="btn"><i class="material-icons">&#xE7FB;</i> TEAM HACKERS</button></li>
+            <li><button class="btn"><i class="material-icons">&#xE7FB;</i> CLASSROOM</button></li>
+          </ul>
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

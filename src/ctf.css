@@ -31,7 +31,8 @@ body
 }
 img.logo
 {
-  padding-top: 60px;
+  padding: 60px 0 20px 0;
+  width: 600px;
 }
 .logo.med
 {
@@ -127,6 +128,11 @@ a:visited
 .forgotpass:focus
 {
   color: #bdbdbd!important;
+}
+
+.container-fluid.fullcont
+{
+
 }
 
 /** BUTTONS **/
@@ -400,10 +406,18 @@ body.compete
 .navbar.profile
 {
   border-bottom: 3px solid #9c27b0;
+  margin: 0;
+}
+.navbar .navbar-header .navbar-brand
+{
+  width: 200px;
+  margin-top: -3px;
 }
 .navbar .navbar-header .navbar-brand img
 {
-  height: 48px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .navbar .navbar-brand
 {
@@ -414,6 +428,14 @@ body.compete
 {
   height: 66px;
 }
+.navbar .navbar-header
+{
+  margin-left: 20px;
+}
+.navbar .navbar-right
+{
+  margin-right: 20px;
+}
 .navbar .nav li.text
 {
   margin: 20px auto;
@@ -423,7 +445,7 @@ body.compete
 .navbar .nav li.button
 {
   height: 66px;
-  margin: -7px;
+  margin: -7px 0;
 }
 .navbar .nav li.button .btn
 {
@@ -478,12 +500,14 @@ body.compete
   background-color: #757575;
   color: #fff;
 }
-.navbar .nav li.button div.user-dropdown .btn i
+.navbar .nav li.button div.user-dropdown .btn i,
+.compete#left-panel button i
 {
   margin-top: -2px;
   font-size: 26px;
 }
-.navbar .nav li.button div.user-dropdown a
+.navbar .nav li.button div.user-dropdown a,
+.compete#left-panel button i
 {
   color: #fff;
   padding: 0px 0px;
@@ -499,6 +523,53 @@ a.noselect
 {
   outline: 0!important;
   border: 0!important;
+}
+
+/** PROFILE SPECIAL **/
+.compete#cont-super
+{
+  background-color: #424242;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  z-index: -9;
+}
+.compete#left-panel
+{
+  z-index: -8;
+  height: 100%;
+  background-color: #757575;
+  border: none;
+  position: absolute;
+  overflow: hidden;
+}
+.compete#left-panel button
+{
+  width: 100%;
+  font-size: 28px;
+  text-align: left;
+  padding: 6px 0px 8px 0px;
+  margin: 0px 24px 0px 0px;
+  background-color: #757575;
+  position: relative;
+}
+.compete#left-panel button:hover,
+.compete#left-panel button:active,
+.compete#left-panel button:focus
+{
+  background-color: #616161;
+  color: #fff;
+}
+.compete#left-panel button.active
+{
+  background-color: #9c27b0;
+}
+
+/** MEDIA QUERIES **/
+
+@media all and (max-width: 991px) {
+
 }
 
 /** TRANSITIONS **/
