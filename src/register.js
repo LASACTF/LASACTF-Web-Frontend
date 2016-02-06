@@ -243,7 +243,7 @@ $(function() {
 
     if (!formFailed){
       $.ajax({
-         url: 'https://lasactf.com/api/user/create_simple',
+         url: '/api/user/create_simple',
          data: {
             "username": username,
             "password": password,

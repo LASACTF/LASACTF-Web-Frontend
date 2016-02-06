@@ -5,7 +5,7 @@ $(function() {
     var password = $('#login-form').find('input[id="inputPassword"]').val();
 
     $.ajax({
-       url: 'https://lasactf.com/api/user/login',
+       url: '/api/user/login',
        data: {
           "username": username,
           "password": password,
