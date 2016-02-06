@@ -120,7 +120,7 @@ $(function() {
 		return;
     }
     $.ajax({
-       url: 'https://lasactf.com/api/user/check_username',
+       url: '/api/user/check_username',
        data: {
           "username": $('#inputUsername').val(),       },
        success: function(data) {
