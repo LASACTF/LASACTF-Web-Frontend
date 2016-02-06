@@ -8,7 +8,7 @@
     <title>LASACTF - Login</title>
 
     <!-- Bootstrap -->
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,7 +18,7 @@
     <![endif]-->
 
     <!-- CSS -->
-    <link href="/src/ctf.css" rel='stylesheet' type='text/css'>
+    <link href="src/ctf.css" rel='stylesheet' type='text/css'>
   </head>
 
   <body class='compete'>
@@ -27,7 +27,7 @@
         <div class="navbar-header">
           <!-- BRAND -->
           <a class="navbar-brand" href="/compete/">
-            <img alt="LASACTF" src="/img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png">
+            <img alt="LASACTF" src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png">
           </a>
         </div>
 
@@ -36,9 +36,9 @@
         </ul>
 
         <ul class="nav navbar-right">
-          <li class="button"><button type="submit" class="btn profile active"><i class="material-icons">&#xE853;</i> username</button>
+          <li class="button"><button type="submit" class="btn profile active" id="profile"><i class="material-icons">&#xE853;</i> username</button>
 
-            <div class="user-dropdown">
+            <div class="user-dropdown hidden" id="dropdown">
               <div href="#"><button class="btn"><i class="material-icons">&#xE90D;</i> YOUR ACCOUNT</button></div>
               <div href="#"><button class="btn"><i class="material-icons">&#xE7FB;</i> TEAM HACKERS</button></div>
               <div href="#"><button class="btn"><i class="material-icons">&#xE7FB;</i> CLASSROOM</button></div>
@@ -58,11 +58,11 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- JS --->
-    <script src="/src/ctfprofile.js"></script>
+    <script src="src/profile.js"></script>
   </body>
 
 </html>
