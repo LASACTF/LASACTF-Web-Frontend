@@ -31,7 +31,8 @@ body
 }
 img.logo
 {
-  padding-top: 60px;
+  padding: 60px 0 20px 0;
+  width: 600px;
 }
 .logo.med
 {
@@ -127,6 +128,11 @@ a:visited
 .forgotpass:focus
 {
   color: #bdbdbd!important;
+}
+
+.container-fluid.fullcont
+{
+
 }
 
 /** BUTTONS **/
@@ -390,6 +396,10 @@ body.compete
 {
   background-color: #424242;
 }
+body.competeleft
+{
+  background-color: #757575;
+}
 
 /** NAVBAR **/
 .navbar
@@ -400,15 +410,25 @@ body.compete
 .navbar.profile
 {
   border-bottom: 3px solid #9c27b0;
+  margin: 0;
+}
+.navbar .navbar-header .navbar-brand
+{
+  width: 200px;
+  margin-top: -3px;
 }
 .navbar .navbar-header .navbar-brand img
 {
-  height: 48px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .navbar .navbar-brand
 {
   margin-top: -8px;
   height: 66px;
+  padding-left: 0;
+
 }
 .navbar .navbar-nav
 {
@@ -423,7 +443,7 @@ body.compete
 .navbar .nav li.button
 {
   height: 66px;
-  margin: -7px;
+  margin: -7px 0;
 }
 .navbar .nav li.button .btn
 {
@@ -499,6 +519,16 @@ a.noselect
 {
   outline: 0!important;
   border: 0!important;
+}
+
+/** PROFILE SPECIAL **/
+
+div.leftbar
+{
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #757575;
 }
 
 /** TRANSITIONS **/
