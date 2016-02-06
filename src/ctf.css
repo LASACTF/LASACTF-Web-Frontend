@@ -212,6 +212,14 @@ a:visited
   box-shadow: inset 0 4px 8px rgba(0,0,0,.5);
 }
 
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
 /** HEADINGS **/
 i.head
 {
@@ -454,7 +462,7 @@ body.compete
   border: none!important;
 }
 
-.navbar .nav li.button div.user-dropdown button
+.navbar .nav li.button div.user-dropdown .btn
 {
   width: 100%;
   font-size: 25px;
@@ -463,14 +471,14 @@ body.compete
   margin: 4px 0;
   background-color: #616161;
 }
-.navbar .nav li.button div.user-dropdown button:hover,
-.navbar .nav li.button div.user-dropdown button:active,
-.navbar .nav li.button div.user-dropdown button:focus
+.navbar .nav li.button div.user-dropdown .btn:hover,
+.navbar .nav li.button div.user-dropdown .btn:active,
+.navbar .nav li.button div.user-dropdown .btn:focus
 {
   background-color: #757575;
   color: #fff;
 }
-.navbar .nav li.button div.user-dropdown button i
+.navbar .nav li.button div.user-dropdown .btn i
 {
   margin-top: -2px;
   font-size: 26px;
@@ -481,10 +489,16 @@ body.compete
   padding: 0px 0px;
   margin: 0px 0px;
 }
-.navbar .nav li.button div.user-dropdown button div
+.navbar .nav li.button div.user-dropdown .btn div
 {
   padding: 0;
   margin: 0;
+}
+
+a.noselect
+{
+  outline: 0!important;
+  border: 0!important;
 }
 
 /** TRANSITIONS **/
