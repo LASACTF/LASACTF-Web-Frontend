@@ -5,14 +5,14 @@ $(function() {
     var password = $('#login-form').find('input[id="inputPassword"]').val();
 
     $.ajax({
-       url: 'https://lasactf.com/api/user/login',
+       url: '/api/user/login',
        data: {
           "username": username,
           "password": password,
        },
        success: function(data) {
         if (data.status == 1){
-          window.location.href = "profile.html";
+          window.location.href = "/profile";
         }
         else{
           $('#inputGroup').addClass('has-failure');

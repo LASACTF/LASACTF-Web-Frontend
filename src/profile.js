@@ -12,3 +12,13 @@ $(window).on('load', function(){
 $(window).on('resize', function(){
   resize();
 });
+
+$(function() {
+  $.ajax({
+     url: '/api/user/status',
+     success: function(data) {
+      console.log(data)
+     },
+     type: 'GET'
+  });
+});

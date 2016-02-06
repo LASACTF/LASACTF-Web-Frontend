@@ -120,7 +120,7 @@ $(function() {
 		return;
     }
     $.ajax({
-       url: 'https://lasactf.com/api/user/check_username',
+       url: '/api/user/check_username',
        data: {
           "username": $('#inputUsername').val(),       },
        success: function(data) {
@@ -243,7 +243,7 @@ $(function() {
 
     if (!formFailed){
       $.ajax({
-         url: 'https://lasactf.com/api/user/create_simple',
+         url: '/api/user/create_simple',
          data: {
             "username": username,
             "password": password,
@@ -258,7 +258,7 @@ $(function() {
 				 },
          success: function(data) {
 					if (data.status == 1){
-					 	window.location.href = "/login.html";
+					 	window.location.href = "/login";
 					}
 					else{
             $('#helpError').text("Error:" + data.message);
