@@ -396,10 +396,6 @@ body.compete
 {
   background-color: #424242;
 }
-body.competeleft
-{
-  background-color: #757575;
-}
 
 /** NAVBAR **/
 .navbar
@@ -427,12 +423,18 @@ body.competeleft
 {
   margin-top: -8px;
   height: 66px;
-  padding-left: 0;
-
 }
 .navbar .navbar-nav
 {
   height: 66px;
+}
+.navbar .navbar-header
+{
+  margin-left: 20px;
+}
+.navbar .navbar-right
+{
+  margin-right: 20px;
 }
 .navbar .nav li.text
 {
@@ -498,12 +500,14 @@ body.competeleft
   background-color: #757575;
   color: #fff;
 }
-.navbar .nav li.button div.user-dropdown .btn i
+.navbar .nav li.button div.user-dropdown .btn i,
+.compete#left-panel button i
 {
   margin-top: -2px;
   font-size: 26px;
 }
-.navbar .nav li.button div.user-dropdown a
+.navbar .nav li.button div.user-dropdown a,
+.compete#left-panel button i
 {
   color: #fff;
   padding: 0px 0px;
@@ -534,22 +538,99 @@ div.leftbar
   position: relative;
   display: table-cell;
 }
+
 .compete#cont-super
 {
   background-color: #424242;
-  bottom: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  z-index: -9;
+}
+.compete#left-panel
+{
+  z-index: -8;
+  height: 100%;
+  background-color: #757575;
+  border: none;
+  position: absolute;
+  overflow: hidden;
+}
+.compete#left-panel button
+{
+  width: 100%;
+  font-size: 25px;
+  text-align: left;
+  padding: 6px 0px 8px 0px;
+  margin: 0px 24px 0px 0px;
+  background-color: #757575;
+  position: relative;
+}
+.compete#left-panel button:hover,
+.compete#left-panel button:active,
+.compete#left-panel button:focus
+{
+  background-color: #616161;
+  color: #fff;
+}
+.compete#left-panel button.active
+{
+  background-color: #9c27b0;
+}
+
+/*
+.compete.cont-super
+{
+  background-color: #424242;
   position: relative;
   max-width: 100%;
   left: 0;
+  padding: 0;
+  z-index: -9;
 }
-.compete#cont-cover
+.compete.cont-panel
 {
-  background-color: #424242;
+  position: fixed;
+  width: 100%;
+  top: 66px;
   bottom: 0;
+  background-color: #424242;
+  z-index: -10;
+  border: none;
+}
+.compete.left-panel
+{
+  z-index: -8;
+  height: 100%;
+  background-color: #757575;
+  border: none;
+  max-width: 300px;
+  min-width: 80px;
+  padding: 0;
+}
+.compete.left-panel button
+{
+  width: 100%;
+  font-size: 25px;
+  text-align: left;
+  padding: 8px 0px 8px 0px;
+  margin: 0px;
+  background-color: #757575;
   position: relative;
-  right: 0;
-  left: 0;
-  top: 0;
+}
+.compete.left-panel button:hover,
+.compete.left-panel button:active,
+.compete.left-panel button:focus
+{
+  background-color: #616161;
+  color: #fff;
+}*/
+
+/** MEDIA QUERIES **/
+
+@media all and (max-width: 991px) {
+
 }
 
 /** TRANSITIONS **/
