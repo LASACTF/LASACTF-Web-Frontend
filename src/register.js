@@ -258,7 +258,7 @@ $(function() {
 				 },
          success: function(data) {
 					if (data.status == 1){
-					 	window.location.href = "/login.html";
+					 	window.location.href = "/login";
 					}
 					else{
             $('#helpError').text("Error:" + data.message);

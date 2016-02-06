@@ -12,7 +12,7 @@ $(function() {
        },
        success: function(data) {
         if (data.status == 1){
-          window.location.href = "profile.html";
+          window.location.href = "/profile";
         }
         else{
           $('#inputGroup').addClass('has-failure');
