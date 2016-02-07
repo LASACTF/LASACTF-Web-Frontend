@@ -21,4 +21,12 @@ $(function() {
      },
      type: 'GET'
   });
+  $( ".dropdown-toggle" ).hover(
+        function(){
+            $('.dropdown-menu').slideDown(200);
+        },
+        function(){
+            $('.dropdown-menu').slideUp(200);
+        }
+  );
 });

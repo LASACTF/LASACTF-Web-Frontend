@@ -471,7 +471,7 @@ body.compete
   background-color: #616161;
 }
 
-.navbar .nav li.button div.user-dropdown
+.navbar .nav li.button ul.user-dropdown
 {
   width: 400px;
   background-color: #616161;
@@ -484,7 +484,7 @@ body.compete
   border: none!important;
 }
 
-.navbar .nav li.button div.user-dropdown .btn
+.navbar .nav li.button ul.user-dropdown .btn
 {
   width: 100%;
   font-size: 25px;
@@ -493,32 +493,35 @@ body.compete
   margin: 4px 0;
   background-color: #616161;
 }
-.navbar .nav li.button div.user-dropdown .btn:hover,
-.navbar .nav li.button div.user-dropdown .btn:active,
-.navbar .nav li.button div.user-dropdown .btn:focus
+.navbar .nav li.button ul.user-dropdown .btn:hover,
+.navbar .nav li.button ul.user-dropdown .btn:active,
+.navbar .nav li.button ul.user-dropdown .btn:focus
 {
   background-color: #757575;
   color: #fff;
 }
-.navbar .nav li.button div.user-dropdown .btn i,
+.navbar .nav li.button ul.user-dropdown .btn i,
 .compete#left-panel button i
 {
   margin-top: -2px;
   font-size: 26px;
 }
-.navbar .nav li.button div.user-dropdown a,
+.navbar .nav li.button ul.user-dropdown a,
 .compete#left-panel button i
 {
   color: #fff;
   padding: 0px 0px;
   margin: 0px 0px;
 }
-.navbar .nav li.button div.user-dropdown .btn div
+.navbar .nav li.button ul.user-dropdown .btn div
 {
   padding: 0;
   margin: 0;
 }
+.sub-menu
+{
 
+}
 a.noselect
 {
   outline: 0!important;
