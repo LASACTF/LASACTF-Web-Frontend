@@ -30,9 +30,9 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('default', ['sass', 'mustache','compress']);
+gulp.task('default', ['sass', 'mustache','compress','copy']);
 
-gulp.task('watch', ['sass', 'mustache','compress'], function () {
+gulp.task('watch', ['sass', 'mustache','compress','copy'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
     gulp.watch('./templates/**/*.mustache', ['mustache']);
 });
