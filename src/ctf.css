@@ -389,7 +389,12 @@ form .form-group.has-warning div.asterisk
 
   margin: 0 auto!important;
 }
-
+.success-text {
+  color: #00C853;
+}
+.failure-text {
+  color: #FF3D00;
+}
 /*** COMPETE ***/
 
 body.compete

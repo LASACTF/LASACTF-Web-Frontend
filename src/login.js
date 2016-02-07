@@ -3,8 +3,8 @@ function getURLParameter(name) {
 }
 $(function() {
   if (getURLParameter('v') == 1){
+    $('#helpBlock').addClass("success-text");
     $('#helpBlock').text("Account Created! Check your email for verification instructions.");
-    $('#helpBlock').css({"color":"#00C853"});
   }
   else if (getURLParameter('s') == 1){
     $('#inputGroup').addClass('has-failure');
@@ -26,6 +26,7 @@ $(function() {
           window.location.href = "/profile";
         }
         else{
+          $('#helpBlock').removeClass("success-text");
           $('#inputGroup').addClass('has-failure');
           $('#helpBlock').text(data.message);
         }
