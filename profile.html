@@ -32,13 +32,13 @@
       <div class="row">
         <div class="col-xs-2"></div>
         <div class="col-xs-8">
-          <h1 class="gray-400 text">Welcome, </h1><h0 class="text">username</h0><h0 class="text gray-400">!</h0><br>
+          <h1 class="gray-400 text">Welcome, </h1><h0 class="text" id="textUsername"></h0><h0 class="text gray-400">!</h0><br>
           <div class="row">
             <div class="col-xs-4 h3 right">
               Your Name
             </div>
             <div class="col-xs-8 h3 left gray-400">
-              <div id="textName">Full Name</div>
+              <div id="textName"></div>
             </div>
           </div>
           <div class="row">
@@ -54,7 +54,7 @@
               Email
             </div>
             <div class="col-xs-8 h3 left gray-400">
-              <div id="textEmail">Email</div>
+              <div id="textEmail"></div>
             </div>
           </div>
           <div class="row">
@@ -62,8 +62,8 @@
               Affiliation
             </div>
             <div class="col-xs-8 h3 left gray-400">
-              <div id="textAffliation">Affliation</div>
-              <div id="textAffliationType">Affliation Type</div>
+              <div id="textAffliation"></div>
+              <div id="textAffliationType"></div>
             </div>
           </div>
           <div class="row">
@@ -71,54 +71,51 @@
               Location
             </div>
             <div class="col-xs-8 h3 left gray-400">
-              <div id="textLocation1">City, State (if available)</div>
-              <div id="textLocation2">Country</div>
+              <div id="textLocation1"></div>
+              <div id="textLocation2"></div>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-4 h3 right">
-              Eligibility
+              Prize Eligibility
             </div>
-            <div class="col-xs-8 h3 left gray-400 red">
-              Checking eligibility...
+            <div class="col-xs-8 h3 left gray-400" id="textEligibile">
             </div>
           </div>
 
           <h2 class="gray-400">The CTF <div class="text gray-100">hasn't started yet</div>, but you can still <div class="text gray-100">create and join teams</div>.</h2><br>
           <form class="form-horizontal">
-            <div class="form-group">
+            <div class="form-group" id="inputGroup">
               <label for="inputTeam" class="col-sm-4 control-label">Team Name</label>
               <div class="col-sm-8">
-                <input type="name" class="form-control" id="inputTeam" placeholder="No Team">
+                <input type="name" class="form-control" id="inputTeam" placeholder="Team Name">
                 <span id="helpTeam" class="help-block"></span>
               </div>
-            </div>
-            <div class="form-group">
               <label for="inputTeamPass" class="col-sm-4 control-label">Passcode</label>
               <div class="col-sm-8">
-                <input type="password" class="form-control" id="inputTeamPass" placeholder="Change Team Passcode">
+                <input type="password" class="form-control" id="inputTeamPass" placeholder="Team Passcode">
                 <span id="helpPass" class="help-block"></span>
               </div>
+              <span id="helpBlock" class="help-block"></span>
+            </div>
+
+            <div class="col-xs-6">
+              <a class="btn purple maxwidth xs noleftpad" id="actionCreate" role="button"><i class="material-icons">&#xE5C8;</i>CREATE TEAM</a>
             </div>
             <div class="col-xs-6">
-              <a class="btn purple maxwidth xs noleftpad" href="/register" role="button"><i class="material-icons">&#xE5C8;</i>CREATE TEAM</a>
-            </div>
-            <div class="col-xs-6">
-              <a class="btn purple maxwidth xs noleftpad" href="/register" role="button"><i class="material-icons">&#xE5C8;</i>CHANGE TEAM</a>
+              <a class="btn purple maxwidth xs noleftpad" id="actionJoin" role="button"><i class="material-icons">&#xE5C8;</i>JOIN TEAM</a>
             </div>
           </form>
 
         </div>
       </div>
 
-    </div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- JS --->
-    <script src="src/login.js"></script>
+    <script src="src/profile.js"></script>
   </body>
 
 </html>
