@@ -61,6 +61,10 @@ img:focus {
 {
   text-align: left;
 }
+h0, .h0
+{
+  font-size: 4.0em;
+}
 h1, .h1
 {
   font-size: 3.4em;
@@ -114,6 +118,10 @@ div.asterisk
 {
   color: #D500F9;
 }
+.green
+{
+  color: #00E676;
+}
 
 /** LINKS **/
 a,
@@ -151,10 +159,27 @@ a:visited
   width: 380px;
   text-align: left;
 }
+.btn.maxwidth
+{
+  width: 100%;
+  text-align: center;
+}
 .btn.sm
 {
   font-size: 20px;
   padding: 2px 9px 2px 9px;
+}
+.btn.xs
+{
+  font-size: 22px;
+  padding: 0px 0px 0px 9px;
+  margin: 5px 0px -6px 0px;
+  height: 40px;
+}
+.btn.noleftpad
+{
+  padding-left: 0;
+  padding-right: 0;
 }
 .btn.expand
 {
@@ -172,6 +197,12 @@ a:visited
   padding-right: 12px;
 }
 .btn.sm i
+{
+  font-size: 26px;
+  padding-bottom: 2px;
+  padding-right: 12px;
+}
+.btn.xs i
 {
   font-size: 26px;
   padding-bottom: 2px;
