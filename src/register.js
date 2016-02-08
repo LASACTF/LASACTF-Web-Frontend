@@ -216,15 +216,14 @@ $(function() {
     var city = $('#registration-form').find('input[id="inputCity"]').val();
     var state = $('#registration-form').find('input[id="inputState"]').val();
     var country = $('#registration-form').find('select[id="inputCountry"]').val();
-    var international = $('#registration-form').find('input[id="international"]').val();
+    var international = $('#registration-form').find('input[id="inputInternational"]').val();
 
     var ctf = $('#registration-form').find('select[id="inputCTFs"]').val();
     var experience = $('#registration-form').find('select[id="inputExperience"]').val();
     var selection = $('#registration-form').find('select[id="inputSection"]').val();
 
     var eligibility = "ineligible";
-    console.log(country,schooltype,status);
-	cleanStatus();
+	  cleanStatus();
     if (country == "us" && schooltype == "high" && status == "comp"){
       eligibility = "eligible";
     }
@@ -253,7 +252,7 @@ $(function() {
             "lastname": "test",
             "eligibility": eligibility,
             "affiliation":affiliation,
-            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status}),
+            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status,"schooltype":schooltype,"eligibility":eligibility,"affiliation":affiliation}),
 						"g-recaptcha-response": grecaptcha.getResponse()
 				 },
          success: function(data) {
