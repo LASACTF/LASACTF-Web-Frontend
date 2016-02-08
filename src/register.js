@@ -207,6 +207,8 @@ $(function() {
     var password = $('#registration-form').find('input[id="inputPassword"]').val();
     var confirmpassword = $('#registration-form').find('input[id="inputConfirmPassword"]').val();
     var firstname = $('#registration-form').find('input[id="inputFirstName"]').val();
+    var lastname = $('#registration-form').find('input[id="inputLastName"]').val();
+
     var email = $('#registration-form').find('input[id="inputEmail"]').val();
     var affiliation = $('#registration-form').find('input[id="inputAffiliation"]').val();
 
@@ -249,7 +251,7 @@ $(function() {
             "groupName": "",
             "email": email,
             "firstname": firstname,
-            "lastname": "test",
+            "lastname": lastname,
             "eligibility": eligibility,
             "affiliation":affiliation,
             "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status,"schooltype":schooltype,"eligibility":eligibility,"affiliation":affiliation}),
