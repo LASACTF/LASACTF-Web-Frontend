@@ -497,6 +497,13 @@ body.compete
   padding: 0px 6px;
   margin: 4px 0;
   background-color: #616161;
+  opacity: 0;
+}
+.navbar .nav li.button ul.user-dropdown .btn
+{
+  transition: opacity ease-in .2s;
+  -o-transition: opacity ease-in .2s;
+  -webkit-transition: opacity ease-in .2s;
 }
 .navbar .nav li.button ul.user-dropdown .btn:hover,
 .navbar .nav li.button ul.user-dropdown .btn:active,

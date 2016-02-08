@@ -22,11 +22,15 @@ $(function() {
      type: 'GET'
   });
   $( ".dropdown-toggle" ).hover(
-        function(){
-            $('.dropdown-menu').slideDown(200);
-        },
-        function(){
-            $('.dropdown-menu').slideUp(200);
-        }
+    function(){
+      $('.dropdown-menu').slideDown(200);
+      setTimeout(function() { $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "1"); }, 250);
+
+    },
+    function(){
+      $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "0");
+      setTimeout(function() { $('.dropdown-menu').slideUp(200); }, 250);
+
+    }
   );
 });
