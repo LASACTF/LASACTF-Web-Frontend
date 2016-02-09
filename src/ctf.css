@@ -55,7 +55,7 @@ img:focus {
 
 .text
 {
-  display:inline;
+  display: inline;
 }
 .left
 {
@@ -118,17 +118,29 @@ div.asterisk
 {
   color: #D500F9;
 }
-.green
+.success-text,
+.green {
+  color: #00C853;
+}
+.failure-text,
+.red{
+  color: #FF3D00;
+}
+.yellow
 {
-  color: #00E676;
+  color: #FFEB3B;
 }
 
 /** LINKS **/
 a,
 a:visited
 {
-  color: #E040FB!;
+  color: #E040FB;
   text-decoration: underline;
+}
+a.clickable
+{
+  cursor: pointer;
 }
 
 .forgotpass:hover,
@@ -136,11 +148,6 @@ a:visited
 .forgotpass:focus
 {
   color: #bdbdbd!important;
-}
-
-.container-fluid.fullcont
-{
-
 }
 
 /** BUTTONS **/
@@ -162,7 +169,7 @@ a:visited
 .btn.maxwidth
 {
   width: 100%;
-  text-align: center;
+  text-align: center!important;
 }
 .btn.sm
 {
@@ -273,7 +280,7 @@ i.head
   display: inline-block;
   color: #eeeeee;
 }
-div.headcont
+.headcont
 {
   text-align: center;
   width: 100%;
@@ -420,12 +427,7 @@ form .form-group.has-warning div.asterisk
 
   margin: 0 auto!important;
 }
-.success-text {
-  color: #00C853;
-}
-.failure-text {
-  color: #FF3D00;
-}
+
 /*** COMPETE ***/
 
 body.compete

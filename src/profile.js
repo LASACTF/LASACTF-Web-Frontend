@@ -1,6 +1,6 @@
 $(function() {
   $.ajax({
-     url: '/api/user/status',
+     url: 'http://design.lasactf.com/api/user/status',
      success: function(result) {
        console.log(result);
        var extra = JSON.parse(result.data['extra']);
@@ -43,10 +43,10 @@ $(function() {
            $('#textLocation2').text(extra['international']);
          }
          if(extra['eligibility'] == "eligible"){
-           $('#textEligibile').text('Eligible').addClass("success-text")
+           $('#textEligibile').text('Eligible for prizes').addClass("success-text")
          }
          else{
-           $('#textEligibile').text('Not Eligible').addClass("failure-text")
+           $('#textEligibile').text('Not eligible for prizes').addClass("failure-text")
          }
          if(result.data['team_name'] != result.data['username']){
            $('inputTeam').text(result.data['team_name']);
