@@ -32,7 +32,8 @@ body
 img.logo
 {
   padding: 60px 0 20px 0;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 .logo.med
 {
@@ -41,6 +42,9 @@ img.logo
 .hidden
 {
   display: none;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 .right
 {
@@ -187,8 +191,8 @@ a.clickable
 }
 .btn.sm
 {
-  font-size: 20px;
-  padding: 2px 9px 2px 9px;
+  font-size: 24px;
+  padding: 2px 9px 2px 25px;
 }
 .btn.xs
 {
@@ -221,7 +225,7 @@ a.clickable
 {
   font-size: 26px;
   padding-bottom: 2px;
-  padding-right: 12px;
+  padding-right: 20px;
 }
 .btn.xs i
 {
@@ -254,6 +258,15 @@ a.clickable
   border: 4px #ccc solid;
   box-shadow: none!important;
   cursor: default;
+}
+.btn.centerpad
+{
+  padding-left: 0;
+  text-align: center;
+}
+.btn.centerpad i
+{
+  padding-left: 0!important;
 }
 
 .btn.white
@@ -630,8 +643,51 @@ a.noselect
 
 /** MEDIA QUERIES **/
 
-@media all and (max-width: 991px) {
-
+@media all and (max-width: 767px) {
+  .logo
+  {
+    max-width: 460px!important;
+  }
+  .sm-invisible
+  {
+    display: none!important;
+  }
+  .sm-visible-block
+  {
+    display: block!important;
+  }
+  .sm-visible-inline
+  {
+    display: inline!important;
+  }
+}
+@media all and (max-width: 480px) {
+  .btn.wide
+  {
+    width: 100%;
+    font-size: 28px;
+    height: 56px;
+    padding-top: 4px;
+    overflow: hidden;
+  }
+  .btn.wide i
+  {
+    font-size: 32px;
+  }
+  .btn.sm
+  {
+    font-size: 22px;
+    height: 50px;
+    padding-top: 5px;
+    padding-left: 11px;
+    overflow: hidden;
+  }
+  .btn.sm i
+  {
+    font-size: 28px;
+    padding-left: 10px;
+    padding-right: 14px;
+  }
 }
 
 /** TRANSITIONS **/
