@@ -1,15 +1,13 @@
 $(function() {
   $.ajax({
-     url: 'http://design.lasactf.com/api/user/status',
+     url: '/api/user/status',
      success: function(result) {
-       console.log(result);
-       var extra = JSON.parse(result.data['extra']);
-       console.log(extra);
-       if (result.status == 1){
+       if (result.status == 1 && result.data.logged_in == true){
+         var extra = JSON.parse(result.data['extra']);
          $('#textUsername').text(result.data['username']);
          $('#textName').text(result.data['firstname'] + " " + result.data['lastname']);
          $('#textEmail').text(result.data['email']);
-         $('#textAffliation').text(extra['affiliation']);
+         $('#textAffliation').text(result.data['affiliation']);
          switch (extra.schooltype) {
            case "high":
              $('#textAffliationType').text("High School or Equivalent");
@@ -42,16 +40,50 @@ $(function() {
          else{
            $('#textLocation2').text(extra['international']);
          }
-         if(extra['eligibility'] == "eligible"){
+         if(result.data['eligibility'] == "eligible"){
            $('#textEligibile').text('Eligible for prizes').addClass("success-text")
          }
          else{
            $('#textEligibile').text('Not eligible for prizes').addClass("failure-text")
          }
          if(result.data['team_name'] != result.data['username']){
-           $('inputTeam').text(result.data['team_name']);
-         }
+           $('#textTeam').text(result.data['team_name']);
+           $('#divNoTeam').addClass('hidden');
+           $('#divTeamedUp').removeClass('hidden');
+           $.ajax({
+             url: '/api/team',
+             success: function(teamresult) {
 
+               if (teamresult.status == 1){
+                 if (teamresult.data.eligible){
+                   $('#teamEligible').text('eligible for prizes').addClass('green');
+                   $('#teamEligible2').text('!');
+                 }
+                 else{
+                   $('#teamEligible').text('not eligible for prizes').addClass('red');
+                   $('#teamEligible2').text(' because one or more members are illegible.')
+                 }
+                 for (var i = 0; i < 5; i++){
+                   if (i < teamresult.data.size){
+                     if(teamresult.data.members[i].username == result.data.username){
+                       $('#user'+i).text("YOU");
+                       $('#user'+i).addClass('purple-a200');
+                     }
+                     else{
+                        $('#user'+i).text(teamresult.data.members[i].username);
+                        $('#user'+i).addClass('gray-200');
+                     }
+                   }
+                   else{
+                    $('#user'+i).text('[Empty Spot]')
+                    $('#user'+i).addClass('gray-400')
+                  }
+                 }
+               }
+             },
+             type: 'GET'
+           });
+         }
        }
      },
      type: 'GET'
@@ -76,6 +108,47 @@ $(function() {
         }
        },
        type: 'POST'
+    });
+  });
+  $( "#actionCreate" ).click(function() {
+    var team_name = $('#inputTeam').val()
+    var team_password = $('#inputTeamPass').val()
+    $.ajax({
+       url: '/api/team/create',
+       data: {
+          "team_name": team_name,
+          "team_password": team_password,
+       },
+       success: function(data) {
+        if (data.status == 1){
+          window.location.href = "/profile";
+        }
+        else{
+          $('#helpBlock').removeClass("success-text");
+          $('#inputGroup').addClass('has-failure');
+          $('#helpBlock').text(data.message);
+        }
+       },
+       type: 'POST'
+    });
+  });
+  $('#showHidePass').click(function(){
+    $.ajax({
+      url: '/api/team',
+      success: function(teamresult) {
+        $('#hiddenPass').text("Team Passcode: " + teamresult.data.password);
+      },
+      type: 'GET'
+    });
+  });
+  $('#actionLogout').click(function(){
+    $.ajax({
+      url: '/api/user/logout',
+      success: function(result) {
+        console.log("hi");
+        window.location.href = "/login";
+      },
+      type: 'GET'
     });
   });
 });

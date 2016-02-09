@@ -83,7 +83,7 @@
             </div>
           </div>
 
-          <div class="text hidden" id="divNoTeam">
+          <div class="text" id="divNoTeam">
             <h2 class="gray-400">LASACTF <div class="text gray-100">hasn't started yet</div>, but you can still <div class="text gray-100">create and join teams</div>.</h2><br>
             <form class="form-horizontal">
               <div class="form-group" id="inputGroup">
@@ -109,21 +109,21 @@
             </form>
           </div>
           <br>
-          <div class="text" id="divTeamedUp">
-            <h2 class="gray-400 text">You are currently on Team </h2><h1 class="text purple-a200">Team Name</h1><h1 class="text gray-400">!</h1><br>
+          <div class="text hidden" id="divTeamedUp">
+            <h2 class="gray-400 text">You are currently on Team </h2><h1 class="text purple-a200" id="textTeam">Team Name</h1><h1 class="text gray-400">!</h1><br>
             <div class="row">
               <div class="col-xs-6">
-                <h3>JoeShmoe123</h3>
-                <h3 class="gray-200">MagicLanternGuy</h3>
-                <h3 class="gray-400">[Empty Spot]</h3>
+                <h3 id="user0"></h3>
+                <h3 id="user2"></h3>
+                <h3 id="user4"></h3>
               </div>
-              <div class="col-xs-6 purple-a200">
-                <h3>YOU</h3>
-                <h3 class="gray-200">2manEerrerz</h3>
+              <div class="col-xs-6">
+                <h3 id="user1"></h3>
+                <h3 id="user3"></h3>
               </div>
             </div>
-            <h4 class="gray-400">Team Passcode: ************ <a class="gray-400 clickable" id="showHidePass" style="display: inline!important">View</a></h4>
-            <h4 class="gray-400 text">Your team is </h4><h4 class="red text" id="teamEligible">not eligible for prizes</h4><h4 class="gray-400 text" id="teamEligibility2"> because one or more members are illegible.</h4><br><br>
+            <h4 class="gray-400" id="hiddenPass">Team Passcode: ************ <a class="gray-400 clickable" id="showHidePass" style="display: inline!important">View</a></h4>
+            <h4 class="gray-400 text">Your team is </h4><h4 class="text" id="teamEligible">not eligible for prizes</h4><h4 class="gray-400 text" id="teamEligible2"> because one or more members are illegible.</h4><br><br>
             <div class="col-xs-2"></div>
             <div class="col-xs-8">
               <a class="btn purple expand xs noleftpad" id="actionLogout" role="button"><i class="material-icons">&#xE879;</i>LOGOUT</a><br><br>
