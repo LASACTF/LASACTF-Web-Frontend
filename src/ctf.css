@@ -98,6 +98,10 @@ div.asterisk
 {
   color: #eee;
 }
+.gray-300
+{
+  color: #E0E0E0;
+}
 .gray-400
 {
   color: #bdbdbd;
@@ -109,6 +113,10 @@ div.asterisk
 .gray-700
 {
   color: #616161;
+}
+.white
+{
+  color: #fff;
 }
 .purple-a200
 {
