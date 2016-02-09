@@ -135,8 +135,14 @@ div.asterisk
 a,
 a:visited
 {
-  color: #E040FB;
+  color: #bdbdbd;
   text-decoration: underline;
+}
+a:active,
+a:hover,
+a:focus
+{
+  color: #E040FB;
 }
 a.clickable
 {

@@ -1,9 +1,9 @@
 $(function() {
   $.ajax({
-     url: 'http://design.lasactf.com/api/user/status',
+     url: '/api/user/status',
      success: function(result) {
-       var extra = JSON.parse(result.data['extra']);
-       if (result.status == 1){
+       if (result.status == 1 && result.data.logged_in == true){
+         var extra = JSON.parse(result.data['extra']);
          $('#textUsername').text(result.data['username']);
          $('#textName').text(result.data['firstname'] + " " + result.data['lastname']);
          $('#textEmail').text(result.data['email']);
@@ -51,10 +51,18 @@ $(function() {
            $('#divNoTeam').addClass('hidden');
            $('#divTeamedUp').removeClass('hidden');
            $.ajax({
-             url: 'http://design.lasactf.com/api/team',
+             url: '/api/team',
              success: function(teamresult) {
-               console.log(teamresult);
+
                if (teamresult.status == 1){
+                 if (teamresult.data.eligible){
+                   $('#teamEligible').text('eligible for prizes').addClass('green');
+                   $('#teamEligible2').text('!');
+                 }
+                 else{
+                   $('#teamEligible').text('not eligible for prizes').addClass('red');
+                   $('#teamEligible2').text(' because one or more members are illegible.')
+                 }
                  for (var i = 0; i < 5; i++){
                    if (i < teamresult.data.size){
                      if(teamresult.data.members[i].username == result.data.username){
@@ -84,7 +92,7 @@ $(function() {
     var team_name = $('#inputTeam').val()
     var team_password = $('#inputTeamPass').val()
     $.ajax({
-       url: 'http://design.lasactf.com/api/team/join',
+       url: '/api/team/join',
        data: {
           "team_name": team_name,
           "team_password": team_password,
@@ -106,7 +114,7 @@ $(function() {
     var team_name = $('#inputTeam').val()
     var team_password = $('#inputTeamPass').val()
     $.ajax({
-       url: 'http://design.lasactf.com/api/team/create',
+       url: '/api/team/create',
        data: {
           "team_name": team_name,
           "team_password": team_password,
@@ -126,11 +134,21 @@ $(function() {
   });
   $('#showHidePass').click(function(){
     $.ajax({
-      url: 'http://design.lasactf.com/api/team',
+      url: '/api/team',
       success: function(teamresult) {
         $('#hiddenPass').text("Team Passcode: " + teamresult.data.password);
       },
       type: 'GET'
     });
-  })
+  });
+  $('#actionLogout').click(function(){
+    $.ajax({
+      url: '/api/user/logout',
+      success: function(result) {
+        console.log("hi");
+        window.location.href = "/login";
+      },
+      type: 'GET'
+    });
+  });
 });
