@@ -138,6 +138,12 @@ a:visited
   color: #E040FB;
   text-decoration: underline;
 }
+a:active,
+a:hover,
+a:focus
+{
+  color: #E040FB;
+}
 a.clickable
 {
   cursor: pointer;
