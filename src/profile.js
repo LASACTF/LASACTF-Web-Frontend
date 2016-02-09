@@ -61,7 +61,7 @@ $(function() {
                  }
                  else{
                    $('#teamEligible').text('not eligible for prizes').addClass('red');
-                   $('#teamEligible2').text(' because one or more members are illegible.')
+                   $('#teamEligible2').text(' because one or more members are ineligible.')
                  }
                  for (var i = 0; i < 5; i++){
                    if (i < teamresult.data.size){
