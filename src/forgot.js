@@ -3,7 +3,7 @@ $(function() {
     event.preventDefault();
     var username = $('#reset-form').find('input[id="inputUsername"]').val();
     $.ajax({
-       url: 'http://design.lasactf.com/api/user/reset_password',
+       url: '/api/user/reset_password',
        data: {
           "username": username
        },
