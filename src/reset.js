@@ -5,7 +5,7 @@ $(function() {
     var passwordconfirmation = $('#reset-form').find('input[id="inputPasswordConfirm"]').val();
 
     $.ajax({
-       url: 'http://design.lasactf.com/api/user/confirm_password_reset',
+       url: '/api/user/confirm_password_reset',
        data: {
           "new-password": password,
           "new-password-confirmation": passwordconfirmation,
