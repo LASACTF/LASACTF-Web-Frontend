@@ -254,7 +254,7 @@ $(function() {
             "lastname": lastname,
             "eligibility": eligibility,
             "affiliation":affiliation,
-            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status,"schooltype":schooltype,"eligibility":eligibility,"affiliation":affiliation}),
+            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status,"schooltype":schooltype}),
 						"g-recaptcha-response": grecaptcha.getResponse()
 				 },
          success: function(data) {
