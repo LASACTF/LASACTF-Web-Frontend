@@ -49,6 +49,7 @@ $(function() {
          if(result.data['team_name'] != result.data['username']){
            $('#textTeam').text(result.data['team_name']);
            $('#divNoTeam').addClass('hidden');
+           $('#actionLogout').removeClass('white').addClass('purple');
            $('#divTeamedUp').removeClass('hidden');
            $.ajax({
              url: '/api/team',
