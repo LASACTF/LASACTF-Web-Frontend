@@ -15,6 +15,11 @@ $(function() {
         if (data.status == 1){
           $('#helpBlock').addClass("success-text");
           $('#helpBlock').text(data.message);
+          setTimeout(
+          function()
+          {
+            window.location.href = "/login";
+          }, 2000);
         }
         else{
           $('#helpBlock').removeClass("success-text");
