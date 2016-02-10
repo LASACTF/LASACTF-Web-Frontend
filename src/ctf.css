@@ -688,6 +688,22 @@ a.noselect
     padding-left: 10px;
     padding-right: 14px;
   }
+  .text.head
+  {
+    font-size: 28px;
+    width: 100%;
+  }
+  .text.head i.head
+  {
+    font-size: 32px;
+    padding-right: 10px;
+    margin-left: -6px;
+    padding-top: 4px;
+  }
+  form .form-group .form-control option
+  {
+    font-size: 14px;
+  }
 }
 
 /** TRANSITIONS **/
