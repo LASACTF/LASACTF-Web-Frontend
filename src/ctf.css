@@ -650,7 +650,7 @@ a.noselect
 
 /** MD **/
 @media all and (max-width: 991px) {
-    .spacetopcond
+  .spacetopcond
   {
     margin-top: 12px!important;
   }
@@ -691,7 +691,8 @@ a.noselect
 
 /** XS **/
 @media all and (max-width: 480px) {
-  .btn.wide.sm
+  .btn.wide.sm,
+  .btn.wide.md
   {
     width: 100%;
     font-size: 28px;
