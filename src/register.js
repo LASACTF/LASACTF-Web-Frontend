@@ -207,6 +207,8 @@ $(function() {
     var password = $('#registration-form').find('input[id="inputPassword"]').val();
     var confirmpassword = $('#registration-form').find('input[id="inputConfirmPassword"]').val();
     var firstname = $('#registration-form').find('input[id="inputFirstName"]').val();
+    var lastname = $('#registration-form').find('input[id="inputLastName"]').val();
+
     var email = $('#registration-form').find('input[id="inputEmail"]').val();
     var affiliation = $('#registration-form').find('input[id="inputAffiliation"]').val();
 
@@ -216,15 +218,14 @@ $(function() {
     var city = $('#registration-form').find('input[id="inputCity"]').val();
     var state = $('#registration-form').find('input[id="inputState"]').val();
     var country = $('#registration-form').find('select[id="inputCountry"]').val();
-    var international = $('#registration-form').find('input[id="international"]').val();
+    var international = $('#registration-form').find('input[id="inputInternational"]').val();
 
     var ctf = $('#registration-form').find('select[id="inputCTFs"]').val();
     var experience = $('#registration-form').find('select[id="inputExperience"]').val();
     var selection = $('#registration-form').find('select[id="inputSection"]').val();
 
     var eligibility = "ineligible";
-    console.log(country,schooltype,status);
-	cleanStatus();
+	  cleanStatus();
     if (country == "us" && schooltype == "high" && status == "comp"){
       eligibility = "eligible";
     }
@@ -250,15 +251,15 @@ $(function() {
             "groupName": "",
             "email": email,
             "firstname": firstname,
-            "lastname": "test",
+            "lastname": lastname,
             "eligibility": eligibility,
             "affiliation":affiliation,
-            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status}),
+            "extra":JSON.stringify({"city":city,"state":state,"country":country, "international":international, "ctf":ctf,"experience":experience,"selection":selection,"status":status,"schooltype":schooltype}),
 						"g-recaptcha-response": grecaptcha.getResponse()
 				 },
          success: function(data) {
 					if (data.status == 1){
-					 	window.location.href = "/login";
+					 	window.location.href = "/login?v=1";
 					}
 					else{
             $('#helpError').text("Error:" + data.message);
