@@ -91,6 +91,14 @@ div.asterisk
   vertical-align: top;
   color: rgb(224, 64, 221);
 }
+.rightconditional
+{
+  text-align: right;
+}
+.spacetop
+{
+  margin-top: 4px!important;
+}
 
 /** COLORS **/
 
@@ -267,6 +275,7 @@ a.clickable
 .btn.centerpad i
 {
   padding-left: 0!important;
+  padding-right: 14px;
 }
 
 .btn.white
@@ -406,10 +415,6 @@ form .form-group .form-control.large
   margin-top: 3px;
   height: 42px;
   font-size: 20px;
-}
-form .form-group .form-control.spacetop
-{
-  margin-top: 4px;
 }
 form .form-group textarea.form-control
 {
@@ -643,6 +648,15 @@ a.noselect
 
 /** MEDIA QUERIES **/
 
+/** MD **/
+@media all and (max-width: 991px) {
+    .spacetopcond
+  {
+    margin-top: 12px!important;
+  }
+}
+
+/** SM **/
 @media all and (max-width: 767px) {
   .logo
   {
@@ -661,8 +675,23 @@ a.noselect
     display: inline!important;
   }
 }
+
+/** SM-ISH **/
+@media all and (max-width: 620px) {
+  .rightconditional
+  {
+    text-align: center!important;
+    font-size: 2em;
+  }
+  .btn.xs
+  {
+    width: 100%;
+  }
+}
+
+/** XS **/
 @media all and (max-width: 480px) {
-  .btn.wide
+  .btn.wide.sm
   {
     width: 100%;
     font-size: 28px;
