@@ -14,6 +14,7 @@ $(function() {
        success: function(data) {
         if (data.status == 1){
           $('#helpBlock').addClass("success-text");
+          $('#inputGroup').removeClass('has-failure').addClass('has-success');
           $('#helpBlock').text(data.message);
           setTimeout(
           function()
@@ -23,7 +24,7 @@ $(function() {
         }
         else{
           $('#helpBlock').removeClass("success-text");
-          $('#inputGroup').addClass('has-failure');
+          $('#inputGroup').removeClass('has-success').addClass('has-failure');
           $('#helpBlock').text(data.message);
         }
        },
