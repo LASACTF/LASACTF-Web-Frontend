@@ -15,7 +15,7 @@ gulp.task('sass', function () {
 
 // Gulp Mustache Task
 gulp.task('mustache', function() {
-    gulp.src("templates/*.mustache")
+    gulp.src("src/*.html")
         .pipe(mustache({},{},{}))
         .pipe(gulp.dest("dist/"));
 });
@@ -26,13 +26,19 @@ gulp.task('compress', function() {
 });
 
 gulp.task('copy', function () {
-    gulp.src('assets/**/*')
-        .pipe(gulp.dest('dist/assets'));
+    gulp.src('src/img/**/*').pipe(gulp.dest('dist/img'));
+    gulp.src('lib/**/*').pipe(gulp.dest('dist/lib'));
+    gulp.src('libc/**/*').pipe(gulp.dest('dist/libc'));
 });
 
-gulp.task('default', ['sass', 'mustache','compress','copy']);
+gulp.task('build', ['sass', 'mustache','compress','copy'] )
+gulp.task('default', ['build','watch']);
 
 gulp.task('watch', ['sass', 'mustache','compress','copy'], function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./templates/**/*.mustache', ['mustache']);
+    gulp.watch('./src/sass/**/*.scss', ['sass']);
+    gulp.watch('./src/**/*.html', ['mustache']);
+    gulp.watch('./src/js/**/*.js', ['compress']);
+    gulp.watch('./src/img/**/*', ['copy']);
+    gulp.watch('./lib/**/*', ['copy']);
+    gulp.watch('./libc/**/*', ['copy']);
 });
