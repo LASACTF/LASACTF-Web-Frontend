@@ -32,7 +32,8 @@ body
 img.logo
 {
   padding: 60px 0 20px 0;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 .logo.med
 {
@@ -41,6 +42,9 @@ img.logo
 .hidden
 {
   display: none;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 .right
 {
@@ -55,11 +59,15 @@ img:focus {
 
 .text
 {
-  display:inline;
+  display: inline;
 }
 .left
 {
   text-align: left;
+}
+h0, .h0
+{
+  font-size: 4.0em;
 }
 h1, .h1
 {
@@ -83,6 +91,14 @@ div.asterisk
   vertical-align: top;
   color: rgb(224, 64, 221);
 }
+.rightconditional
+{
+  text-align: right;
+}
+.spacetop
+{
+  margin-top: 4px!important;
+}
 
 /** COLORS **/
 
@@ -93,6 +109,10 @@ div.asterisk
 .gray-200
 {
   color: #eee;
+}
+.gray-300
+{
+  color: #E0E0E0;
 }
 .gray-400
 {
@@ -106,6 +126,10 @@ div.asterisk
 {
   color: #616161;
 }
+.white
+{
+  color: #fff;
+}
 .purple-a200
 {
   color: #E040FB;
@@ -114,13 +138,35 @@ div.asterisk
 {
   color: #D500F9;
 }
+.success-text,
+.green {
+  color: #00C853;
+}
+.failure-text,
+.red{
+  color: #FF3D00;
+}
+.yellow
+{
+  color: #FFEB3B;
+}
 
 /** LINKS **/
 a,
 a:visited
 {
-  color: #E040FB!;
+  color: #bdbdbd;
   text-decoration: underline;
+}
+a:active,
+a:hover,
+a:focus
+{
+  color: #E040FB;
+}
+a.clickable
+{
+  cursor: pointer;
 }
 
 .forgotpass:hover,
@@ -128,11 +174,6 @@ a:visited
 .forgotpass:focus
 {
   color: #bdbdbd!important;
-}
-
-.container-fluid.fullcont
-{
-
 }
 
 /** BUTTONS **/
@@ -151,10 +192,27 @@ a:visited
   width: 380px;
   text-align: left;
 }
+.btn.maxwidth
+{
+  width: 100%;
+  text-align: center!important;
+}
 .btn.sm
 {
-  font-size: 20px;
-  padding: 2px 9px 2px 9px;
+  font-size: 24px;
+  padding: 2px 9px 2px 25px;
+}
+.btn.xs
+{
+  font-size: 22px;
+  padding: 0px 0px 0px 9px;
+  margin: 5px 0px -6px 0px;
+  height: 40px;
+}
+.btn.noleftpad
+{
+  padding-left: 0;
+  padding-right: 0;
 }
 .btn.expand
 {
@@ -172,6 +230,12 @@ a:visited
   padding-right: 12px;
 }
 .btn.sm i
+{
+  font-size: 26px;
+  padding-bottom: 2px;
+  padding-right: 20px;
+}
+.btn.xs i
 {
   font-size: 26px;
   padding-bottom: 2px;
@@ -202,6 +266,16 @@ a:visited
   border: 4px #ccc solid;
   box-shadow: none!important;
   cursor: default;
+}
+.btn.centerpad
+{
+  padding-left: 0;
+  text-align: center;
+}
+.btn.centerpad i
+{
+  padding-left: 0!important;
+  padding-right: 14px;
 }
 
 .btn.white
@@ -242,7 +316,7 @@ i.head
   display: inline-block;
   color: #eeeeee;
 }
-div.headcont
+.headcont
 {
   text-align: center;
   width: 100%;
@@ -341,10 +415,6 @@ form .form-group .form-control.large
   margin-top: 3px;
   height: 42px;
   font-size: 20px;
-}
-form .form-group .form-control.spacetop
-{
-  margin-top: 4px;
 }
 form .form-group textarea.form-control
 {
@@ -471,7 +541,7 @@ body.compete
   background-color: #616161;
 }
 
-.navbar .nav li.button div.user-dropdown
+.navbar .nav li.button ul.user-dropdown
 {
   width: 400px;
   background-color: #616161;
@@ -484,7 +554,7 @@ body.compete
   border: none!important;
 }
 
-.navbar .nav li.button div.user-dropdown .btn
+.navbar .nav li.button ul.user-dropdown .btn
 {
   width: 100%;
   font-size: 25px;
@@ -492,33 +562,43 @@ body.compete
   padding: 0px 6px;
   margin: 4px 0;
   background-color: #616161;
+  opacity: 0;
 }
-.navbar .nav li.button div.user-dropdown .btn:hover,
-.navbar .nav li.button div.user-dropdown .btn:active,
-.navbar .nav li.button div.user-dropdown .btn:focus
+.navbar .nav li.button ul.user-dropdown .btn
+{
+  transition: opacity ease-in .2s;
+  -o-transition: opacity ease-in .2s;
+  -webkit-transition: opacity ease-in .2s;
+}
+.navbar .nav li.button ul.user-dropdown .btn:hover,
+.navbar .nav li.button ul.user-dropdown .btn:active,
+.navbar .nav li.button ul.user-dropdown .btn:focus
 {
   background-color: #757575;
   color: #fff;
 }
-.navbar .nav li.button div.user-dropdown .btn i,
+.navbar .nav li.button ul.user-dropdown .btn i,
 .compete#left-panel button i
 {
   margin-top: -2px;
   font-size: 26px;
 }
-.navbar .nav li.button div.user-dropdown a,
+.navbar .nav li.button ul.user-dropdown a,
 .compete#left-panel button i
 {
   color: #fff;
   padding: 0px 0px;
   margin: 0px 0px;
 }
-.navbar .nav li.button div.user-dropdown .btn div
+.navbar .nav li.button ul.user-dropdown .btn div
 {
   padding: 0;
   margin: 0;
 }
+.sub-menu
+{
 
+}
 a.noselect
 {
   outline: 0!important;
@@ -568,8 +648,93 @@ a.noselect
 
 /** MEDIA QUERIES **/
 
+/** MD **/
 @media all and (max-width: 991px) {
+  .spacetopcond
+  {
+    margin-top: 12px!important;
+  }
+}
 
+/** SM **/
+@media all and (max-width: 767px) {
+  .logo
+  {
+    max-width: 460px!important;
+  }
+  .sm-invisible
+  {
+    display: none!important;
+  }
+  .sm-visible-block
+  {
+    display: block!important;
+  }
+  .sm-visible-inline
+  {
+    display: inline!important;
+  }
+}
+
+/** SM-ISH **/
+@media all and (max-width: 620px) {
+  .rightconditional
+  {
+    text-align: center!important;
+    font-size: 2em;
+  }
+  .btn.xs
+  {
+    width: 100%;
+  }
+}
+
+/** XS **/
+@media all and (max-width: 480px) {
+  .btn.wide.sm,
+  .btn.wide.md
+  {
+    width: 100%;
+    font-size: 28px;
+    height: 56px;
+    height: 56px;
+    padding-top: 4px;
+    overflow: hidden;
+  }
+  .btn.wide i
+  {
+    font-size: 32px;
+  }
+  .btn.sm
+  {
+    font-size: 22px;
+    height: 50px;
+    padding-top: 5px;
+    padding-left: 11px;
+    overflow: hidden;
+  }
+  .btn.sm i
+  {
+    font-size: 28px;
+    padding-left: 10px;
+    padding-right: 14px;
+  }
+  .text.head
+  {
+    font-size: 28px;
+    width: 100%;
+  }
+  .text.head i.head
+  {
+    font-size: 32px;
+    padding-right: 10px;
+    margin-left: -6px;
+    padding-top: 4px;
+  }
+  form .form-group .form-control option
+  {
+    font-size: 14px;
+  }
 }
 
 /** TRANSITIONS **/

@@ -31,7 +31,7 @@
       ga('send', 'pageview');
     </script>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>LASACTF - Login</title>
+    <title>LASACTF - Reset Password</title>
 
     <!-- Bootstrap -->
     <link href="libc/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,18 +53,18 @@
        <a href="/"><img src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png" class="logo med"></a>
       </div>
       <div class="headcont">
-        <h1 class="text head"><i class="material-icons head">&#xE0DA;</i>LOGIN</h1>
+        <h1 class="text head"><i class="material-icons head">&#xE0DA;</i>RESET PASSWORD</h1>
       </div>
-      <br><br>
+      <br>
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-          <form class="form-horizontal" id="login-form">
+          <form class="form-horizontal" id="reset-form">
             <div class="form-group" id="inputGroup">
+              <h3>Enter the username you used at registration.</h3>
+              <h4 class="gray-400">If a match is found, password reset instructions will be sent to the email you provided.</h4><br>
               <input type="username" class="form-control" id="inputUsername" placeholder="Username">
-              <input type="password" class="form-control spacetop" id="inputPassword" placeholder="Password">
-              <a href="/forgot" class="forgotpass gray-600">Forgot password?</a><br>
               <span id="helpBlock" class="help-block"></span>
-              <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>ENTER COMPETITION</button>
+              <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>RESET PASSWORD</button>
             </div>
             <br>
           </form>
@@ -76,7 +76,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- JS --->
-    <script src="src/login.js"></script>
+    <script src="src/forgot.js"></script>
   </body>
 
 </html>
