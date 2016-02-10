@@ -1,0 +1,25 @@
+{
+  "name": "LASACTF-Web",
+  "version": "0.0.0",
+  "description": "Frontend for LASACTF",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lasactf/LASACTF-Web.git"
+  },
+  "author": "LASACTF Team",
+  "bugs": {
+    "url": "https://github.com/lasactf/LASACTF-Web/issues"
+  },
+  "homepage": "https://github.com/lasactf/LASACTF-Web",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-mustache": "^2.2.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}
+gulp
