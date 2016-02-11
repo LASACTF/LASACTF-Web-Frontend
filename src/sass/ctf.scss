@@ -583,8 +583,10 @@ body.compete
   background-color: #9c27b0;
   box-shadow: none;
   z-index: 1;
+  height: 67px;
 }
-.navbar .nav li.button .btn.profile:hover
+.navbar .nav li.button .btn.profile:hover,
+.navbar .nav li.button .btn.profile.open
 {
   background-color: #616161;
 }

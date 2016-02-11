@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LASACTF - Profile</title>
+    {{> partial/head.html}}
+  </head>
+
+  <body>
+    <div class="container" id="cont-super">
+      <div class="row">
+       <a href="/"><img src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png" class="logo med"></a>
+      </div>
+      <div class="headcont">
+        <h1 class="text head"><i class="material-icons head">&#xE853;</i>PROFILE</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <h1 class="gray-400 text">Welcome, </h1><h0 class="text" id="textUsername"></h0><h0 class="text gray-400">!</h0><br>
+          <div class="row">
+            <div class="col-sm-4 h3 rightconditional">
+              Your Name
+            </div>
+            <div class="col-sm-8 h3 left gray-400">
+              <div id="textName">Getting name...</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 h3 rightconditional">
+              Password
+            </div>
+            <div class="col-sm-8 h3 left gray-400">
+              <a class="btn purple wide xs" style="margin-top: -12px" href="/forgot" role="button"><i class="material-icons">&#xE5C8;</i>UPDATE PASSWORD</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 h3 rightconditional">
+              Email
+            </div>
+            <div class="col-sm-8 h3 left gray-400">
+              <div id="textEmail">Getting email...</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 h3 rightconditional">
+              Affiliation
+            </div>
+            <div class="col-sm-8 h3 left gray-400">
+              <div id="textAffliation">Getting affiliation...</div>
+              <div id="textAffliationType"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 h3 rightconditional">
+              Location
+            </div>
+            <div class="col-sm-8 h3 left gray-400">
+              <div id="textLocation1">Getting location...</div>
+              <div id="textLocation2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 h3 rightconditional">
+              Eligibility
+            </div>
+            <div class="col-sm-8 h3 left gray-400" id="textEligibile">Getting eligibility...</div>
+          </div>
+
+          <div class="text" id="divNoTeam">
+            <h2 class="gray-400">LASACTF <div class="text gray-100">hasn't started yet</div>, but you can still <div class="text gray-100">create and join teams</div>.</h2><br>
+            <form class="form-horizontal">
+              <div class="form-group" id="inputGroup">
+                <label for="inputTeam" class="col-sm-4 control-label rightconditional">Team Name</label>
+                <div class="col-sm-8">
+                  <input type="name" class="form-control" id="inputTeam" placeholder="Team Name">
+                  <span id="helpTeam" class="help-block"></span>
+                </div>
+                <label for="inputTeamPass" class="col-sm-4 control-label rightconditional">Passcode</label>
+                <div class="col-sm-8">
+                  <input type="password" class="form-control" id="inputTeamPass" placeholder="Team Passcode">
+                  <span id="helpPass" class="help-block"></span>
+                </div>
+                <span id="helpBlock" class="help-block"></span>
+              </div>
+
+              <div class="col-md-6">
+                <a class="btn purple maxwidth xs noleftpad" id="actionCreate" role="button"><i class="material-icons">&#xE5C8;</i>CREATE TEAM</a>
+              </div>
+              <div class="col-md-6">
+                <a class="btn purple maxwidth xs noleftpad spacetopcond" id="actionJoin" role="button"><i class="material-icons">&#xE5C8;</i>JOIN TEAM</a>
+              </div>
+            </form>
+          </div>
+          <br>
+          <div class="text hidden" id="divTeamedUp">
+            <h2 class="gray-400 text">You are currently on Team </h2><h1 class="text purple-a200" id="textTeam">Team Name</h1><h1 class="text gray-400">!</h1><br>
+            <div class="row">
+              <div class="col-xs-6">
+                <h3 id="user0"></h3>
+                <h3 id="user2"></h3>
+                <h3 id="user4"></h3>
+              </div>
+              <div class="col-xs-6">
+                <h3 id="user1"></h3>
+                <h3 id="user3"></h3>
+              </div>
+            </div>
+            <h4 class="gray-400" id="hiddenPass">Team Passcode: ************ <a class="gray-400 clickable" id="showHidePass" style="display: inline!important">View</a></h4>
+            <h4 class="gray-400 text">Your team is </h4><h4 class="text" id="teamEligible">not eligible for prizes</h4><h4 class="gray-400 text" id="teamEligible2"> because one or more members are illegible.</h4>
+          </div>
+          <br><br>
+          <div class="col-xs-2"></div>
+          <div class="col-xs-8">
+            <a class="btn white expand xs noleftpad" id="actionLogout" role="button"><i class="material-icons">&#xE879;</i>LOGOUT</a><br><br>
+          <div class="col-xs-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{> partial/foot.html}}
+    <!-- JS --->
+    <script src="js/profile.js"></script>
+  </body>
+
+</html>
