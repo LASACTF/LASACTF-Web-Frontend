@@ -554,11 +554,16 @@ body.compete
 {
   margin-right: 20px;
 }
+.navbutton {
+  padding: 23px;
+  height: 100%;
+  display: inline-block;
+}
 .navbar .nav li.text
 {
   margin: 20px auto;
   vertical-align: middle;
-  padding: 0 auto;
+  padding: 10 auto;
 }
 .navbar .nav li.button
 {
@@ -655,6 +660,9 @@ a.noselect
   border: 0!important;
 }
 
+.navbutton{
+  padding: 23px;
+}
 /** PROFILE SPECIAL **/
 .compete#cont-super
 {
