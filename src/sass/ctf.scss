@@ -555,9 +555,25 @@ body.compete
   margin-right: 20px;
 }
 .navbutton {
-  padding: 23px;
-  height: 100%;
+  padding: 0px 23px 0px 23px;
+  line-height: 66px;
   display: inline-block;
+  font-size: 24px;
+}
+.navbutton:hover.navbutton-blue, .navbutton.active.navbutton-blue{
+  color: $blue-500;
+}
+.navbutton:hover.navbutton-green, .navbutton.active.navbutton-green{
+  color: $green-500;
+}
+.navbutton:hover.navbutton-red, .navbutton.active.navbutton-red{
+  color: $red-500;
+}
+.navbutton .inner{
+  vertical-align: middle;
+}
+.navbutton .material{
+  vertical-align: middle;
 }
 .navbar .nav li.text
 {
