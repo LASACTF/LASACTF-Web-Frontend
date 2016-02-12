@@ -50,6 +50,7 @@ $blue-500: #2196F3;
 $blue-800: #1565C0;
 $blue-a400: #2979FF;
 $red-500: #F44336;
+$red-800: #C62828;
 $red-a400: #FF1744;
 $red-a700: #D50000;
 $deeporange-500: #FF5722;
@@ -62,6 +63,7 @@ $yellow-a400: #FFEA00;
 $amber-500: #FFC107;
 $amber-a400: #FFC400;
 $green-500: #4CAF50;
+$green-800: #2E7D32;
 $green-a400: #00E676;
 $green-a700: #00C853;
 
@@ -537,7 +539,7 @@ body.compete
 }
 .navbar.profile
 {
-  border-bottom: 3px solid #9c27b0;
+  border-bottom: 4px solid #9c27b0;
   margin: 0;
 }
 .navbar .navbar-header .navbar-brand
@@ -571,20 +573,22 @@ body.compete
 .navbar li.navbutton
 {
   padding: 0;
-  margin: 0px 14px 3px 14px;
   height: 64px;
 }
 .navbar button.navbutton {
   padding: 0px 5px 0px 5px;
   //line-height: 66px;
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   border: none;
   height: 66px!important;
   top: 0;
-  padding: 0 24px;
+  padding: 0 12px;
   background-color: rgba(0,0,0,0);
   @include transition(background-color ease-in-out .15s);
+}
+.navbar button.navbutton i{
+  font-size: 20px;
 }
 .navbar button.navbutton-blue:hover {
   background-color: $blue-800;
@@ -594,11 +598,21 @@ body.compete
   background-color:$blue-500;
   color: #fff;
 }
-.navbutton:hover.navbutton-green, .navbutton.active.navbutton-green{
-  color: $green-500;
+.navbar button.navbutton-green:hover {
+  background-color: $green-800;
 }
-.navbutton:hover.navbutton-red, .navbutton.active.navbutton-red{
-  color: $red-500;
+.navbar button.navbutton-green.active
+{
+  background-color:$green-500;
+  color: #fff;
+}
+.navbar button.navbutton-red:hover {
+  background-color: $red-800;
+}
+.navbar button.navbutton-red.active
+{
+  background-color:$red-500;
+  color: #fff;
 }
 .navbutton .inner{
   vertical-align: middle;
@@ -634,7 +648,7 @@ body.compete
   background-color: #9c27b0;
   box-shadow: none;
   z-index: 1;
-  height: 66px;
+  height: 67px;
 }
 .navbar .nav li.button .btn.profile:hover,
 .navbar .nav li.button .btn.profile.open
