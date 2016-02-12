@@ -47,6 +47,7 @@ $gray-800: #424242;
 $gray-900: #212121;
 
 $blue-500: #2196F3;
+$blue-800: #1565C0;
 $blue-a400: #2979FF;
 $red-500: #F44336;
 $red-a400: #FF1744;
@@ -68,6 +69,14 @@ $bg-color-index: $gray-900;
 $bg-color-compete: $gray-800;
 $color-text-success: $green-a700;
 $color-text-failure: $red-a700;
+
+/** MIXINS **/
+@mixin transition($string) {
+  -webkit-transition: $string;
+     -moz-transition: $string;
+      -ms-transition: $string;
+          transition: $string;
+}
 
 /** MAIN **/
 
@@ -215,6 +224,11 @@ a:focus
 a.clickable
 {
   cursor: pointer;
+}
+a.button
+{
+  color: inherit;
+  text-decoration: none;
 }
 
 .forgotpass:hover,
@@ -554,14 +568,31 @@ body.compete
 {
   margin-right: 20px;
 }
-.navbutton {
-  padding: 0px 23px 0px 23px;
-  line-height: 66px;
-  display: inline-block;
-  font-size: 24px;
+.navbar li.navbutton
+{
+  padding: 0;
+  margin: 0px 14px 3px 14px;
+  height: 64px;
 }
-.navbutton:hover.navbutton-blue, .navbutton.active.navbutton-blue{
-  color: $blue-500;
+.navbar button.navbutton {
+  padding: 0px 5px 0px 5px;
+  //line-height: 66px;
+  display: block;
+  font-size: 24px;
+  border: none;
+  height: 66px!important;
+  top: 0;
+  padding: 0 24px;
+  background-color: rgba(0,0,0,0);
+  @include transition(background-color ease-in-out .15s);
+}
+.navbar button.navbutton-blue:hover {
+  background-color: $blue-800;
+}
+.navbar button.navbutton-blue.active
+{
+  background-color:$blue-500;
+  color: #fff;
 }
 .navbutton:hover.navbutton-green, .navbutton.active.navbutton-green{
   color: $green-500;
@@ -665,10 +696,7 @@ body.compete
   padding: 0;
   margin: 0;
 }
-.sub-menu
-{
 
-}
 a.noselect
 {
   outline: 0!important;
