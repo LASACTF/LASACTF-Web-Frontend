@@ -639,13 +639,16 @@ body.compete
   font-size: 32px;
   padding: 0;
 }
+.navbar .nav li.button .btn.profile
+{
+
+}
 .navbar .nav li.button .btn.profile.active
 {
   color: #fff;
   border: none!important;
   background-color: #9c27b0;
   box-shadow: none;
-  z-index: 1;
   height: 66px;
   margin: 0px !important;
 }
@@ -663,7 +666,7 @@ body.compete
   right: 0;
   padding: 6px 6px;
   box-shadow: 4px 4px 12px #212121;
-  z-index: -4;
+  //z-index: -1;
   border: none!important;
 }
 
@@ -714,46 +717,20 @@ a.noselect
   outline: 0!important;
   border: 0!important;
 }
-/** PROFILE SPECIAL **/
-.compete#cont-super
+
+/** TOP TABBAR **/
+.tabbar-container
 {
-  background-color: #424242;
-  position: fixed;
-  height: 100%;
+  display: block;
   width: 100%;
-  padding: 0;
-  z-index: -9;
+  height: 52px;
+  //z-index: 15;
 }
-.compete#left-panel
+.tabbar-container.purple
 {
-  z-index: -8;
-  height: 100%;
-  background-color: #757575;
-  border: none;
-  position: absolute;
-  overflow: hidden;
+  background-color: $purple-500;
 }
-.compete#left-panel button
-{
-  width: 100%;
-  font-size: 28px;
-  text-align: left;
-  padding: 6px 0px 8px 0px;
-  margin: 0px 24px 0px 0px;
-  background-color: #757575;
-  position: relative;
-}
-.compete#left-panel button:hover,
-.compete#left-panel button:active,
-.compete#left-panel button:focus
-{
-  background-color: #616161;
-  color: #fff;
-}
-.compete#left-panel button.active
-{
-  background-color: #9c27b0;
-}
+
 
 /** MEDIA QUERIES **/
 
