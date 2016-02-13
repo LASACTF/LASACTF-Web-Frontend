@@ -109,6 +109,9 @@ img.logo
   padding: 0;
   margin: 0;
 }
+.no-display{
+  display: none;
+}
 .right
 {
   text-align: right;
@@ -939,6 +942,10 @@ a.noselect
   .smish-visible
   {
     display: inline !important;
+  }
+  .smish-visible-block
+  {
+    display: block !important;
   }
 }
 
