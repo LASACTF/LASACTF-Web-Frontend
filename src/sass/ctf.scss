@@ -592,7 +592,6 @@ body.compete
 .navbar button.navbutton {
   padding: 0px 5px 0px 5px;
   //line-height: 66px;
-  display: block;
   font-size: 18px;
   border: none;
   height: 100%;
@@ -656,10 +655,6 @@ body.compete
 {
   font-size: 32px;
   padding: 0;
-}
-.navbar .nav li.button .btn.profile
-{
-
 }
 .navbar .nav li.button .btn.profile.active
 {
@@ -737,6 +732,7 @@ a.noselect
   outline: 0!important;
   border: 0!important;
 }
+/** Mobile Navbar **/
 
 .navbar-collapse.collapsing{
   background-color: #212121;
@@ -744,6 +740,30 @@ a.noselect
 
 .navbar-collapse.collapse.in{
   background-color: #212121;
+}
+.navbar-toggle{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-collapse.collapsing .navbar-right{
+  margin-right: 0px;
+}
+.navbar-collapse.collapse.in .navbar-right{
+  margin-right: 0px;
+}
+
+.navbar-collapse.collapsing .navbar-right button.navbutton{
+  font-size: 40px;
+}
+.navbar-collapse.in .navbar-right button.navbutton{
+  font-size: 40px;
+}
+.navbar-collapse.collapsing .navbar-right button.navbutton i{
+  font-size: 40px;
+}
+.navbar-collapse.in .navbar-right button.navbutton i{
+  font-size: 40px;
 }
 
 /** BREADBAR **/
@@ -864,6 +884,14 @@ a.noselect
   .btn.xs
   {
     width: 100%;
+  }
+  .smish-invisible
+  {
+    display: none !important;
+  }
+  .smish-visible
+  {
+    display: inline !important;
   }
 }
 
