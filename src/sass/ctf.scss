@@ -736,14 +736,33 @@ a.noselect
   background-color: $purple-500;
 }
 
-
 /** MEDIA QUERIES **/
+
+/** LG **/
+@media all and (max-width: 1199px) {
+  .lg-invisible
+  {
+    display: none!important;
+  }
+  .lg-visible-block
+  {
+    display: block!important;
+  }
+  .lg-visible-inline
+  {
+    display: inline!important;
+  }
+}
 
 /** MD **/
 @media all and (max-width: 991px) {
   .spacetopcond
   {
     margin-top: 12px!important;
+  }
+  .md-invisible
+  {
+    display: none;
   }
 }
 
@@ -825,6 +844,10 @@ a.noselect
   form .form-group .form-control option
   {
     font-size: 14px;
+  }
+  .xs-invisible
+  {
+    display: none;
   }
 }
 
