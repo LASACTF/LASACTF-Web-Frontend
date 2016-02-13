@@ -113,6 +113,14 @@ img.logo
 {
   text-align: right;
 }
+.left
+{
+  text-align: left;
+}
+.center
+{
+  text-align: center;
+}
 button:focus,
 img:focus {
   outline: 0!important;
@@ -123,10 +131,6 @@ img:focus {
 .text
 {
   display: inline;
-}
-.left
-{
-  text-align: left;
 }
 h0, .h0
 {
@@ -818,6 +822,27 @@ a.noselect
 {
   background-color: $purple-400!important;
   height: 52px;
+}
+
+/** CONTENT **/
+.content
+{
+  width: 100%;
+  padding: 8px 48px 8px 48px;
+  text-align: left;
+}
+.content .left-info
+{
+  text-align: left;
+  width: 180px;
+  display: inline-block;
+  vertical-align: top;
+}
+.content .right-info
+{
+  text-align: left;
+  width: auto;
+  display: inline-block;
 }
 
 /** MEDIA QUERIES **/
