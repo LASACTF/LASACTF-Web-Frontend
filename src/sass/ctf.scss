@@ -738,6 +738,14 @@ a.noselect
   border: 0!important;
 }
 
+.navbar-collapse.collapsing{
+  background-color: #212121;
+}
+
+.navbar-collapse.collapse.in{
+  background-color: #212121;
+}
+
 /** BREADBAR **/
 .breadbar
 {
