@@ -539,8 +539,11 @@ body.compete
 }
 .navbar.profile
 {
-  border-bottom: 4px solid #9c27b0;
   margin: 0;
+}
+.navbar .container-fluid{
+  border-bottom: 4px solid #9c27b0;
+  height: 66px;
 }
 .navbar .navbar-header .navbar-brand
 {
@@ -558,10 +561,6 @@ body.compete
   margin-top: -8px;
   height: 66px;
 }
-.navbar .navbar-nav
-{
-  height: 66px;
-}
 .navbar .navbar-header
 {
   margin-left: 20px;
@@ -573,7 +572,7 @@ body.compete
 .navbar li.navbutton
 {
   padding: 0;
-  height: 64px;
+  height: 66px;
 }
 .navbar button.navbutton {
   padding: 0px 5px 0px 5px;
@@ -581,7 +580,7 @@ body.compete
   display: block;
   font-size: 18px;
   border: none;
-  height: 66px!important;
+  height: 100%;
   top: 0;
   padding: 0 12px;
   background-color: rgba(0,0,0,0);
@@ -628,7 +627,6 @@ body.compete
 .navbar .nav li.button
 {
   height: 66px;
-  margin: -7px 0;
 }
 .navbar .nav li.button .btn
 {
@@ -648,7 +646,8 @@ body.compete
   background-color: #9c27b0;
   box-shadow: none;
   z-index: 1;
-  height: 67px;
+  height: 66px;
+  margin: 0px !important;
 }
 .navbar .nav li.button .btn.profile:hover,
 .navbar .nav li.button .btn.profile.open
@@ -662,7 +661,6 @@ body.compete
   background-color: #616161;
   position: absolute;
   right: 0;
-  top: 70px;
   padding: 6px 6px;
   box-shadow: 4px 4px 12px #212121;
   z-index: -4;
