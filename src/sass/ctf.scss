@@ -631,6 +631,14 @@ body.compete
   background-color:$red-500;
   color: #fff;
 }
+.navbar button.navbutton-purple:hover {
+  background-color: $purple-800;
+}
+.navbar button.navbutton-purple.active
+{
+  background-color:$purple-500;
+  color: #fff;
+}
 #problemicon{
   padding-bottom: 2px;
 }
@@ -776,6 +784,12 @@ a.noselect
 .navbar-collapse.in .navbar-right button.navbutton i
 {
   font-size: 32px;
+}
+#mobile-dropdown-toggle{
+  background: none;
+  border: 0;
+  color: $white;
+  padding: 0px;
 }
 
 /** BREADBAR **/
