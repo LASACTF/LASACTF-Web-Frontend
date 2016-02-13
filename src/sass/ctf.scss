@@ -124,6 +124,10 @@ img.logo
 {
   text-align: center;
 }
+.nopad
+{
+  padding: 0!important;
+}
 button:focus,
 img:focus {
   outline: 0!important;
@@ -168,6 +172,10 @@ div.asterisk
 .spacetop
 {
   margin-top: 4px!important;
+}
+.toppos
+{
+  vertical-align: top;
 }
 
 /** COLORS **/
@@ -859,6 +867,34 @@ a.noselect
 {
   text-align: left;
   width: auto;
+  display: inline-block;
+}
+
+/** PROGRESS BARS **/
+
+.progress
+{
+  width: 100%;
+  height: 12px;
+  border: 0;
+  border-radius: 0;
+  overflow-y: visible;
+}
+.progress .progress-bar
+{
+  background-color: $green-500;
+}
+.ranktop
+{
+  margin-bottom: 4px;
+}
+.rankbottom
+{
+  margin-top: -16px;
+}
+.rankbottom h1.text
+{
+  margin-top: -4px;
   display: inline-block;
 }
 
