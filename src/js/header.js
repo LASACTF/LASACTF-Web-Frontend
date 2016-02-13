@@ -6,17 +6,19 @@ $(function() {
       function(){
         $('.dropdown-menu').slideDown(200)
         $('.btn.profile').addClass('open');
-        setTimeout(function() { $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "1"); }, 250);
-
+        setTimeout(function() {
+          $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "1");
+        }, 200);
       },
       function(){
         $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "0");
 
         setTimeout(function() {
           $('.dropdown-menu').slideUp(200);
-          $('.btn.profile').removeClass('open');
+          setTimeout(function() {
+            $('.btn.profile').removeClass('open');
+          }, 200);
         }, 250);
-
       }
     );
     var timespan = countdown(new Date("March 19, 2016 12:00:00 CST"), function(ts) {
