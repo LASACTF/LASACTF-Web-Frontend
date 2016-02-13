@@ -549,10 +549,16 @@ body.compete
 .navbar.profile
 {
   margin: 0;
+  box-shadow: none;
 }
-.navbar .container-fluid{
+.navbar .container-fluid
+{
   border-bottom: 4px solid #9c27b0;
   height: 66px;
+}
+.navbar.profile .container-fluid
+{
+  border-bottom: 0!important;
 }
 .navbar .navbar-header .navbar-brand
 {
