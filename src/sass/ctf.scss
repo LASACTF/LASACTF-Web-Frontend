@@ -753,17 +753,25 @@ a.noselect
   margin-right: 0px;
 }
 
-.navbar-collapse.collapsing .navbar-right button.navbutton{
-  font-size: 40px;
+.navbar-collapse.collapsing .navbar-right li.navbutton,
+.navbar-collapse.in .navbar-right li.navbutton
+{
+  height: 58px;
 }
-.navbar-collapse.in .navbar-right button.navbutton{
-  font-size: 40px;
+.navbar-collapse.collapsing .navbar-right button.navbutton,
+.navbar-collapse.in .navbar-right button.navbutton {
+
+  width: 100%;
+  text-align: left;
+  padding-left: 48px;
+  font-size: 30px;
+  height: 54px;
+  margin: 0;
 }
-.navbar-collapse.collapsing .navbar-right button.navbutton i{
-  font-size: 40px;
-}
-.navbar-collapse.in .navbar-right button.navbutton i{
-  font-size: 40px;
+.navbar-collapse.collapsing .navbar-right button.navbutton i,
+.navbar-collapse.in .navbar-right button.navbutton i
+{
+  font-size: 32px;
 }
 
 /** BREADBAR **/
