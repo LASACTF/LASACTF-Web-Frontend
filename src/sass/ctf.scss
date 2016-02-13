@@ -739,6 +739,7 @@ a.noselect
   text-align: left;
   padding: 0 36px;
   border: 0;
+  margin: 0!important;
 }
 .breadbar.purple
 {
@@ -766,12 +767,12 @@ a.noselect
 .breadbar .tab.active,
 .breadbar.purple .tab.active:hover
 {
-  background-color: $gray-800;
+  background-color: $gray-800!important;
   height: 53px;
 }
 .breadbar.purple .tab:hover
 {
-  background-color: $purple-400;
+  background-color: $purple-400!important;
   height: 52px;
 }
 
