@@ -536,6 +536,7 @@ body.compete
 {
   background-color: #212121;
   height: 66px;
+  border: 0px;
 }
 .navbar.profile
 {
@@ -612,6 +613,9 @@ body.compete
 {
   background-color:$red-500;
   color: #fff;
+}
+#problemicon{
+  padding-bottom: 2px;
 }
 .navbutton .inner{
   vertical-align: middle;
