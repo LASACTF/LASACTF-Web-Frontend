@@ -834,6 +834,18 @@ a.noselect
   {
     display: inline!important;
   }
+  .breadbar .tab
+  {
+    width: 68px;
+  }
+  .breadbar .tab.active
+  {
+    width: 200px;
+  }
+  .breadbar .tab.active text.sm-invisible
+  {
+    display:inline!important;
+  }
 }
 
 /** SM-ISH **/
@@ -898,6 +910,14 @@ a.noselect
   .xs-invisible
   {
     display: none;
+  }
+  .breadbar .tab
+  {
+    width: 68px!important;
+  }
+  .breadbar .tab.active text.sm-invisible
+  {
+    display:none!important;
   }
 }
 
