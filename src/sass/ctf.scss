@@ -704,9 +704,7 @@ body.compete
 }
 .navbar .nav li.button ul.user-dropdown .btn
 {
-  transition: opacity ease-in .2s;
-  -o-transition: opacity ease-in .2s;
-  -webkit-transition: opacity ease-in .2s;
+  @include transition(opacity ease-in .1s);
 }
 .navbar .nav li.button ul.user-dropdown .btn:hover,
 .navbar .nav li.button ul.user-dropdown .btn:active,
