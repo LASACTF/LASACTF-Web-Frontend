@@ -34,7 +34,7 @@ gulp.task('compress', function() {
 gulp.task('copy', function () {
     gulp.src('src/img/**/*').pipe(gulp.dest('dist/img'));
     gulp.src('lib/**/*').pipe(gulp.dest('dist/lib'));
-    gulp.src('libc/**/*').pipe(gulp.dest('dist/lib'));
+    gulp.src('libc/**/*').pipe(gulp.dest('dist/libc'));
 });
 
 gulp.task('build', ['sass', 'mustache','compress','copy'] )
