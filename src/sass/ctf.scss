@@ -636,6 +636,13 @@ body.compete
   padding: 0;
   height: 66px;
 }
+.navbar li.navbuttonwrapper a
+{
+  color: $white;
+  background: none;
+  display: inline;
+  padding: 0;
+}
 .navbar-collapse
 {
   padding-right: 0;

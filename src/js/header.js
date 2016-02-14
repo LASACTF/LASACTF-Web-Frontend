@@ -2,6 +2,10 @@ function padDigits(number, digits) {
     return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }
 $(function() {
+  //Bootstrap fix
+  $('#desktop-dropdown a').click(function(){
+    window.location.href = $(this).attr('href');
+  });
   $('#desktop-dropdown-toggle').hover(
       function(){
         $('#desktop-dropdown').slideDown(200)
