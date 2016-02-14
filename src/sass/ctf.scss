@@ -75,11 +75,29 @@ $color-text-success: $green-a700;
 $color-text-failure: $red-a700;
 
 /** MIXINS **/
-@mixin transition($string) {
-  -webkit-transition: $string;
-     -moz-transition: $string;
-      -ms-transition: $string;
-          transition: $string;
+@mixin transition($s1) {
+  -webkit-transition: $s1;
+     -moz-transition: $s1;
+      -ms-transition: $s1;
+          transition: $s1;
+}
+@mixin transition2($s1, $s2) {
+  -webkit-transition: $s1, $s2;
+     -moz-transition: $s1, $s2;
+      -ms-transition: $s1, $s2;
+          transition: $s1, $s2;
+}
+@mixin transition3($s1, $s2, $s3) {
+  -webkit-transition: $s1, $s2, $s3;
+     -moz-transition: $s1, $s2, $s3;
+      -ms-transition: $s1, $s2, $s3;
+          transition: $s1, $s2, $s3;
+}
+@mixin transition4($s1, $s2, $s3, $s4) {
+  -webkit-transition: $s1, $s2, $s3, $s4;
+     -moz-transition: $s1, $s2, $s3, $s4;
+      -ms-transition: $s1, $s2, $s3, $s4;
+          transition: $s1, $s2, $s3, $s4;
 }
 
 /** MAIN **/
@@ -618,12 +636,17 @@ body.compete
   padding: 0;
   height: 66px;
 }
+.navbar-collapse
+{
+  padding-right: 0;
+}
 .navbar button.navbutton {
   padding: 0px 5px 0px 5px;
   //line-height: 66px;
   font-size: 18px;
   border: none;
   height: 100%;
+  width: 100%;
   top: 0;
   padding: 0 12px;
   background-color: rgba(0,0,0,0);
@@ -1022,6 +1045,49 @@ a.noselect
   {
     display: block !important;
   }
+
+  .navbar button.navbutton
+  {
+    @include transition2(color ease-in-out .15s, background-color ease-in-out .15s);
+    border-left: 4px solid $black;
+    border-right: 4px solid $black;
+    color: $gray-200;
+  }
+  .navbar button.navbutton:hover
+  {
+    color: $white;
+  }
+  .navbar button.navbutton.active
+  {
+    border-left: 4px solid $white;
+    color: $white;
+  }
+
+  .navbar button.navbutton-blue:hover,
+  .navbar button.navbutton-blue.active {
+    background-color: $blue-500;
+  }
+
+  .navbar button.navbutton-green:hover,
+  .navbar button.navbutton-green.active {
+    background-color: $green-500;
+  }
+  .navbar button.navbutton-red:hover,
+  .navbar button.navbutton-red.active {
+    background-color: $red-500;
+  }
+  .navbar button.navbutton-purple:hover,
+  .navbar button.navbutton-purple.active {
+    background-color: $purple-500;
+  }
+  .navbar button.navbutton-indigo:hover,
+  .navbar button.navbutton-indigo.active {
+    background-color: $indigo-500;
+  }
+  .navbar button.navbutton-logout:hover,
+  .navbar button.navbutton-logout.active {
+    background-color: $gray-600;
+  }
 }
 
 /** XS **/
@@ -1089,8 +1155,5 @@ a,
 .btn,
 form .form-group .form-control
 {
-  @include transition(border-color ease-in-out .15s);
-  @include transition(box-shadow ease-in-out .15s);
-  @include transition(background-color ease-in-out .15s);
-  @include transition(color ease-in-out .15s);
+  @include transition4(border-color ease-in-out .15s, box-shadow ease-in-out .15s, background-color ease-in-out .15s, color ease-in-out .15s);
 }
