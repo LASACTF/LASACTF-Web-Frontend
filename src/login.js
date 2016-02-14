@@ -10,6 +10,10 @@ $(function() {
     $('#inputGroup').addClass('has-failure');
     $('#helpBlock').text("You must sign in to access that page.")
   }
+  else if(getURLParameter('d') == 1){
+    $('#helpBlock').addClass("success-text");
+    $('#helpBlock').text("Account Verified! Login to continue.");
+  }
   $( "#login-form" ).submit(function( event ) {
     event.preventDefault();
     var username = $('#login-form').find('input[id="inputUsername"]').val();
