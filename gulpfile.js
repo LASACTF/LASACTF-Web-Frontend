@@ -4,6 +4,11 @@ var sourcemaps = require('gulp-sourcemaps');
 var mustache = require("gulp-mustache");
 var uglify = require('gulp-uglify');
 
+function swallowError (error) {
+  // If you want details of the error in the console
+  console.log(error.toString());
+  this.emit('end');
+}
 // Gulp Sass Task
 gulp.task('sass', function () {
  gulp.src('src/sass/**/*.scss')
@@ -22,6 +27,7 @@ gulp.task('mustache', function() {
 gulp.task('compress', function() {
   gulp.src('src/js/**/*.js')
     .pipe(uglify())
+    .on('error', swallowError)
     .pipe(gulp.dest('dist/js'));
 });
 
