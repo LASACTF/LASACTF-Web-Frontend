@@ -50,4 +50,10 @@ $(function() {
      },
      type: 'GET'
   });
+  $('#inputCountdown').click(function(){
+    localStorage.setItem("countdown",$('#inputCountdown').is(':checked'));
+  });
+  if (localStorage.getItem("countdown") == true){
+    $('#inputCountdown').prop('checked', true);
+  }
 });
