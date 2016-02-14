@@ -1049,8 +1049,8 @@ a.noselect
   .navbar button.navbutton
   {
     @include transition2(color ease-in-out .15s, background-color ease-in-out .15s);
-    border-left: 4px solid $black;
-    border-right: 4px solid $black;
+    border-left: 4px solid rgb(33, 33, 33);
+    border-right: 4px solid rgb(33, 33, 33);
     color: $gray-200;
   }
   .navbar button.navbutton:hover
