@@ -52,8 +52,15 @@ $(function() {
   });
   $('#inputCountdown').click(function(){
     localStorage.setItem("nocountdown",$('#inputCountdown').is(':checked'));
+    console.log($('#inputCountdown').is(':checked'));
+    if ($('#inputCountdown').is(':checked')){
+      $('#countdown').addClass("hidden");
+    }
+    else{
+      $('#countdown').removeClass("hidden");
+    }
   });
-  if (localStorage.getItem("nocountdown") == "true"){
+  if (localStorage.getItem("nocountdown")){
     $('#inputCountdown').prop('checked', true);
   }
 });
