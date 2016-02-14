@@ -1,14 +1,17 @@
+$footer-height: 70px;
+
 .footer
 {
   width: 100%;
   background-color: $gray-900;
   color: $gray-700;
   padding: 16px 0;
-  margin-top: 48px;
-
+  //margin-top: 48px;
   clear: both;
-  position: relative;
-  z-index: 10;
+  //position: relative;
+  //z-index: 10;
+  vertical-align: middle;
+  height: $footer-height;
 }
 .footer a
 {
@@ -23,9 +26,17 @@
 {
   color: $gray-600;
 }
-.content
+.primarycontainer
 {
+  min-height:100%;
   height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
   height: 100%;
-  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+  margin: 0 auto -$footer-height; /* the bottom margin is the negative value of the footer's height */
+  padding-bottom: 32px;
+}
+.primarycontainer:after
+{
+  content: "";
+  display: block;
+  //height: $footer-height;
 }

@@ -81,7 +81,10 @@ $color-text-failure: $red-a700;
 }
 
 /** MAIN **/
-
+*
+{
+  margin: 0;
+}
 body
 {
   font-family: 'VT323';
@@ -91,6 +94,10 @@ body
   overflow-x: hidden;
   overflow-y: scroll;
   text-align: center;
+}
+html, body
+{
+  height: 100%;
 }
 img.logo
 {
