@@ -1,8 +1,8 @@
 var levels = [100,300,500,700];
-$(function() {
-  $.ajax({
-    url: 'http://design.lasactf.com/api/team',
-    success: function(teamresult) {
+$.ajax({
+  url: '/api/team',
+  success: function(teamresult) {
+    $(function() {
       if(teamresult.status == 1){
         $('#textXP').text(teamresult.data.score);
         if (teamresult.data.score < levels[0]){
@@ -26,7 +26,16 @@ $(function() {
           }
         }
       }
-    },
-    type: 'GET'
-  });
+    });
+  },
+  type: 'GET'
+});
+$.ajax({
+  url: '/api/stats/scoreboard',
+  success: function(result) {
+    $(function() {
+      console.log(result);
+    });
+  },
+  type: 'GET'
 });
