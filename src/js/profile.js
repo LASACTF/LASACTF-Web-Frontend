@@ -60,7 +60,7 @@ $(function() {
       $('#countdown').removeClass("hidden");
     }
   });
-  if (localStorage.getItem("nocountdown")){
+  if (localStorage.getItem("nocountdown") == "true"){
     $('#inputCountdown').prop('checked', true);
   }
 });
