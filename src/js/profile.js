@@ -1,7 +1,7 @@
-$(function() {
-  $.ajax({
-     url: '/api/user/status',
-     success: function(result) {
+$.ajax({
+   url: '/api/user/status',
+   success: function(result) {
+     $(function() {
        if (result.status == 1 && result.data.logged_in == true){
          var extra = JSON.parse(result.data['extra']);
          $('#textUsername').text(result.data['username']);
@@ -47,12 +47,14 @@ $(function() {
            $('#textEligibile').text('Not eligible for prizes').addClass("failure-text")
          }
        }
-     },
-     type: 'GET'
-  });
+     });
+   },
+   type: 'GET'
+});
+$(function() {
+  $('#profileTab').addClass("active");
   $('#inputCountdown').click(function(){
     localStorage.setItem("nocountdown",$('#inputCountdown').is(':checked'));
-    console.log($('#inputCountdown').is(':checked'));
     if ($('#inputCountdown').is(':checked')){
       $('#countdown').addClass("hidden");
     }
