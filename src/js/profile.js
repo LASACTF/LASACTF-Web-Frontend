@@ -53,7 +53,7 @@ $(function() {
   $('#inputCountdown').click(function(){
     localStorage.setItem("nocountdown",$('#inputCountdown').is(':checked'));
   });
-  if (localStorage.getItem("nocountdown") == true){
+  if (localStorage.getItem("nocountdown")){
     $('#inputCountdown').prop('checked', true);
   }
 });
