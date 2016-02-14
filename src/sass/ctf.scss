@@ -49,6 +49,8 @@ $gray-900: #212121;
 $blue-500: #2196F3;
 $blue-800: #1565C0;
 $blue-a400: #2979FF;
+$indigo-500: #3F51B5;
+$indigo-800: #283593;
 $red-500: #F44336;
 $red-800: #C62828;
 $red-a400: #FF1744;
@@ -656,6 +658,14 @@ body.compete
 .navbar button.navbutton-purple.active
 {
   background-color:$purple-500;
+  color: #fff;
+}
+.navbar button.navbutton-indigo:hover {
+  background-color: $indigo-800;
+}
+.navbar button.navbutton-indigo.active
+{
+  background-color:$indigo-500;
   color: #fff;
 }
 #problemicon{
