@@ -15,21 +15,7 @@
     </div>
     <div class="content">
       <h1 class="gray-400 text">Welcome, </h1><h0 class="text" id="textUsername">username</h0><h0 class="text gray-400">!</h0><br>
-      <div class="col-xs-6 ranktop nopad">
-        <h2 class="gray-400 text">Level </h2><h1 class="white text">3</h1>
-      </div>
-      <div class="col-xs-6 ranktop nopad right">
-        <h1 class="white text">420</h1><h2 class="gray-400 text"> XP</h2>
-      </div>
-      <div class="progress rank">
-        <div class="progress-bar" role="progressbar" style="width: 40%"></div>
-      </div>
-      <div class="col-xs-6 nopad toppos rankbottom">
-        <h2 class="gray-400 text toppos">Rank: </h2><h1 class="white text toppos">93</h1><h3 class="gray-400 text toppos" style="padding-top: 4px">rd</h3>
-      </div>
-      <div class="col-xs-6 nopad rankbottom right">
-        <h1 class="white text toppos">80</h1><h2 class="gray-400 text toppos" style="padding-left: 8px">XP to next level</h2>
-      </div>
+      {{> partial/bar.html}}
       <div class="info">
         <div class="left-info h3">
           Your Name
@@ -81,7 +67,7 @@
         </div><br>
       </div>
     </div>
-    
+
     <!-- JS --->
     <script src="js/profile.js"></script>
   </body>
