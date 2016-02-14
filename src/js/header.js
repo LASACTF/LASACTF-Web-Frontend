@@ -28,4 +28,7 @@ $(function() {
       $('#tsecs').text(padDigits(ts.seconds,2));
     }, countdown.DAYS | countdown.HOURS|countdown.MINUTES|countdown.SECONDS|countdown.MILLISECONDS);
 
+    if (localStorage.getItem("nocountdown") == "true"){
+      $('#countdown').addClass("hidden");
+    }
 });
