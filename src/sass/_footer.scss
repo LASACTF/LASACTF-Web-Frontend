@@ -1,0 +1,31 @@
+.footer
+{
+  width: 100%;
+  background-color: $gray-900;
+  color: $gray-700;
+  padding: 16px 0;
+  margin-top: 48px;
+
+  clear: both;
+  position: relative;
+  z-index: 10;
+}
+.footer a
+{
+  color: $gray-700;
+  padding: 0 8px;
+}
+.footer a:visited
+{
+  color: $gray-700;
+}
+.footer a:hover
+{
+  color: $gray-600;
+}
+.content
+{
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
