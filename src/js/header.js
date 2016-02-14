@@ -2,9 +2,9 @@ function padDigits(number, digits) {
     return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }
 $(function() {
-  $( ".dropdown-toggle" ).hover(
+  $('#desktop-dropdown-toggle').hover(
       function(){
-        $('.dropdown-menu').slideDown(200)
+        $('#desktop-dropdown').slideDown(200)
         $('.btn.profile').addClass('open');
         setTimeout(function() {
           $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "1");
@@ -14,7 +14,7 @@ $(function() {
         $('.navbar .nav li.button ul.user-dropdown .btn').css("opacity", "0");
 
         setTimeout(function() {
-          $('.dropdown-menu').slideUp(200);
+          $('#desktop-dropdown').slideUp(200);
           setTimeout(function() {
             $('.btn.profile').removeClass('open');
           }, 200);
