@@ -51,9 +51,9 @@ $(function() {
      type: 'GET'
   });
   $('#inputCountdown').click(function(){
-    localStorage.setItem("countdown",$('#inputCountdown').is(':checked'));
+    localStorage.setItem("nocountdown",$('#inputCountdown').is(':checked'));
   });
-  if (localStorage.getItem("countdown") == true){
+  if (localStorage.getItem("nocountdown") == true){
     $('#inputCountdown').prop('checked', true);
   }
 });
