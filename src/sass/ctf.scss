@@ -48,6 +48,7 @@ $gray-900: #212121;
 
 $blue-500: #2196F3;
 $blue-800: #1565C0;
+$blue-a200: #448AFF;
 $blue-a400: #2979FF;
 $indigo-500: #3F51B5;
 $indigo-800: #283593;
@@ -266,6 +267,10 @@ div.asterisk
 .brightred
 {
   color: $deeporange-a400;
+}
+.blue
+{
+  color: $blue-500;
 }
 
 /** LINKS **/

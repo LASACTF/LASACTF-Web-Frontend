@@ -11,9 +11,8 @@
       {{> partial/profilebar.html}}
       <div class="content">
         <!--{{> partial/scorebar-full.html}}-->
-
-        <text id="noTeam">
-          <br>
+        <br>
+        <text id="noTeam hidden">
           <text class="h2 gray-400">Hey, you </text><text class="h1 brightred">aren't on a team yet!</text>
           <h3 class="gray-400">You should sign up for a team to get the benefits of working with others! Combine your score, collaborate, and go for the coolest prizes!<br><br>You can <text class="white">create or join teams here</text>, but <text class="brightred">you cannot change teams once you are on one!</text></h3>
         </text>
@@ -32,6 +31,22 @@
           </div>
         </div>
         <div class="info">
+          <h3 class="left-info sm">Affiliation</h3>
+          <div class="form-group" id="inputGroupAffliation">
+            <input type="name" class="right-info form-control" id="inputCreateAffiliation" placeholder="Team High School / University / Other">
+            <select class="form-control sm" id="inputSchoolType">
+              <option value="high">High School</option>
+              <option value="high">High School Equivalent (homeschooled, etc.)</option>
+              <option value="college">Higher Education (college, university, etc.)</option>
+              <option value="corp">Corporation / Non-Profit</option>
+              <option value="middle">Middle School or Equivalent</option>
+              <option value="various">Various</option>
+              <option value="other">Other (not listed above)</option>
+            </select>
+            <span id="helpTeam" class="help-block">Only type this in if you're creating a new team.</span>
+          </div>
+        </div>
+        <div class="info">
           <div class="col-md-6">
             <a class="btn purple maxwidth xs noleftpad" id="actionCreate" role="button"><i class="material-icons">&#xE5C8;</i>CREATE TEAM</a>
           </div>
@@ -40,9 +55,23 @@
           </div>
         </div>
 
-        <br><br><br><br>
+        <br><br><br>
 
-        <br>
+        <text id="teamedUp">
+          <h2 class="gray-400 text">You are currently on Team </h2><h1 class="text purple-a200" id="textTeam">Team Name</h1><h1 class="text gray-400">!</h1><br>
+          <h2>gereeter</h2>
+          <div class="info">
+            <div class="left-info h3">
+              Best Category
+            </div>
+            <text class="right-info h3 blue">
+              Test
+            </text><br>
+          </div>
+        </text>
+
+        <br><br><br>
+
         <div class="text" id="divTeamedUp">
           <h2 class="gray-400 text">You are currently on Team </h2><h1 class="text purple-a200" id="textTeam">Team Name</h1><h1 class="text gray-400">!</h1><br>
           <div class="row">
