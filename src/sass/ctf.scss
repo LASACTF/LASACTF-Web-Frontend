@@ -702,6 +702,14 @@ body.compete
   background-color:$indigo-500;
   color: #fff;
 }
+.navbar button.navbutton-orange:hover {
+  background-color: $orange-800;
+}
+.navbar button.navbutton-orange.active
+{
+  background-color:$orange-500;
+  color: #fff;
+}
 #problemicon{
   padding-bottom: 2px;
 }
@@ -1059,6 +1067,9 @@ a.noselect
     border-left: 4px solid rgb(33, 33, 33);
     border-right: 4px solid rgb(33, 33, 33);
     color: $gray-200;
+  }
+  .navbar li.navbuttonwrapper{
+    height: auto;
   }
   .navbar button.navbutton:hover
   {
