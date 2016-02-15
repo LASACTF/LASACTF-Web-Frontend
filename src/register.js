@@ -16,10 +16,10 @@ function validatePassword() {
         $('#helpPassword').text('Passwords must be at least 6 characters');
         return;
 	}
-	if($('#inputPassword').val().length > 50) {
+	if($('#inputPassword').val().length > 300) {
 		$('#inputPassword').parent().parent().addClass('has-failure');
 		$('#inputPassword').parent().parent().removeClass('has-success');
-		$('#helpPassword').text('Passwords cannot be more than 50 characters');
+		$('#helpPassword').text('Passwords cannot be more than 300 characters');
 		return;
 	}
 	if($('#inputPassword').val() != $('#inputConfirmPassword').val()) {
@@ -106,10 +106,10 @@ $(function() {
 		$('#helpUsername').text('Usernames must be at least 3 characters');
 		return;
 	}
-	if($('#inputUsername').val().length > 32) {
+	if($('#inputUsername').val().length > 19) {
 		$('#inputUsername').parent().parent().addClass('has-failure');
 		$('#inputUsername').parent().parent().removeClass('has-success');
-		$('#helpUsername').text('Usernames cannot be more than 32 characters');
+		$('#helpUsername').text('Usernames cannot be more than 19 characters');
 		return;
 	}
     if(/\s/g.exec($('#inputUsername').val()) != null)
