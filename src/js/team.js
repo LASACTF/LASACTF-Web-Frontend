@@ -47,17 +47,22 @@ $.ajax({
                for (var i = 0; i < 5; i++){
                  if (i < teamresult.data.size){
                    if(teamresult.data.members[i].username == result.data.username){
-                     $('#user'+i).removeClass('hidden');
                      $('#user'+i + ' .left-info').text("YOU");
                      $('#user'+i + ' .left-info').addClass('purple-a200');
-                     generateGraph(teamresult.data.members[i]["uid"],teamresult.data.solved_problems, $('#user'+i + ' .right-info .progress'))
+
                    }
                    else{
-                      $('#user'+i).removeClass('hidden');
-                      $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
-                      $('#user'+i + ' .left-info').addClass('gray-200');
-                      generateGraph(teamresult.data.members[i]["uid"],teamresult.data.solved_problems, $('#user'+i + ' .right-info .progress'))
+                     $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
+                     $('#user'+i + ' .left-info').addClass('gray-200');
                    }
+                    $('#user'+i).removeClass('hidden');
+                    generateGraph(teamresult.data.members[i]["uid"],teamresult.data.solved_problems, $('#user'+i + ' .right-info .progress'))
+                    if(teamresult.data.members[i]["eligibility"] == "eligible"){
+                      $('#user'+i + ' .right-info .h4').addClass('green').text('eligible')
+                    }
+                    else{
+                      $('#user'+i + ' .right-info .h4').addClass('red').text('not eligible')
+                    }
                  }
                }
                if(5-teamresult.data.size > 1){
