@@ -3,28 +3,24 @@ var convert = {"web exploitation":"web","reverse engineering":"reverse",
 "algorithm":"algo","asymptotic":"asymptotic", "miscellaneous":"misc"}
 function generateGraph(uid, submissions, element){
   var totalcount = 0;
-  var categories = {};
+  var categories = {"web":0,"crypto":0,"reverse":0,"forensics":0,"binary":0,"algo":0,"asymptotic":0,"misc":0};
   for (var i = 0; i < submissions.length; i++){
     if (submissions[i]["uid"] == uid){
       totalcount+= 1;
-      if (isNaN(categories[convert[submissions[i]["category"].toLowerCase()]])){
-        categories[convert[submissions[i]["category"].toLowerCase()]] = 1;
-      }
-      else {
-        categories[convert[submissions[i]["category"].toLowerCase()]] += 1;
-      }
+      categories[convert[submissions[i]["category"].toLowerCase()]] += 1;
     }
   }
   if (totalcount > 0){
     for (var key in categories){
       var percent = (categories[key]/totalcount)*100 ;
       element.append("<div class=\"progress-bar " +  key  + " \" id=\"graphProgress\" role=\"progressbar\" style=\"width:" + percent + "%\"></div>")
+
     }
   }
 
 }
 $.ajax({
-   url: 'http://design.lasactf.com/api/user/status',
+   url: '/api/user/status',
    success: function(result) {
      if (result.status == 1 && result.data.logged_in == true){
        if(result.data['team_name'] != result.data['username']){
@@ -32,10 +28,11 @@ $.ajax({
          $('#noTeam').addClass('hidden');
          $('#teamedUp').removeClass('hidden');
          $.ajax({
-           url: 'http://design.lasactf.com/api/team',
+           url: '/api/team',
            success: function(teamresult) {
 
              if (teamresult.status == 1){
+               $('#inputUpdateAffiliation').attr("placeholder", teamresult.data.affiliation);
                if (teamresult.data.eligible){
                  $('#teamEligible').text('eligible for prizes').addClass('green');
                  $('#teamEligible2').text('!');
@@ -49,7 +46,6 @@ $.ajax({
                    if(teamresult.data.members[i].username == result.data.username){
                      $('#user'+i + ' .left-info').text("YOU");
                      $('#user'+i + ' .left-info').addClass('purple-a200');
-
                    }
                    else{
                      $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
@@ -131,7 +127,7 @@ $(function() {
    $( "#actionAffiliation" ).click(function() {
      var team_affiliation = $('#inputUpdateAffiliation').val();
      $.ajax({
-        url: 'http://design.lasactf.com/api/team/change_affiliation',
+        url: '/api/team/change_affiliation',
         data: {
            "team_affiliation": team_affiliation
         },
