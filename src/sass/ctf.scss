@@ -85,8 +85,8 @@ $color-asymptotic: $yellow-500; //math, problem solving, logic, and linguistics
 
 $bg-color-index: $gray-900;
 $bg-color-compete: $gray-800;
-$color-text-success: $green-a700;
-$color-text-failure: $red-a700;
+$color-text-success: $green-a400;
+$color-text-failure: $red-a400;
 
 /** MIXINS **/
 @mixin transition($s1) {
@@ -270,12 +270,9 @@ div.asterisk
   color: $color-text-success;
 }
 .failure-text,
-.red{
+.red,
+.brightred {
   color: $color-text-failure;
-}
-.brightred
-{
-  color: $deeporange-a400;
 }
 .blue
 {
