@@ -64,6 +64,9 @@ $yellow-500: #FFEB3B;
 $yellow-a400: #FFEA00;
 $amber-500: #FFC107;
 $amber-a400: #FFC400;
+$cyan-500: #00BCD4;
+$cyan-800: #00838F;
+$cyan-a400: #00E5FF;
 $green-500: #4CAF50;
 $green-800: #2E7D32;
 $green-a400: #00E676;
@@ -686,6 +689,14 @@ body.compete
   background-color:$red-500;
   color: #fff;
 }
+.navbar button.navbutton-cyan:hover {
+  background-color: $cyan-800;
+}
+.navbar button.navbutton-cyan.active
+{
+  background-color: $cyan-500;
+  color: #fff;
+}
 .navbar button.navbutton-purple:hover {
   background-color: $purple-800;
 }
@@ -985,6 +996,22 @@ a.noselect
   }
 }
 
+/** HEADER-MD **/
+@media all and (max-width: 1024px) {
+  .header-md-invisible
+  {
+    display:none;
+  }
+  .navbar button.navbutton
+  {
+    margin: 0 6px;
+  }
+  .navbar button.navbutton.last
+  {
+    margin-right: 16px;
+  }
+}
+
 /** MD **/
 @media all and (max-width: 991px) {
   .spacetopcond
@@ -1082,6 +1109,10 @@ a.noselect
   .navbar button.navbutton-red:hover,
   .navbar button.navbutton-red.active {
     background-color: $red-500;
+  }
+  .navbar button.navbutton-cyan:hover,
+  .navbar button.navbutton-cyan.active {
+    background-color: $cyan-500;
   }
   .navbar button.navbutton-purple:hover,
   .navbar button.navbutton-purple.active {
