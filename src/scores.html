@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> partial/head.html}}
+    <title>LASACTF - Profile</title>
+  </head>
+
+  <body class='compete'>
+    <div class="primarycontainer">
+      {{> partial/header.html}}
+      {{> partial/scoreboardbar.html}}
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2 class="gray-400 text">Your team is in </h2><h0 class="text purple-a200" id="textUsername">7<text class="ligature">th</text></h0><h1 class="text gray-400"> place!</h1>
+          </div>
+          <div class="col-sm-4 right">
+            <div class="right"><text class="h0">1000</text><text class="h2"> XP</text></div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="left-info h3">
+            Your Name
+          </div>
+          <div class="right-info h3 gray-400" id="textName">
+            Getting name...
+          </div><br>
+        </div>
+      </div>
+    </div>
+
+    {{> partial/footer.html}}
+
+    <!-- JS --->
+    <script src="js/scores.js"></script>
+  </body>
+
+</html>
