@@ -74,6 +74,15 @@ $green-800: #2E7D32;
 $green-a400: #00E676;
 $green-a700: #00C853;
 
+$color-web: $blue-500;
+$color-crypt: $green-500;
+$color-forensics: $orange-500;
+$color-reverse: $red-500;
+$color-binary: $purple-500;
+$color-algo: $cyan-500;
+$color-misc: $gray-500;
+$color-asymptotic: $yellow-500; //math, problem solving, logic, and linguistics
+
 $bg-color-index: $gray-900;
 $bg-color-compete: $gray-800;
 $color-text-success: $green-a700;
@@ -949,16 +958,29 @@ a.noselect
   width: 180px;
   display: inline-block;
   vertical-align: top;
+  overflow-x: hidden;
 }
 .info .left-info.sm
 {
   width: 140px;
+}
+.info .left-info.lg
+{
+  width: 240px;
 }
 .info .right-info
 {
   text-align: left;
   width: auto;
   display: inline-block;
+}
+.info .right-info.progress-user
+{
+  display:inline;
+}
+.info .right-info.progress-user text
+{
+  padding-left: 12px;
 }
 .info .form-group
 {
@@ -986,6 +1008,45 @@ a.noselect
 .progress .progress-bar
 {
   background-color: $green-500;
+}
+.progress.user
+{
+  display: inline-block;
+  max-width: 360px;
+  margin: 32px 0px 0 0px;
+  width: 100%;
+}
+.progress.user .progress-bar.web
+{
+  background-color: $color-web;
+}
+.progress.user .progress-bar.crypt
+{
+  background-color: $color-crypt;
+}
+.progress.user .progress-bar.reverse
+{
+  background-color: $color-reverse;
+}
+.progress.user .progress-bar.binary
+{
+  background-color: $color-binary;
+}
+.progress.user .progress-bar.misc
+{
+  background-color: $color-misc;
+}
+.progress.user .progress-bar.asymptotic
+{
+  background-color: $color-asymptotic;
+}
+.progress.user .progress-bar.algo
+{
+  background-color: $color-algo;
+}
+.progress.user .progress-bar.forensics
+{
+  background-color: $color-forensics;
 }
 .ranktop
 {
@@ -1175,6 +1236,11 @@ a.noselect
   .navbar button.navbutton-logout:hover,
   .navbar button.navbutton-logout.active {
     background-color: $gray-600;
+  }
+  .info .right-info.progress-user text
+  {
+    display:block;
+    padding-left: 0px;
   }
 }
 
