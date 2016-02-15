@@ -10,7 +10,55 @@
       {{> partial/header.html}}
       {{> partial/profilebar.html}}
       <div class="content">
-        {{> partial/scorebar-full.html}}
+        <!--{{> partial/scorebar-full.html}}-->
+
+        <text id="noTeam">
+          <br>
+          <text class="h2 gray-400">Hey, you </text><text class="h1 brightred">aren't on a team yet!</text>
+          <h3 class="gray-400">You should sign up for a team to get the benefits of working with others! Combine your score, collaborate, and go for the coolest prizes!<br><br>You can <text class="white">create or join teams here</text>, but <text class="brightred">you cannot change teams once you are on one!</text></h3>
+        </text>
+        <br>
+        <div class="info">
+          <h3 class="left-info sm">Team Name</h3>
+          <div class="form-group" id="inputGroupName">
+            <input type="name" class="right-info form-control" id="inputTeam" placeholder="Team Name">
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="left-info sm">Passcode</h3>
+          <div class="form-group" id="inputGroupPass">
+            <input type="name" class="right-info form-control" id="inputPass" placeholder="Secret Passcode">
+            <span id="helpTeam" class="help-block">If you're creating a new team, others have to type this in when joining. In you're joining, get someone on the team to give you the code.</span>
+          </div>
+        </div>
+        <div class="info">
+          <div class="col-md-6">
+            <a class="btn purple maxwidth xs noleftpad" id="actionCreate" role="button"><i class="material-icons">&#xE5C8;</i>CREATE TEAM</a>
+          </div>
+          <div class="col-md-6">
+            <a class="btn purple maxwidth xs noleftpad spacetopcond" id="actionJoin" role="button"><i class="material-icons">&#xE5C8;</i>JOIN TEAM</a>
+          </div>
+        </div>
+
+        <br><br><br><br>
+
+        <br>
+        <div class="text" id="divTeamedUp">
+          <h2 class="gray-400 text">You are currently on Team </h2><h1 class="text purple-a200" id="textTeam">Team Name</h1><h1 class="text gray-400">!</h1><br>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3 id="user0"></h3>
+              <h3 id="user2"></h3>
+              <h3 id="user4"></h3>
+            </div>
+            <div class="col-xs-6">
+              <h3 id="user1"></h3>
+              <h3 id="user3"></h3>
+            </div>
+          </div>
+          <h4 class="gray-400" id="hiddenPass">Team Passcode: ************ <a class="gray-400 clickable" id="showHidePass" style="display: inline!important">View</a></h4>
+          <h4 class="gray-400 text">Your team is </h4><h4 class="text" id="teamEligible">not eligible for prizes</h4><h4 class="gray-400 text" id="teamEligible2"> because one or more members are illegible.</h4>
+        </div>
       </div>
     </div>
 

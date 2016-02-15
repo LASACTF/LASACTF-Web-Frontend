@@ -53,6 +53,7 @@ $indigo-500: #3F51B5;
 $indigo-800: #283593;
 $red-500: #F44336;
 $red-800: #C62828;
+$red-a200: #FF5252;
 $red-a400: #FF1744;
 $red-a700: #D50000;
 $deeporange-500: #FF5722;
@@ -250,6 +251,10 @@ div.asterisk
 {
   color: $purple-a400;
 }
+.red-a200
+{
+  color: $red-a200;
+}
 .success-text,
 .green {
   color: $color-text-success;
@@ -257,6 +262,10 @@ div.asterisk
 .failure-text,
 .red{
   color: $color-text-failure;
+}
+.brightred
+{
+  color: $deeporange-a400;
 }
 
 /** LINKS **/
@@ -444,14 +453,14 @@ i.head
 }
 
 /** FORMS **/
-form .form-group label
+.form-group label
 {
   font-size: 24px;
   font-weight: 100;
   margin-top: -4px!important;
   margin-bottom: 4px!important;
 }
-form .form-group input.form-control
+.form-group input.form-control
 {
   font-size: 24px;
   padding: 3px 12px!important;
@@ -461,67 +470,67 @@ form .form-group input.form-control
   border: 2px solid rgb(97, 97, 97);
   height: 36px;
 }
-form .form-group .form-control.sm
+.form-group .form-control.sm
 {
   margin-top: 4px;
 }
-form .form-group .form-control::-webkit-input-placeholder,
-form .form-group .form-control::-webkit-input-placeholder
+.form-group .form-control::-webkit-input-placeholder,
+.form-group .form-control::-webkit-input-placeholder
 { -webkit-transition: color ease-in-out .15s; }
-form .form-group .form-control:-moz-placeholder,
-form .form-group .form-control:-moz-placeholder
+.form-group .form-control:-moz-placeholder,
+.form-group .form-control:-moz-placeholder
 { -moz-transition: color ease-in-out .15s; }
-form .form-group .form-control::-moz-placeholder,
-form .form-group .form-control::-moz-placeholder
+.form-group .form-control::-moz-placeholder,
+.form-group .form-control::-moz-placeholder
 { -moz-transition: color ease-in-out .15s; }
-form .form-group .form-control::-ms-input-placeholder,
-form .form-group .form-control::-ms-input-placeholder
+.form-group .form-control::-ms-input-placeholder,
+.form-group .form-control::-ms-input-placeholder
 { -o-transition: color ease-in-out .15s; }
 
-form .form-group .form-control:focus::-webkit-input-placeholder,
-form .form-group .form-control:active::-webkit-input-placeholder
+.form-group .form-control:focus::-webkit-input-placeholder,
+.form-group .form-control:active::-webkit-input-placeholder
 { color: #eee!important; }
-form .form-group .form-control:focus:-moz-placeholder,
-form .form-group .form-control:active:-moz-placeholder
+.form-group .form-control:focus:-moz-placeholder,
+.form-group .form-control:active:-moz-placeholder
 { color: #eee!important; }
-form .form-group .form-control:focus::-moz-placeholder,
-form .form-group .form-control:active::-moz-placeholder
+.form-group .form-control:focus::-moz-placeholder,
+.form-group .form-control:active::-moz-placeholder
 { color: #eee!important; }
-form .form-group .form-control:focus::-ms-input-placeholder,
-form .form-group .form-control:active::-ms-input-placeholder
+.form-group .form-control:focus::-ms-input-placeholder,
+.form-group .form-control:active::-ms-input-placeholder
 { color: #eee!important; }
 
-form .form-group.has-success .form-control::-webkit-input-placeholder
+.form-group.has-success .form-control::-webkit-input-placeholder
 { color: #ccc; }
-form .form-group.has-success .form-control:-moz-placeholder
+.form-group.has-success .form-control:-moz-placeholder
 { color: #ccc; }
-form .form-group.has-success .form-control::-moz-placeholder
+.form-group.has-success .form-control::-moz-placeholder
 { color: #ccc; }
-form .form-group.has-success .form-control::-ms-input-placeholder
+.form-group.has-success .form-control::-ms-input-placeholder
 { color: #ccc; }
-form .form-group.has-failure .form-control::-webkit-input-placeholder
+.form-group.has-failure .form-control::-webkit-input-placeholder
 { color: #ccc; }
-form .form-group.has-failure .form-control.failure:-moz-placeholder
+.form-group.has-failure .form-control.failure:-moz-placeholder
 { color: #ccc; }
-form .form-group.has-failure .form-control::-moz-placeholder
+.form-group.has-failure .form-control::-moz-placeholder
 { color: #ccc; }
-form .form-group.has-failure .form-control::-ms-input-placeholder
+.form-group.has-failure .form-control::-ms-input-placeholder
 { color: #ccc; }
 
-form .form-group .form-control option
+.form-group .form-control option
 {
   background-color: rgb(97, 97, 97)!important;
 }
-form .form-group .form-control:active,
-form .form-group .form-control:focus,
-form .form-group .form-control.focus
+.form-group .form-control:active,
+.form-group .form-control:focus,
+.form-group .form-control.focus
 {
   box-shadow: 0px 0px 16px rgba(224,64,251,.5);
   background-color: rgb(224,64,251);
   border: 2px solid rgb(224,64,251);
   color: #fff!important;
 }
-form .form-group .form-control
+.form-group .form-control
 {
   background-color: rgb(97, 97, 97);
   color: #fff!important;
@@ -530,48 +539,48 @@ form .form-group .form-control
   border: 2px solid rgb(97, 97, 97);
   padding: 6px 0px 6px 9px;
 }
-form .form-group .form-control.large
+.form-group .form-control.large
 {
   margin-top: 3px;
   height: 42px;
   font-size: 20px;
 }
-form .form-group textarea.form-control
+.form-group textarea.form-control
 {
   font-size: 20px;
 }
-form .form-group .help-block
+.form-group .help-block
 {
   text-align: left;
   font-size: 20px;
 }
 
 /** FORM STATUS **/
-form .form-group.has-success .form-control
+.form-group.has-success .form-control
 {
   background-color: #388E3C;
   color: #fff;
   border: 2px solid #388E3C;
 }
-form .form-group.has-success .control-label,
-form .form-group.has-success .help-block
+.form-group.has-success .control-label,
+.form-group.has-success .help-block
 {
   color: #00C853;
 }
-form .form-group.has-failure .form-control
+.form-group.has-failure .form-control
 {
   background-color: #D84315;
   color: #fff;
   border: 2px solid #D84315;
 }
-form .form-group.has-failure .control-label,
-form .form-group.has-failure .help-block
+.form-group.has-failure .control-label,
+.form-group.has-failure .help-block
 {
   color: #FF3D00;
 }
-form .form-group.has-success div.asterisk,
-form .form-group.has-failure div.asterisk,
-form .form-group.has-warning div.asterisk
+.form-group.has-success div.asterisk,
+.form-group.has-failure div.asterisk,
+.form-group.has-warning div.asterisk
 {
   color: #fff;
 }
@@ -924,21 +933,39 @@ a.noselect
 .content
 {
   width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 8px 48px 8px 48px;
   text-align: left;
 }
-.content .left-info
+.info .left-info
 {
   text-align: left;
   width: 180px;
   display: inline-block;
   vertical-align: top;
 }
-.content .right-info
+.info .left-info.sm
+{
+  width: 140px;
+}
+.info .right-info
 {
   text-align: left;
   width: auto;
   display: inline-block;
+}
+.info .form-group
+{
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+.info .form-group input
+{
+  width: 100%;
 }
 
 /** PROGRESS BARS **/
@@ -1181,7 +1208,7 @@ a.noselect
     margin-left: -6px;
     padding-top: 4px;
   }
-  form .form-group .form-control option
+ .form-group .form-control option
   {
     font-size: 14px;
   }
@@ -1202,7 +1229,7 @@ a.noselect
 /** TRANSITIONS **/
 a,
 .btn,
-form .form-group .form-control
+.form-group .form-control
 {
   @include transition4(border-color ease-in-out .15s, box-shadow ease-in-out .15s, background-color ease-in-out .15s, color ease-in-out .15s);
 }
