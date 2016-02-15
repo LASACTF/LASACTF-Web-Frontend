@@ -1005,7 +1005,7 @@ a.noselect
 }
 
 /** HEADER-MD **/
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1032px) {
   .header-md-invisible
   {
     display:none;
@@ -1032,6 +1032,13 @@ a.noselect
   }
 }
 
+/** HEADER-SD **/
+@media all and (max-width: 857px) {
+  .header-sm-invisible
+  {
+    display:none;
+  }
+}
 /** SM **/
 @media all and (max-width: 767px) {
   .logo
