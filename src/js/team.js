@@ -25,7 +25,6 @@ $.ajax({
      if (result.status == 1 && result.data.logged_in == true){
        if(result.data['team_name'] != result.data['username']){
          $('#textTeam').text(result.data['team_name']);
-         $('#noTeam').addClass('hidden');
          $('#teamedUp').removeClass('hidden');
          $.ajax({
            url: '/api/team',
@@ -76,6 +75,9 @@ $.ajax({
            type: 'GET'
          });
        }
+     }
+     else{
+       $('#noTeam').removeClass('hidden');
      }
    },
    type: 'GET'
