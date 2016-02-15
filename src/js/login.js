@@ -23,7 +23,7 @@ $(function() {
        },
        success: function(data) {
         if (data.status == 1){
-          window.location.href = "/profile";
+          window.location.href = "/problems";
         }
         else{
           $('#helpBlock').removeClass("success-text");
