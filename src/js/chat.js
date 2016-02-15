@@ -1,0 +1,3 @@
+$(function() {
+  $('#headerChat').addClass('active');
+});

@@ -1,0 +1,3 @@
+$(function() {
+  $('#headerShell').addClass('active');
+});
