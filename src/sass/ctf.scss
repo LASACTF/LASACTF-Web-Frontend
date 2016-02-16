@@ -1155,6 +1155,18 @@ a.noselect
   {
     margin-right: 16px;
   }
+  .breadbar .tab
+  {
+    width: 68px;
+  }
+  .breadbar .tab.active
+  {
+    width: 200px;
+  }
+  .breadbar .tab.active text.header-md-invisible
+  {
+    display:inline!important;
+  }
 }
 
 /** MD **/
@@ -1173,7 +1185,7 @@ a.noselect
 @media all and (max-width: 857px) {
   .header-sm-invisible
   {
-    display:none;
+    display: none;
   }
 }
 /** SM **/
@@ -1193,18 +1205,6 @@ a.noselect
   .sm-visible-inline
   {
     display: inline!important;
-  }
-  .breadbar .tab
-  {
-    width: 68px;
-  }
-  .breadbar .tab.active
-  {
-    width: 200px;
-  }
-  .breadbar .tab.active text.sm-invisible
-  {
-    display:inline!important;
   }
 }
 
@@ -1342,7 +1342,7 @@ a.noselect
   {
     width: 68px!important;
   }
-  .breadbar .tab.active text.sm-invisible
+  .breadbar .tab.active text.header-md-invisible
   {
     display:none!important;
   }
