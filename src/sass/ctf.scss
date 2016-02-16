@@ -52,8 +52,10 @@ $blue-a200: #448AFF;
 $blue-a400: #2979FF;
 $indigo-500: #3F51B5;
 $indigo-800: #283593;
+$red-400: #EF5350;
 $red-500: #F44336;
 $red-800: #C62828;
+$red-a100: #FF8A80;
 $red-a200: #FF5252;
 $red-a400: #FF1744;
 $red-a700: #D50000;
@@ -704,6 +706,10 @@ body.compete
   background-color: rgba(0,0,0,0);
   @include transition(background-color ease-in-out .15s);
 }
+.navbar button.navbutton-red.active
+{
+  height:67px;
+}
 .navbar button.navbutton i{
   font-size: 20px;
 }
@@ -785,6 +791,7 @@ body.compete
 {
   font-size: 26px;
   height: 100%;
+  //height: 66px;
   padding: 0 32px 4px 32px;
 }
 .navbar .nav li.button .btn i
@@ -962,7 +969,9 @@ a.noselect
   padding-bottom: 4px;
 }
 .breadbar .tab.active,
-.breadbar.purple .tab.active:hover
+.breadbar .tab.active:hover,
+.breadbar.purple .tab.active:hover,
+.breadbar.red .tab.active:hover
 {
   background-color: $gray-800!important;
   height: 53px;
@@ -970,6 +979,11 @@ a.noselect
 .breadbar.purple .tab:hover
 {
   background-color: $purple-400!important;
+  height: 52px;
+}
+.breadbar.red .tab:hover
+{
+  background-color: $red-a200!important;
   height: 52px;
 }
 
@@ -1141,6 +1155,18 @@ a.noselect
   {
     margin-right: 16px;
   }
+  .breadbar .tab
+  {
+    width: 68px;
+  }
+  .breadbar .tab.active
+  {
+    width: 200px;
+  }
+  .breadbar .tab.active text.header-md-invisible
+  {
+    display:inline!important;
+  }
 }
 
 /** MD **/
@@ -1153,13 +1179,17 @@ a.noselect
   {
     display: none;
   }
+  .content
+  {
+    padding: 8px 16px 8px 16px;
+  }
 }
 
 /** HEADER-SD **/
 @media all and (max-width: 857px) {
   .header-sm-invisible
   {
-    display:none;
+    display: none;
   }
 }
 /** SM **/
@@ -1180,17 +1210,9 @@ a.noselect
   {
     display: inline!important;
   }
-  .breadbar .tab
+  .content
   {
-    width: 68px;
-  }
-  .breadbar .tab.active
-  {
-    width: 200px;
-  }
-  .breadbar .tab.active text.sm-invisible
-  {
-    display:inline!important;
+    padding: 8px 4px 8px 4px;
   }
 }
 
@@ -1328,7 +1350,7 @@ a.noselect
   {
     width: 68px!important;
   }
-  .breadbar .tab.active text.sm-invisible
+  .breadbar .tab.active text.header-md-invisible
   {
     display:none!important;
   }
