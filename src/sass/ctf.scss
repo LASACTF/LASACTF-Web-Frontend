@@ -795,16 +795,22 @@ body.compete
   font-size: 32px;
   padding: 0;
 }
-.navbar .nav li.button .btn.profile.active
+.navbar .nav li.button .btn.profile
 {
   color: #fff;
   border: none!important;
-  background-color: #9c27b0;
+  background-color: rgba(0, 0, 0, 0);
   box-shadow: none;
   height: 66px;
   margin: 0px !important;
 }
-.navbar.profile .nav li.button .btn.profile.active
+.navbar .nav li.button .btn.profile.active
+{
+  background-color: #9c27b0;
+}
+.navbar.profile .nav li.button .btn.profile,
+.navbar .nav li.button .btn.profile:hover,
+.navbar .nav li.button .btn.profile.open
 {
   height: 67px;
 }
