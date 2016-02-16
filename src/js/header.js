@@ -1,10 +1,37 @@
 function padDigits(number, digits) {
     return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }
+function onLogout(){
+  $.ajax({
+     url: '/api/user/logout',
+     success: function(result) {
+       localStorage.removeItem("username");
+       window.location.href = "/login";
+     },
+     type: 'GET'
+  });
+}
 $(function() {
+  if (localStorage.getItem("username")){
+    $('#headerUsername').text(localStorage.getItem("username"));
+  }
+  else{
+    $.ajax({
+       url: '/api/user/status',
+       success: function(result) {
+          if (result.status == 1 && result.data.logged_in == true){
+             var extra = JSON.parse(result.data['extra']);
+             $('#headerUsername').text(result.data['username']);
+             localStorage.setItem("username",result.data['username']);
+           }
+       },
+       type: 'GET'
+    });
+  }
   //Bootstrap fix
   $('#desktop-dropdown a').click(function(){
-    window.location.href = $(this).attr('href');
+    if ($(this).attr('id') != 'actionLogout')
+      window.location.href = $(this).attr('href');
   });
   $('#desktop-dropdown-toggle').hover(
       function(){
@@ -35,4 +62,5 @@ $(function() {
     if (localStorage.getItem("nocountdown") == "true"){
       $('#countdown').addClass("hidden");
     }
+
 });
