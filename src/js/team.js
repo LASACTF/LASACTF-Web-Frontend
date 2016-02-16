@@ -84,6 +84,8 @@ $.ajax({
 });
 $(function() {
   $('#teamTab').addClass("active");
+  $('#headerProfile').addClass('active');
+  $('.navbar').addClass('profile');
   $( "#actionJoin" ).click(function() {
      var team_name = $('#inputTeam').val();
      var team_password = $('#inputPass').val();

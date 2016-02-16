@@ -53,6 +53,8 @@ $.ajax({
 });
 $(function() {
   $('#profileTab').addClass("active");
+  $('#headerProfile').addClass('active');
+  $('.navbar').addClass('profile');
   $('#inputCountdown').click(function(){
     localStorage.setItem("nocountdown",$('#inputCountdown').is(':checked'));
     if ($('#inputCountdown').is(':checked')){
