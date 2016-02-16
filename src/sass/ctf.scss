@@ -1179,6 +1179,10 @@ a.noselect
   {
     display: none;
   }
+  .content
+  {
+    padding: 8px 16px 8px 16px;
+  }
 }
 
 /** HEADER-SD **/
@@ -1205,6 +1209,10 @@ a.noselect
   .sm-visible-inline
   {
     display: inline!important;
+  }
+  .content
+  {
+    padding: 8px 4px 8px 4px;
   }
 }
 
