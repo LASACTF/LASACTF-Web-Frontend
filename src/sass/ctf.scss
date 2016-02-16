@@ -630,9 +630,25 @@ body.compete
   box-shadow: none;
   z-index: 1;
 }
+.navbar.chat .container-fluid
+{
+  border-bottom: 4px solid $cyan-500;
+}
+.navbar.shell .container-fluid
+{
+  border-bottom: 4px solid $green-500;
+}
+.navbar.scoreboard .container-fluid
+{
+  border-bottom: 4px solid $red-500;
+}
+.navbar.problems .container-fluid
+{
+  border-bottom: 4px solid $blue-500;
+}
 .navbar .container-fluid
 {
-  border-bottom: 4px solid #9c27b0;
+  //border-bottom: 4px solid #9c27b0;
   height: 66px;
 }
 .navbar.profile .container-fluid
