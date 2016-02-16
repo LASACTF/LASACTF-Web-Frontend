@@ -52,8 +52,10 @@ $blue-a200: #448AFF;
 $blue-a400: #2979FF;
 $indigo-500: #3F51B5;
 $indigo-800: #283593;
+$red-400: #EF5350;
 $red-500: #F44336;
 $red-800: #C62828;
+$red-a100: #FF8A80;
 $red-a200: #FF5252;
 $red-a400: #FF1744;
 $red-a700: #D50000;
@@ -966,7 +968,9 @@ a.noselect
   padding-bottom: 4px;
 }
 .breadbar .tab.active,
-.breadbar.purple .tab.active:hover
+.breadbar .tab.active:hover,
+.breadbar.purple .tab.active:hover,
+.breadbar.red .tab.active:hover
 {
   background-color: $gray-800!important;
   height: 53px;
@@ -974,6 +978,11 @@ a.noselect
 .breadbar.purple .tab:hover
 {
   background-color: $purple-400!important;
+  height: 52px;
+}
+.breadbar.red .tab:hover
+{
+  background-color: $red-a200!important;
   height: 52px;
 }
 
