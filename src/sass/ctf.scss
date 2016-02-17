@@ -1141,8 +1141,30 @@ a.noselect
 }
 .scorestable .scorerow
 {
-  padding: 4px 0;
-  border-bottom: 2px solid $gray-700;
+  padding: 4px 6px;
+  border-bottom: 2px solid $gray-800;
+}
+.scorestable .scorerow:nth-child(1)
+{
+  background-color: $red-500;
+}
+.scorestable .scorerow:nth-child(2)
+{
+  background-color: $red-400!important;
+}
+.scorestable .scorerow:nth-child(3)
+{
+  background-color: $red-300;
+}
+.scorestable .scorerow:nth-child(-n+3),
+.scorestable .scorerow:nth-child(-n+3) text
+{
+  border-bottom: none;
+  color: $white;
+}
+.scorestable .scorerow:nth-child(even)
+{
+  background-color: lighten( $gray-800, 5% );
 }
 .scorestable .scorerow:last-child
 {
@@ -1247,6 +1269,11 @@ a.noselect
   .scorestable .scorerow .col:nth-child(2)
   {
     width: 80%;
+  }
+  .scorestable .scorerow .col:nth-child(3)
+  {
+    width: 75%;
+    padding-left: 13%;
   }
   .scorestable .scorerow .col:nth-child(4)
   {
