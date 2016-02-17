@@ -52,6 +52,9 @@ $blue-a200: #448AFF;
 $blue-a400: #2979FF;
 $indigo-500: #3F51B5;
 $indigo-800: #283593;
+$red-100: #FFCDD2;
+$red-200: #EF9A9A;
+$red-300: #E57373;
 $red-400: #EF5350;
 $red-500: #F44336;
 $red-800: #C62828;
@@ -173,7 +176,8 @@ img.logo
 }
 .nopad
 {
-  padding: 0!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
 }
 .nomarg
 {
@@ -214,6 +218,10 @@ h3, .h3
 h4, .h4
 {
   font-size: 1.5em;
+}
+.h5
+{
+  font-size: 0.7em;
 }
 div.asterisk
 {
@@ -272,6 +280,11 @@ div.asterisk
 {
   color: $purple-a400;
 }
+.red-100 { color: $red-100; }
+.red-200 { color: $red-200; }
+.red-300 { color: $red-300; }
+.red-400 { color: $red-400; }
+.red-500 { color: $red-500; }
 .red-a200
 {
   color: $red-a200;
@@ -1120,6 +1133,54 @@ a.noselect
   height: 24px;
 }
 
+/** SCOREBOARD TABLE **/
+.scorestable
+{
+  display: table;
+  width: 100%;
+}
+.scorestable .scorerow
+{
+  padding: 4px 0;
+  border-bottom: 2px solid $gray-700;
+}
+.scorestable .scorerow:last-child
+{
+  border-bottom: none!important;
+}
+.scorestable .scorerow .col
+{
+  display: inline-block;
+  padding: 0 0px;
+  vertical-align: top;
+}
+.scorestable .scorerow .col:nth-child(1)
+{
+  //float: left;
+  width: 12%;
+}
+.scorestable .scorerow .col:nth-child(2)
+{
+  width: 30%;
+  //float: left;
+}
+.scorestable .scorerow .col:nth-child(3)
+{
+  width: 45%;
+  vertical-align: middle;
+  height: 100%;
+  padding: 6px 0;
+}
+.scorestable .scorerow .col:nth-child(4)
+{
+  text-align:right;
+  float:right;
+}
+.scorestable .scorerow .col .text
+{
+  width: 100%;
+}
+
 /** FOOTER **/
 @import 'footer';
 
@@ -1183,6 +1244,14 @@ a.noselect
   {
     padding: 8px 16px 8px 16px;
   }
+  .scorestable .scorerow .col:nth-child(2)
+  {
+    width: 80%;
+  }
+  .scorestable .scorerow .col:nth-child(4)
+  {
+    margin-top: -34px;
+  }
 }
 
 /** HEADER-SD **/
@@ -1222,6 +1291,12 @@ a.noselect
   {
     text-align: center!important;
     font-size: 2em;
+  }
+  .smish-left
+  {
+    text-align: left!important;
+    float: left;
+    font-size: 0.7em;
   }
   .btn.xs
   {
