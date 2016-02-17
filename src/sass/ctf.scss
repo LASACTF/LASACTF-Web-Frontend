@@ -1144,9 +1144,14 @@ a.noselect
   padding: 4px 6px;
   border-bottom: 2px solid $gray-800;
 }
+.scorestable .scorerow.you
+{
+  background-color: $purple-a200!important;
+  color: #fff!important;
+}
 .scorestable .scorerow:nth-child(1)
 {
-  background-color: $red-500;
+  background-color: $red-500!important;
 }
 .scorestable .scorerow:nth-child(2)
 {
@@ -1154,10 +1159,11 @@ a.noselect
 }
 .scorestable .scorerow:nth-child(3)
 {
-  background-color: $red-300;
+  background-color: $red-300!important;
 }
 .scorestable .scorerow:nth-child(-n+3),
-.scorestable .scorerow:nth-child(-n+3) text
+.scorestable .scorerow:nth-child(-n+3) text,
+.scorestable .scorerow.you text
 {
   border-bottom: none;
   color: $white;
