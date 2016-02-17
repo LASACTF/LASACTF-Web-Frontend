@@ -1341,7 +1341,6 @@ a.noselect
   {
     display: block !important;
   }
-
   .navbar button.navbutton
   {
     @include transition2(color ease-in-out .15s, background-color ease-in-out .15s);
@@ -1395,6 +1394,11 @@ a.noselect
   {
     display:block;
     padding-left: 0px;
+  }
+  .scorestable .scorerow .col:nth-child(2)
+  {
+    width: 86%;
+    //float: left;
   }
 }
 
