@@ -65,9 +65,16 @@ $red-a400: #FF1744;
 $red-a700: #D50000;
 $deeporange-500: #FF5722;
 $deeporange-a400: #FF3D00;
+$orange-100: #FFE0B2;
+$orange-200: #FFCC80;
+$orange-300: #FFB74D;
+$orange-400: #FFA726;
 $orange-500: #FF9800;
 $orange-800: #EF6C00;
+$orange-a100: #FFD180;
+$orange-a200: #FFAB40;
 $orange-a400: #FF9100;
+$orange-a700: #FF6D00;
 $yellow-500: #FFEB3B;
 $yellow-a400: #FFEA00;
 $amber-500: #FFC107;
@@ -651,7 +658,7 @@ body.compete
   z-index: 1;
 }
 .navbar.scoreboard .container-fluid{
-  border-bottom: 4px solid $red-500;
+  border-bottom: 4px solid $orange-500;
 }
 .navbar.chat .container-fluid
 {
@@ -728,7 +735,7 @@ body.compete
 }
 .navbar button.navbutton-red.active
 {
-  height:67px;
+  //height:67px;
 }
 .navbar button.navbutton i{
   font-size: 20px;
@@ -750,11 +757,11 @@ body.compete
   color: #fff;
 }
 .navbar button.navbutton-red:hover {
-  background-color: $red-800;
+  background-color: $orange-800;
 }
 .navbar button.navbutton-red.active
 {
-  background-color:$red-500;
+  background-color:$orange-500;
   color: #fff;
 }
 .navbar button.navbutton-cyan:hover {
@@ -966,7 +973,7 @@ a.noselect
 }
 .breadbar.red
 {
-  background-color: $red-500;
+  background-color: $orange-500;
   color: $white;
 }
 .breadbar .tab
@@ -1003,7 +1010,7 @@ a.noselect
 }
 .breadbar.red .tab:hover
 {
-  background-color: $red-a200!important;
+  background-color: $orange-a200!important;
   height: 52px;
 }
 
@@ -1158,15 +1165,15 @@ a.noselect
 }
 .scorestable .scorerow:nth-child(1)
 {
-  background-color: $red-500!important;
+  background-color: $orange-500!important;
 }
 .scorestable .scorerow:nth-child(2)
 {
-  background-color: $red-400!important;
+  background-color: $orange-400!important;
 }
 .scorestable .scorerow:nth-child(3)
 {
-  background-color: $red-300!important;
+  background-color: $orange-300!important;
 }
 .scorestable .scorerow:nth-child(-n+3),
 .scorestable .scorerow:nth-child(-n+3) text,
@@ -1388,7 +1395,7 @@ a.noselect
   }
   .navbar button.navbutton-red:hover,
   .navbar button.navbutton-red.active {
-    background-color: $red-500;
+    background-color: $orange-500;
   }
   .navbar button.navbutton-cyan:hover,
   .navbar button.navbutton-cyan.active {
