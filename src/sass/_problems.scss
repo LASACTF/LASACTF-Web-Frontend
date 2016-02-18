@@ -1,7 +1,7 @@
 .problem
 {
   width: 100%;
-  background-color: $gray-700;
+  background-color: material-color('grey','700');
   height: 56px;
   padding: 0px;
   margin: 0;
@@ -10,11 +10,11 @@
 }
 .problem:hover
 {
-  background-color: $gray-600;
+  background-color: material-color('grey','600');
 }
 .problem:hover .icon
 {
-  background-color: $blue-400;
+  background-color: material-color('blue','400');
 }
 .problem,
 .problem .icon
@@ -26,7 +26,7 @@
   width: 64px;
   height: 56px;
   float: left;
-  background-color: $blue-500;
+  background-color: material-color('blue','500');
   margin-top: -2px;
   margin-right: 12px;
   padding: 10px 14px;
