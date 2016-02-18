@@ -46,6 +46,7 @@ $gray-700: #616161;
 $gray-800: #424242;
 $gray-900: #212121;
 
+$blue-400: #42A5F5;
 $blue-500: #2196F3;
 $blue-800: #1565C0;
 $blue-a200: #448AFF;
@@ -117,6 +118,11 @@ $color-text-failure: $red-a400;
      -moz-transition: $s1, $s2, $s3, $s4;
       -ms-transition: $s1, $s2, $s3, $s4;
           transition: $s1, $s2, $s3, $s4;
+}
+@mixin transform($s1)
+{
+  -webkit-transform: $s1;
+  transform: $s1;
 }
 
 /** MAIN **/
@@ -1208,6 +1214,9 @@ a.noselect
 {
   width: 100%;
 }
+
+/** PROBLEMS **/
+@import 'problems';
 
 /** FOOTER **/
 @import 'footer';
