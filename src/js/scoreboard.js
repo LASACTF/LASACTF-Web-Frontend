@@ -30,7 +30,7 @@ $.ajax({
                         <div class="col"><h2 class="text">' + (i+1 )+'<text class="ligature">'+ ordinal_suffix_of(i+1) + '</text></h2></div>
                         <div class="col"><h2 class="text">' + team.name + '</h2></div>
                         <div class="col"><h4 class="text">' + team.affiliation + '</h4></div>
-                        <div class="col"><h2 class="text">' + team.score + '<text class="h5 gray-600"> XP</text></h2></div>
+                        <div class="col"><h2 class="text">' + team.score + '<text class="h5 color-grey-600"> XP</text></h2></div>
                       </div>';
                       table.append(append);
                     }
@@ -41,7 +41,7 @@ $.ajax({
                         <div class="col"><h2 class="text">' + (i+1 )+'<text class="ligature">'+ ordinal_suffix_of(i+1) + '</text></h2></div>
                         <div class="col"><h2 class="text">' + team.name + '</h2></div>
                         <div class="col"><h4 class="text">' + team.affiliation + '</h4></div>
-                        <div class="col"><h2 class="text">' + team.score + '<text class="h5 gray-600"> XP</text></h2></div>
+                        <div class="col"><h2 class="text">' + team.score + '<text class="h5 color-grey-600"> XP</text></h2></div>
                       </div>';
                       table.append(append);
                     }
