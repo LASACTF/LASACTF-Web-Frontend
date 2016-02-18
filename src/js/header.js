@@ -24,7 +24,7 @@ function onLogout(){
 $(function() {
   if (localStorage.getItem("username")){
     $('#headerUsername').text(" " + localStorage.getItem("username"));
-    $('#headerUsername').css("font-size", getProfileFontSize().toString() + "px");
+    $('#headerUsername').css("font-size", getProfileFontSize(localStorage.getItem("username")).toString() + "px");
   }
   else{
     $.ajax({
@@ -33,7 +33,7 @@ $(function() {
           if (result.status == 1 && result.data.logged_in == true){
              var extra = JSON.parse(result.data['extra']);
              $('#headerUsername').text(" " + result.data['username']);
-             $('#headerUsername').css("font-size", getProfileFontSize().toString() + "px");
+             $('#headerUsername').css("font-size", getProfileFontSize(result.data['username']).toString() + "px");
              localStorage.setItem("username",result.data['username']);
            }
        },
