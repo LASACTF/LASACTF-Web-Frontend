@@ -1195,6 +1195,7 @@ a.noselect
   display: inline-block;
   padding: 0 0px;
   vertical-align: top;
+  word-break: break-all!important;
 }
 .scorestable .scorerow .col:nth-child(1)
 {
