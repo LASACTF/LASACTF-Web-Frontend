@@ -32,7 +32,7 @@ $.ajax({
              success: function(teamresult) {
 
                if (teamresult.status == 1){
-                 $('#inputUpdateAffiliation').attr("placeholder", teamresult.data.affiliation);
+                 $('#inputUpdateAffiliation').attr("value", teamresult.data.affiliation);
                  if (teamresult.data.eligible){
                    $('#teamEligible').text('eligible for prizes').addClass('green');
                    $('#teamEligible2').text('!');
