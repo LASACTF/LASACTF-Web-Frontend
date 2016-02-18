@@ -22,63 +22,64 @@ function generateGraph(uid, submissions, element){
 $.ajax({
    url: '/api/user/status',
    success: function(result) {
-     if (result.status == 1 && result.data.logged_in == true){
-       if(result.data['team_name'] != result.data['username']){
-         $('#textTeam').text(result.data['team_name']);
-         $('#teamedUp').removeClass('hidden');
-         $.ajax({
-           url: '/api/team',
-           success: function(teamresult) {
+     $(function() {
+       if (result.status == 1 && result.data.logged_in == true){
+         console.log(result.data['team_name'] != result.data['username']);
+         if(result.data['team_name'] != result.data['username']){
+           $('#textTeam').text(result.data['team_name']);
+           $('#teamedUp').removeClass('hidden');
+           $.ajax({
+             url: '/api/team',
+             success: function(teamresult) {
 
-             if (teamresult.status == 1){
-               $('#inputUpdateAffiliation').attr("placeholder", teamresult.data.affiliation);
-               if (teamresult.data.eligible){
-                 $('#teamEligible').text('eligible for prizes').addClass('green');
-                 $('#teamEligible2').text('!');
-               }
-               else{
-                 $('#teamEligible').text('not eligible for prizes').addClass('brightred');
-                 $('#teamEligible2').text(' because one or more members are ineligible.')
-               }
-               for (var i = 0; i < 5; i++){
-                 if (i < teamresult.data.size){
-                   if(teamresult.data.members[i].username == result.data.username){
-                     $('#user'+i + ' .left-info').text("YOU");
-                     $('#user'+i + ' .left-info').addClass('purple-a200');
+               if (teamresult.status == 1){
+                 $('#inputUpdateAffiliation').attr("placeholder", teamresult.data.affiliation);
+                 if (teamresult.data.eligible){
+                   $('#teamEligible').text('eligible for prizes').addClass('green');
+                   $('#teamEligible2').text('!');
+                 }
+                 else{
+                   $('#teamEligible').text('not eligible for prizes').addClass('brightred');
+                   $('#teamEligible2').text(' because one or more members are ineligible.')
+                 }
+                 for (var i = 0; i < 5; i++){
+                   if (i < teamresult.data.size){
+                     if(teamresult.data.members[i].username == result.data.username){
+                       $('#user'+i + ' .left-info').text("YOU");
+                       $('#user'+i + ' .left-info').addClass('purple-a200');
+                     }
+                     else{
+                       $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
+                       $('#user'+i + ' .left-info').addClass('gray-200');
+                     }
+                      $('#user'+i).removeClass('hidden');
+                      generateGraph(teamresult.data.members[i]["uid"],teamresult.data.solved_problems, $('#user'+i + ' .right-info .progress'))
+                      if(teamresult.data.members[i]["eligibility"] == "eligible"){
+                        $('#user'+i + ' .right-info .h4').addClass('green').text('eligible')
+                      }
+                      else{
+                        $('#user'+i + ' .right-info .h4').addClass('red').text('not eligible')
+                      }
                    }
-                   else{
-                     $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
-                     $('#user'+i + ' .left-info').addClass('gray-200');
-                   }
-                    $('#user'+i).removeClass('hidden');
-                    generateGraph(teamresult.data.members[i]["uid"],teamresult.data.solved_problems, $('#user'+i + ' .right-info .progress'))
-                    if(teamresult.data.members[i]["eligibility"] == "eligible"){
-                      $('#user'+i + ' .right-info .h4').addClass('green').text('eligible')
-                    }
-                    else{
-                      $('#user'+i + ' .right-info .h4').addClass('red').text('not eligible')
-                    }
+                 }
+                 if(5-teamresult.data.size > 1){
+                   var slots = 5-teamresult.data.size;
+                   $('#textRemaining').text('[' + slots + ' empty spots remaining]' )
+                 }
+                 else if (5-teamresult.data.size == 1){
+                   $('#textRemaining').text('[ 1 empty spot remaining]' )
+                 }
+                 else {
+                   $('#textRemaining').text('No spots remaining' )
                  }
                }
-               if(5-teamresult.data.size > 1){
-                 var slots = 5-teamresult.data.size;
-                 $('#textRemaining').text('[' + slots + ' empty spots remaining]' )
-               }
-               else if (5-teamresult.data.size == 1){
-                 $('#textRemaining').text('[ 1 empty spot remaining]' )
-               }
-               else {
-                 $('#textRemaining').text('No spots remaining' )
-               }
-             }
-           },
-           type: 'GET'
-         });
+             },
+             type: 'GET'
+           });
+         }
        }
-     }
-     else{
-       $('#noTeam').removeClass('hidden');
-     }
+     });
+
    },
    type: 'GET'
 });
