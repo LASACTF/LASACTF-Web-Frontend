@@ -48,6 +48,8 @@ $.ajax({
                   }
                   if($('#textPlace').text().includes("-1")){
                     $('#textPlace').text("∞ place");
+                    $('#divScored').addClass("hidden");
+                    $('#divUnscored').removeClass("hidden");
                   }
                 }
             },
