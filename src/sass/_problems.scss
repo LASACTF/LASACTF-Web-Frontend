@@ -32,19 +32,13 @@
   padding: 10px 14px;
 }
 .problem .icon i,
-.problem i.dropdown,
 .problem .name
 {
   font-size: 36px;
 }
-.problem i.dropdown
+.problem .value
 {
-  float: right;
-  margin-top: 8px;
-  @include transform(rotate(-90deg));
-  @include transition(transform .15s ease-in-out);
-}
-.problem:hover i.dropdown
-{
-  @include transform(rotate(0deg));
+  float:right;
+  font-size: 32px;
+  margin-top: 4px;
 }
