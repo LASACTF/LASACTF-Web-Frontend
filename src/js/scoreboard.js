@@ -13,11 +13,11 @@ function ordinal_suffix_of(i) {
     return "th";
 }
 $.ajax({
-   url: 'http://design.lasactf.com/api/stats/scoreboard',
+   url: '/api/stats/scoreboard',
    success: function(result) {
        if (result.status == 1){
          $.ajax({
-            url: 'http://design.lasactf.com/api/team',
+            url: '/api/team',
             success: function(teamresult) {
                 if (result.status == 1){
                   var table = $('#scoreTable');
