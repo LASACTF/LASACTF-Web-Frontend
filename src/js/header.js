@@ -1,6 +1,16 @@
 function padDigits(number, digits) {
     return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }
+function getProfileFontSize(name)
+{
+  var c = name.length;
+  if (c < 10)
+    return 26;
+  if (c < 15)
+    return 18;
+  if (c < 20)
+    return 14;
+}
 function onLogout(){
   $.ajax({
      url: '/api/user/logout',
@@ -13,7 +23,8 @@ function onLogout(){
 }
 $(function() {
   if (localStorage.getItem("username")){
-    $('#headerUsername').text(localStorage.getItem("username"));
+    $('#headerUsername').text(" " + localStorage.getItem("username"));
+    $('#headerUsername').css("font-size", getProfileFontSize(localStorage.getItem("username")).toString() + "px");
   }
   else{
     $.ajax({
@@ -21,7 +32,8 @@ $(function() {
        success: function(result) {
           if (result.status == 1 && result.data.logged_in == true){
              var extra = JSON.parse(result.data['extra']);
-             $('#headerUsername').text(result.data['username']);
+             $('#headerUsername').text(" " + result.data['username']);
+             $('#headerUsername').css("font-size", getProfileFontSize(result.data['username']).toString() + "px");
              localStorage.setItem("username",result.data['username']);
            }
        },
