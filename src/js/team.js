@@ -24,7 +24,6 @@ $.ajax({
    success: function(result) {
      $(function() {
        if (result.status == 1 && result.data.logged_in == true){
-         console.log(result.data['team_name'] != result.data['username']);
          if(result.data['team_name'] != result.data['username']){
            $('#textTeam').text(result.data['team_name']);
            $('#teamedUp').removeClass('hidden');
