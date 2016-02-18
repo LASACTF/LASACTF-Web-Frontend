@@ -539,16 +539,16 @@ i.head
 
 .form-group .form-control:focus::-webkit-input-placeholder,
 .form-group .form-control:active::-webkit-input-placeholder
-{ color: #eee!important; }
+{ color: $purple-a200!important; }
 .form-group .form-control:focus:-moz-placeholder,
 .form-group .form-control:active:-moz-placeholder
-{ color: #eee!important; }
+{ color: $purple-a200!important; }
 .form-group .form-control:focus::-moz-placeholder,
 .form-group .form-control:active::-moz-placeholder
-{ color: #eee!important; }
+{ color: $purple-a200!important; }
 .form-group .form-control:focus::-ms-input-placeholder,
 .form-group .form-control:active::-ms-input-placeholder
-{ color: #eee!important; }
+{ color: $purple-a200!important; }
 
 .form-group.has-success .form-control::-webkit-input-placeholder
 { color: #ccc; }
