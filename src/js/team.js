@@ -77,6 +77,9 @@ $.ajax({
              type: 'GET'
            });
          }
+         else{
+           $('#noTeam').removeClass('hidden');
+         }
        }
      });
 
