@@ -45,7 +45,7 @@ $.ajax({
                    if (i < teamresult.data.size){
                      if(teamresult.data.members[i].username == result.data.username){
                        $('#user'+i + ' .left-info').text("YOU");
-                       $('#user'+i + ' .left-info').addClass('color-color-purple-a200');
+                       $('#user'+i + ' .left-info').addClass('color-purple-a200');
                      }
                      else{
                        $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
