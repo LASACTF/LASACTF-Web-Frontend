@@ -12,10 +12,6 @@
 {
   background-color: $gray-600;
 }
-.problem:hover .icon
-{
-  background-color: $blue-400;
-}
 .problem,
 .problem .icon
 {
@@ -52,4 +48,23 @@
 .problem.crypto .icon
 {
   background-color: $color-crypt;
+}
+
+.problem .problem-slide
+{
+  height: 0;
+}
+.problem.open
+{
+  height: auto;
+}
+.problem.open .slide
+{
+  width: 100%;
+  height: auto;
+  background-color: $gray-700;
+}
+.problem.open .slide .select
+{
+  width: 59px;
 }
