@@ -71,6 +71,7 @@ $orange-300: #FFB74D;
 $orange-400: #FFA726;
 $orange-500: #FF9800;
 $orange-600: #FB8C00;
+$orange-700: #F57C00;
 $orange-800: #EF6C00;
 $orange-a100: #FFD180;
 $orange-a200: #FFAB40;
@@ -100,7 +101,7 @@ $color-asymptotic: $yellow-500; //math, problem solving, logic, and linguistics
 $bg-color-index: $gray-900;
 $bg-color-compete: $gray-800;
 $color-text-success: $green-a400;
-$color-text-failure: $red-a400;
+$color-text-failure: $deeporange-a400;
 
 /** MIXINS **/
 @mixin transition($s1) {
@@ -1164,27 +1165,7 @@ a.noselect
   background-color: $purple-a200!important;
   color: #fff!important;
 }
-.scorestable .scorerow:nth-child(1)
-{
-  background-color: $orange-600!important;
-}
-.scorestable .scorerow:nth-child(2)
-{
-  background-color: $orange-500!important;
-}
-.scorestable .scorerow:nth-child(3)
-{
-  background-color: $orange-400!important;
-}
-.scorestable .scorerow:nth-child(-n+3),
-.scorestable .scorerow:nth-child(-n+3) text,
-.scorestable .scorerow:nth-child(-n+3) .col:nth-child(3),
-.scorestable .scorerow.you text,
-.scorestable .scorerow.you .col:nth-child(3),
-{
-  color: $white;
-}
-.scorestable .scorerow:nth-child(-n+3)
+.scorestable .scorerow:nth-child(-n+5)
 {
   border-bottom: none;
   margin: 0;
