@@ -1208,6 +1208,14 @@ a.noselect
   text-align:right;
   float:right;
 }
+.scorestable .scorerow.you .col:nth-child(3)
+{
+  color: $white!important;
+}
+.scorestable .scorerow.you .col:nth-child(4) .text
+{
+  color: $white!important;
+}
 .scorestable .scorerow .col .text
 {
   width: 100%;
