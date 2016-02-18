@@ -18,90 +18,27 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 /** COLORS **/
+@import "lib/sass-material-colors/sass/sass-material-colors";
+@import "lib/sass-material-colors/sass/sass-material-colors-classes";
+
 $black: #000;
 $white: #fff;
-$purple-50: #F3E5F5;
-$purple-100: #E1BEE7;
-$purple-200: #CE93D8;
-$purple-300: #CE93D8;
-$purple-400: #AB47BC;
-$purple-500: #9C27B0;
-$purple-600: #8E24AA;
-$purple-700: #7B1FA2;
-$purple-800: #6A1B9A;
-$purple-900: #4A148C;
-$purple-a100: #EA80FC;
-$purple-a200: #E040FB;
-$purple-a400: #D500F9;
-$purple-a700: #AA00FF;
 
-$gray-50: #FAFAFA;
-$gray-100: #F5F5F5;
-$gray-200: #EEEEEE;
-$gray-300: #E0E0E0;
-$gray-400: #BDBDBD;
-$gray-500: #9E9E9E;
-$gray-600: #757575;
-$gray-700: #616161;
-$gray-800: #424242;
-$gray-900: #212121;
 
-$blue-400: #42A5F5;
-$blue-500: #2196F3;
-$blue-800: #1565C0;
-$blue-a200: #448AFF;
-$blue-a400: #2979FF;
-$indigo-500: #3F51B5;
-$indigo-800: #283593;
-$red-100: #FFCDD2;
-$red-200: #EF9A9A;
-$red-300: #E57373;
-$red-400: #EF5350;
-$red-500: #F44336;
-$red-800: #C62828;
-$red-a100: #FF8A80;
-$red-a200: #FF5252;
-$red-a400: #FF1744;
-$red-a700: #D50000;
-$deeporange-500: #FF5722;
-$deeporange-a400: #FF3D00;
-$orange-100: #FFE0B2;
-$orange-200: #FFCC80;
-$orange-300: #FFB74D;
-$orange-400: #FFA726;
-$orange-500: #FF9800;
-$orange-600: #FB8C00;
-$orange-700: #F57C00;
-$orange-800: #EF6C00;
-$orange-a100: #FFD180;
-$orange-a200: #FFAB40;
-$orange-a400: #FF9100;
-$orange-a700: #FF6D00;
-$yellow-500: #FFEB3B;
-$yellow-a400: #FFEA00;
-$amber-500: #FFC107;
-$amber-a400: #FFC400;
-$cyan-500: #00BCD4;
-$cyan-800: #00838F;
-$cyan-a400: #00E5FF;
-$green-500: #4CAF50;
-$green-800: #2E7D32;
-$green-a400: #00E676;
-$green-a700: #00C853;
+$color-web: material-color('blue','500');
+$color-crypt:  material-color('green','500');
+$color-forensics:  material-color('orange','500');
+$color-reverse:  material-color('red','500');
+$color-binary:  material-color('purple','500');
+$color-algo:  material-color('cyan','500');
+$color-misc:  material-color('grey','500');
 
-$color-web: $blue-500;
-$color-crypt: $green-500;
-$color-forensics: $orange-500;
-$color-reverse: $red-500;
-$color-binary: $purple-500;
-$color-algo: $cyan-500;
-$color-misc: $gray-500;
-$color-asymptotic: $yellow-500; //math, problem solving, logic, and linguistics
+$color-asymptotic:  material-color('yellow','500'); //math, problem solving, logic, and linguistics
 
-$bg-color-index: $gray-900;
-$bg-color-compete: $gray-800;
-$color-text-success: $green-a400;
-$color-text-failure: $deeporange-a400;
+$bg-color-index: material-color('grey','900');
+$bg-color-compete: material-color('grey','800');
+$color-text-success: material-color('green','a400');
+$color-text-failure: material-color('deep-orange','a400');
 
 /** MIXINS **/
 @mixin transition($s1) {
@@ -258,65 +195,65 @@ div.asterisk
 }
 
 /** COLORS **/
-
-.gray-100
-{
-  color: $gray-100;
-}
-.gray-200
-{
-  color: $gray-200;
-}
-.gray-300
-{
-  color: $gray-300;
-}
-.gray-400
-{
-  color: $gray-400;
-}
-.gray-600
-{
-  color: $gray-600;
-}
-.gray-700
-{
-  color: $gray-700;
-}
-.white
-{
-  color: $white;
-}
-.purple-a200
-{
-  color: $purple-a200;
-}
-.purple-a400
-{
-  color: $purple-a400;
-}
-.red-100 { color: $red-100; }
-.red-200 { color: $red-200; }
-.red-300 { color: $red-300; }
-.red-400 { color: $red-400; }
-.red-500 { color: $red-500; }
-.red-a200
-{
-  color: $red-a200;
-}
-.success-text,
-.green {
-  color: $color-text-success;
-}
-.failure-text,
-.red,
-.brightred {
-  color: $color-text-failure;
-}
-.blue
-{
-  color: $blue-500;
-}
+//
+// .gray-100
+// {
+//   color: material-color()
+// }
+// .gray-200
+// {
+//   color: $gray-200;
+// }
+// .gray-300
+// {
+//   color: $gray-300;
+// }
+// .gray-400
+// {
+//   color: $gray-400;
+// }
+// .gray-600
+// {
+//   color: $gray-600;
+// }
+// .gray-700
+// {
+//   color: $gray-700;
+// }
+// .white
+// {
+//   color: $white;
+// }
+// .purple-a200
+// {
+//   color: $purple-a200;
+// }
+// .purple-a400
+// {
+//   color: $purple-a400;
+// }
+// .red-100 { color: $red-100; }
+// .red-200 { color: $red-200; }
+// .red-300 { color: $red-300; }
+// .red-400 { color: $red-400; }
+// .red-500 { color: $red-500; }
+// .red-a200
+// {
+//   color: $red-a200;
+// }
+// .success-text,
+// .green {
+//   color: $color-text-success;
+// }
+// .failure-text,
+// .red,
+// .brightred {
+//   color: $color-text-failure;
+// }
+// .blue
+// {
+//   color: $blue-500;
+// }
 
 /** LINKS **/
 a,
@@ -539,16 +476,16 @@ i.head
 
 .form-group .form-control:focus::-webkit-input-placeholder,
 .form-group .form-control:active::-webkit-input-placeholder
-{ color: $purple-a200!important; }
+{ color: material-color('purple','a200')!important; }
 .form-group .form-control:focus:-moz-placeholder,
 .form-group .form-control:active:-moz-placeholder
-{ color: $purple-a200!important; }
+{ color: material-color('purple','a200')!important; }
 .form-group .form-control:focus::-moz-placeholder,
 .form-group .form-control:active::-moz-placeholder
-{ color: $purple-a200!important; }
+{ color: material-color('purple','a200')!important; }
 .form-group .form-control:focus::-ms-input-placeholder,
 .form-group .form-control:active::-ms-input-placeholder
-{ color: $purple-a200!important; }
+{ color: material-color('purple','a200')!important; }
 
 .form-group.has-success .form-control::-webkit-input-placeholder
 { color: #ccc; }
@@ -646,372 +583,6 @@ body.compete
   background-color: #424242;
 }
 
-/** NAVBAR **/
-.navbar
-{
-  background-color: #212121;
-  height: 66px;
-  border: 0px;
-  box-shadow: 0px 0px 8px 2px rgba(0,0,0,.25);
-}
-.navbar.profile{
-  margin: 0;
-  box-shadow: none;
-  z-index: 1;
-}
-.navbar.scoreboard .container-fluid{
-  border-bottom: 4px solid $orange-500;
-}
-.navbar.chat .container-fluid
-{
-  border-bottom: 4px solid $cyan-500;
-}
-.navbar.shell .container-fluid
-{
-  border-bottom: 4px solid $green-500;
-}
-.navbar.problems .container-fluid
-{
-  border-bottom: 4px solid $blue-500;
-}
-.navbar .container-fluid
-{
-  //border-bottom: 4px solid #9c27b0;
-  height: 66px;
-}
-.navbar.profile .container-fluid
-{
-  border-bottom: 0!important;
-}
-.navbar .navbar-header .navbar-brand
-{
-  width: 200px;
-  margin-top: 0px;
-}
-.navbar .navbar-header .navbar-brand img
-{
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-.navbar .navbar-brand
-{
-  margin-top: -8px;
-  height: 66px;
-}
-.navbar .navbar-header
-{
-  margin-left: 20px;
-}
-.navbar .navbar-right
-{
-  margin-right: 20px;
-}
-.navbar li.navbuttonwrapper
-{
-  padding: 0;
-  height: 66px;
-}
-.navbar li.navbuttonwrapper a
-{
-  color: $white;
-  background: none;
-  display: inline;
-  padding: 0;
-}
-.navbar-collapse
-{
-  padding-right: 0;
-}
-.navbar button.navbutton {
-  padding: 0px 5px 0px 5px;
-  //line-height: 66px;
-  font-size: 18px;
-  border: none;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  padding: 0 12px;
-  background-color: rgba(0,0,0,0);
-  @include transition(background-color ease-in-out .15s);
-}
-.navbar button.navbutton i{
-  font-size: 20px;
-}
-.navbar button.navbutton-blue:hover {
-  background-color: $blue-800;
-}
-.navbar button.navbutton-blue.active
-{
-  background-color:$blue-500;
-  color: #fff;
-}
-.navbar button.navbutton-green:hover {
-  background-color: $green-800;
-}
-.navbar button.navbutton-green.active
-{
-  background-color:$green-500;
-  color: #fff;
-}
-.navbar button.navbutton-orange:hover {
-  background-color: $orange-800;
-}
-.navbar button.navbutton-orange.active
-{
-  background-color:$orange-500;
-  color: #fff;
-}
-.navbar button.navbutton-cyan:hover {
-  background-color: $cyan-800;
-}
-.navbar button.navbutton-cyan.active
-{
-  background-color: $cyan-500;
-  color: #fff;
-}
-.navbar button.navbutton-purple:hover {
-  background-color: $purple-800;
-}
-.navbar button.navbutton-purple.active
-{
-  background-color:$purple-500;
-  color: #fff;
-}
-.navbar button.navbutton-indigo:hover {
-  background-color: $indigo-800;
-}
-.navbar button.navbutton-indigo.active
-{
-  background-color:$indigo-500;
-  color: #fff;
-}
-.navbar button.navbutton-orange:hover {
-  background-color: $orange-800;
-}
-.navbar button.navbutton-orange.active
-{
-  background-color:$orange-500;
-  color: #fff;
-}
-#problemicon{
-  padding-bottom: 2px;
-}
-.navbutton .inner{
-  vertical-align: middle;
-}
-.navbutton .material{
-  vertical-align: middle;
-}
-.navbar .nav li.text
-{
-  margin: 20px auto;
-  vertical-align: middle;
-}
-.navbar .nav li.button
-{
-  height: 66px;
-}
-.navbar .nav li.button .btn
-{
-  font-size: 26px;
-  height: 100%;
-  //height: 66px;
-  padding: 0 32px 4px 32px;
-}
-.navbar .nav li.button .btn i
-{
-  font-size: 32px;
-  padding: 0;
-}
-.navbar .nav li.button .btn.profile
-{
-  color: #fff;
-  border: none!important;
-  background-color: rgba(0, 0, 0, 0);
-  box-shadow: none;
-  height: 66px;
-  margin: 0px !important;
-}
-.navbar .nav li.button .btn.profile.active
-{
-  background-color: #9c27b0;
-}
-.navbar.profile .nav li.button .btn.profile,
-.navbar .nav li.button .btn.profile:hover,
-.navbar .nav li.button .btn.profile.open
-{
-  height: 67px;
-}
-.navbar .nav li.button .btn.profile:hover,
-.navbar .nav li.button .btn.profile.open
-{
-  background-color: #616161;
-}
-
-.navbar .nav li.button ul.user-dropdown
-{
-  width: 400px;
-  background-color: #616161;
-  position: absolute;
-  right: 0;
-  padding: 6px 6px;
-  box-shadow: 0px 4px 0px 4px 12px #212121;
-  //z-index: -1;
-  border: none!important;
-}
-
-.navbar .nav li.button ul.user-dropdown .btn
-{
-  width: 100%;
-  font-size: 25px;
-  text-align: left;
-  padding: 0px 6px;
-  margin: 4px 0;
-  background-color: #616161;
-  opacity: 0;
-}
-.navbar .nav li.button ul.user-dropdown .btn
-{
-  @include transition(opacity ease-in .1s);
-}
-.navbar .nav li.button ul.user-dropdown .btn:hover,
-.navbar .nav li.button ul.user-dropdown .btn:active,
-.navbar .nav li.button ul.user-dropdown .btn:focus
-{
-  background-color: #757575;
-  color: #fff;
-}
-.navbar .nav li.button ul.user-dropdown .btn i,
-.compete#left-panel button i
-{
-  margin-top: -2px;
-  font-size: 26px;
-}
-.navbar .nav li.button ul.user-dropdown a,
-.compete#left-panel button i
-{
-  color: #fff;
-  padding: 0px 0px;
-  margin: 0px 0px;
-}
-.navbar .nav li.button ul.user-dropdown .btn div
-{
-  padding: 0;
-  margin: 0;
-}
-
-a.noselect
-{
-  outline: 0!important;
-  border: 0!important;
-}
-/** Mobile Navbar **/
-
-.navbar-collapse.collapsing{
-  background-color: #212121;
-}
-
-.navbar-collapse.collapse.in{
-  background-color: #212121;
-}
-.navbar-toggle{
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-}
-
-.navbar-collapse.collapsing .navbar-right{
-  margin-right: 0px;
-}
-.navbar-collapse.collapse.in .navbar-right{
-  margin-right: 0px;
-}
-
-.navbar-collapse.collapsing .navbar-right li.navbutton,
-.navbar-collapse.in .navbar-right li.navbutton
-{
-  height: 58px;
-}
-.navbar-collapse.collapsing .navbar-right button.navbutton,
-.navbar-collapse.in .navbar-right button.navbutton {
-
-  width: 100%;
-  text-align: left;
-  padding-left: 48px;
-  font-size: 30px;
-  height: 54px;
-  margin: 0;
-}
-.navbar-collapse.collapsing .navbar-right button.navbutton i,
-.navbar-collapse.in .navbar-right button.navbutton i
-{
-  font-size: 32px;
-}
-#mobile-dropdown-toggle{
-  background: none;
-  border: 0;
-  color: $white;
-  padding: 0px;
-}
-
-/** BREADBAR **/
-.breadbar
-{
-  display: block;
-  width: 100%;
-  height: 52px;
-  text-align: left;
-  padding: 0 36px;
-  border: 0;
-  margin: 0!important;
-}
-.breadbar.purple
-{
-  background-color: $purple-500;
-}
-.breadbar.orange
-{
-  background-color: $orange-500;
-  color: $white;
-}
-.breadbar .tab
-{
-  width: 200px;
-  display: inline-block;
-  text-align: center;
-  font-size: 24px;
-  border: 0;
-  height: 52px;
-  @include transition(background-color ease-in-out .15s);
-}
-.breadbar .tab a
-{
-  padding: 10px;
-}
-.breadbar .tab i
-{
-  vertical-align: middle;
-  padding-bottom: 4px;
-}
-.breadbar .tab.active,
-.breadbar .tab.active:hover,
-.breadbar.purple .tab.active:hover,
-.breadbar.red .tab.active:hover
-{
-  background-color: $gray-800!important;
-  height: 53px;
-}
-.breadbar.purple .tab:hover
-{
-  background-color: $purple-400!important;
-  height: 52px;
-}
-.breadbar.red .tab:hover
-{
-  background-color: $orange-a200!important;
-  height: 52px;
-}
-
 /** CONTENT **/
 .content
 {
@@ -1076,7 +647,7 @@ a.noselect
 }
 .progress .progress-bar
 {
-  background-color: $green-500;
+  background-color: material-color('green','500');
 }
 .progress.user
 {
@@ -1154,11 +725,11 @@ a.noselect
 .scorestable .scorerow
 {
   padding: 4px 6px;
-  border-bottom: 2px solid $gray-800;
+  border-bottom: 2px solid material-color('grey','800');
 }
 .scorestable .scorerow.you
 {
-  background-color: $purple-a200!important;
+  background-color: material-color('purple','a200')!important;
   color: #fff!important;
 }
 .scorestable .scorerow:nth-child(-n+5)
@@ -1168,7 +739,7 @@ a.noselect
 }
 .scorestable .scorerow:nth-child(even)
 {
-  background-color: lighten( $gray-800, 5% );
+  background-color: lighten( material-color('grey','800'), 5% );
 }
 .scorestable .scorerow:last-child
 {
@@ -1197,7 +768,7 @@ a.noselect
   vertical-align: middle;
   height: 100%;
   padding: 6px 0;
-  color: $gray-500;
+  color: material-color('grey','500');
 }
 .scorestable .scorerow .col:nth-child(4)
 {
@@ -1216,6 +787,12 @@ a.noselect
 {
   width: 100%;
 }
+#divScored{
+  z-index: -1;
+}
+
+/** NAVBAR **/
+@import 'header';
 
 /** PROBLEMS **/
 @import 'problems';
@@ -1246,26 +823,6 @@ a.noselect
   .header-md-invisible
   {
     display:none;
-  }
-  .navbar button.navbutton
-  {
-    margin: 0 6px;
-  }
-  .navbar button.navbutton.last
-  {
-    margin-right: 16px;
-  }
-  .breadbar .tab
-  {
-    width: 68px;
-  }
-  .breadbar .tab.active
-  {
-    width: 200px;
-  }
-  .breadbar .tab.active text.header-md-invisible
-  {
-    display:inline!important;
   }
 }
 
@@ -1358,55 +915,6 @@ a.noselect
   {
     display: block !important;
   }
-  .navbar button.navbutton
-  {
-    @include transition2(color ease-in-out .15s, background-color ease-in-out .15s);
-    border-left: 4px solid rgb(33, 33, 33);
-    border-right: 4px solid rgb(33, 33, 33);
-    color: $gray-200;
-  }
-  .navbar li.navbuttonwrapper{
-    height: auto;
-  }
-  .navbar button.navbutton:hover
-  {
-    color: $white;
-  }
-  .navbar button.navbutton.active
-  {
-    border-left: 4px solid $white;
-    color: $white;
-  }
-
-  .navbar button.navbutton-blue:hover,
-  .navbar button.navbutton-blue.active {
-    background-color: $blue-500;
-  }
-
-  .navbar button.navbutton-green:hover,
-  .navbar button.navbutton-green.active {
-    background-color: $green-500;
-  }
-  .navbar button.navbutton-orange:hover,
-  .navbar button.navbutton-orange.active {
-    background-color: $orange-500;
-  }
-  .navbar button.navbutton-cyan:hover,
-  .navbar button.navbutton-cyan.active {
-    background-color: $cyan-500;
-  }
-  .navbar button.navbutton-purple:hover,
-  .navbar button.navbutton-purple.active {
-    background-color: $purple-500;
-  }
-  .navbar button.navbutton-indigo:hover,
-  .navbar button.navbutton-indigo.active {
-    background-color: $indigo-500;
-  }
-  .navbar button.navbutton-logout:hover,
-  .navbar button.navbutton-logout.active {
-    background-color: $gray-600;
-  }
   .info .right-info.progress-user text
   {
     display:block;
@@ -1472,10 +980,6 @@ a.noselect
   .breadbar .tab
   {
     width: 68px!important;
-  }
-  .breadbar .tab.active text.header-md-invisible
-  {
-    display:none!important;
   }
   h0, .h0
   {
