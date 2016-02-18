@@ -23,6 +23,7 @@ $(function() {
        },
        success: function(data) {
         if (data.status == 1){
+          localStorage.setItem("username",username);
           window.location.href = "/problems";
         }
         else{
