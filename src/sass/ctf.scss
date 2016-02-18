@@ -735,10 +735,6 @@ body.compete
   background-color: rgba(0,0,0,0);
   @include transition(background-color ease-in-out .15s);
 }
-.navbar button.navbutton-red.active
-{
-  //height:67px;
-}
 .navbar button.navbutton i{
   font-size: 20px;
 }
@@ -758,10 +754,10 @@ body.compete
   background-color:$green-500;
   color: #fff;
 }
-.navbar button.navbutton-red:hover {
+.navbar button.navbutton-orange:hover {
   background-color: $orange-800;
 }
-.navbar button.navbutton-red.active
+.navbar button.navbutton-orange.active
 {
   background-color:$orange-500;
   color: #fff;
@@ -973,7 +969,7 @@ a.noselect
 {
   background-color: $purple-500;
 }
-.breadbar.red
+.breadbar.orange
 {
   background-color: $orange-500;
   color: $white;
@@ -1391,8 +1387,8 @@ a.noselect
   .navbar button.navbutton-green.active {
     background-color: $green-500;
   }
-  .navbar button.navbutton-red:hover,
-  .navbar button.navbutton-red.active {
+  .navbar button.navbutton-orange:hover,
+  .navbar button.navbutton-orange.active {
     background-color: $orange-500;
   }
   .navbar button.navbutton-cyan:hover,
