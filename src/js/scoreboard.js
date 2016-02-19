@@ -12,6 +12,11 @@ function ordinal_suffix_of(i) {
     }
     return "th";
 }
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+};
 $.ajax({
    url: '/api/stats/scoreboard',
    success: function(result) {
@@ -28,20 +33,20 @@ $.ajax({
                       var append =
                       '<div class="scorerow white">
                         <div class="col"><h2 class="text">' + (i+1 )+'<text class="ligature">'+ ordinal_suffix_of(i+1) + '</text></h2></div>
-                        <div class="col"><h2 class="text">' + team.name + '</h2></div>
-                        <div class="col"><h4 class="text">' + team.affiliation + '</h4></div>
-                        <div class="col"><h2 class="text">' + team.score + '<text class="h5 color-grey-600"> XP</text></h2></div>
+                        <div class="col"><h2 class="text">' + escapeHtml(team.name) + '</h2></div>
+                        <div class="col"><h4 class="text">' + escapeHtml(team.affiliation) + '</h4></div>
+                        <div class="col"><h2 class="text">' + escapeHtml(team.score) + '<text class="h5 color-grey-600"> XP</text></h2></div>
                       </div>';
                       table.append(append);
                     }
                     else{
-                      $('#textPlace').html((i+1)+ '<text class="ligature" id="textSuffix">' + ordinal_suffix_of(i+1) + '</text> place');
+                      $('#textPlace').text((i+1)+ '<text class="ligature" id="textSuffix">' + ordinal_suffix_of(i+1) + '</text> place');
                       var append =
                       '<div class="scorerow white you">
                         <div class="col"><h2 class="text">' + (i+1 )+'<text class="ligature">'+ ordinal_suffix_of(i+1) + '</text></h2></div>
-                        <div class="col"><h2 class="text">' + team.name + '</h2></div>
-                        <div class="col"><h4 class="text">' + team.affiliation + '</h4></div>
-                        <div class="col"><h2 class="text">' + team.score + '<text class="h5 color-grey-600"> XP</text></h2></div>
+                        <div class="col"><h2 class="text">' + escapeHtml(team.name) + '</h2></div>
+                        <div class="col"><h4 class="text">' + escapeHtml(team.affiliation) + '</h4></div>
+                        <div class="col"><h2 class="text">' + escapeHtml(team.score) + '<text class="h5 color-grey-600"> XP</text></h2></div>
                       </div>';
                       table.append(append);
                     }
