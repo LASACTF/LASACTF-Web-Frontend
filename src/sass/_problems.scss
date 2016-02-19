@@ -65,7 +65,7 @@
   float: none;
   text-align: left;
   width: 100%;
-  padding: 6px 12px 6px 74px;
+  padding: 9px 12px 9px 74px;
   position: relative;
   z-index: 1;
 }
@@ -78,8 +78,8 @@
 }
 .problem-slide .selectbox
 {
-  float: none;
-  width: 59px;
+  float: left;
+  width: 60px;
   margin: 0;
   padding: 0;
   position: relative;
@@ -121,29 +121,72 @@
   background-color: material-color('grey','600')!important;
 }
 
+.problem.web.complete,
 .problem.web .icon,
-.problem-slide.web .selectbox
+.problem-slide.web .selectbox,
+.problem-slide.web .select button
 {
   background-color: $color-web;
 }
+.problem-slide.web .select button:hover,
+.problem.web.complete:hover,
+.problem.web:hover .icon
+{
+  background-color: lighten($color-web, 10%);
+}
+
+.problem.crypto.complete,
 .problem.crypto .icon,
-.problem-crypto.web .selectbox
+.problem-slide.crypto .selectbox,
+.problem-slide.crypto .select button
 {
   background-color: $color-crypt;
 }
-.problem-slide.web .select button
+.problem-slide.crypto .select button:hover,
+.problem.crypto.complete:hover,
+.problem.crypto:hover .icon
 {
-  background-color: material-color('blue','500');
+  background-color: lighten($color-crypt, 10%);
 }
-.problem-slide.web .select button:hover
+
+.problem.forensics.complete,
+.problem.forensics .icon,
+.problem-slide.forensics .selectbox,
+.problem-slide.forensics .select button
 {
-  background-color: material-color('blue','400');
+  background-color: $color-forensics;
 }
-.problem-slide.crypto .select button
+.problem-slide.forensics .select button:hover,
+.problem.forensics.complete:hover,
+.problem.forensics:hover .icon
 {
-  background-color: material-color('green','500');
+  background-color: lighten($color-forensics, 10%);
 }
-.problem-slide.crypto .select button:hover
+
+.problem.reverse.complete,
+.problem.reverse .icon,
+.problem-slide.reverse .selectbox,
+.problem-slide.reverse .select button
 {
-  background-color: material-color('green','400');
+  background-color: $color-reverse;
+}
+.problem-slide.reverse .select button:hover,
+.problem.reverse.complete:hover,
+.problem.reverse:hover .icon
+{
+  background-color: lighten($color-reverse, 10%);
+}
+
+.problem.binary.complete,
+.problem.binary .icon,
+.problem-slide.binary .selectbox,
+.problem-slide.binary .select button
+{
+  background-color: $color-binary;
+}
+.problem-slide.binary .select button:hover,
+.problem.binary.complete:hover,
+.problem.binary:hover .icon
+{
+  background-color: lighten($color-binary, 10%);
 }

@@ -29,9 +29,15 @@
             </div>
           </div>
           <div class="body">
-            <h3 class="text">Bob made a problem. It's cool. This is the description. You can also add a link like <a href="#">this</a>!</h3><br><br>
+            <h3 class="text">Bob made a problem. It's cool. This is the description. You can also add a link like <a href="#">this</a>!</h3>
+            <h4>Also, here's a <code>code tag!</code></h4><br><br>
             <div class="form-group" id="inputGroup">
-              <input type="flag" class="form-control" id="inputUsername" placeholder="Submit Flag">
+              <div class="col-xs-9">
+                <input type="flag" class="form-control" id="inputUsername" placeholder="Submit Flag">
+              </div>
+              <div class="col-xs-3">
+                <input type="flag" class="form-control" id="inputUsername" placeholder="Submit Flag">
+              </div>
             </div>
           </div>
         </div>
@@ -44,6 +50,30 @@
           <text class="value">30 XP</text>
         </div>
         <div class="problem-slide crypto complete">
+          <div class="selectbox">
+            <div class="select">
+              <button><i class="material-icons">&#xE153;</i></button>
+            </div>
+            <div class="select active">
+              <button><i class="material-icons">&#xE887;</i></button>
+            </div>
+            <div class="select">
+              <button><i class="material-icons">&#xE8DD;</i></button>
+            </div>
+          </div>
+          <div class="body">
+            <h3 class="text">Here's a hint. It should help, but usually doesn't.</h3>
+          </div>
+        </div>
+
+        <div class="problem forensics">
+          <div class="icon">
+            <i class="material-icons">&#xE90D;</i>
+          </div>
+          <text class="name">Pixels</text>
+          <text class="value">30 XP</text>
+        </div>
+        <div class="problem-slide forensics closed complete">
           <div class="selectbox">
             <div class="select active">
               <button><i class="material-icons">&#xE153;</i></button>
@@ -59,19 +89,19 @@
             <h3 class="text">Bob made a problem. It's cool.</h3>
             <h2>Test</h2><br><br>
             <div class="form-group" id="inputGroup">
-              <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+              <input type="flag" class="form-control" id="inputUsername" placeholder="Username">
             </div>
           </div>
         </div>
 
-        <div class="problem crypto">
+        <div class="problem forensics complete">
           <div class="icon">
-            <i class="material-icons">&#xE897;</i>
+            <i class="material-icons">&#xE5CA;</i>
           </div>
-          <text class="name">Shifty Letters</text>
-          <text class="value">30 XP</text>
+          <text class="name">Pixels 2</text>
+          <text class="value">60 XP</text>
         </div>
-        <div class="problem-slide crypto complete">
+        <div class="problem-slide forensics closed complete">
           <div class="selectbox">
             <div class="select active">
               <button><i class="material-icons">&#xE153;</i></button>
@@ -87,10 +117,64 @@
             <h3 class="text">Bob made a problem. It's cool.</h3>
             <h2>Test</h2><br><br>
             <div class="form-group" id="inputGroup">
-              <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+              <input type="flag" class="form-control" id="inputUsername" placeholder="Username">
             </div>
           </div>
         </div>
+
+        <div class="problem reverse">
+          <div class="icon">
+            <i class="material-icons">&#xE042;</i>
+          </div>
+          <text class="name">Easy?</text>
+          <text class="value">30 XP</text>
+        </div>
+        <div class="problem-slide reverse">
+          <div class="selectbox">
+            <div class="select active">
+              <button><i class="material-icons">&#xE153;</i></button>
+            </div>
+            <div class="select">
+              <button><i class="material-icons">&#xE887;</i></button>
+            </div>
+            <div class="select">
+              <button><i class="material-icons">&#xE8DD;</i></button>
+            </div>
+          </div>
+          <div class="body">
+            <h3 class="text">John made a problem. It's awful. You're probably not going to solve it and even if you do it won't give you any satisfaction. jk :heart: John</h3><br><br>
+            <div class="form-group" id="inputGroup">
+              <input type="flag" class="form-control" id="inputUsername" placeholder="Username">
+            </div>
+          </div>
+        </div>
+
+        <div class="problem binary">
+          <div class="icon">
+            <i class="material-icons">&#xE042;</i>
+          </div>
+          <text class="name">Break the Binary</text>
+          <text class="value">30 XP</text>
+        </div>
+        <div class="problem-slide binary">
+          <div class="selectbox">
+            <div class="select active">
+              <button><i class="material-icons">&#xE153;</i></button>
+            </div>
+            <div class="select">
+              <button><i class="material-icons">&#xE887;</i></button>
+            </div>
+            <div class="select">
+              <button><i class="material-icons">&#xE8DD;</i></button>
+            </div>
+          </div>
+          <div class="body">
+            <div class="form-group" id="inputGroup">
+              <input type="flag" class="form-control" id="inputUsername" placeholder="Username">
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
     {{> partial/footer.html}}
