@@ -6,7 +6,7 @@
   padding: 0px;
   margin: 8px 0;
   text-align: left;
-  padding: 2px 0;
+  //padding: 2px 0;
 }
 .problem:hover
 {
@@ -22,7 +22,6 @@
   width: 59px;
   height: 50px;
   float: left;
-  margin-top: -1px;
   margin-right: 16px;
   padding: 11px 16px;
 }
@@ -36,35 +35,115 @@
 }
 .problem .value
 {
-  float:right;
+  float: right;
   font-size: 32px;
   padding-right: 16px;
 }
 
-.problem.web .icon
-{
-  background-color: $color-web;
-}
-.problem.crypto .icon
-{
-  background-color: $color-crypt;
-}
-
-.problem .problem-slide
-{
-  height: 0;
-}
-.problem.open
-{
-  height: auto;
-}
-.problem.open .slide
+.problem-slide
 {
   width: 100%;
   height: auto;
-  background-color: material-color('grey','700');
+  background-color: material-color('grey','600');
+  margin-top: -8px;
+  min-height: 56px * 2;
+  float: none;
 }
-.problem.open .slide .select
+.problem-slide.closed
+{
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  display: none;
+}
+.problem-slide.complete
+{
+  min-height: 56px * 3;
+}
+.problem-slide .body
+{
+  float: none;
+  text-align: left;
+  width: 100%;
+  padding: 6px 12px 6px 74px;
+  position: relative;
+  z-index: 1;
+}
+.problem-slide .body .submit
+{
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6px 0px 6px 74px;
+}
+.problem-slide .selectbox
+{
+  float: none;
+  width: 59px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+.problem-slide .select
 {
   width: 59px;
+  position: absolute;
+}
+.problem-slide .select button
+{
+  width: 60px;
+  height: 56px; //50px
+  border: none;
+  padding-top: 7px;
+  @include transition(background-color .15s ease-in-out);
+}
+.problem-slide .selectbox .select:nth-child(1)
+{
+  top: 0;
+}
+.problem-slide .selectbox .select:nth-child(2)
+{
+  top: 56px;
+}
+.problem-slide .selectbox .select:nth-child(3)
+{
+  display: none;
+  top: 56px * 2;
+}
+.problem-slide.complete .selectbox .select:nth-child(3)
+{
+  display: block;
+}
+.problem-slide .select.active button,
+.problem-slide .select.active button:hover
+{
+  background-color: material-color('grey','600')!important;
+}
+
+.problem.web .icon,
+.problem-slide.web .selectbox
+{
+  background-color: $color-web;
+}
+.problem.crypto .icon,
+.problem-crypto.web .selectbox
+{
+  background-color: $color-crypt;
+}
+.problem-slide.web .select button
+{
+  background-color: material-color('blue','500');
+}
+.problem-slide.web .select button:hover
+{
+  background-color: material-color('blue','400');
+}
+.problem-slide.crypto .select button
+{
+  background-color: material-color('green','500');
+}
+.problem-slide.crypto .select button:hover
+{
+  background-color: material-color('green','400');
 }
