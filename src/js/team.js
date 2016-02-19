@@ -45,11 +45,11 @@ $.ajax({
                    if (i < teamresult.data.size){
                      if(teamresult.data.members[i].username == result.data.username){
                        $('#user'+i + ' .left-info').text("YOU");
-                       $('#user'+i + ' .left-info').addClass('purple-a200');
+                       $('#user'+i + ' .left-info').addClass('color-purple-a200');
                      }
                      else{
                        $('#user'+i + ' .left-info').text(teamresult.data.members[i].username);
-                       $('#user'+i + ' .left-info').addClass('gray-200');
+                       $('#user'+i + ' .left-info').addClass('color-grey-200');
                      }
                       $('#user'+i).removeClass('hidden');
                       generateGraph(teamresult.data.members[i]["uid"],teamresult.data.solved_problems, $('#user'+i + ' .right-info .progress'))
