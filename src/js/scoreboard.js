@@ -40,7 +40,7 @@ $.ajax({
                       table.append(append);
                     }
                     else{
-                      $('#textPlace').text((i+1)+ '<text class="ligature" id="textSuffix">' + ordinal_suffix_of(i+1) + '</text> place');
+                      $('#textPlace').html((i+1)+ '<text class="ligature" id="textSuffix">' + ordinal_suffix_of(i+1) + '</text> place');
                       var append =
                       '<div class="scorerow white you">
                         <div class="col"><h2 class="text">' + (i+1 )+'<text class="ligature">'+ ordinal_suffix_of(i+1) + '</text></h2></div>
