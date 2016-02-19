@@ -19,6 +19,11 @@ function generateGraph(uid, submissions, element){
   }
 
 }
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+};
 $.ajax({
    url: '/api/user/status',
    success: function(result) {
@@ -32,7 +37,7 @@ $.ajax({
              success: function(teamresult) {
 
                if (teamresult.status == 1){
-                 $('#inputUpdateAffiliation').attr("value", teamresult.data.affiliation);
+                 $('#inputUpdateAffiliation').attr("value", escapeHtml(teamresult.data.affiliation));
                  if (teamresult.data.eligible){
                    $('#teamEligible').text('eligible for prizes').addClass('green');
                    $('#teamEligible2').text('!');
