@@ -35,7 +35,7 @@
 }
 .problem .value
 {
-  float:right;
+  float: right;
   font-size: 32px;
   padding-right: 16px;
 }
@@ -44,7 +44,7 @@
 {
   width: 100%;
   height: auto;
-  background-color: $gray-700;
+  background-color: material-color('grey','600');
   margin-top: -8px;
   min-height: 56px * 2;
 }
@@ -59,21 +59,34 @@
 {
   min-height: 56px * 3;
 }
+.problem-slide .body
+{
+  float: none;
+  text-align: left;
+  width: 100%;
+  padding: 6px 12px 6px 74px;
+  position: relative;
+  z-index: 1;
+}
+.problem-slide .body .submit
+{
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6px 0px 6px 74px;
+}
 .problem-slide .selectbox
 {
   width: 59px;
   margin: 0;
   padding: 0;
   position: relative;
+  z-index: 2;
+  min-height: 56px * 2;
 }
-.problem-slide .body
+.problem-slide.complete .selectbox
 {
-  float: right;
-  text-align: left;
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 74px;
-  position: static;
+  min-height: 56px * 3;
 }
 .problem-slide .select
 {
@@ -108,14 +121,16 @@
 .problem-slide .select.active button,
 .problem-slide .select.active button:hover
 {
-  background-color: $gray-700!important;
+  background-color: material-color('grey','600')!important;
 }
 
-.problem.web .icon
+.problem.web .icon,
+.problem-slide.web .selectbox
 {
   background-color: $color-web;
 }
-.problem.crypto .icon
+.problem.crypto .icon,
+.problem-crypto.web .selectbox
 {
   background-color: $color-crypt;
 }
@@ -130,8 +145,6 @@
 .problem-slide.crypto .select button
 {
   background-color: material-color('green','500');
-  width: 100%;
-  height: auto;
 }
 .problem-slide.crypto .select button:hover
 {
