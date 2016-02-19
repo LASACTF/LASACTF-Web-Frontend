@@ -47,6 +47,7 @@
   background-color: material-color('grey','600');
   margin-top: -8px;
   min-height: 56px * 2;
+  float: none;
 }
 .problem-slide.closed
 {
@@ -77,6 +78,7 @@
 }
 .problem-slide .selectbox
 {
+  float: none;
   width: 59px;
   margin: 0;
   padding: 0;
