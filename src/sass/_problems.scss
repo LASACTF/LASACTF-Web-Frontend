@@ -6,7 +6,7 @@
   padding: 0px;
   margin: 8px 0;
   text-align: left;
-  padding: 2px 0;
+  //padding: 2px 0;
 }
 .problem:hover
 {
@@ -22,7 +22,6 @@
   width: 59px;
   height: 50px;
   float: left;
-  margin-top: -1px;
   margin-right: 16px;
   padding: 11px 16px;
 }
@@ -41,6 +40,77 @@
   padding-right: 16px;
 }
 
+.problem-slide
+{
+  width: 100%;
+  height: auto;
+  background-color: $gray-700;
+  margin-top: -8px;
+  min-height: 56px * 2;
+}
+.problem-slide.closed
+{
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  display: none;
+}
+.problem-slide.complete
+{
+  min-height: 56px * 3;
+}
+.problem-slide .selectbox
+{
+  width: 59px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.problem-slide .body
+{
+  float: right;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 74px;
+  position: static;
+}
+.problem-slide .select
+{
+  width: 59px;
+  position: absolute;
+}
+.problem-slide .select button
+{
+  width: 60px;
+  height: 56px; //50px
+  border: none;
+  padding-top: 7px;
+  @include transition(background-color .15s ease-in-out);
+}
+.problem-slide .selectbox .select:nth-child(1)
+{
+  top: 0;
+}
+.problem-slide .selectbox .select:nth-child(2)
+{
+  top: 56px;
+}
+.problem-slide .selectbox .select:nth-child(3)
+{
+  display: none;
+  top: 56px * 2;
+}
+.problem-slide.complete .selectbox .select:nth-child(3)
+{
+  display: block;
+}
+.problem-slide .select.active button,
+.problem-slide .select.active button:hover
+{
+  background-color: $gray-700!important;
+}
+
 .problem.web .icon
 {
   background-color: $color-web;
@@ -49,22 +119,19 @@
 {
   background-color: $color-crypt;
 }
-
-.problem .problem-slide
+.problem-slide.web .select button
 {
-  height: 0;
+  background-color: $blue-500;
 }
-.problem.open
+.problem-slide.web .select button:hover
 {
-  height: auto;
+  background-color: $blue-400;
 }
-.problem.open .slide
+.problem-slide.crypto .select button
 {
-  width: 100%;
-  height: auto;
-  background-color: $gray-700;
+  background-color: $green-500;
 }
-.problem.open .slide .select
+.problem-slide.crypto .select button:hover
 {
-  width: 59px;
+  background-color: $green-400;
 }
