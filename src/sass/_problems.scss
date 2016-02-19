@@ -1,7 +1,7 @@
 .problem
 {
   width: 100%;
-  background-color: $gray-700;
+  background-color: material-color('grey','700');
   height: 50px;
   padding: 0px;
   margin: 8px 0;
@@ -10,7 +10,7 @@
 }
 .problem:hover
 {
-  background-color: $gray-600;
+  background-color: material-color('grey','600');
 }
 .problem,
 .problem .icon
@@ -121,17 +121,19 @@
 }
 .problem-slide.web .select button
 {
-  background-color: $blue-500;
+  background-color: material-color('blue','500');
 }
 .problem-slide.web .select button:hover
 {
-  background-color: $blue-400;
+  background-color: material-color('blue','400');
 }
 .problem-slide.crypto .select button
 {
-  background-color: $green-500;
+  background-color: material-color('green','500');
+  width: 100%;
+  height: auto;
 }
 .problem-slide.crypto .select button:hover
 {
-  background-color: $green-400;
+  background-color: material-color('green','400');
 }

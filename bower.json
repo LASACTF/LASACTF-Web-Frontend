@@ -24,6 +24,7 @@
     "jquery": "^2.2.0",
     "jquery-placeholder": "^2.3.1",
     "countdownjs": "^2.6.0",
-    "font-awesome": "^4.5.0"
+    "font-awesome": "^4.5.0",
+    "sass-material-colors": "^0.0.5"
   }
 }
