@@ -69,7 +69,6 @@
   width: 100%;
   padding: 9px 12px 9px 74px;
   position: relative;
-  z-index: 1;
 }
 .problem-slide .body .submit-left
 {
@@ -88,8 +87,6 @@
   width: 60px;
   margin: 0;
   padding: 0;
-  position: relative;
-  z-index: 2;
   position: absolute;
   height: 100%;
 }
@@ -105,6 +102,19 @@
   border: none;
   padding-top: 7px;
   @include transition(background-color .15s ease-in-out);
+}
+.problem-submit .form-control{
+  font-size: 24px;
+  padding: 3px 12px !important;
+  background-color: #616161;
+  color: #fff !important;
+  border-radius: 0;
+  border: 2px solid #616161;
+  height: 36px;
+}
+.problem-submit .btn{
+  margin: 0;
+  height: 36px !important;
 }
 .problem-slide .selectbox .select:nth-child(1)
 {
