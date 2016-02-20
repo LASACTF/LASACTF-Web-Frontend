@@ -139,6 +139,10 @@ button:focus,
 img:focus {
   outline: 0!important;
 }
+.vert-middle
+{
+  vertical-align: middle;
+}
 
 /** TEXT **/
 
@@ -750,8 +754,59 @@ body.compete
 {
   width: 100%;
 }
-#divScored{
+#divScored {
   z-index: -1;
+}
+
+/** SLIDERS **/
+.slider
+{
+  margin-top: -6px;
+  width: 100%;
+  margin-right: 18px;
+}
+.slider .slider-track
+{
+  border-radius: 0;
+  background: material-color('grey','700');
+}
+.slider .slider-selection
+{
+  border-radius: 0;
+  background: material-color('grey','500');
+}
+.slider .slider-handle
+{
+  background: material-color('grey','400');
+  border: 0;
+}
+.slider .slider-handle:hover,
+.slider .slider-handle:active
+{
+  background: material-color('grey','100');
+}
+.slider .tooltip
+{
+  display:none;
+}
+
+/** RADIO BUTTONS **/
+.btn-group.radio .btn
+{
+  background-color: material-color("grey", "700");
+  border: 0;
+  margin-right: 2px;
+}
+.btn-group.radio .btn.active,
+.btn-group.radio .btn.active:hover,
+.btn-group.radio .btn.active:focus
+{
+  background-color: material-color("purple", "400");
+}
+.btn-group.radio .btn:hover,
+.btn-group.radio .btn:focus
+{
+  background-color: lighten(material-color("grey", "700"), 5%);
 }
 
 /** NAVBAR **/
@@ -880,13 +935,19 @@ body.compete
   }
   .info .right-info.progress-user text
   {
-    display:block;
+    display: block;
     padding-left: 0px;
   }
   .scorestable .scorerow .col:nth-child(2)
   {
     width: 86%;
     //float: left;
+  }
+  .slider
+  {
+    margin-top: 0px;
+    margin-right: 18px;
+    margin-left: 8px;
   }
 }
 
