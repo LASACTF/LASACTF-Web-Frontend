@@ -48,6 +48,7 @@
   margin-top: -8px;
   min-height: 56px * 2;
   float: none;
+  position: relative;
 }
 .problem-slide.closed
 {
@@ -84,6 +85,8 @@
   padding: 0;
   position: relative;
   z-index: 2;
+  position: absolute;
+  height: 100%;
 }
 .problem-slide .select
 {
