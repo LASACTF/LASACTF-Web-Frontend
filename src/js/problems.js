@@ -15,8 +15,7 @@ $(".sliderTime").on("slide", function(slideEvt) {
 $('.sliderDifficulty').slider();
 $(".sliderDifficulty").on("slide", function(slideEvt) {
   var value = slideEvt.value;
-  switch(value)
-  {
+  switch (value) {
     case 1:
       $(".sliderDifficultyDisplay").text("Very Easy");
       break;
@@ -40,8 +39,7 @@ $(".sliderDifficulty").on("slide", function(slideEvt) {
 $('.sliderInterest').slider();
 $(".sliderInterest").on("slide", function(slideEvt) {
   var value = slideEvt.value;
-  switch(value)
-  {
+  switch (value) {
     case 1:
       $(".sliderInterestDisplay").text("Very Low");
       break;
