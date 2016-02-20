@@ -93,11 +93,25 @@
   color: #fff !important;
   border-radius: 0;
   border: 2px solid #616161;
+  box-shadow: none;
   height: 36px;
+  @include transition(background-color .15s ease-in-out, border-color .15s ease-in-out);
+}
+.problem-submit .form-control:active,
+.problem-submit .form-control:focus
+{
+  background-color: material-color('purple', 'a200');
+  border: 2px solid material-color('purple', 'a200');
 }
 .problem-submit .btn {
   margin: 0;
   height: 36px !important;
+  font-size: 20px;
+  width: 52px;
+}
+.problem-submit .btn i {
+  font-size: 24px !important;
+  margin-top: -2px;
 }
 .problem-slide .selectbox .select:nth-child(1) {
   top: 0;
