@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {{> partial/head.html}}
-    <title>LASACTF - Shell</title>
-  </head>
 
-  <body class="compete">
-    <div class="primarycontainer">
-      {{> partial/header.html}}
-      <h4>Your account credentials are the same for the website and shell server.</h4>
-      <div class="content shell">
-        <iframe src="http://web.lasactf.com/shell" style="border:0; width:100%; height:500px;"></iframe>
-      </div>
+<head>
+  {{> partial/head.html}}
+  <title>LASACTF - Shell</title>
+</head>
+
+<body class="compete">
+  <div class="primarycontainer">
+    {{> partial/header.html}}
+    <h4>Your account credentials are the same for the website and shell server.</h4>
+    <div class="content shell">
+      <iframe src="http://web.lasactf.com/shell" style="border:0; width:100%; height:500px;"></iframe>
     </div>
-    {{> partial/footer.html}}
-    <!-- JS --->
-    <script src="js/shell.js"></script>
-  </body>
+  </div>
+  {{> partial/footer.html}}
+  <!-- JS --->
+  <script src="js/shell.js"></script>
+</body>
 
 </html>

@@ -1,48 +1,39 @@
-.problem
-{
+.problem {
   width: 100%;
   background-color: material-color('grey','700');
   height: 50px;
-  padding: 0px;
+  padding: 0;
   margin: 8px 0;
   text-align: left;
   //padding: 2px 0;
 }
-.problem:hover
-{
+.problem:hover {
   background-color: material-color('grey','600');
   cursor: pointer;
 }
 .problem,
-.problem .icon
-{
+.problem .icon {
   @include transition(background-color .15s ease-in-out);
 }
-.problem .icon
-{
+.problem .icon {
   width: 60px;
   height: 50px;
   float: left;
   margin-right: 16px;
   padding: 11px 16px;
 }
-.problem .icon i
-{
+.problem .icon i {
   font-size: 28px;
 }
-.problem .name
-{
+.problem .name {
   font-size: 32px;
 }
-.problem .value
-{
+.problem .value {
   float: right;
   font-size: 32px;
   padding-right: 16px;
 }
-
-.problem-slide
-{
+.problem-slide {
   width: 100%;
   height: auto;
   background-color: material-color('grey','600');
@@ -51,38 +42,31 @@
   float: none;
   position: relative;
 }
-.problem-slide.closed
-{
+.problem-slide.closed {
   height: 0;
   width: 0;
   overflow: hidden;
   display: none;
 }
-.problem-slide.complete
-{
+.problem-slide.complete {
   min-height: 56px * 3;
 }
-.problem-slide .body
-{
+.problem-slide .body {
   float: none;
   text-align: left;
   width: 100%;
   padding: 9px 12px 9px 74px;
   position: relative;
 }
-.problem-slide .body .submit-left
-{
+.problem-slide .body .submit-left {
   position: relative;
   width: 100%;
 }
-.problem-slide .body .submit-right
-{
+.problem-slide .body .submit-right {
   position: relative;
   width: 64px;
 }
-
-.problem-slide .selectbox
-{
+.problem-slide .selectbox {
   float: left;
   width: 60px;
   margin: 0;
@@ -90,20 +74,18 @@
   position: absolute;
   height: 100%;
 }
-.problem-slide .select
-{
+.problem-slide .select {
   width: 59px;
   position: absolute;
 }
-.problem-slide .select button
-{
+.problem-slide .select button {
   width: 60px;
   height: 56px; //50px
   border: none;
   padding-top: 7px;
   @include transition(background-color .15s ease-in-out);
 }
-.problem-submit .form-control{
+.problem-submit .form-control {
   font-size: 24px;
   padding: 3px 12px !important;
   background-color: #616161;
@@ -112,99 +94,79 @@
   border: 2px solid #616161;
   height: 36px;
 }
-.problem-submit .btn{
+.problem-submit .btn {
   margin: 0;
   height: 36px !important;
 }
-.problem-slide .selectbox .select:nth-child(1)
-{
+.problem-slide .selectbox .select:nth-child(1) {
   top: 0;
 }
-.problem-slide .selectbox .select:nth-child(2)
-{
+.problem-slide .selectbox .select:nth-child(2) {
   top: 56px;
 }
-.problem-slide .selectbox .select:nth-child(3)
-{
+.problem-slide .selectbox .select:nth-child(3) {
   display: none;
   top: 56px * 2;
 }
-.problem-slide.complete .selectbox .select:nth-child(3)
-{
+.problem-slide.complete .selectbox .select:nth-child(3) {
   display: block;
 }
 .problem-slide .select.active button,
-.problem-slide .select.active button:hover
-{
+.problem-slide .select.active button:hover {
   background-color: material-color('grey','600')!important;
 }
-
 .problem.web.complete,
 .problem.web .icon,
 .problem-slide.web .selectbox,
-.problem-slide.web .select button
-{
+.problem-slide.web .select button {
   background-color: $color-web;
 }
 .problem-slide.web .select button:hover,
 .problem.web.complete:hover,
-.problem.web:hover .icon
-{
+.problem.web:hover .icon {
   background-color: lighten($color-web, 10%);
 }
-
 .problem.crypto.complete,
 .problem.crypto .icon,
 .problem-slide.crypto .selectbox,
-.problem-slide.crypto .select button
-{
+.problem-slide.crypto .select button {
   background-color: $color-crypt;
 }
 .problem-slide.crypto .select button:hover,
 .problem.crypto.complete:hover,
-.problem.crypto:hover .icon
-{
+.problem.crypto:hover .icon {
   background-color: lighten($color-crypt, 10%);
 }
-
 .problem.forensics.complete,
 .problem.forensics .icon,
 .problem-slide.forensics .selectbox,
-.problem-slide.forensics .select button
-{
+.problem-slide.forensics .select button {
   background-color: $color-forensics;
 }
 .problem-slide.forensics .select button:hover,
 .problem.forensics.complete:hover,
-.problem.forensics:hover .icon
-{
+.problem.forensics:hover .icon {
   background-color: lighten($color-forensics, 10%);
 }
-
 .problem.reverse.complete,
 .problem.reverse .icon,
 .problem-slide.reverse .selectbox,
-.problem-slide.reverse .select button
-{
+.problem-slide.reverse .select button {
   background-color: $color-reverse;
 }
 .problem-slide.reverse .select button:hover,
 .problem.reverse.complete:hover,
-.problem.reverse:hover .icon
-{
+.problem.reverse:hover .icon {
   background-color: lighten($color-reverse, 10%);
 }
-
 .problem.binary.complete,
 .problem.binary .icon,
 .problem-slide.binary .selectbox,
-.problem-slide.binary .select button
-{
+.problem-slide.binary .select button {
   background-color: $color-binary;
 }
 .problem-slide.binary .select button:hover,
 .problem.binary.complete:hover,
-.problem.binary:hover .icon
-{
+.problem.binary:hover .icon {
   background-color: lighten($color-binary, 10%);
 }
