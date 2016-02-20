@@ -5,7 +5,7 @@
     <title>LASACTF - Team</title>
   </head>
 
-  <body class='compete'>
+  <body class="compete">
     <div class="primarycontainer">
       {{> partial/header.html}}
       {{> partial/profilebar.html}}
@@ -21,21 +21,21 @@
             <h3 class="left-info sm">Team Name</h3>
             <div class="form-group" id="inputGroupName">
               <input type="name" class="right-info form-control" id="inputTeam" placeholder="Team Name">
-              <span id="helpTeam" class="help-block red"></span>
+              <span class="help-block red"></span>
             </div>
           </div>
           <div class="info">
             <h3 class="left-info sm">Passcode</h3>
             <div class="form-group" id="inputGroupPass">
               <input type="name" class="right-info form-control" id="inputPass" placeholder="Secret Passcode">
-              <span id="helpTeam" class="help-block">If you're creating a new team, others have to type this in when joining. In you're joining, get someone on the team to give you the code.</span>
+              <span class="help-block">If you're creating a new team, others have to type this in when joining. In you're joining, get someone on the team to give you the code.</span>
             </div>
           </div>
           <div class="info">
             <h3 class="left-info sm">Affiliation</h3>
-            <div class="form-group" id="inputGroupAffliation">
+            <div class="form-group">
               <input type="name" class="right-info form-control" id="inputCreateAffiliation" placeholder="Team High School / University / Other">
-              <span id="helpTeam" class="help-block">Only type this in if you're creating a team.</span>
+              <span class="help-block">Only type this in if you're creating a team.</span>
             </div>
           </div>
 
@@ -105,9 +105,9 @@
           <h2>Team Info</h2>
           <div class="info">
             <h3 class="left-info sm">Affiliation</h3>
-            <div class="form-group" id="inputGroupAffliation">
+            <div class="form-group">
               <input type="name" class="right-info form-control" id="inputUpdateAffiliation" placeholder="Team High School / University / Other">
-              <span id="helpTeam" class="help-block">You can change your team's affiliation. Keep it clean, folks.</span>
+              <span class="help-block">You can change your team's affiliation. Keep it clean, folks.</span>
               <a class="btn purple wide xs" role="button" id="actionAffiliation"><i class="material-icons">&#xE5C8;</i>UPDATE AFFILIATION</a>
             </div>
             <span id="helpError2" class="help-block red"><h4></h4></span>
