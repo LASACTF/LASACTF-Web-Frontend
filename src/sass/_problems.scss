@@ -70,13 +70,17 @@
   position: relative;
   z-index: 1;
 }
-.problem-slide .body .submit
+.problem-slide .body .submit-left
 {
-  text-align: left;
+  position: relative;
   width: 100%;
-  margin: 0 auto;
-  padding: 6px 0px 6px 74px;
 }
+.problem-slide .body .submit-right
+{
+  position: relative;
+  width: 64px;
+}
+
 .problem-slide .selectbox
 {
   float: left;
