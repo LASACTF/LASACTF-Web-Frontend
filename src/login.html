@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>LASACTF - Login</title>
-    {{> partial/head.html}}
-  </head>
 
-  <body>
-    <div class="container" id="cont-super">
-      <div class="row">
-       <a href="/"><img src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png" class="logo med"></a>
-      </div>
-      <div class="headcont">
-        <h1 class="text head"><i class="material-icons head">&#xE0DA;</i>LOGIN</h1>
-      </div>
-      <br><br>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-          <form class="form-horizontal" id="login-form">
-            <div class="form-group" id="inputGroup">
-              <input type="username" class="form-control" id="inputUsername" placeholder="Username">
-              <input type="password" class="form-control spacetop" id="inputPassword" placeholder="Password">
-              <a href="/forgot" class="forgotpass color-grey-600">Forgot password?</a><br>
-              <span id="helpBlock" class="help-block"></span>
-              <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>ENTER COMPETITION</button>
-            </div>
-            <br>
-          </form>
+<head>
+  <title>LASACTF - Login</title>
+  {{> partial/head.html}}
+</head>
+
+<body>
+  <div class="container" id="cont-super">
+    <div class="row">
+      <a href="/"><img src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png" class="logo med"></a>
+    </div>
+    <div class="headcont">
+      <h1 class="text head"><i class="material-icons head">&#xE0DA;</i>LOGIN</h1>
+    </div>
+    <br>
+    <br>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <form class="form-horizontal" id="login-form">
+        <div class="form-group" id="inputGroup">
+          <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+          <input type="password" class="form-control spacetop" id="inputPassword" placeholder="Password">
+          <a href="/forgot" class="forgotpass color-grey-600">Forgot password?</a>
+          <br>
+          <span id="helpBlock" class="help-block"></span>
+          <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>ENTER COMPETITION</button>
         </div>
-      </div>
+        <br>
+      </form>
+    </div>
+  </div>
 
-    <!-- JS --->
-    <script src="js/login.js"></script>
-  </body>
+  <!-- JS --->
+  <script src="js/login.js"></script>
+</body>
 
 </html>
