@@ -29,11 +29,24 @@
   ga('send', 'pageview');
 </script>
 
-<link rel="stylesheet" href="css/libs.css"/>
+<!-- build:css css/libs.css -->
+<link href="libc/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="lib/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css">
+<!-- endbuild -->
 <link href="css/ctf.css" rel="stylesheet" type="text/css">
 
 
-<script src="js/libs.js"></script>
+<!-- build:js js/libs.js -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="lib/jquery.cookie/jquery.cookie.js"></script>
+<!-- Other JS-->
+<script src="libc/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+<script src="lib/handlebars/handlebars.runtime.min.js"></script>
+<!-- endbuild -->
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
