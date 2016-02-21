@@ -279,28 +279,9 @@
   border-color: $color-algo;
 }
 
-.problem-submit.has-success {
-  background-color: material-color('green','800');
-}
-.problem-submit.has-success .form-control {
-  background-color: material-color('green','800');
-  color: #fff !important;
-  border:0;
-}
-.problem-submit.has-success,
 .problem-submit.has-success .help-block {
-  color: material-color('green','a700');
+  color: material-color('green','a200');
 }
-
-.problem-submit.has-failure {
-  background-color: material-color('red','800');
-}
-.problem-submit.has-failure .form-control {
-  background-color: material-color('red','800');
-  color: #fff !important;
-  border:0;
-}
-.problem-submit.has-failure,
 .problem-submit.has-failure .help-block {
-  color: material-color('red','a700');
+  color: material-color('red','a200');
 }
