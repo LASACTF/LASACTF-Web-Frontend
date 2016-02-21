@@ -88,6 +88,10 @@
   padding-top: 7px;
   @include transition(background-color .15s ease-in-out);
 }
+.problem-slide .problem-submit
+{
+  margin-top: 18px;
+}
 .problem-slide .problem-submit .form-control {
   font-size: 24px;
   padding: 3px 12px !important;
@@ -100,6 +104,30 @@
   @include transition(background-color .15s ease-in-out);
   @include transition(border-color .15s ease-in-out);
 }
+.problem-slide .problem-submit .form-control:active::-webkit-input-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:active:-moz-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:active::-moz-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:active::-ms-input-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:focus::-webkit-input-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:focus:-moz-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:focus::-moz-placeholder {
+  color: material-color("grey", "200");
+}
+.problem-slide .problem-submit .form-control:focus::-ms-input-placeholder {
+  color: material-color("grey", "200");
+}
 .problem-slide .problem-submit .btn {
   margin: 0;
   height: 36px !important;
@@ -111,6 +139,9 @@
   font-size: 24px !important;
   margin-top: -6px;
   margin-left: 4px;
+}
+.problem-slide .problem-submit input {
+  margin-left: -1px;
 }
 .problem-slide .selectbox .select:nth-child(1) {
   top: 0;
@@ -226,6 +257,27 @@
 {
   background-color: $color-binary;
   border-color: $color-binary;
+}
+
+.problem.algo.complete,
+.problem.algo .icon,
+.problem-slide.algo .selectbox,
+.problem-slide.algo .select button,
+.problem-slide.algo .problem-submit .btn {
+  background-color: $color-algo;
+}
+.problem-slide.algo .select button:hover,
+.problem.algo.complete:hover,
+.problem.algo:hover .icon,
+.problem-slide.algo .problem-submit .btn:hover{
+  background-color: lighten($color-algo, 10%);
+}
+.problem-slide.algo .problem-submit .form-control:active,
+.problem-slide.algo .problem-submit .form-control:focus
+{
+  background-color: $color-algo;
+  border-color: $color-algo;
+}
 
 .problem-submit.has-success {
   background-color: material-color('green','800');
