@@ -26,6 +26,8 @@
     "countdownjs": "^2.6.0",
     "font-awesome": "^4.5.0",
     "sass-material-colors": "^0.0.5",
-    "seiyria-bootstrap-slider": "^6.0.17"
+    "seiyria-bootstrap-slider": "^6.0.17",
+    "string": "^3.3.1",
+    "jquery.cookie": "jquery-cookie#^1.4.1"
   }
 }

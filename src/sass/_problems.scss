@@ -38,9 +38,11 @@
   height: auto;
   background-color: material-color('grey','600');
   margin-top: -8px;
-  min-height: 56px * 2;
   float: none;
   position: relative;
+}
+.problem-slide.in {
+  min-height: 112px;
 }
 .problem-slide.closed {
   height: 0;
@@ -48,8 +50,8 @@
   overflow: hidden;
   display: none;
 }
-.problem-slide.complete {
-  min-height: 56px * 3;
+.problem-slide.complete.in {
+  min-height: 168px;
 }
 .problem-slide .body {
   float: none;
@@ -97,10 +99,6 @@
   height: 36px;
   @include transition(background-color .15s ease-in-out);
   @include transition(border-color .15s ease-in-out);
-}
-.problem-slide .problem-submit .form-control:active::-webkit-input-placeholder,
-.problem-slide .problem-submit .form-control:focus::-webkit-input-placeholder {
-  color: material-color("grey", "300");
 }
 .problem-slide .problem-submit .btn {
   margin: 0;
@@ -228,4 +226,29 @@
 {
   background-color: $color-binary;
   border-color: $color-binary;
+
+.problem-submit.has-success {
+  background-color: material-color('green','800');
+}
+.problem-submit.has-success .form-control {
+  background-color: material-color('green','800');
+  color: #fff !important;
+  border:0;
+}
+.problem-submit.has-success,
+.problem-submit.has-success .help-block {
+  color: material-color('green','a700');
+}
+
+.problem-submit.has-failure {
+  background-color: material-color('red','800');
+}
+.problem-submit.has-failure .form-control {
+  background-color: material-color('red','800');
+  color: #fff !important;
+  border:0;
+}
+.problem-submit.has-failure,
+.problem-submit.has-failure .help-block {
+  color: material-color('red','a700');
 }
