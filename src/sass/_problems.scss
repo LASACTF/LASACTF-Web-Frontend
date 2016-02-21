@@ -57,7 +57,7 @@
   float: none;
   text-align: left;
   width: 100%;
-  padding: 9px 12px 9px 74px;
+  padding: 12px 12px 9px 74px;
   position: relative;
 }
 .problem-slide .body .submit-left {
@@ -279,28 +279,9 @@
   border-color: $color-algo;
 }
 
-.problem-submit.has-success {
-  background-color: material-color('green','800');
-}
-.problem-submit.has-success .form-control {
-  background-color: material-color('green','800');
-  color: #fff !important;
-  border:0;
-}
-.problem-submit.has-success,
 .problem-submit.has-success .help-block {
-  color: material-color('green','a700');
+  color: material-color('green','a200');
 }
-
-.problem-submit.has-failure {
-  background-color: material-color('red','800');
-}
-.problem-submit.has-failure .form-control {
-  background-color: material-color('red','800');
-  color: #fff !important;
-  border:0;
-}
-.problem-submit.has-failure,
 .problem-submit.has-failure .help-block {
-  color: material-color('red','a700');
+  color: material-color('red','a200');
 }
