@@ -7,19 +7,40 @@ var handlebars = require('gulp-handlebars');
 var concat = require('gulp-concat');
 var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
+var usemin = require('gulp-usemin');
+var ext_replace = require('gulp-ext-replace');
+var minifyCss = require('gulp-minify-css');
+var rimraf = require('gulp-rimraf');
 
 function swallowError (error) {
   // If you want details of the error in the console
   console.log(error.toString());
   this.emit('end');
 }
-// Gulp Sass Task
+
 gulp.task('sass', function () {
  gulp.src('src/sass/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('libmin', function(){
+    return gulp.src('src/partial-src/*.src')
+      .pipe(usemin({
+            assetsDir: '.',
+            css: [minifyCss(), 'concat'],
+            js: [uglify(), 'concat']
+        }))
+      .pipe(gulp.dest("dist/"));
+});
+
+gulp.task('fix-templates', ['libmin'], function(){
+     return gulp.src('dist/**/*.src')
+      .pipe(rimraf())
+      .pipe(ext_replace('.html', '.html.src'))
+      .pipe(gulp.dest("src/partial/"));
 });
 
 // Gulp Mustache Task
@@ -51,16 +72,15 @@ gulp.task('compress', function() {
 
 gulp.task('copy', function () {
     gulp.src('src/img/**/*').pipe(gulp.dest('dist/img'));
-    gulp.src('lib/**/*').pipe(gulp.dest('dist/lib'));
-    gulp.src('libc/**/*').pipe(gulp.dest('dist/libc'));
 });
 
 
-gulp.task('build', ['sass', 'mustache','handlebars','compress','copy'] )
+gulp.task('build', ['sass','libmin', 'fix-templates', 'mustache','handlebars','compress','copy'] )
 gulp.task('default', ['build','watch']);
 
 gulp.task('watch', ['sass', 'mustache', 'handlebars','compress','copy'], function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
+    gulp.watch('./src/partial-src/*.src', ['libmin', 'fix-templates', 'mustache']);
     gulp.watch('./src/**/*.html', ['mustache']);
     gulp.watch('./src/**/*.hbs', ['handlebars']);
     gulp.watch('./src/js/**/*.js', ['compress']);
