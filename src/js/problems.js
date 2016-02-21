@@ -18,6 +18,32 @@ var icon = {
   "asymptotic":"",
   "misc":""
 };
+function ajaxSubmit(input, help, parent){
+      $.ajax({
+        url: '/api/problems/submit',
+        data: {
+          "key": input.val(),
+          "pid": input.attr('data-pid'),
+          "token": $.cookie('token'),
+        },
+        success: function(result) {
+          if (result.status == 1) {
+              help.removeClass("failure-text").addClass("success-text");
+              parent.removeClass('has-failure').addClass('has-success');
+              help.children('h3').text(result.message);
+              setTimeout(
+              function() {
+                window.location.href = "/problems";
+              }, 2000);
+          } else {
+            help.addClass("failure-text");
+            parent.removeClass('has-success').addClass('has-failure');
+            help.children('h3').text(result.message);
+          }
+        },
+        type: 'POST'
+      });
+}
 $.ajax({
   url: 'http://design.lasactf.com/api/problems',
   success: function(result) {
@@ -238,32 +264,17 @@ $.ajax({
           var input = $(this).siblings('input').eq(0);
           var parent = $(this).parent();
           var help = parent.siblings('.help-block').eq(0);
-
-          $.ajax({
-            url: '/api/problems/submit',
-            data: {
-              "key": input.val(),
-              "pid": input.attr('data-pid'),
-              "token": $.cookie('token'),
-            },
-            success: function(result) {
-              if (result.status == 1) {
-                  help.removeClass("failure-text").addClass("success-text");
-                  parent.removeClass('has-failure').addClass('has-success');
-                  help.children('h3').text(result.message);
-                  setTimeout(
-                  function() {
-                    window.location.href = "/problems";
-                  }, 2000);
-              } else {
-                help.addClass("failure-text");
-                parent.removeClass('has-success').addClass('has-failure');
-                help.children('h3').text(result.message);
-              }
-            },
-            type: 'POST'
-          });
+          ajaxSubmit(input,help,parent);
         })
+        $('.problem-submit .form-control').keypress(function(event){
+          var keycode = (event.keyCode ? event.keyCode : event.which);
+          if(keycode == '13'){
+            var input = $(this);
+            var parent = $(this).parent();
+            var help = parent.siblings('.help-block').eq(0);
+            ajaxSubmit(input,help,parent);
+          }
+        });
 
         $('.sliderTime').slider();
         $(".sliderTime").on("slide", function(slideEvt) {
