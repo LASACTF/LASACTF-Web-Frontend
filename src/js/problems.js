@@ -26,23 +26,194 @@ $.ajax({
         for (var i = 0; i < result.data.length; i++){
           var problem = result.data[i];
           if (!problem.solved){
-            var str = '<div class="problem{{category}}" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="true"> <div class="icon"> <i class="material-icons">{{icon}}</i> </div><text class="name">{{name}}</text> <text class="value">{{score}}XP</text> </div><div class="problem-slide{{category}}collapse in" id="{{pid}}"> <div class="selectbox"> <div class="select active" data-tab="problem"> <button><i class="material-icons">&#xE153;</i></button> </div><div class="select" data-tab="hint"> <button><i class="material-icons">&#xE887;</i></button> </div><div class="select" data-tab="feedback"> <button><i class="material-icons">&#xE8DD;</i></button> </div></div><div class="body problem-tab"> <h3 class="text">{{description}}</h3> <div class="input-group input-group-sm problem-submit"> <span class="input-group-btn"> <button class="btn purple sm" type="submit"><i class="material-icons">&#xE153;</i> SUBMIT</button> </span> <input type="text" placeholder="Submit Flag" class="form-control" data-pid="{{pid}}"> </div><span class="help-block"><h3></h3></span> </div><div class="body hidden hint-tab"> <h3 class="text">{{hint}}</h3> </div><div class="body hidden feedback-tab"> <div class="form-group" id="inputGroup"> <div class="row"> <div class="col-sm-6"> <h3 class="text">How much time did you spend?</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <input class="sliderTime" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="240" data-slider-step="15" data-slider-value="0"/> <text class="h3 sliderTimeDisplay">0:00</text> </div></div><br><div class="row"> <div class="col-sm-6"> <h3 class="text">How easy or challenging was the problem?</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <input class="sliderDifficulty" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/> <text class="h3 sliderDifficultyDisplay">Average</text> </div></div><br><div class="row"> <div class="col-sm-6"> <h3 class="text">Rate your overall interest in the problem.</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <input class="sliderInterest" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/> <text class="h3 sliderInterestDisplay">Average</text> </div></div><br><div class="row"> <div class="col-sm-6"> <h3 class="text">Would you want to see a problem like this in a future CTF?</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <div class="btn-group radio" data-toggle="buttons"> <label class="btn btn-primary"> <input type="radio" name="options" autocomplete="off" checked>Yes </label> <label class="btn btn-primary"> <input type="radio" name="options" autocomplete="off">No </label> </div></div></div><br><div class="row"> <div class="col-sm-2"></div><div class="col-sm-8"> <button type="submit" class="btn purple sm expand centerpad"><i class="material-icons">&#xE0B7;</i>SEND FEEDBACK</button> </div><div class="col-sm-2"></div></div></div></div></div>';
+            var str = '<div class="problem {{category}}" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="true">
+              <div class="icon">
+                <i class="material-icons">{{icon}}</i>
+              </div>
+              <text class="name">{{name}}</text>
+              <text class="value">{{score}} XP</text>
+            </div>
+            <div class="problem-slide {{category}} collapse in" id="{{pid}}">
+              <div class="selectbox">
+                <div class="select active" data-tab="problem">
+                  <button><i class="material-icons">&#xE153;</i></button>
+                </div>
+                <div class="select" data-tab="hint">
+                  <button><i class="material-icons">&#xE887;</i></button>
+                </div>
+                <div class="select" data-tab="feedback">
+                  <button><i class="material-icons">&#xE8DD;</i></button>
+                </div>
+              </div>
+              <div class="body problem-tab">
+                <h3 class="text">{{description}}</h3>
+                <div class="input-group input-group-sm problem-submit">
+                  <span class="input-group-btn">
+                    <button class="btn purple sm" type="submit"><i class="material-icons">&#xE153;</i> SUBMIT</button>
+                  </span>
+                  <input type="text" placeholder="Submit Flag" class="form-control" data-pid="{{pid}}">
+                </div>
+                <span class="help-block"><h3></h3></span>
+              </div>
+              <div class="body hidden hint-tab">
+                <h3 class="text">{{hint}}</h3>
+              </div>
+              <div class="body hidden feedback-tab">
+                <div class="form-group" id="inputGroup">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">How much time did you spend?</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <input class="sliderTime" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="240" data-slider-step="15" data-slider-value="0" />
+                      <text class="h3 sliderTimeDisplay">0:00</text>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">How easy or challenging was the problem?</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <input class="sliderDifficulty" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
+                      <text class="h3 sliderDifficultyDisplay">Average</text>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">Rate your overall interest in the problem.</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <input class="sliderInterest" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
+                      <text class="h3 sliderInterestDisplay">Average</text>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">Would you want to see a problem like this in a future CTF?</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <div class="btn-group radio" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                          <input type="radio" name="options" autocomplete="off" checked>Yes
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="options" autocomplete="off">No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                      <button type="submit" class="btn purple sm expand centerpad"><i class="material-icons">&#xE0B7;</i>SEND FEEDBACK</button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>';
             var hint = "";
             for (var j = 0; j < problem.hints.length; j++){
               hint += problem.hints[j] + '\r\n';
             }
-            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint};
-            var html = S(str).template(value).s;
+            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint}
+            var html = S(str).template(value).s
             $('#main').append(html);
           }
           else{
-            var str = '<div class="problem{{category}}complete" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="false"> <div class="icon"> <i class="material-icons">&#xE5CA;</i> </div><text class="name">{{name}}</text> <text class="value">{{score}}XP</text> </div><div class="problem-slide{{category}}collapse complete" id="{{pid}}"> <div class="selectbox"> <div class="select active" data-tab="problem"> <button><i class="material-icons">&#xE153;</i></button> </div><div class="select" data-tab="hint"> <button><i class="material-icons">&#xE887;</i></button> </div><div class="select" data-tab="feedback"> <button><i class="material-icons">&#xE8DD;</i></button> </div></div><div class="body problem-tab"> <h3 class="text">{{description}}</h3> </div><div class="body hidden hint-tab"> <h3 class="text">{{hint}}</h3> </div><div class="body hidden feedback-tab"> <div class="form-group" id="inputGroup"> <div class="row"> <div class="col-sm-6"> <h3 class="text">How much time did you spend?</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <input class="sliderTime" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="240" data-slider-step="15" data-slider-value="0"/> <text class="h3 sliderTimeDisplay">0:00</text> </div></div><br><div class="row"> <div class="col-sm-6"> <h3 class="text">How easy or challenging was the problem?</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <input class="sliderDifficulty" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/> <text class="h3 sliderDifficultyDisplay">Average</text> </div></div><br><div class="row"> <div class="col-sm-6"> <h3 class="text">Rate your overall interest in the problem.</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <input class="sliderInterest" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3"/> <text class="h3 sliderInterestDisplay">Average</text> </div></div><br><div class="row"> <div class="col-sm-6"> <h3 class="text">Would you want to see a problem like this in a future CTF?</h3> </div><div class="col-sm-6 vert-middle" style="margin-top: 0px"> <div class="btn-group radio" data-toggle="buttons"> <label class="btn btn-primary"> <input type="radio" name="options" autocomplete="off" checked>Yes </label> <label class="btn btn-primary"> <input type="radio" name="options" autocomplete="off">No </label> </div></div></div><br><div class="row"> <div class="col-sm-2"></div><div class="col-sm-8"> <button type="submit" class="btn purple sm expand centerpad"><i class="material-icons">&#xE0B7;</i>SEND FEEDBACK</button> </div><div class="col-sm-2"></div></div></div></div></div>';
+            var str = '<div class="problem {{category}} complete" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="false">
+              <div class="icon">
+                <i class="material-icons">&#xE5CA;</i>
+              </div>
+              <text class="name">{{name}}</text>
+              <text class="value">{{score}} XP</text>
+            </div>
+            <div class="problem-slide {{category}} collapse complete" id="{{pid}}">
+              <div class="selectbox">
+                <div class="select active" data-tab="problem">
+                  <button><i class="material-icons">&#xE153;</i></button>
+                </div>
+                <div class="select" data-tab="hint">
+                  <button><i class="material-icons">&#xE887;</i></button>
+                </div>
+                <div class="select" data-tab="feedback">
+                  <button><i class="material-icons">&#xE8DD;</i></button>
+                </div>
+              </div>
+              <div class="body problem-tab">
+                <h3 class="text">{{description}}</h3>
+              </div>
+              <div class="body hidden hint-tab">
+                <h3 class="text">{{hint}}</h3>
+              </div>
+              <div class="body hidden feedback-tab">
+                <div class="form-group" id="inputGroup">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">How much time did you spend?</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <input class="sliderTime" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="240" data-slider-step="15" data-slider-value="0" />
+                      <text class="h3 sliderTimeDisplay">0:00</text>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">How easy or challenging was the problem?</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <input class="sliderDifficulty" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
+                      <text class="h3 sliderDifficultyDisplay">Average</text>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">Rate your overall interest in the problem.</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <input class="sliderInterest" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
+                      <text class="h3 sliderInterestDisplay">Average</text>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 class="text">Would you want to see a problem like this in a future CTF?</h3>
+                    </div>
+                    <div class="col-sm-6 vert-middle" style="margin-top: 0px">
+                      <div class="btn-group radio" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                          <input type="radio" name="options" autocomplete="off" checked>Yes
+                        </label>
+                        <label class="btn btn-primary">
+                          <input type="radio" name="options" autocomplete="off">No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                      <button type="submit" class="btn purple sm expand centerpad"><i class="material-icons">&#xE0B7;</i>SEND FEEDBACK</button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>';
             var hint = "";
             for (var j = 0; j < problem.hints.length; j++){
               hint += problem.hints[j] + '\r\n';
             }
-            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint};
-            var html = S(str).template(value).s;
+            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint}
+            var html = S(str).template(value).s
             $('#main').append(html);
           }
         }
@@ -92,7 +263,7 @@ $.ajax({
             },
             type: 'POST'
           });
-        });
+        })
 
         $('.sliderTime').slider();
         $(".sliderTime").on("slide", function(slideEvt) {
