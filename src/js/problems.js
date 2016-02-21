@@ -19,7 +19,7 @@ var icon = {
   "misc":""
 };
 $.ajax({
-  url: '/api/problems',
+  url: 'http://design.lasactf.com/api/problems',
   success: function(result) {
     $(function() {
       if (result.status == 1){
