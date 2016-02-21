@@ -26,13 +26,13 @@
     <h3 class="text">{{{description}}}</h3>
     {{#if solved}}
     {{else}}
-    <div class="input-group input-group-sm problem-submit">
-      <span class="input-group-btn">
-                  <button class="btn purple sm" type="submit"><i class="material-icons">&#xE153;</i> SUBMIT</button>
-                </span>
-      <input type="text" placeholder="Submit Flag" class="form-control" data-pid="{{pid}}">
-    </div>
-    <span class="help-block"><h3></h3></span>
+      <div class="input-group input-group-sm problem-submit">
+        <span class="input-group-btn">
+            <button class="btn purple sm" type="submit"><i class="material-icons">&#xE153;</i> SUBMIT</button>
+        </span>
+        <input type="text" placeholder="Submit Flag" class="form-control" data-pid="{{pid}}">
+      </div>
+      <span class="help-block"><h3></h3></span>
     {{/if}}
   </div>
   <div class="body hidden hint-tab">
