@@ -151,6 +151,11 @@
   width: 52px;
   border: 0;
   border-radius: 0;
+  background-color: material-color("grey", "700");
+}
+.problem-slide .problem-submit
+{
+  box-shadow: none;
 }
 .problem-slide .problem-submit .btn i {
   font-size: 24px !important;
@@ -177,17 +182,17 @@
 .problem-slide .select.active button:hover {
   background-color: material-color('grey','600')!important;
 }
-
 .problem.web.complete,
 .problem.web .icon,
 .problem-slide.web .selectbox,
 .problem-slide.web .select button,
-.problem-slide.web .problem-submit .btn {
+.problem-slide.web .problem-submit .btn.active {
   background-color: $color-web;
 }
 .problem-slide.web .select button:hover,
 .problem.web.complete:hover,
-.problem.web:hover .icon {
+.problem.web:hover .icon,
+.problem-slide.web .problem-submit .btn.active:hover {
   background-color: lighten($color-web, 10%);
 }
 .problem-slide.web .problem-submit .form-control:active,
@@ -201,12 +206,13 @@
 .problem.crypto .icon,
 .problem-slide.crypto .selectbox,
 .problem-slide.crypto .select button,
-.problem-slide.crypto .problem-submit .btn {
+.problem-slide.crypto .problem-submit .btn.active {
   background-color: $color-crypt;
 }
 .problem-slide.crypto .select button:hover,
 .problem.crypto.complete:hover,
-.problem.crypto:hover .icon {
+.problem.crypto:hover .icon,
+.problem-slide.crypto .problem-submit .btn.active:hover {
   background-color: lighten($color-crypt, 10%);
 }
 .problem-slide.crypto .problem-submit .form-control:active,
@@ -220,13 +226,13 @@
 .problem.forensics .icon,
 .problem-slide.forensics .selectbox,
 .problem-slide.forensics .select button,
-.problem-slide.forensics .problem-submit .btn {
+.problem-slide.forensics .problem-submit .btn.active {
   background-color: $color-forensics;
 }
 .problem-slide.forensics .select button:hover,
 .problem.forensics.complete:hover,
 .problem.forensics:hover .icon,
-.problem-slide.forensics .problem-submit .btn:hover {
+.problem-slide.forensics .problem-submit .btn.active:hover {
   background-color: lighten($color-forensics, 10%);
 }
 .problem-slide.forensics .problem-submit .form-control:active,
@@ -240,13 +246,13 @@
 .problem.reverse .icon,
 .problem-slide.reverse .selectbox,
 .problem-slide.reverse .select button,
-.problem-slide.reverse .problem-submit .btn {
+.problem-slide.reverse .problem-submit .btn.active {
   background-color: $color-reverse;
 }
 .problem-slide.reverse .select button:hover,
 .problem.reverse.complete:hover,
 .problem.reverse:hover .icon,
-.problem-slide.reverse .problem-submit .btn:hover {
+.problem-slide.reverse .problem-submit .btn.active:hover {
   background-color: lighten($color-reverse, 10%);
 }
 .problem-slide.reverse .problem-submit .form-control:active,
@@ -260,13 +266,13 @@
 .problem.binary .icon,
 .problem-slide.binary .selectbox,
 .problem-slide.binary .select button,
-.problem-slide.binary .problem-submit .btn {
+.problem-slide.binary .problem-submit .btn.active {
   background-color: $color-binary;
 }
 .problem-slide.binary .select button:hover,
 .problem.binary.complete:hover,
 .problem.binary:hover .icon,
-.problem-slide.binary .problem-submit .btn:hover{
+.problem-slide.binary .problem-submit .btn.active:hover{
   background-color: lighten($color-binary, 10%);
 }
 .problem-slide.binary .problem-submit .form-control:active,
@@ -280,13 +286,13 @@
 .problem.algo .icon,
 .problem-slide.algo .selectbox,
 .problem-slide.algo .select button,
-.problem-slide.algo .problem-submit .btn {
+.problem-slide.algo .problem-submit .btn.active {
   background-color: $color-algo;
 }
 .problem-slide.algo .select button:hover,
 .problem.algo.complete:hover,
 .problem.algo:hover .icon,
-.problem-slide.algo .problem-submit .btn:hover{
+.problem-slide.algo .problem-submit .btn.active:hover{
   background-color: lighten($color-algo, 10%);
 }
 .problem-slide.algo .problem-submit .form-control:active,
