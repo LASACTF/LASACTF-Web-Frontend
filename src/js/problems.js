@@ -53,6 +53,9 @@ $.ajax({
         for (var i = 0; i < result.data.length; i++) {
           var problem = result.data[i];
           var hint = "";
+          for (var j = 0; j < problem.hints.length; j++){
+            hint += problem.hints[j] + '<br>';
+          }
           var value = {
             "pid": problem.pid,
             "description": problem.description,
@@ -94,6 +97,15 @@ $.ajax({
             var parent = $(this).parent();
             var help = parent.siblings('.help-block').eq(0);
             ajaxSubmit(input, help, parent);
+          }
+        });
+        $('.problem-submit .form-control').on('input',function(event) {
+          var button = $(this).siblings().eq(0).children().eq(0);
+          if ($(this).val().length > 0){
+            button.addClass('active');
+          }
+          else{
+            button.removeClass('active');
           }
         });
 
