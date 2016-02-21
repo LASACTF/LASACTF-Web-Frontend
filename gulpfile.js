@@ -40,11 +40,11 @@ gulp.task('fix-templates', ['libmin'], function(){
      return gulp.src('dist/**/*.src')
       .pipe(rimraf())
       .pipe(ext_replace('.html', '.html.src'))
-      .pipe(gulp.dest("src/partial/"));
+      .pipe(gulp.dest("src/partial-compiled/"));
 });
 
 // Gulp Mustache Task
-gulp.task('mustache', function() {
+gulp.task('mustache', ['fix-templates'], function() {
     gulp.src("src/*.html")
         .pipe(mustache({},{},{}))
         .pipe(gulp.dest("dist/"));
@@ -75,13 +75,13 @@ gulp.task('copy', function () {
 });
 
 
-gulp.task('build', ['sass','libmin', 'fix-templates', 'mustache','handlebars','compress','copy'] )
+gulp.task('build', ['sass','handlebars','compress','copy','mustache'] )
 gulp.task('default', ['build','watch']);
 
-gulp.task('watch', ['sass', 'mustache', 'handlebars','compress','copy'], function () {
+gulp.task('watch', function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch('./src/partial-src/*.src', ['libmin', 'fix-templates', 'mustache']);
-    gulp.watch('./src/**/*.html', ['mustache']);
+    gulp.watch('./src/*.html', ['mustache']);
     gulp.watch('./src/**/*.hbs', ['handlebars']);
     gulp.watch('./src/js/**/*.js', ['compress']);
     gulp.watch('./src/img/**/*', ['copy']);
