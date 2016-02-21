@@ -86,32 +86,33 @@
   padding-top: 7px;
   @include transition(background-color .15s ease-in-out);
 }
-.problem-submit .form-control {
+.problem-slide .problem-submit .form-control {
   font-size: 24px;
   padding: 3px 12px !important;
   background-color: #616161;
   color: #fff !important;
   border-radius: 0;
-  border: 2px solid #616161;
+  border: 0;
   box-shadow: none;
   height: 36px;
-  @include transition(background-color .15s ease-in-out, border-color .15s ease-in-out);
+  @include transition(background-color .15s ease-in-out);
+  @include transition(border-color .15s ease-in-out);
 }
-.problem-submit .form-control:active,
-.problem-submit .form-control:focus
-{
-  background-color: material-color('purple', 'a200');
-  border: 2px solid material-color('purple', 'a200');
+.problem-slide .problem-submit .form-control:active::-webkit-input-placeholder,
+.problem-slide .problem-submit .form-control:focus::-webkit-input-placeholder {
+  color: material-color("grey", "300");
 }
-.problem-submit .btn {
+.problem-slide .problem-submit .btn {
   margin: 0;
   height: 36px !important;
   font-size: 20px;
   width: 52px;
+  border: 0;
 }
-.problem-submit .btn i {
+.problem-slide .problem-submit .btn i {
   font-size: 24px !important;
-  margin-top: -2px;
+  margin-top: -6px;
+  margin-left: 4px;
 }
 .problem-slide .selectbox .select:nth-child(1) {
   top: 0;
@@ -130,10 +131,12 @@
 .problem-slide .select.active button:hover {
   background-color: material-color('grey','600')!important;
 }
+
 .problem.web.complete,
 .problem.web .icon,
 .problem-slide.web .selectbox,
-.problem-slide.web .select button {
+.problem-slide.web .select button,
+.problem-slide.web .problem-submit .btn {
   background-color: $color-web;
 }
 .problem-slide.web .select button:hover,
@@ -141,10 +144,18 @@
 .problem.web:hover .icon {
   background-color: lighten($color-web, 10%);
 }
+.problem-slide.web .problem-submit .form-control:active,
+.problem-slide.web .problem-submit .form-control:focus
+{
+  background-color: $color-web;
+  border-color: $color-web;
+}
+
 .problem.crypto.complete,
 .problem.crypto .icon,
 .problem-slide.crypto .selectbox,
-.problem-slide.crypto .select button {
+.problem-slide.crypto .select button,
+.problem-slide.crypto .problem-submit .btn {
   background-color: $color-crypt;
 }
 .problem-slide.crypto .select button:hover,
@@ -152,36 +163,69 @@
 .problem.crypto:hover .icon {
   background-color: lighten($color-crypt, 10%);
 }
+.problem-slide.crypto .problem-submit .form-control:active,
+.problem-slide.crypto .problem-submit .form-control:focus
+{
+  background-color: $color-crypt;
+  border-color: $color-crypt;
+}
+
 .problem.forensics.complete,
 .problem.forensics .icon,
 .problem-slide.forensics .selectbox,
-.problem-slide.forensics .select button {
+.problem-slide.forensics .select button,
+.problem-slide.forensics .problem-submit .btn {
   background-color: $color-forensics;
 }
 .problem-slide.forensics .select button:hover,
 .problem.forensics.complete:hover,
-.problem.forensics:hover .icon {
+.problem.forensics:hover .icon,
+.problem-slide.forensics .problem-submit .btn:hover {
   background-color: lighten($color-forensics, 10%);
 }
+.problem-slide.forensics .problem-submit .form-control:active,
+.problem-slide.forensics .problem-submit .form-control:focus
+{
+  background-color: $color-forensics;
+  border-color: $color-forensics;
+}
+
 .problem.reverse.complete,
 .problem.reverse .icon,
 .problem-slide.reverse .selectbox,
-.problem-slide.reverse .select button {
+.problem-slide.reverse .select button,
+.problem-slide.reverse .problem-submit .btn {
   background-color: $color-reverse;
 }
 .problem-slide.reverse .select button:hover,
 .problem.reverse.complete:hover,
-.problem.reverse:hover .icon {
+.problem.reverse:hover .icon,
+.problem-slide.reverse .problem-submit .btn:hover {
   background-color: lighten($color-reverse, 10%);
 }
+.problem-slide.reverse .problem-submit .form-control:active,
+.problem-slide.reverse .problem-submit .form-control:focus
+{
+  background-color: $color-reverse;
+  border-color: $color-reverse;
+}
+
 .problem.binary.complete,
 .problem.binary .icon,
 .problem-slide.binary .selectbox,
-.problem-slide.binary .select button {
+.problem-slide.binary .select button,
+.problem-slide.binary .problem-submit .btn {
   background-color: $color-binary;
 }
 .problem-slide.binary .select button:hover,
 .problem.binary.complete:hover,
-.problem.binary:hover .icon {
+.problem.binary:hover .icon,
+.problem-slide.binary .problem-submit .btn:hover{
   background-color: lighten($color-binary, 10%);
+}
+.problem-slide.binary .problem-submit .form-control:active,
+.problem-slide.binary .problem-submit .form-control:focus
+{
+  background-color: $color-binary;
+  border-color: $color-binary;
 }
