@@ -31,8 +31,8 @@ $.ajax({
             for (var j = 0; j < problem.hints.length; j++){
               hint += problem.hints[j] + '\r\n';
             }
-            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint}
-            var html = S(str).template(value).s
+            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint};
+            var html = S(str).template(value).s;
             $('#main').append(html);
           }
           else{
@@ -41,8 +41,8 @@ $.ajax({
             for (var j = 0; j < problem.hints.length; j++){
               hint += problem.hints[j] + '\r\n';
             }
-            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint}
-            var html = S(str).template(value).s
+            var value = {"pid":problem.pid, "description": problem.description, category:convert[problem.category.toLowerCase()], "name":problem.name, "score": problem.score, "icon": icon[convert[problem.category.toLowerCase()]], "hint": hint};
+            var html = S(str).template(value).s;
             $('#main').append(html);
           }
         }
@@ -92,7 +92,7 @@ $.ajax({
             },
             type: 'POST'
           });
-        })
+        });
 
         $('.sliderTime').slider();
         $(".sliderTime").on("slide", function(slideEvt) {
