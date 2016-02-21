@@ -19,23 +19,26 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 $.ajax({
-  url: '/api/stats/scoreboard',
+  url: 'http://design.lasactf.com/api/stats/scoreboard',
   success: function(result) {
     if (result.status == 1) {
       $.ajax({
-        url: '/api/team',
+        url: 'http://design.lasactf.com/api/team',
         success: function(teamresult) {
           if (result.status == 1) {
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
             for (var i = 0; i < result.data.public.length; i++) {
               var team = result.data.public[i];
-              if (teamresult.data.team_name != team.name) {
-                table.append('<div class="scorerow white"> <div class = "col"> <h2 class = "text"> ' + (i + 1) + ' <text class = "ligature"> ' + ordinal_suffix_of(i + 1) + ' </text></h2> </div> <div class = "col"> <h2 class = "text"> ' + escapeHtml(team.name) + ' </h2></div> <div class = "col"> <h4 class = "text"> ' + escapeHtml(team.affiliation) + ' </h4></div><div class = "col"> <h2 class = "text"> ' + escapeHtml(team.score) + ' <text class = "h5 color-grey-600"> XP </text></h2> </div> </div>');
-              } else {
-                $('#textPlace').html((i + 1) + '<text class="ligature" id="textSuffix">' + ordinal_suffix_of(i + 1) + '</text> place');
-                table.append('<div class="scorerow white you"> < div class = "col" > < h2 class = "text" > ' + (i + 1) + ' < text class = "ligature" > ' + ordinal_suffix_of(i + 1) + ' < /text></h2 > < /div> < div class = "col" > < h2 class = "text" > ' + escapeHtml(team.name) + ' < /h2></div>< div class = "col" > < h4 class = "text" > ' + escapeHtml(team.affiliation) + ' < /h4></div><div class = "col" > < h2 class = "text" > ' + escapeHtml(team.score) + ' < text class = "h5 color-grey-600" > XP < /text></h2> </div> </div>');
-              }
+              var value = {
+                "name": team.name,
+                "affiliation": team.affiliation,
+                "score": team.score,
+                "num": i + 1 + "",
+                "suffix": ordinal_suffix_of(i + 1),
+                "you": teamresult.data.team_name == team.name
+              };
+              table.append(App.templates.scoreboard(value));
             }
             if ($('#textPlace').text().includes("-1")) {
               $('#textPlace').text("∞ place");
