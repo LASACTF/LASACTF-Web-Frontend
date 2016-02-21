@@ -14,7 +14,7 @@ var icon = {
   "binary":"&#xE90E;",
   "forensics":"&#xE90D;",
   "crypto":"&#xE897;",
-  "algo":"",
+  "algo":"&#xE155;",
   "asymptotic":"",
   "misc":""
 };
