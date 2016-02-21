@@ -248,12 +248,12 @@ $.ajax({
             },
             success: function(result) {
               if (result.status == 1) {
-                  help.addClass("success-text");
+                  help.removeClass("failure-text").addClass("success-text");
                   parent.removeClass('has-failure').addClass('has-success');
                   help.children('h3').text(result.message);
                   setTimeout(
                   function() {
-                    window.location.href = "/problem";
+                    window.location.href = "/problems";
                   }, 2000);
               } else {
                 help.addClass("failure-text");
