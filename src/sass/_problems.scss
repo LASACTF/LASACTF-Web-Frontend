@@ -41,6 +41,11 @@
   float: none;
   position: relative;
 }
+.problem-slide a:hover,
+.problem-slide a:active
+{
+  color: #fff;
+}
 .problem-slide.in {
   min-height: 112px;
 }
