@@ -41,7 +41,7 @@ $.ajax({
               };
               if (teamresult.data.team_name == team.name){
                 inscoreboard = true;
-                $('#textPlace').text((i + 1) + " place");
+                $('#textPlace').text((i + 1) + "");
                 $('#textSuffix').text(ordinal_suffix_of(i + 1));
 
               }
