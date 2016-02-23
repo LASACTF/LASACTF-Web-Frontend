@@ -28,6 +28,7 @@ $.ajax({
           if (result.status == 1) {
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
+            var inscoreboard = false
             for (var i = 0; i < result.data.public.length; i++) {
               var team = result.data.public[i];
               var value = {
@@ -38,9 +39,13 @@ $.ajax({
                 "suffix": ordinal_suffix_of(i + 1),
                 "you": teamresult.data.team_name == team.name
               };
+              if (teamresult.data.team_name == team.name){
+                inscoreboard = true;
+                $('#textPlace').text((i + 1) + " place");
+              }
               table.append(App.templates.scoreboard(value));
             }
-            if ($('#textPlace').text().includes("-1")) {
+            if (!inscoreboard) {
               $('#textPlace').text("∞ place");
               $('#divScored').addClass("hidden");
               $('#divUnscored').removeClass("hidden");
