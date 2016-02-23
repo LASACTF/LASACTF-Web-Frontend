@@ -42,6 +42,8 @@ $.ajax({
               if (teamresult.data.team_name == team.name){
                 inscoreboard = true;
                 $('#textPlace').text((i + 1) + " place");
+                $('#textSuffix').text(ordinal_suffix_of(i + 1));
+
               }
               table.append(App.templates.scoreboard(value));
             }
