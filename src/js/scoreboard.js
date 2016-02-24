@@ -19,15 +19,16 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 $.ajax({
-  url: 'http://design.lasactf.com/api/stats/scoreboard',
+  url: '/api/stats/scoreboard',
   success: function(result) {
     if (result.status == 1) {
       $.ajax({
-        url: 'http://design.lasactf.com/api/team',
+        url: '/api/team',
         success: function(teamresult) {
           if (result.status == 1) {
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
+            var inscoreboard = false
             for (var i = 0; i < result.data.public.length; i++) {
               var team = result.data.public[i];
               var value = {
@@ -38,9 +39,15 @@ $.ajax({
                 "suffix": ordinal_suffix_of(i + 1),
                 "you": teamresult.data.team_name == team.name
               };
+              if (teamresult.data.team_name == team.name){
+                inscoreboard = true;
+                $('#textPlace').text((i + 1) + "");
+                $('#textSuffix').text(ordinal_suffix_of(i + 1));
+
+              }
               table.append(App.templates.scoreboard(value));
             }
-            if ($('#textPlace').text().includes("-1")) {
+            if (!inscoreboard) {
               $('#textPlace').text("∞ place");
               $('#divScored').addClass("hidden");
               $('#divUnscored').removeClass("hidden");

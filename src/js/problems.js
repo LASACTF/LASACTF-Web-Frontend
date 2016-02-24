@@ -46,7 +46,7 @@ function ajaxSubmit(input, help, parent) {
   });
 }
 $.ajax({
-  url: 'http://design.lasactf.com/api/problems',
+  url: '/api/problems',
   success: function(result) {
     $(function() {
       if (result.status == 1) {
