@@ -16,10 +16,10 @@ function validatePassword() {
     $('#helpPassword').text('Passwords must be at least 6 characters');
     return;
   }
-  if ($('#inputPassword').val().length > 50) {
+  if ($('#inputPassword').val().length > 300) {
     $('#inputPassword').parent().parent().addClass('has-failure');
     $('#inputPassword').parent().parent().removeClass('has-success');
-    $('#helpPassword').text('Passwords cannot be more than 50 characters');
+    $('#helpPassword').text('Passwords cannot be more than 300 characters');
     return;
   }
   if ($('#inputPassword').val() != $('#inputConfirmPassword').val()) {
@@ -34,7 +34,7 @@ function validatePassword() {
 }
 
 function genericEmptyCheck(field, help) {
-  if (field.val().length == 0) {
+  if (field.val().length === 0) {
     field.parent().parent().addClass('has-failure');
     field.parent().parent().removeClass('has-success');
     help.text('This field is required');
@@ -47,7 +47,7 @@ function genericEmptyCheck(field, help) {
     if (arguments.length > 2) {
       var i;
       for (i = 2; i < arguments.length; i++) {
-        if (!arguments[i].hasClass('hidden') && arguments[i].val().length == 0) {
+        if (!arguments[i].hasClass('hidden') && arguments[i].val().length === 0) {
           valid = false;
           break;
         }
@@ -69,7 +69,7 @@ function locationCheck() {
     return;
   }
   if ($('#inputInternational').hasClass('hidden')) {
-    if ($('#inputState').val().length != 0 && $('#inputCity').val().length != 0) {
+    if ($('#inputState').val().length !== 0 && $('#inputCity').val().length !== 0) {
       $('#inputState').parent().parent().removeClass('has-failure');
       $('#inputState').parent().parent().addClass('has-success');
       $('#helpLocation').text('');
@@ -79,7 +79,7 @@ function locationCheck() {
       $('#helpLocation').text('Please enter a city and state');
     }
   } else {
-    if ($('#inputInternational').val().length != 0) {
+    if ($('#inputInternational').val().length !== 0) {
       $('#inputState').parent().parent().removeClass('has-failure');
       $('#inputState').parent().parent().addClass('has-success');
       $('#helpLocation').text('');
@@ -99,13 +99,13 @@ $(function() {
       $('#helpUsername').text('Usernames must be at least 3 characters');
       return;
     }
-    if ($('#inputUsername').val().length > 32) {
+    if ($('#inputUsername').val().length > 19) {
       $('#inputUsername').parent().parent().addClass('has-failure');
       $('#inputUsername').parent().parent().removeClass('has-success');
-      $('#helpUsername').text('Usernames cannot be more than 32 characters');
+      $('#helpUsername').text('Usernames cannot be more than 19 characters');
       return;
     }
-    if (/\s/g.exec($('#inputUsername').val()) != null) {
+    if (/\s/g.exec($('#inputUsername').val()) !== null) {
       $('#inputUsername').parent().parent().addClass('has-failure');
       $('#inputUsername').parent().parent().removeClass('has-success');
       $('#helpUsername').text('Usernames may not contain whitespace');
@@ -117,7 +117,7 @@ $(function() {
         "username": $('#inputUsername').val(),
       },
       success: function(data) {
-        if (data['status'] == 1) {
+        if (data.status == 1) {
           $('#inputUsername').parent().parent().addClass('has-success');
           $('#inputUsername').parent().parent().removeClass('has-failure');
           $('#helpUsername').text('');
@@ -224,7 +224,7 @@ $(function() {
       if (!$(this).parent().parent().hasClass('has-success')) {
         formFailed = true;
         console.log($(this));
-        if ($(this).val().length == 0) {
+        if ($(this).val().length === 0) {
           $(this).parent().parent().addClass('has-failure');
           $(this).parent().parent().removeClass('has-success');
         }
@@ -261,7 +261,7 @@ $(function() {
             window.location.href = "/login?v=1";
           } else {
             $('#helpError').text("Error:" + data.message);
-            grecaptcha.reset()
+            grecaptcha.reset();
           }
         },
         type: 'POST'
