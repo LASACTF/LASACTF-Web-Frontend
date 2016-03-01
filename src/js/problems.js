@@ -29,7 +29,6 @@ function ajaxSubmit(input, help, parent) {
     },
     success: function(result) {
       if (result.status == 1) {
-        console.log(result);
         help.removeClass("failure-text").addClass("success-text");
         parent.removeClass('has-failure').addClass('has-success');
         help.children('h3').text(result.message);
@@ -94,6 +93,7 @@ $.ajax({
           var input = $(this).siblings('input').eq(0);
           var parent = $(this).parent();
           var help = parent.siblings('.help-block').eq(0);
+          console.log(input,help,parent);
           ajaxSubmit(input, help, parent);
         });
         $('.problem-submit .form-control').keypress(function(event) {
@@ -102,6 +102,7 @@ $.ajax({
             var input = $(this);
             var parent = $(this).parent();
             var help = parent.siblings('.help-block').eq(0);
+            console.log(input,help,parent);
             ajaxSubmit(input, help, parent);
           }
         });
