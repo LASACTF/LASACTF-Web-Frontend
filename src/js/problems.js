@@ -29,6 +29,7 @@ function ajaxSubmit(input, help, parent) {
     },
     success: function(result) {
       if (result.status == 1) {
+        console.log(result);
         help.removeClass("failure-text").addClass("success-text");
         parent.removeClass('has-failure').addClass('has-success');
         help.children('h3').text(result.message);
