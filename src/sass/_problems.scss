@@ -148,10 +148,13 @@
   margin: 0;
   height: 36px !important;
   font-size: 20px;
-  width: 52px;
   border: 0;
   border-radius: 0;
   background-color: material-color("grey", "700");
+  margin-left: 6px;
+  padding: 0px 24px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 .problem-slide .problem-submit
 {
