@@ -44,7 +44,7 @@ $color-asymptotic: material-color('yellow','500'); //math, problem solving, logi
 $bg-color-index: material-color('grey','900');
 $bg-color-compete: material-color('grey','800');
 $color-text-success: material-color('green','a400');
-$color-text-failure: material-color('deep-orange','a400');
+$color-text-failure: material-color('amber','a400');
 /** MIXINS **/
 @mixin transition($s1) {
   -webkit-transition: $s1;
