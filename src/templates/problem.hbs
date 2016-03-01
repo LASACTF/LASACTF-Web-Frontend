@@ -1,4 +1,4 @@
-<div class="problem {{category}} {{#if solved}}complete{{/if}}" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="{{#if solved}}false{{else}}true{{/if}}">
+<div class="problem {{category}} {{#if solved}}complete{{/if}}" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="{{#if solved}}false{{else if collapse}}false{{else}}true{{/if}}">
   <div class="icon">
     {{#if solved}}
       <i class="material-icons">&#xE5CA;</i>
@@ -10,7 +10,7 @@
   <text class="name">{{name}}</text>
   <text class="value">{{score}} XP</text>
 </div>
-<div class="problem-slide {{category}} collapse {{#if solved}}complete{{else}}in{{/if}}" id="{{pid}}">
+<div class="problem-slide {{category}} collapse {{#if solved}}complete{{else if collapse}} {{else}}in{{/if}}" id="{{pid}}">
   <div class="selectbox">
     <div class="select active" data-tab="problem">
       <button><i class="material-icons">&#xE153;</i></button>

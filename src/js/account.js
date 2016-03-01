@@ -84,4 +84,11 @@ $(function() {
   if (localStorage.getItem("nocountdown") == "true") {
     $('#inputCountdown').prop('checked', true);
   }
+  $('#inputCollapse').click(function() {
+    localStorage.setItem("collapse", $('#inputCollapse')
+      .is(':checked'));
+  });
+  if (localStorage.getItem("collapse") == "true") {
+    $('#inputCollapse').prop('checked', true);
+  }
 });
