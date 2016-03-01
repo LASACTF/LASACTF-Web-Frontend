@@ -31,7 +31,7 @@ function ajaxSubmit(input, help, parent) {
       if (result.status == 1) {
         help.removeClass("failure-text").addClass("success-text");
         parent.removeClass('has-failure').addClass('has-success');
-        help.children('h3').text(result.message);
+        help.children('h4').text(result.message);
         setTimeout(
           function() {
             window.location.href = "/problems";
@@ -39,7 +39,7 @@ function ajaxSubmit(input, help, parent) {
       } else {
         help.addClass("failure-text");
         parent.removeClass('has-success').addClass('has-failure');
-        help.children('h3').text(result.message);
+        help.children('h4').text(result.message);
       }
     },
     type: 'POST'
@@ -93,7 +93,6 @@ $.ajax({
           var input = $(this).siblings('input').eq(0);
           var parent = $(this).parent();
           var help = parent.siblings('.help-block').eq(0);
-          console.log(input,help,parent);
           ajaxSubmit(input, help, parent);
         });
         $('.problem-submit .form-control').keypress(function(event) {
@@ -102,7 +101,6 @@ $.ajax({
             var input = $(this);
             var parent = $(this).parent();
             var help = parent.siblings('.help-block').eq(0);
-            console.log(input,help,parent);
             ajaxSubmit(input, help, parent);
           }
         });
