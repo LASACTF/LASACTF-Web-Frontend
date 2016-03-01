@@ -51,6 +51,10 @@ $.ajax({
   success: function(result) {
     $(function() {
       if (result.status == 1) {
+        var collapse = false;
+        if (localStorage.getItem("collapse") == "true") {
+          collapse = true;
+        }
         for (var i = 0; i < result.data.length; i++) {
           var problem = result.data[i];
           var hint = "";
@@ -65,7 +69,8 @@ $.ajax({
             "score": problem.score,
             "icon": icon[convert[problem.category.toLowerCase()]],
             "hint": hint,
-            "solved": problem.solved ? true : null
+            "solved": problem.solved ? true : null,
+            "collapse": collapse
           };
           $('#main').append(App.templates.problem(value));
         }
