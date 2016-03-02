@@ -35,7 +35,7 @@ function ajaxSubmit(input, help, parent) {
         setTimeout(
           function() {
             help.children('h4').text("");
-            parent.addclass("hidden")
+            parent.addClass("hidden");
             var root = parent.parent().parent();
             var title = $('#' + root.attr('id') + "-title");
             title.addClass("complete");
