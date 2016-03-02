@@ -35,11 +35,14 @@ function ajaxSubmit(input, help, parent) {
         setTimeout(
           function() {
             help.children('h4').text("");
-            var root = parent.parent();
+            var root = parent.parent().parent();
             console.log(root);
             root.toggle();
-            var title = $('#' + root.id() + "-title");
+            var title = $('#' + root.attr('id') + "-title");
             console.log(title);
+            root.removeClass("in");
+            root.addClass("complete");
+            title.addClass("complete");
           }, 500);
       } else {
         help.addClass("failure-text");
