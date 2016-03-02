@@ -36,14 +36,12 @@ function ajaxSubmit(input, help, parent) {
           function() {
             help.children('h4').text("");
             var root = parent.parent().parent();
-            console.log(root);
-            root.toggle();
             var title = $('#' + root.attr('id') + "-title");
-            console.log(title);
-            root.removeClass("in");
-            root.addClass("complete");
             title.addClass("complete");
-          }, 500);
+            title.children('div').children('i').html("&#xE5CA;");
+            title.click();
+            root.addClass("complete");
+          }, 1000);
       } else {
         help.addClass("failure-text");
         parent.removeClass('has-success').addClass('has-failure');
