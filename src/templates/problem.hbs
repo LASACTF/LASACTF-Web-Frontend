@@ -1,4 +1,4 @@
-<div class="problem {{category}} {{#if solved}}complete{{/if}}" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="{{#if solved}}false{{else if collapse}}false{{else}}true{{/if}}">
+<div class="problem {{category}} {{#if solved}}complete{{/if}}" data-toggle="collapse" data-target="#{{pid}}" aria-expanded="{{#if solved}}false{{else if collapse}}false{{else}}true{{/if}}" id="{{pid}}-title">
   <div class="icon">
     {{#if solved}}
       <i class="material-icons">&#xE5CA;</i>
@@ -27,7 +27,7 @@
     {{#if solved}}
     {{else}}
       <div class="input-group input-group-sm problem-submit">
-        <input type="text" placeholder="Submit Flag" class="form-control" data-pid="{{pid}}">
+        <input type="text" placeholder="Flag" class="form-control" data-pid="{{pid}}">
         <span class="input-group-btn">
             <button class="btn purple sm active" type="submit">SUBMIT</button>
         </span>
