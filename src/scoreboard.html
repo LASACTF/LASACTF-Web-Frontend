@@ -12,9 +12,9 @@
     {{> partial/header.html}}
     <div class="content">
       <div class="row">
-        <div class="col-sm-8 nopad" id="divScored">
+        <div class="col-sm-8 nopad hidden" id="divScored">
           <h2 class="color-grey-400 text">Your team is in </h2>
-          <h0 class="text color-purple-a200" id="textPlace"></h0>
+          <h0 class="text color-purple-a200" id="textPlace">-1</h0>
           <h0><text class="text color-purple-a200 ligature" id="textSuffix">st</text></h0>
           <h0 class="text color-purple-a200">&nbsp;place</h0>
           <h0 class="text color-grey-400">!</h0>
@@ -24,7 +24,7 @@
           <br>
           <h4 class="color-grey-600">You must solve at least one problem and be on an eligible team to appear on the scoreboard!</h4>
         </div>
-        <div class="col-sm-4 right nopad smish-invisible">
+        <div class="col-sm-4 right nopad smish-invisible hidden" id="divXp">
           <div class="right">
             <text class="h0 color-purple-a200" id="textScore"></text>
             <text class="h2 color-grey-400"> XP</text>
