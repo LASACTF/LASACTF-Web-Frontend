@@ -34,8 +34,15 @@ function ajaxSubmit(input, help, parent) {
         help.children('h4').text(result.message);
         setTimeout(
           function() {
-            window.location.href = "/problems";
-          }, 500);
+            help.children('h4').text("");
+            parent.addClass("hidden");
+            var root = parent.parent().parent();
+            var title = $('#' + root.attr('id') + "-title");
+            title.addClass("complete");
+            title.children('div').children('i').html("&#xE5CA;");
+            title.click();
+            root.addClass("complete");
+          }, 1000);
       } else {
         help.addClass("failure-text");
         parent.removeClass('has-success').addClass('has-failure');
@@ -46,7 +53,7 @@ function ajaxSubmit(input, help, parent) {
   });
 }
 $.ajax({
-  url: 'http://dev.lasactf.com/api/problems',
+  url: '/api/problems',
   success: function(result) {
     $(function() {
       if (result.status == 1) {
