@@ -47,9 +47,11 @@ $.ajax({
               }
               table.append(App.templates.scoreboard(value));
             }
-            if (!inscoreboard) {
-              $('#textPlace').text("∞ place");
-              $('#divScored').addClass("hidden");
+            if (inscoreboard) {
+              $('#divScored').removeClass("hidden");
+              $('#divXp').removeClass("hidden");
+            }
+            else{
               $('#divUnscored').removeClass("hidden");
             }
           }
