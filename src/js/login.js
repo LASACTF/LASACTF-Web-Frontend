@@ -2,12 +2,17 @@ function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
 }
 $(function() {
-  if (getURLParameter('v') == 1) {
+  if (getURLParameter('v') == 1){
     $('#helpBlock').addClass("success-text");
     $('#helpBlock').text("Account Created! Check your email for verification instructions.");
-  } else if (getURLParameter('s') == 1) {
+  }
+  else if (getURLParameter('s') == 1){
     $('#inputGroup').addClass('has-failure');
-    $('#helpBlock').text("You must sign in to access that page.");
+    $('#helpBlock').text("You must sign in to access that page.")
+  }
+  else if(getURLParameter('d') == 1){
+    $('#helpBlock').addClass("success-text");
+    $('#helpBlock').text("Account Verified! Login to continue.");
   }
   $("#login-form").submit(function(event) {
     event.preventDefault();
