@@ -65,6 +65,12 @@
   padding: 12px 12px 9px 74px;
   position: relative;
 }
+.problem-slide .body,
+.problem-slide .body code
+{
+  word-wrap: break-word;
+  word-break: break-all;
+}
 .problem-slide .body .submit-left {
   position: relative;
   width: 100%;
