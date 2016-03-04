@@ -42,6 +42,7 @@ function ajaxSubmit(input, help, parent) {
             title.children('div').children('i').html("&#xE5CA;");
             title.click();
             root.addClass("complete");
+            regenScoreboard(parseInt($('#textXP').text) + 30);
           }, 1000);
       } else {
         help.addClass("failure-text");
