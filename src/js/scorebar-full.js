@@ -23,6 +23,7 @@ $.ajax({
             }
           }
         }
+        $('#scorebar').removeClass('hidden');
       }
     });
   },
