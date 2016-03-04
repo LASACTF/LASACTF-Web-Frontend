@@ -72,6 +72,7 @@ gulp.task('compress', function() {
 
 gulp.task('copy', function () {
     gulp.src('src/img/**/*').pipe(gulp.dest('dist/img'));
+    gulp.src('lib/font-awesome/fonts/*').pipe(gulp.dest('dist/fonts'));
 });
 
 
