@@ -12,7 +12,7 @@ function regenScoreboard(score) {
         $('#textLevel').text(i + 1);
         $('#textNext').text('∞');
         $('#graphProgress').width('100%');
-      } else if (score < levels[i + 1] && score > levels[i]) {
+      } else if (score < levels[i + 1] && score >= levels[i]) {
         $('#textLevel').text(i + 1 + "");
         $('#textNext').text(levels[i + 1] - score);
         $('#graphProgress').width(((score - levels[i]) / (levels[i + 1] - levels[i])) * 100 + "%");
