@@ -82,6 +82,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch('./src/partial-src/*.src', ['libmin', 'fix-templates', 'mustache']);
     gulp.watch('./src/*.html', ['mustache']);
+    gulp.watch('./src/partial/*.html', ['mustache']);
     gulp.watch('./src/**/*.hbs', ['handlebars']);
     gulp.watch('./src/js/**/*.js', ['compress']);
     gulp.watch('./src/img/**/*', ['copy']);
