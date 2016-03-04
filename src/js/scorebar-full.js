@@ -26,23 +26,22 @@ $.ajax({
   success: function(teamresult) {
     $(function() {
       if (teamresult.status == 1) {
-        regenScoreboard(team.data.score);
+        $.ajax({
+          url: '/api/stats/scoreboard',
+          success: function(result) {
+            $(function() {
+              for (var i = 0; i < result.data.public.length; i++) {
+                var team = result.data.public[i];
+                if (teamresult.data.team_name == team.name) {
+                  $('#textRank').text((i + 1) + "");
+                }
+              }
+            });
+          },
+          type: 'GET'
+        });
+        regenScoreboard(teamresult.data.score);
         $('#scorebar').removeClass('hidden');
-      }
-    });
-  },
-  type: 'GET'
-});
-$.ajax({
-  url: '/api/stats/scoreboard',
-  success: function(result) {
-    $(function() {
-      var inscoreboard = false
-      for (var i = 0; i < result.data.public.length; i++) {
-        if (teamresult.data.team_name == team.name) {
-          inscoreboard = true;
-          $('#textRank').text((i + 1) + "");
-        }
       }
     });
   },
