@@ -107,7 +107,8 @@ $.ajax({
           $('#progressbarReverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
           $('#progressbarBinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
           $('#progressbarAlgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
-
+          console.log(categories);
+          console.log( teamresult.data.solved_problems);
         });
       }
     });
