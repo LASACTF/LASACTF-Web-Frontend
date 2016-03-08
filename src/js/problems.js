@@ -95,7 +95,7 @@ $.ajax({
               "total": 0
             }
           };
-          for (var i = 0; i < result.data; i++) {
+          for (var i = 0; i < result.data.length; i++) {
             console.log(convert[result.data[i].category.toLowerCase()]);
             categories[convert[result.data[i].category.toLowerCase()]].total++;
           }
