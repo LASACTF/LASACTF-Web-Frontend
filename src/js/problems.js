@@ -96,6 +96,7 @@ $.ajax({
             }
           };
           for (var i = 0; i < result.data; i++) {
+            console.log(convert[result.data[i].category.toLowerCase()]);
             categories[convert[result.data[i].category.toLowerCase()]].total++;
           }
           for (var j = 0; j < teamresult.data.solved_problems.length; j++) {
