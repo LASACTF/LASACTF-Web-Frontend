@@ -96,7 +96,6 @@ $.ajax({
             }
           };
           for (var i = 0; i < result.data.length; i++) {
-            console.log(convert[result.data[i].category.toLowerCase()]);
             categories[convert[result.data[i].category.toLowerCase()]].total++;
           }
           for (var j = 0; j < teamresult.data.solved_problems.length; j++) {
@@ -108,8 +107,6 @@ $.ajax({
           $('#progressbarReverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
           $('#progressbarBinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
           $('#progressbarAlgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
-          console.log(categories);
-          console.log( teamresult.data.solved_problems);
         });
       }
     });
