@@ -106,7 +106,7 @@ $.ajax({
           $('#progressbarForensics .progress .progress-bar').width(categories.forensics.solved / categories.forensics.total * 100 + "%");
           $('#progressbarReverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
           $('#progressbarBinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
-          $('#progressbarAlgo .progress .progress-bar').width(categories.algoalgo.solved / categories.algo.total * 100 + "%");
+          $('#progressbarAlgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
 
         });
       }
