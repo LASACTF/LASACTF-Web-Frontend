@@ -56,6 +56,62 @@ function ajaxSubmit(input, help, parent) {
 $.ajax({
   url: '/api/problems',
   success: function(result) {
+    $.ajax({
+      url: '/api/team',
+      type: 'GET',
+      success: function(teamresult) {
+        $(function() {
+          var categories = {
+            "web": {
+              "solved": 0,
+              "total": 0
+            },
+            "crypto": {
+              "solved": 0,
+              "total": 0
+            },
+            "reverse": {
+              "solved": 0,
+              "total": 0
+            },
+            "forensics": {
+              "solved": 0,
+              "total": 0
+            },
+            "binary": {
+              "solved": 0,
+              "total": 0
+            },
+            "algo": {
+              "solved": 0,
+              "total": 0
+            },
+            "asymptotic": {
+              "solved": 0,
+              "total": 0
+            },
+            "misc": {
+              "solved": 0,
+              "total": 0
+            }
+          };
+          for (var i = 0; i < result.data; i++) {
+            categories[convert[result.data[i].category.toLowerCase()]].total++;
+          }
+          for (var j = 0; j < teamresult.data.solved_problems.length; j++) {
+            categories[convert[teamresult.data.solved_problems[j].category.toLowerCase()]].solved++;
+          }
+          $('#progressbarWeb .progress .progress-bar').width(categories.web.solved / categories.web.total * 100 + "%");
+          $('#progressbarCrypto .progress .progress-bar').width(categories.crypto.solved / categories.crypto.total * 100 + "%");
+          $('#progressbarForensics .progress .progress-bar').width(categories.forensics.solved / categories.forensics.total * 100 + "%");
+          $('#progressbarReverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
+          $('#progressbarBinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
+          $('#progressbarAlgo .progress .progress-bar').width(categories.algoalgo.solved / categories.algo.total * 100 + "%");
+
+        });
+      }
+    });
+
     $(function() {
       if (result.status == 1) {
         var collapse = false;
@@ -65,7 +121,7 @@ $.ajax({
         for (var i = 0; i < result.data.length; i++) {
           var problem = result.data[i];
           var hint = "";
-          for (var j = 0; j < problem.hints.length; j++){
+          for (var j = 0; j < problem.hints.length; j++) {
             hint += problem.hints[j] + '<br>';
           }
           var value = {
@@ -112,12 +168,11 @@ $.ajax({
             ajaxSubmit(input, help, parent);
           }
         });
-        $('.problem-submit .form-control').on('input',function(event) {
+        $('.problem-submit .form-control').on('input', function(event) {
           var button = $(this).siblings().eq(0).children().eq(0);
-          if ($(this).val().length > -1){
+          if ($(this).val().length > -1) {
             button.addClass('active');
-          }
-          else{
+          } else {
             button.removeClass('active');
           }
         });
