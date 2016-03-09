@@ -44,9 +44,8 @@ function ajaxSubmit(input, help, parent) {
             root.addClass("complete");
             regenScoreboard(parseInt($('#textXP').text()) + parseInt(title.children('text').eq(1).text()));
             var currentwidth = parseFloat($('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width());
-            var updatedwidth = Math.min((currentwidth + parseFloat(root.attr('data-percent')))*100,100);
+            var updatedwidth = Math.min((currentwidth + parseFloat(root.attr('data-percent'))) * 100, 100);
             $('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width(updatedwidth);
-
           }, 1000);
       } else {
         help.addClass("failure-text");
@@ -58,21 +57,21 @@ function ajaxSubmit(input, help, parent) {
   });
 }
 $.ajax({
-      url: 'http://dev.lasactf.com/api/problems',
-      success: function(result) {
-          $.ajax({
-                url: '/api/team',
-                type: 'GET',
-                success: function(teamresult) {
-                    $(function() {
-                          var categories = {
-                              "web": {
-                                "solved": 0,
-                                "total": 0
-                              },
-                              "crypto": {
-                                "solved": 0,
-                                "total": 0
+  url: 'http://dev.lasactf.com/api/problems',
+  success: function(result) {
+    $.ajax({
+      url: '/api/team',
+      type: 'GET',
+      success: function(teamresult) {
+        $(function() {
+          var categories = {
+            "web": {
+              "solved": 0,
+              "total": 0
+            },
+            "crypto": {
+              "solved": 0,
+              "total": 0
             },
             "reverse": {
               "solved": 0,
@@ -144,7 +143,7 @@ $.ajax({
             "pid": problem.pid,
             "description": problem.description,
             "category": convert[problem.category.toLowerCase()],
-            "percent": 1/categories[convert[problem.category.toLowerCase()]] * 100,
+            "percent": 1 / categories[convert[problem.category.toLowerCase()]] * 100,
             "name": problem.name,
             "score": problem.score,
             "icon": icon[convert[problem.category.toLowerCase()]],
