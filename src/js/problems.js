@@ -43,11 +43,8 @@ function ajaxSubmit(input, help, parent) {
             title.click();
             root.addClass("complete");
             regenScoreboard(parseInt($('#textXP').text()) + parseInt(title.children('text').eq(1).text()));
-            console.log( root.attr('data-category') );
-            console.log(root.attr('data-percent'));
             var currentwidth = parseFloat($('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width());
             var updatedwidth = Math.min((currentwidth + parseFloat(root.attr('data-percent')))*100,100);
-            console.log(updatedwidth);
             $('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width(updatedwidth);
 
           }, 1000);
