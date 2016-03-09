@@ -44,9 +44,9 @@ function ajaxSubmit(input, help, parent) {
             root.addClass("complete");
             regenScoreboard(parseInt($('#textXP').text()) + parseInt(title.children('text').eq(1).text()));
             console.log( root.attr('data-category') );
-            console.log(root.attr('data-percentage'));
-            console.log(parseFloat($('#progressbar' + root.attr('data-category') + '.progress .progress-bar').width()) + root.attr('data-percentage') + ' %' );
-            $('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width( parseFloat($('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width()) + root.attr('data-percentage') + ' %' );
+            console.log(root.attr('data-percent'));
+            console.log(parseFloat($('#progressbar' + root.attr('data-category') + '.progress .progress-bar').width()) + root.attr('data-percent') + ' %' );
+            $('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width( parseFloat($('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width()) + root.attr('data-percent') + ' %' );
 
           }, 1000);
       } else {
