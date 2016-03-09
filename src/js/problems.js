@@ -21,7 +21,7 @@ var icon = {
 
 function ajaxSubmit(input, help, parent) {
   $.ajax({
-    url: '/api/problems/submit',
+    url: 'http://dev.lasactf.com/api/problems/submit',
     data: {
       "key": input.val(),
       "pid": input.attr('data-pid'),
@@ -43,6 +43,11 @@ function ajaxSubmit(input, help, parent) {
             title.click();
             root.addClass("complete");
             regenScoreboard(parseInt($('#textXP').text()) + parseInt(title.children('text').eq(1).text()));
+            console.log( root.attr('data-category') );
+            console.log(root.attr('data-percentage'));
+            console.log(parseFloat($('#progressbar' + root.attr('data-category') + '.progress .progress-bar').width()) + root.attr('data-percentage') + ' %' );
+            $('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width( parseFloat($('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width()) + root.attr('data-percentage') + ' %' );
+
           }, 1000);
       } else {
         help.addClass("failure-text");
@@ -54,21 +59,21 @@ function ajaxSubmit(input, help, parent) {
   });
 }
 $.ajax({
-  url: '/api/problems',
-  success: function(result) {
-    $.ajax({
-      url: '/api/team',
-      type: 'GET',
-      success: function(teamresult) {
-        $(function() {
-          var categories = {
-            "web": {
-              "solved": 0,
-              "total": 0
-            },
-            "crypto": {
-              "solved": 0,
-              "total": 0
+      url: 'http://dev.lasactf.com/api/problems',
+      success: function(result) {
+          $.ajax({
+                url: '/api/team',
+                type: 'GET',
+                success: function(teamresult) {
+                    $(function() {
+                          var categories = {
+                              "web": {
+                                "solved": 0,
+                                "total": 0
+                              },
+                              "crypto": {
+                                "solved": 0,
+                                "total": 0
             },
             "reverse": {
               "solved": 0,
@@ -101,12 +106,12 @@ $.ajax({
           for (var j = 0; j < teamresult.data.solved_problems.length; j++) {
             categories[convert[teamresult.data.solved_problems[j].category.toLowerCase()]].solved++;
           }
-          $('#progressbarWeb .progress .progress-bar').width(categories.web.solved / categories.web.total * 100 + "%");
-          $('#progressbarCrypto .progress .progress-bar').width(categories.crypto.solved / categories.crypto.total * 100 + "%");
-          $('#progressbarForensics .progress .progress-bar').width(categories.forensics.solved / categories.forensics.total * 100 + "%");
-          $('#progressbarReverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
-          $('#progressbarBinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
-          $('#progressbarAlgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
+          $('#progressbarweb .progress .progress-bar').width(categories.web.solved / categories.web.total * 100 + "%");
+          $('#progressbarcrypto .progress .progress-bar').width(categories.crypto.solved / categories.crypto.total * 100 + "%");
+          $('#progressbarforensics .progress .progress-bar').width(categories.forensics.solved / categories.forensics.total * 100 + "%");
+          $('#progressbarreverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
+          $('#progressbarbinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
+          $('#progressbaralgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
         });
       }
     });
@@ -117,6 +122,19 @@ $.ajax({
         if (localStorage.getItem("collapse") == "true") {
           collapse = true;
         }
+        var categories = {
+          "web": 0,
+          "crypto": 0,
+          "reverse": 0,
+          "forensics": 0,
+          "binary": 0,
+          "algo": 0,
+          "asymptotic": 0,
+          "misc": 0
+        };
+        for (var i = 0; i < result.data.length; i++) {
+          categories[convert[result.data[i].category.toLowerCase()]]++;
+        }
         for (var i = 0; i < result.data.length; i++) {
           var problem = result.data[i];
           var hint = "";
@@ -126,7 +144,8 @@ $.ajax({
           var value = {
             "pid": problem.pid,
             "description": problem.description,
-            category: convert[problem.category.toLowerCase()],
+            "category": convert[problem.category.toLowerCase()],
+            "percent": 1/categories[convert[problem.category.toLowerCase()]] * 100,
             "name": problem.name,
             "score": problem.score,
             "icon": icon[convert[problem.category.toLowerCase()]],

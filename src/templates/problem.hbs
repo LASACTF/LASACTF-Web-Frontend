@@ -10,7 +10,7 @@
   <text class="name">{{name}}</text>
   <text class="value">{{score}} XP</text>
 </div>
-<div class="problem-slide {{category}} collapse {{#if solved}}complete{{else if collapse}} {{else}}in{{/if}}" id="{{pid}}">
+<div class="problem-slide {{category}} collapse {{#if solved}}complete{{else if collapse}} {{else}}in{{/if}}" id="{{pid}}" data-category="{{category}}" data-percent="{{percent}}">
   <div class="selectbox">
     <div class="select active" data-tab="problem">
       <button><i class="material-icons">&#xE153;</i></button>

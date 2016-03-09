@@ -18,24 +18,30 @@ $(function() {
     event.preventDefault();
     var username = $('#login-form').find('input[id="inputUsername"]').val();
     var password = $('#login-form').find('input[id="inputPassword"]').val();
-
     $.ajax({
-      url: '/api/user/login',
-      data: {
-        "username": username,
-        "password": password,
+      url: '/api/user/logout',
+      success: function(result) {
+        localStorage.removeItem("username");
+        $.ajax({
+          url: '/api/user/login',
+          data: {
+            "username": username,
+            "password": password,
+          },
+          success: function(data) {
+            if (data.status == 1) {
+              localStorage.setItem("username", username);
+              window.location.href = "/problems";
+            } else {
+              $('#helpBlock').removeClass("success-text");
+              $('#inputGroup').addClass('has-failure');
+              $('#helpBlock').text(data.message);
+            }
+          },
+          type: 'POST'
+        });
       },
-      success: function(data) {
-        if (data.status == 1) {
-          localStorage.setItem("username", username);
-          window.location.href = "/problems";
-        } else {
-          $('#helpBlock').removeClass("success-text");
-          $('#inputGroup').addClass('has-failure');
-          $('#helpBlock').text(data.message);
-        }
-      },
-      type: 'POST'
+      type: 'GET'
     });
   });
 });
