@@ -5,6 +5,11 @@
   box-shadow: 0 0 8px 2px rgba(0,0,0,.25);
   z-index: 1001;
 }
+.navbar.locked,
+.navbar.locked .navbar-collapse
+{
+  background-color: material-color("purple", "500")!important;
+}
 .navbar.profile {
   margin: 0;
   box-shadow: none;
@@ -37,6 +42,7 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  max-height: 48px;
 }
 .navbar .navbar-brand {
   margin-top: -8px;
@@ -72,6 +78,16 @@
   padding: 0 12px;
   background-color: rgba(0,0,0,0);
   @include transition(background-color ease-in-out .15s);
+}
+.navbar.locked button.navbutton:hover,
+.navbar .nav li.button .btn.profile:hover
+{
+  background-color: material-color("purple","400")!important;
+}
+.navbar.locked button.navbutton.active,
+.navbar .nav li.button .btn.profile.active
+{
+  background-color: material-color("grey","500")!important;
 }
 .navbar button.navbutton i {
   font-size: 20px;
@@ -219,9 +235,7 @@ a.noselect {
   border: 0!important;
 }
 /** Mobile Navbar **/
-.navbar-collapse.collapsing {
-  background-color: #212121;
-}
+.navbar-collapse.collapsing,
 .navbar-collapse.collapse.in {
   background-color: #212121;
 }
@@ -332,6 +346,10 @@ a.noselect {
     border-left: 4px solid rgb(33, 33, 33);
     border-right: 4px solid rgb(33, 33, 33);
     color: material-color('grey','200');
+  }
+  .navbar.locked button.navbutton {
+    border-left: 4px solid material-color("purple","500");
+    border-right: 4px solid material-color("purple","500");
   }
   .navbar li.navbuttonwrapper {
     height: auto;
