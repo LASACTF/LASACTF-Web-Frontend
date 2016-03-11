@@ -339,6 +339,52 @@ a.noselect {
     display: inline!important;
   }
 }
+
+/** LOCKED NAVBAR **/
+.navbar.locked .navbar-collapse
+{
+  text-align: center;
+  max-height: 56px;
+}
+.navbar.locked .navbar-nav.navbar-center
+{
+  display: inline-block;
+  float: none!important;
+}
+.navbar.locked .navbar-nav .navbutton
+{
+  font-size: 24px;
+}
+.navbar.locked .navbar-nav .navbutton i
+{
+  font-size: 28px;
+}
+
+@media all and (max-width: 690px)
+{
+  .navbar.locked .navbar-collapse
+  {
+    max-height: none;
+  }
+  .navbar.locked .navbar-nav.navbar-center
+  {
+    float: inherit;
+    display: block;
+  }
+  .navbar.locked .navbar-nav .navbutton
+  {
+    width: 100%;
+  }
+}
+@media all and (min-width: 691px) and (max-width: 767px)
+{
+  .navbar.locked .navbar-nav .navbutton
+  {
+    width: 80px;
+  }
+}
+
+
 /** SM-ISH **/
 @media all and (max-width: 690px) {
   .navbar button.navbutton {
