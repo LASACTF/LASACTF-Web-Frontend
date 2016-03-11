@@ -376,14 +376,13 @@ a.noselect {
     width: 100%;
   }
 }
-@media all and (min-width: 691px) and (max-width: 767px)
+@media all and (max-width: 767px)
 {
   .navbar.locked .navbar-nav .navbutton
   {
-    width: 80px;
+    width: 80px!important;
   }
 }
-
 
 /** SM-ISH **/
 @media all and (max-width: 690px) {
