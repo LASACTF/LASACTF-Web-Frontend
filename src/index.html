@@ -9,47 +9,66 @@
 <body>
   <body class="compete">
     <div class="primarycontainer">
-      {{> partial/header-locked.html}} {{> partial/profilebar.html}}
-      <div class="content">
+      {{> partial/header-locked.html}}
+      <div class="content index">
 
+        <div class="frame purple" style="text-align: center; padding-bottom: 32px;">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <img src="img/LASA-CTF-Logo-v3-3x-trans-white.png" class="logo">
+            </div>
+          </div>
+          <div class="row">
+            <h2><div class="h2 text" id="tdays">00</div><span class="sm-invisible"> days and </span><span class="hidden sm-visible-inline">:</span><div class="h2 text" id="thours">00</div>:<div class="h2 text" id="tmins">00</div>:<div class="h2 text" id="tsecs">00</div><br class="hidden sm-visible-block"> <text id="ttext">until start</text></h2>
+          </div>
+        </div>
+        <div class="frame purple-light" style="text-align: center; padding-bottom:32px; padding-top:12px">
+          <h1>A National Computer Security<br>"Capture-The-Flag" Competition</h1>
+          <h2>By high schoolers for high schoolers</h2>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <br>
+              <h2>March 19-26, 2016</h2>
+
+              <a class="btn purple md wide" href="/register" role="button"><i class="material-icons">&#xE254;</i>REGISTER</a>
+              <br>
+              <a class="btn white md wide" href="/login" role="button"><i class="material-icons">&#xE0DA;</i>LOGIN</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="container" id="cont-super">
+
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <br>
+              <h2>March 19-26, 2016</h2>
+
+              <a class="btn purple md wide" href="/register" role="button"><i class="material-icons">&#xE254;</i>REGISTER</a>
+              <br>
+              <a class="btn white md wide" href="/login" role="button"><i class="material-icons">&#xE0DA;</i>LOGIN</a>
+              <br>
+              <a class="btn white md wide" href="/about" role="button"><i class="material-icons">&#xE153;</i>ABOUT</a>
+              <br>
+              <br>
+              <a class="btn purple wide sm" href="http://eepurl.com/bMBMK1" role="button"><i class="material-icons">&#xE866;</i>SUBSCRIBE TO UPDATES</a>
+              <br>
+              <a class="btn white wide sm" href="mailto:team@lasactf.com" role="button"><i class="material-icons">&#xE0BE;</i>CONTACT US</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
   {{> partial/footer.html}}
 
-  <div class="container" id="cont-super">
-    <div class="row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <img src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png" class="logo">
-      </div>
-    </div>
-    <div class="row">
-      <h2><div class="h2 text" id="tdays">00</div><span class="sm-invisible"> days and </span><span class="hidden sm-visible-inline">:</span><div class="h2 text" id="thours">00</div>:<div class="h2 text" id="tmins">00</div>:<div class="h2 text" id="tsecs">00</div><br class="hidden sm-visible-block"> <text id="ttext">until start</text></h2>
-    </div>
-    <div class="row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <br>
-        <h2>March 19-26, 2016</h2>
-
-        <a class="btn purple md wide" href="/register" role="button"><i class="material-icons">&#xE254;</i>PRE-REGISTER</a>
-        <br>
-        <a class="btn white md wide" href="/login" role="button"><i class="material-icons">&#xE0DA;</i>LOGIN</a>
-        <br>
-        <a class="btn white md wide" href="/about" role="button"><i class="material-icons">&#xE153;</i>ABOUT</a>
-        <br>
-        <br>
-        <a class="btn purple wide sm" href="http://eepurl.com/bMBMK1" role="button"><i class="material-icons">&#xE866;</i>SUBSCRIBE TO UPDATES</a>
-        <br>
-        <a class="btn white wide sm" href="mailto:team@lasactf.com" role="button"><i class="material-icons">&#xE0BE;</i>CONTACT US</a>
-        <h3 class="color-grey-400">Check us out on <a href="https://twitter.com/lasactf"><i class="fa fa-twitter"></i></a> and <a href="https://www.facebook.com/lasactf"><i class="fa fa-facebook-official"></i></a></h3>
-      </div>
-    </div>
-  </div>
-
   <!-- JS --->
-  <script src="js/index.js"></script>
+  <!--<script src="js/index.js"></script>-->
 </body>
 
 </html>
