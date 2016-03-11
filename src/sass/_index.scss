@@ -22,3 +22,18 @@
 {
   background-color: material-color("purple", "400");
 }
+.frame.gray
+{
+  background-color: material-color("grey", "300");
+  color: material-color("grey", "900");
+}
+.frame.gray .btn.white
+{
+  color: material-color("purple", "a200");
+  border-color: material-color("purple", "a200");
+}
+
+.frame.image
+{
+  background-image: url("img/");
+}
