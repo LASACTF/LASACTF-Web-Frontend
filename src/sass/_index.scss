@@ -32,13 +32,16 @@
   background-color: material-color("grey", "300");
   color: material-color("grey", "900");
 }
-.frame.gray .btn.white
-{
-  color: material-color("purple", "a200");
-  border-color: material-color("purple", "a200");
-}
-
 .frame.image
 {
-  background-image: url("img/");
+  background-color: transparent;
+  background-image: url("../img/prizes.gif");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.frame.image .btn.white
+{
+  color: white;
+  border-color: material-color("grey", "400");
 }
