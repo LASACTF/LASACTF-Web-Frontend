@@ -85,16 +85,6 @@
   background-color: rgba(0,0,0,0);
   @include transition(background-color ease-in-out .15s);
 }
-.navbar.locked button.navbutton:hover,
-.navbar.locked .nav li.button .btn.profile:hover
-{
-  background-color: material-color("purple","400")!important;
-}
-.navbar.locked button.navbutton.active,
-.navbar.locked .nav li.button .btn.profile.active
-{
-  background-color: material-color("grey","500")!important;
-}
 .navbar button.navbutton i {
   font-size: 20px;
 }
