@@ -1,3 +1,4 @@
 $(function() {
-  $('#headerShell').addClass('active');  $('.navbar').addClass('shell');
+  $('#headerShell').addClass('active');  \
+  $('.navbar').addClass('shell');
 });
