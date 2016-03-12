@@ -381,19 +381,19 @@ i.head {
 }
 .form-group .form-control:focus::-webkit-input-placeholder,
 .form-group .form-control:active::-webkit-input-placeholder {
-  color: material-color('purple','a200')!important;
+  color:  $white;
 }
 .form-group .form-control:focus:-moz-placeholder,
 .form-group .form-control:active:-moz-placeholder {
-  color: material-color('purple','a200')!important;
+  color: $white;
 }
 .form-group .form-control:focus::-moz-placeholder,
 .form-group .form-control:active::-moz-placeholder {
-  color: material-color('purple','a200')!important;
+  color:  $white;
 }
 .form-group .form-control:focus::-ms-input-placeholder,
 .form-group .form-control:active::-ms-input-placeholder {
-  color: material-color('purple','a200')!important;
+  color:  $white;
 }
 .form-group.has-success .form-control::-webkit-input-placeholder {
   color: #ccc;
@@ -461,13 +461,13 @@ i.head {
   color: #00C853;
 }
 .form-group.has-failure .form-control {
-  background-color: #D84315;
+  background-color: material-color('orange','800');
   color: #fff;
-  border: 2px solid #D84315;
+  border: 2px solid material-color('orange','800');
 }
 .form-group.has-failure .control-label,
 .form-group.has-failure .help-block {
-  color: #FF3D00;
+  color: material-color('orange','a400');
 }
 .form-group.has-success div.asterisk,
 .form-group.has-failure div.asterisk,
