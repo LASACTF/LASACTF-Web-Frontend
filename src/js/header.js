@@ -31,10 +31,8 @@ $.ajax({
         $('#headerUsername').text(" " + result.data.username);
         $('#headerUsername').css("font-size", getProfileFontSize(result.data.username).toString() + "px");
         localStorage.setItem("username", result.data.username);
-        $('#loggedInHeader').removeClass('hidden');
       }
       else if ( result.status == 1 && result.data.logged_in === false){
-        $('#loggedOutHeader').removeClass('hidden');
       }
     });
 
