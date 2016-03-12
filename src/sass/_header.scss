@@ -27,6 +27,12 @@
 .navbar.problems .container-fluid {
   border-bottom: 4px solid material-color('blue','500');
 }
+.navbar.register .container-fluid {
+  border-bottom: 4px solid material-color('green','500');
+}
+.navbar.login .container-fluid {
+  border-bottom: 4px solid material-color('purple','500');
+}
 .navbar .container-fluid {
   //border-bottom: 4px solid #9c27b0;
   height: 66px;
@@ -381,13 +387,6 @@ a.noselect {
   .navbar.locked .navbar-nav .navbutton
   {
     width: 100%;
-  }
-}
-@media all and (max-width: 767px)
-{
-  .navbar.locked .navbar-nav .navbutton
-  {
-    width: 80px!important;
   }
 }
 

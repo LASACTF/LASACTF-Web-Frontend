@@ -2,6 +2,8 @@ function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
 }
 $(function() {
+  $('#headerLogin').addClass('active');
+  $('.navbar').addClass('login');
   if (getURLParameter('v') == 1){
     $('#helpBlock').addClass("success-text");
     $('#helpBlock').text("Account Created! Check your email for verification instructions.");
