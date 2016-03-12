@@ -25,7 +25,7 @@ $.ajax({
       $.ajax({
         url: '/api/team',
         success: function(teamresult) {
-          if (teamresult.status == 1 && result.status == 1) {
+          if (result.status == 1) {
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
             var inscoreboard = false;
@@ -51,7 +51,7 @@ $.ajax({
               $('#divScored').removeClass("hidden");
               $('#divXp').removeClass("hidden");
             }
-            else{
+            else if (teamresult.status == 1){
               $('#divUnscored').removeClass("hidden");
             }
           }
