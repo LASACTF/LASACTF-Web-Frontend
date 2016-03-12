@@ -32,6 +32,11 @@
   background-color: material-color("grey", "300");
   color: material-color("grey", "900");
 }
+.frame.white
+{
+  background-color: white;
+  color: material-color("grey", "900");
+}
 .frame.image
 {
   background-color: transparent;
@@ -44,4 +49,13 @@
 {
   color: white;
   border-color: material-color("grey", "400");
+}
+
+img.sponsor
+{
+  padding: 60px 0 20px;
+  width: auto;
+  height: auto;
+  max-width: 360px;
+  max-height: 200px;
 }
