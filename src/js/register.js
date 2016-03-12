@@ -92,6 +92,7 @@ function locationCheck() {
 }
 //Registration page submission
 $(function() {
+  $('#headerRegister').addClass('active');
   $('#inputUsername').on('blur', function(e) {
     if ($('#inputUsername').val().length < 3) {
       $('#inputUsername').parent().parent().addClass('has-failure');

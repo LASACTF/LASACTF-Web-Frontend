@@ -25,10 +25,10 @@ $.ajax({
       $.ajax({
         url: '/api/team',
         success: function(teamresult) {
-          if (result.status == 1) {
+          if (teamresult.status == 1 && result.status == 1) {
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
-            var inscoreboard = false
+            var inscoreboard = false;
             for (var i = 0; i < result.data.public.length; i++) {
               var team = result.data.public[i];
               var value = {
