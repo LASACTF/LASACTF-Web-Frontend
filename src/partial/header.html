@@ -20,12 +20,14 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right" style="text-align: center;">
-        <li class="navbuttonwrapper"><a href="/problems"><button class="navbutton navbutton-blue" id="headerProblems"><i id="problemicon" class="material-icons material">&#xE0E0;</i><text class="inner header-md-invisible smish-visible"> PROBLEMS</text></button></a></li>
+        <li class="navbuttonwrapper loggedout"><a href="/login"><button class="navbutton navbutton-blue" id="headerLogin"><i class="material-icons material">&#xE0DA;</i><text class="inner header-md-invisible smish-visible"> LOGIN</text></button></a></li>
+        <li class="navbuttonwrapper loggedout"><a href="/register"><button class="navbutton navbutton-blue" id="headerRegister"><i class="material-icons material">&#xE254;</i><text class="inner header-md-invisible smish-visible"> REGISTER</text></button></a></li>
+        <li class="navbuttonwrapper loggedin"><a href="/problems"><button class="navbutton navbutton-blue" id="headerProblems"><i id="problemicon" class="material-icons material">&#xE0E0;</i><text class="inner header-md-invisible smish-visible"> PROBLEMS</text></button></a></li>
         <li class="navbuttonwrapper"><a href="/scoreboard"><button class="navbutton navbutton-orange" id="headerScoreboard"><i class="material-icons material">&#xE8D0;</i><text class="inner header-md-invisible smish-visible"> SCOREBOARD</text></button></a></li>
-        <li class="navbuttonwrapper"><a href="/shell"><button class="navbutton navbutton-green" id="headerShell"><i class="material-icons material">&#xE86F;</i><text class="inner header-md-invisible smish-visible"> SHELL</text></button></a></li>
-        <li class="navbuttonwrapper"><a href="/chat"><button class="navbutton navbutton-cyan last" id="headerChat"><i class="material-icons material">&#xE0B7;</i><text class="inner header-md-invisible smish-visible"> CHAT</text></button></a></li>
+        <li class="navbuttonwrapper loggedin"><a href="/shell"><button class="navbutton navbutton-green" id="headerShell"><i class="material-icons material">&#xE86F;</i><text class="inner header-md-invisible smish-visible"> SHELL</text></button></a></li>
+        <li class="navbuttonwrapper loggedin"><a href="/chat"><button class="navbutton navbutton-cyan last" id="headerChat"><i class="material-icons material">&#xE0B7;</i><text class="inner header-md-invisible smish-visible"> CHAT</text></button></a></li>
 
-        <li class="dropdown">
+        <li class="dropdown loggenin">
           <li class="dropdown-toggle button smish-invisible" id="desktop-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button type="submit" class="btn profile" id="headerProfile"><i class="material-icons">&#xE853;</i><text class="header-sm-invisible" id="headerUsername"> username</text></button>
             <ul class="dropdown-menu user-dropdown" id="desktop-dropdown">
               <a class="btn" href="/account"><i class="material-icons">&#xE90D;</i> YOUR ACCOUNT</a>
@@ -36,9 +38,9 @@
             </ul>
           </li>
         </li>
-        <li class="navbuttonwrapper hidden smish-visible"><a href="/account"><button class="navbutton navbutton-purple" id="headerProfileMobile"><i class="material-icons material">&#xE853;</i><text class="inner md-invisible smish-visible"> PROFILE</text></button></a></li>
+        <li class="navbuttonwrapper hidden smish-visible loggedin"><a href="/account"><button class="navbutton navbutton-purple" id="headerProfileMobile"><i class="material-icons material">&#xE853;</i><text class="inner md-invisible smish-visible"> PROFILE</text></button></a></li>
         <li class="navbuttonwrapper hidden smish-visible"><a href="/about"><button class="navbutton navbutton-orange sm"><i class="material-icons material">&#xE88F;</i><text class="inner md-invisible smish-visible"> ABOUT LASACTF</button></a></li>
-        <li class="navbuttonwrapper hidden smish-visible"><a onclick="onLogout()"><button class="navbutton navbutton-logout sm"><i class="material-icons material">&#xE8AC;</i><text class="inner md-invisible smish-visible"> LOG OUT</text></button></a></li>
+        <li class="navbuttonwrapper hidden smish-visible loggedin"><a onclick="onLogout()"><button class="navbutton navbutton-logout sm"><i class="material-icons material">&#xE8AC;</i><text class="inner md-invisible smish-visible"> LOG OUT</text></button></a></li>
       </ul>
     </div>
   </div>
