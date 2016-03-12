@@ -341,10 +341,18 @@ a.noselect {
 }
 
 /** LOCKED NAVBAR **/
+.navbar.locked{
+  margin: 0px;
+  box-shadow: none;
+}
 .navbar.locked .navbar-collapse
 {
   text-align: center;
   max-height: 56px;
+}
+.navbar.locked .navbar-brand,
+.navbar.locked .nav-countdown{
+  display: none;
 }
 .navbar.locked .navbar-nav.navbar-center
 {
@@ -359,7 +367,6 @@ a.noselect {
 {
   font-size: 28px;
 }
-
 @media all and (max-width: 690px)
 {
   .navbar.locked .navbar-collapse
