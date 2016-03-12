@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <img alt="LASACTF" src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png">
+        <img alt="LASACTF" src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png" id="headway">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="header-collapse">
@@ -45,3 +45,11 @@
     </div>
   </div>
 </nav>
+
+<script>
+  var HW_config = {
+    selector: "#headway", // CSS selector where to inject the badge
+    account: "PJr0bx" // your account ID
+  };
+</script>
+<script async src="//cdn.headwayapp.co/widget.js"></script>
