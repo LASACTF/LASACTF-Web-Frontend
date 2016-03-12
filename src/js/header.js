@@ -22,24 +22,27 @@ function onLogout() {
     type: 'GET'
   });
 }
-$(function() {
-  if (localStorage.getItem("username")) {
-    $('#headerUsername').text(" " + localStorage.getItem("username"));
-    $('#headerUsername').css("font-size", getProfileFontSize(localStorage.getItem("username")).toString() + "px");
-  } else {
-    $.ajax({
-      url: '/api/user/status',
-      success: function(result) {
-        if (result.status == 1 && result.data.logged_in === true) {
-          var extra = JSON.parse(result.data.extra);
-          $('#headerUsername').text(" " + result.data.username);
-          $('#headerUsername').css("font-size", getProfileFontSize(result.data.username).toString() + "px");
-          localStorage.setItem("username", result.data.username);
-        }
-      },
-      type: 'GET'
+$.ajax({
+  url: '/api/user/status',
+  success: function(result) {
+    $(function(){
+      if (result.status == 1 && result.data.logged_in === true) {
+        var extra = JSON.parse(result.data.extra);
+        $('#headerUsername').text(" " + result.data.username);
+        $('#headerUsername').css("font-size", getProfileFontSize(result.data.username).toString() + "px");
+        localStorage.setItem("username", result.data.username);
+        $('#loggedInHeader').removeClass('hidden');
+      }
+      else if ( result.status == 1 && result.data.logged_in === false){
+        $('#loggedOutHeader').removeClass('hidden');
+      }
     });
-  }
+
+  },
+  type: 'GET'
+});
+$(function() {
+
   //Bootstrap fix
   $('#desktop-dropdown a').click(function() {
     if ($(this).attr('id') != 'actionLogout')
