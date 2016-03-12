@@ -34,7 +34,7 @@ $.ajax({
         $('.loggedout').addClass('hidden');
       }
       else if ( result.status == 1 && result.data.logged_in === false){
-        $('.loggenin').addClass('hidden');
+        $('.loggedin').addClass('hidden');
       }
     });
 
