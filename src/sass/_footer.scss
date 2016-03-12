@@ -1,5 +1,5 @@
-$footer-height: 140px;
-$footer-margin-top: 32px;
+$footer-height: 210px;
+$footer-margin-top: 40px;
 .footer {
   width: 100%;
   background-color: material-color('grey','900');
@@ -35,4 +35,19 @@ $footer-margin-top: 32px;
   content: "";
   display: block;
   //height: $footer-height;
+}
+
+.facebook-icon:hover
+{
+  color: #3B5998;
+}
+.twitter-icon:hover
+{
+  color: #4099FF;
+}
+.footer .media-icons i
+{
+  margin-left: 6px;
+  margin-right: 6px;
+  @include transition(color .15s ease-in-out);
 }
