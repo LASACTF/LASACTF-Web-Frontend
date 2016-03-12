@@ -28,7 +28,7 @@ $.ajax({
           if (result.status == 1) {
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
-            var inscoreboard = false
+            var inscoreboard = false;
             for (var i = 0; i < result.data.public.length; i++) {
               var team = result.data.public[i];
               var value = {
@@ -51,7 +51,7 @@ $.ajax({
               $('#divScored').removeClass("hidden");
               $('#divXp').removeClass("hidden");
             }
-            else{
+            else if (teamresult.status == 1){
               $('#divUnscored').removeClass("hidden");
             }
           }
