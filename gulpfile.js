@@ -25,6 +25,11 @@ gulp.task('sass', function () {
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/css'));
 });
+gulp.task('sass-prod', function () {
+ gulp.src('src/sass/**/*.scss')
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(gulp.dest('dist/css'));
+});
 
 gulp.task('libmin', function(){
     return gulp.src('src/partial-src/*.src')
@@ -77,6 +82,7 @@ gulp.task('copy', function () {
 
 
 gulp.task('build', ['sass','handlebars','compress','copy','mustache'] )
+gulp.task('build-prod', ['sass-prod','handlebars','compress','copy','mustache'] )
 gulp.task('default', ['build','watch']);
 
 gulp.task('watch', function () {
