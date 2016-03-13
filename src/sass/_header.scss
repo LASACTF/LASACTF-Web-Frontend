@@ -318,15 +318,15 @@ a.noselect {
 }
 #HW_badge{
   margin-left: 155px;
-  border-radius: 50%;
+  border-radius: 50%!important;
   background-color: material-color("red", "a200");
   animation: colorRotate 6s linear 0s infinite;
-  height: 20px;
-  width: 20px;
-  line-height: 16px;
-  font-size: 16px;
-  top: 32px;
-  left: 2px;
+  height: 20px!important;
+  width: 20px!important;
+  line-height: 16px!important;
+  font-size: 16px!important;
+  top: 32px!important;
+  left: 2px!important;
 }
 #HW_badge_cont{
   height: 0px !important;
