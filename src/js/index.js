@@ -19,6 +19,7 @@ if (Math.floor(Date.now() / 1000) < 1458406800) {
   }, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS | countdown.MILLISECONDS);
 }
 $(function(){
-  // $('.navbar').addClass('locked');
+  $('.nav-countdown').addClass('hidden');
+  $('.navbar').addClass('index');
   $('.headway').addClass('hidden');
 });
