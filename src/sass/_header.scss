@@ -316,6 +316,12 @@ a.noselect {
   background-color: material-color('orange','a200')!important;
   height: 52px;
 }
+#HW_badge{
+  margin-left: 155px;
+}
+#HW_badge_cont{
+  height: 0px !important;
+}
 /** MEDIA QUERIES **/
 /** HEADER-MD **/
 @media all and (max-width: 1032px) {
