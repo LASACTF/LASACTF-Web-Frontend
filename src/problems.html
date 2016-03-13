@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partial-compiled/head.html}}
+  <script src="js/templates.js"></script>
+  <title>LASACTF - Problems</title>
+</head>
+
+<body class="compete">
+  <div class="primarycontainer">
+    {{> partial/header.html}}
+    <div class="content" id="main">
+      {{> partial/scorebar-full.html}}
+      <div class="categorybarwrapper">
+        <div class="categorybar web">
+          <div id="progressbarweb" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE894;</i>
+            <div class="name">Web Exploitation</div>
+          </div>
+        </div>
+        <div class="categorybar crypto">
+          <div id="progressbarcrypto" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE897;</i>
+            <div class="name">Cryptography</div>
+          </div>
+        </div>
+        <div class="categorybar forensics">
+          <div id="progressbarforensics" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE90D;</i>
+            <div class="name">Forensics</div>
+          </div>
+        </div>
+        <div class="categorybar reverse">
+          <div id="progressbarreverse" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE042;</i>
+            <div class="name">Reverse Engineering</div>
+          </div>
+        </div>
+        <div class="categorybar binary">
+          <div id="progressbarbinary" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE90E;</i>
+            <div class="name">Binary Exploitation</div>
+          </div>
+        </div>
+        <div class="categorybar algo">
+          <div id="progressbaralgo" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE155;</i>
+            <div class="name">Algorithm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{> partial/footer.html}}
+  <!-- JS --->
+  <script src="js/problems.js"></script>
+
+</body>
+
+</html>

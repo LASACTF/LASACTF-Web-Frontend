@@ -1,0 +1,56 @@
+<script src="js/header.js"></script>
+<nav class="navbar">
+
+  <div class="container-fluid" id="cont-measure">
+    <div class="navbar-header">
+      <text class="headway"></text>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-collapse" aria-expanded="false">
+        <i class="material-icons">&#xE5D2;</i>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand headway" href="/">
+        <img alt="LASACTF" src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="header-collapse">
+      <ul class="nav navbar-nav smish-invisible nav-countdown" id="countdown">
+        <li class="text xs-invisible"><h5 class="text color-grey-400"><div class="h4 text color-grey-200" id="tdays">12</div><text class="lg-invisible"> <div class="text color-grey-200">days</div> and </text><span class="hidden lg-visible-inline">:</span><div class="h4 text" id="thours">04</div>:<div class="h4 text" id="tmins">12</div>:<div class="h4 text" id="tsecs">24</div><text class="sm-invisible" id="ttext"> until start</text></h5></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" style="text-align: center;">
+        <li class="navbuttonwrapper loggedout"><a href="/login"><button class="navbutton navbutton-purple" id="headerLogin"><i class="material-icons material">&#xE0DA;</i><text class="inner header-md-invisible smish-visible"> LOGIN</text></button></a></li>
+        <li class="navbuttonwrapper loggedout"><a href="/register"><button class="navbutton navbutton-green" id="headerRegister"><i class="material-icons material">&#xE254;</i><text class="inner header-md-invisible smish-visible"> REGISTER</text></button></a></li>
+        <li class="navbuttonwrapper loggedin"><a href="/problems"><button class="navbutton navbutton-blue" id="headerProblems"><i id="problemicon" class="material-icons material">&#xE0E0;</i><text class="inner header-md-invisible smish-visible"> PROBLEMS</text></button></a></li>
+        <li class="navbuttonwrapper"><a href="/scoreboard"><button class="navbutton navbutton-orange" id="headerScoreboard"><i class="material-icons material">&#xE8D0;</i><text class="inner header-md-invisible smish-visible"> SCOREBOARD</text></button></a></li>
+        <li class="navbuttonwrapper loggedin"><a href="/shell"><button class="navbutton navbutton-green" id="headerShell"><i class="material-icons material">&#xE86F;</i><text class="inner header-md-invisible smish-visible"> SHELL</text></button></a></li>
+        <li class="navbuttonwrapper loggedin"><a href="/chat"><button class="navbutton navbutton-cyan last" id="headerChat"><i class="material-icons material">&#xE0B7;</i><text class="inner header-md-invisible smish-visible"> CHAT</text></button></a></li>
+        <li class="navbuttonwrapper loggedout"><a href="/about"><button class="navbutton navbutton-blue last" id="headerAbout"><i class="material-icons material">&#xE88F;</i><text class="inner header-md-invisible smish-visible"> ABOUT</text></button></a></li>
+
+        <li class="dropdown">
+          <li class="dropdown-toggle button smish-invisible loggedin" id="desktop-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button type="submit" class="btn profile" id="headerProfile"><i class="material-icons">&#xE853;</i><text class="header-sm-invisible" id="headerUsername"> username</text></button>
+            <ul class="dropdown-menu user-dropdown" id="desktop-dropdown">
+              <a class="btn" href="/account"><i class="material-icons">&#xE90D;</i> YOUR ACCOUNT</a>
+              <a href="/team" class="btn"><i class="material-icons">&#xE7FB;</i> YOUR TEAM</a>
+              <a href="mailto:team@lasactf.com" class="btn"><div class="col-xs-8"><i class="material-icons">&#xE0BE;</i> CONTACT US</div><div class="col-xs-4 right"><i class="material-icons color-grey-400">&#xE879;</i></div></a>
+              <a href="/about" class="btn"><i class="material-icons">&#xE88F;</i> ABOUT LASACTF</a>
+              <a onclick="onLogout()" class="btn" id="actionLogout"><i class="material-icons">&#xE8AC;</i> LOG OUT</a>
+            </ul>
+          </li>
+        </li>
+        <li class="navbuttonwrapper hidden smish-visible"><a href="/account"><button class="navbutton navbutton-purple loggedin" id="headerProfileMobile"><i class="material-icons material">&#xE853;</i><text class="inner md-invisible smish-visible"> PROFILE</text></button></a></li>
+        <li class="navbuttonwrapper hidden smish-visible"><a onclick="onLogout()"><button class="navbutton navbutton-logout sm loggedin"><i class="material-icons material">&#xE8AC;</i><text class="inner md-invisible smish-visible"> LOG OUT</text></button></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var HW_config = {
+    selector: ".headway", // CSS selector where to inject the badge
+    account: "PJr0bx" // your account ID
+  };
+</script>
+<script async src="//cdn.headwayapp.co/widget.js"></script>
