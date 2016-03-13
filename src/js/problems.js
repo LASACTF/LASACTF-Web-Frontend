@@ -21,7 +21,7 @@ var icon = {
 
 function ajaxSubmit(input, help, parent) {
   $.ajax({
-    url: 'http://dev.lasactf.com/api/problems/submit',
+    url: '/api/problems/submit',
     data: {
       "key": input.val(),
       "pid": input.attr('data-pid'),
@@ -57,7 +57,7 @@ function ajaxSubmit(input, help, parent) {
   });
 }
 $.ajax({
-  url: 'http://dev.lasactf.com/api/problems',
+  url: '/api/problems',
   success: function(result) {
     $.ajax({
       url: '/api/team',
