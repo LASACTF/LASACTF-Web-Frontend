@@ -318,10 +318,56 @@ a.noselect {
 }
 #HW_badge{
   margin-left: 155px;
+  border-radius: 50%;
+  background: material-color("red", "a200");
+  animation: colorRotate 6s linear 0s infinite;
+  height: 20px;
+  width: 20px;
+  line-height: 16px;
+  font-size: 16px;
+  top: 32px;
+  left: 2px;
 }
 #HW_badge_cont{
   height: 0px !important;
 }
+@keyframes colorRotate {
+    from {
+        color: material-color("red", "a200");
+    }
+    10% {
+        color: material-color("deep-orange", "a200");
+    }
+    20% {
+        color: material-color("light-green", "a200");
+    }
+    30% {
+        color: material-color("green", "a200");
+    }
+    40% {
+        color: material-color("light-blue", "a200");
+    }
+    50% {
+        color: material-color("blue", "a200");
+    }
+    60% {
+        color: material-color("indigo", "a200");
+    }
+    70% {
+        color: material-color("purple", "a200");
+    }
+    80% {
+        color: material-color("deep-purple", "a200");
+    }
+    90% {
+        color: material-color("pink", "a200");
+    }
+    to {
+        color: material-color("red", "a200");
+    }
+}
+
+
 /** MEDIA QUERIES **/
 /** HEADER-MD **/
 @media all and (max-width: 1032px) {
