@@ -20,4 +20,5 @@ if (Math.floor(Date.now() / 1000) < 1458406800) {
 }
 $(function(){
   $('.navbar').addClass('locked');
+  $('.headway').addClass('hidden');
 });
