@@ -24,6 +24,10 @@
     "jquery": "^2.2.0",
     "jquery-placeholder": "^2.3.1",
     "countdownjs": "^2.6.0",
-    "font-awesome": "^4.5.0"
+    "font-awesome": "^4.5.0",
+    "sass-material-colors": "^0.0.5",
+    "seiyria-bootstrap-slider": "^6.0.17",
+    "jquery.cookie": "jquery-cookie#^1.4.1",
+    "handlebars": "^4.0.5"
   }
 }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partial-compiled/head.html}}
+  <title>LASACTF - Team</title>
+</head>
+
+<body class="compete">
+  <div class="primarycontainer">
+    {{> partial/header.html}} {{> partial/profilebar.html}}
+    <div class="content">
+      <!--{{> partial/scorebar-full.html}}-->
+      <br>
+      <div class="hidden" id="noTeam">
+        <text class="h2 color-grey-400">Hey, you </text>
+        <text class="h1 brightred">aren't on a team yet!</text>
+        <h3 class="color-grey-400">You should sign up for a team to get the benefits of working with others! Combine your score, collaborate, and go for the coolest prizes!<br><br>You can <text class="white">create or join teams here</text>, but <text class="brightred">you cannot change teams once you are on one!</text></h3>
+
+        <br>
+        <div class="info">
+          <h3 class="left-info sm">Team Name</h3>
+          <div class="form-group" id="inputGroupName">
+            <input type="name" class="right-info form-control" id="inputTeam" placeholder="Team Name">
+            <span class="help-block red"></span>
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="left-info sm">Passcode</h3>
+          <div class="form-group" id="inputGroupPass">
+            <input type="name" class="right-info form-control" id="inputPass" placeholder="Secret Passcode">
+            <span class="help-block">If you're creating a new team, others have to type this in when joining. If you're joining, get someone on the team to give you the code.</span>
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="left-info sm">Affiliation</h3>
+          <div class="form-group">
+            <input type="name" class="right-info form-control" id="inputCreateAffiliation" placeholder="Team High School / University / Other">
+            <span class="help-block">Only type this in if you're creating a team.</span>
+          </div>
+        </div>
+
+        <span id="helpError" class="help-block red"><h4></h4></span>
+
+        <div class="info">
+          <div class="col-md-6">
+            <a class="btn purple maxwidth xs noleftpad" id="actionCreate" role="button"><i class="material-icons">&#xE5C8;</i>CREATE TEAM</a>
+          </div>
+          <div class="col-md-6">
+            <a class="btn purple maxwidth xs noleftpad spacetopcond" id="actionJoin" role="button"><i class="material-icons">&#xE5C8;</i>JOIN TEAM</a>
+          </div>
+        </div>
+        <br>
+        <br>
+      </div>
+
+      <div class="hidden" id="teamedUp">
+        <h2 class="color-grey-400 text">You are currently on Team </h2>
+        <h1 class="text color-purple-a200" id="textTeam">Team Name</h1>
+        <h1 class="text color-grey-400">!</h1>
+        <br>
+        <br>
+        <div class="info hidden" id="user0">
+          <h2 class="left-info lg"></h2>
+          <div class="right-info progress-user">
+            <div class="progress user">
+
+            </div>
+            <text class="h4"></text>
+          </div>
+        </div>
+        <div class="info lg hidden" id="user1">
+          <h2 class="left-info lg"></h2>
+          <div class="right-info progress-user">
+            <div class="progress user">
+
+            </div>
+            <text class="h4"></text>
+          </div>
+        </div>
+        <div class="info lg hidden" id="user2">
+          <h2 class="left-info lg"></h2>
+          <div class="right-info progress-user">
+            <div class="progress user">
+
+            </div>
+            <text class="h4"></text>
+          </div>
+        </div>
+        <div class="info lg hidden" id="user3">
+          <h2 class="left-info lg"></h2>
+          <div class="right-info progress-user">
+            <div class="progress user">
+            </div>
+            <text class="h4"></text>
+          </div>
+        </div>
+        <div class="info lg hidden" id="user4">
+          <h2 class="left-info lg">idontsolveproblems</h2>
+          <div class="right-info progress-user">
+            <div class="progress user">
+            </div>
+            <text class="h4"></text>
+          </div>
+        </div>
+        <br>
+        <h2 class="left-info lg color-grey-400" id="textRemaining"></h2>
+        <h3 class="color-grey-400" id="hiddenPass">Team Passcode: ************ <a class="color-grey-400 clickable" id="showHidePass" style="display: inline!important">View</a></h3>
+        <h4 class="color-grey-400">Give this code to anyone that wants to join your team.</h4>
+        <br>
+        <br>
+        <h2>Team Info</h2>
+        <div class="info">
+          <h3 class="left-info sm">Affiliation</h3>
+          <div class="form-group">
+            <input type="name" class="right-info form-control" id="inputUpdateAffiliation" placeholder="Team High School / University / Other">
+            <span class="help-block">You can change your team's affiliation. Keep it clean, folks.</span>
+            <a class="btn purple wide xs" role="button" id="actionAffiliation"><i class="material-icons">&#xE5C8;</i>UPDATE AFFILIATION</a>
+          </div>
+          <span id="helpError2" class="help-block red"><h4></h4></span>
+        </div>
+        <br>
+        <div class="info">
+          <h3 class="left-info sm">Eligibility</h3>
+          <div class="right-info h4 color-grey-400" style="margin-top: 22px">
+            <text class="color-grey-400">Your team is </text>
+            <text class="" id="teamEligible"></text>
+            <text class="color-grey-400" id="teamEligible2"></text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{> partial/footer.html}}
+
+  <!-- JS --->
+  <script src="js/team.js"></script>
+</body>
+
+</html>

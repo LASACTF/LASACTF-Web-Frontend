@@ -1,0 +1,61 @@
+
+
+.content.index
+{
+  padding: 0;
+  margin: 0;
+  margin-top: -1px;
+  min-width: 100%;
+}
+
+.frame
+{
+  display: block;
+  width: 100%;
+}
+.frame.purple .row
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.frame.purple
+{
+  background-color: material-color("purple", "500");
+}
+.frame.purple-light
+{
+  background-color: material-color("purple", "400");
+}
+.frame.gray
+{
+  background-color: material-color("grey", "300");
+  color: material-color("grey", "900");
+}
+.frame.white
+{
+  background-color: white;
+  color: material-color("grey", "900");
+}
+.frame.image
+{
+  background-color: transparent;
+  background-image: url("../img/prizes.gif");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.frame.image .btn.white
+{
+  color: white;
+  border-color: material-color("grey", "400");
+}
+
+img.sponsor
+{
+  padding: 60px 0 20px;
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 200px;
+}

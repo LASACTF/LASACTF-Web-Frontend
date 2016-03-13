@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partial-compiled/head.html}}
+  <title>LASACTF - Reset Password</title>
+</head>
+
+<body>
+  <div class="container" id="cont-super">
+    <div class="row" style="text-align: center">
+      <h1>Reset Password</h1>
+    </div>
+    <br>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <form class="form-horizontal" id="reset-form">
+        <div class="form-group" id="inputGroup">
+          <h3>Set a new password.</h3>
+          <input type="password" class="form-control" id="inputPassword" placeholder="New Password">
+          <input type="password" class="form-control spacetop" id="inputPasswordConfirm" placeholder="Confirm Password">
+          <span id="helpBlock" class="help-block"></span>
+          <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>RESET PASSWORD</button>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+
+  {{> partial/footer.html}}
+  <!-- JS --->
+  <script src="js/reset.js"></script>
+</body>
+
+</html>
