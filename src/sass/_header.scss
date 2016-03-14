@@ -321,13 +321,13 @@ a.noselect {
 }
 #HW_badge{
   margin-left: 155px;
-  border-radius: 50%!important;
+  border-radius: 45%!important;
   background-color: material-color("red", "a200");
   animation: colorRotate 6s linear 0s infinite;
-  height: 20px!important;
-  width: 20px!important;
-  line-height: 16px!important;
-  font-size: 16px!important;
+  height: 25px!important;
+  width: 25px!important;
+  line-height: 20px!important;
+  font-size: 20px!important;
   top: 32px!important;
   left: 2px!important;
 }
