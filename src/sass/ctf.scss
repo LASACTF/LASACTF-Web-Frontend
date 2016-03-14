@@ -281,12 +281,12 @@ code {
 }
 .btn.purple {
   color: #fff;
-  background-color: rgb(224, 64, 251);
-  border: 4px rgb(224, 64, 251) solid;
+  background-color: material-color("purple", "700");
+  border: 4px material-color("purple", "700") solid;
 }
 .btn.purple:hover,
 .btn.purple:focus {
-  background-color: #d500f9;
+  background-color: material-color("purple", "400");
 }
 .btn.disabled {
   background-color: #ccc;
@@ -313,7 +313,7 @@ code {
   border: 4px #bdbdbd solid;
 }
 .btn.white:hover {
-  background-color: #424242;
+  background-color: material-color("purple", "400");
 }
 .btn.white:active {
   box-shadow: inset 0 4px 8px rgba(0,0,0,.5);
@@ -426,8 +426,8 @@ i.head {
 .form-group .form-control:focus,
 .form-group .form-control.focus {
   box-shadow: 0 0 16px rgba(224,64,251,.5);
-  background-color: rgb(224,64,251);
-  border: 2px solid rgb(224,64,251);
+  background-color: material-color("purple", "600");
+  border: 2px solid material-color("purple", "600");
   color: #fff!important;
 }
 .form-group .form-control {
