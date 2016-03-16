@@ -267,10 +267,10 @@ $.ajax({
             success: function(result) {
               if (result.status == 1) {
                 help.removeClass("failure-text").addClass("success-text");
-                help.children('h4').text(result.message);
+                help.text(result.message);
               } else {
                 help.addClass("failure-text");
-                help.children('h4').text(result.message);
+                help.text(result.message);
               }
             },
             type: 'POST'
