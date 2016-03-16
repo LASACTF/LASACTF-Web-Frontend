@@ -307,7 +307,7 @@ a.noselect {
 .breadbar .tab.active,
 .breadbar .tab.active:hover,
 .breadbar.purple .tab.active:hover,
-.breadbar.red .tab.active:hover {
+.breadbar.orange .tab.active:hover {
   background-color: material-color('grey','800')!important;
   height: 53px;
 }
@@ -315,7 +315,7 @@ a.noselect {
   background-color: material-color('purple','400')!important;
   height: 52px;
 }
-.breadbar.red .tab:hover {
+.breadbar.orange .tab:hover {
   background-color: material-color('orange','a200')!important;
   height: 52px;
 }
