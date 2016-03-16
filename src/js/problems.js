@@ -192,7 +192,6 @@ $.ajax({
             button.removeClass('active');
           }
         });
-
         $('.sliderTime').slider();
         $(".sliderTime").on("slide", function(slideEvt) {
           var value = slideEvt.value;
@@ -249,6 +248,15 @@ $.ajax({
               break;
           }
         });
+        $('.feedback-button').click(function() {
+          var pid = $(this).attr('data-pid');
+          var time = $('#' + pid + "time").val();
+          var difficulty = $('#' + pid + "difficulty").val();
+          var interest = $('#' + pid + "interest").val();
+          var yes = $('#' + pid + "yes").val();
+          var no = $('#' + pid + "no").val();
+          console.log(pid,time,difficulty,interest,yes,no);
+        });
       }
     });
   },
@@ -257,13 +265,4 @@ $.ajax({
 $(function() {
   $('#headerProblems').addClass('active');
   $('.navbar').addClass('problems');
-  $('.feedback-button').click(function() {
-    var pid = $(this).attr('data-pid');
-    var time = $('#' + pid + "time").val();
-    var difficulty = $('#' + pid + "difficulty").val();
-    var interest = $('#' + pid + "interest").val();
-    var yes = $('#' + pid + "yes").val();
-    var no = $('#' + pid + "no").val();
-    console.log(pid,time,difficulty,interest,yes,no);
-  });
 });
