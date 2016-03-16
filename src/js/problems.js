@@ -253,9 +253,30 @@ $.ajax({
           var time = $('#' + pid + "time").val();
           var difficulty = $('#' + pid + "difficulty").val();
           var interest = $('#' + pid + "interest").val();
-          var yes = $('#' + pid + "yes").val();
-          var no = $('#' + pid + "no").val();
-          console.log(pid,time,difficulty,interest,yes,no);
+          var yes = $('#' + pid + "yes").is(":checked");
+          var no = $('#' + pid + "no").is(":checked");
+          var like = yes && !no;
+          var help = $('#'+pid+"help");
+          $.ajax({
+            url: '/api/problems/submit',
+            data: {
+              "pid":pid,
+              "feedback": {"liked":like,"timeSpent":time,"comment": " " + difficulty + interest},
+              "token": $.cookie('token'),
+            },
+            success: function(result) {
+              if (result.status == 1) {
+                help.removeClass("failure-text").addClass("success-text");
+                parent.removeClass('has-failure').addClass('has-success');
+                help.children('h4').text(result.message);
+              } else {
+                help.addClass("failure-text");
+                parent.removeClass('has-success').addClass('has-failure');
+                help.children('h4').text(result.message);
+              }
+            },
+            type: 'POST'
+          });
         });
       }
     });
