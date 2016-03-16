@@ -57,10 +57,10 @@ function ajaxSubmit(input, help, parent) {
   });
 }
 $.ajax({
-  url: 'http://dev.lasactf.com/api/problems',
+  url: '/api/problems',
   success: function(result) {
     $.ajax({
-      url: 'http://dev.lasactf.com/api/team',
+      url: '/api/team',
       type: 'GET',
       success: function(teamresult) {
         $(function() {
@@ -258,7 +258,7 @@ $.ajax({
           var like = yes && !no;
           var help = $('#'+pid+"help");
           $.ajax({
-            url: '/api/problems/submit',
+            url: '/api/problems/feedback',
             data: {
               "pid":pid,
               "feedback": {"liked":like,"timeSpent":time,"comment": " " + difficulty + interest},
@@ -267,11 +267,9 @@ $.ajax({
             success: function(result) {
               if (result.status == 1) {
                 help.removeClass("failure-text").addClass("success-text");
-                parent.removeClass('has-failure').addClass('has-success');
                 help.children('h4').text(result.message);
               } else {
                 help.addClass("failure-text");
-                parent.removeClass('has-success').addClass('has-failure');
                 help.children('h4').text(result.message);
               }
             },
