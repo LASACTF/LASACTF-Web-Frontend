@@ -65,4 +65,5 @@ $.ajax({
 $(function() {
   $('#headerScoreboard').addClass('active');
   $('.navbar').addClass('scoreboard');
+  $('.navbar').addClass('profile');
 });
