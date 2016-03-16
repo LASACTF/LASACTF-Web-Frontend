@@ -29,7 +29,7 @@ $(function() {
       success: function(data) {
         if (data.status == 1) {
           localStorage.setItem("username", username);
-          window.location.href = "/account";
+          window.location.href = "/problems";
         } else {
           $('#helpBlock').removeClass("success-text");
           $('#inputGroup').addClass('has-failure');

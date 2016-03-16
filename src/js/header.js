@@ -36,7 +36,6 @@ $.ajax({
       else if ( result.status == 1 && result.data.logged_in === false){
         $('.loggedin').addClass('hidden');
       }
-      $('.navbar-right').removeClass('hidden');
     });
 
   },
