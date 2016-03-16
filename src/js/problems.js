@@ -192,7 +192,6 @@ $.ajax({
             button.removeClass('active');
           }
         });
-
         $('.sliderTime').slider();
         $(".sliderTime").on("slide", function(slideEvt) {
           var value = slideEvt.value;
@@ -248,6 +247,34 @@ $.ajax({
               $(".sliderInterestDisplay").text("Unknown");
               break;
           }
+        });
+        $('.feedback-button').click(function() {
+          var pid = $(this).attr('data-pid');
+          var time = $('#' + pid + "time").val();
+          var difficulty = $('#' + pid + "difficulty").val();
+          var interest = $('#' + pid + "interest").val();
+          var yes = $('#' + pid + "yes").is(":checked");
+          var no = $('#' + pid + "no").is(":checked");
+          var like = yes && !no;
+          var help = $('#'+pid+"help");
+          $.ajax({
+            url: '/api/problems/feedback',
+            data: {
+              "pid":pid,
+              "feedback": JSON.stringify({"liked":like,"timeSpent":time,"comment": "" + difficulty +" "+ interest}),
+              "token": $.cookie('token'),
+            },
+            success: function(result) {
+              if (result.status == 1) {
+                help.removeClass("failure-text").addClass("success-text");
+                help.text(result.message);
+              } else {
+                help.addClass("failure-text");
+                help.text(result.message);
+              }
+            },
+            type: 'POST'
+          });
         });
       }
     });
