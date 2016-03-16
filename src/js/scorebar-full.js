@@ -1,4 +1,4 @@
-var levels = [100, 300, 500, 700, 1500];
+var levels = [100, 500, 1000, 1500];
 
 function regenScoreboard(score) {
   $('#textXP').text(score);
