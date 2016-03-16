@@ -261,7 +261,7 @@ $.ajax({
             url: '/api/problems/feedback',
             data: {
               "pid":pid,
-              "feedback": JSON.stringify({"liked":like,"timeSpent":time,"comment": " " + difficulty + interest}),
+              "feedback": JSON.stringify({"liked":like,"timeSpent":time,"comment": "" + difficulty +" "+ interest}),
               "token": $.cookie('token'),
             },
             success: function(result) {
