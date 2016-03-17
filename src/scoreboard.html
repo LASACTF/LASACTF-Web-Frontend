@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   {{> partial-compiled/head.html}}
   <script src="js/templates.js"></script>
@@ -17,10 +19,11 @@
 			} else {
 				window.location.href='/ranked';
 			}
-		}, 
+		},
 		error: function(result) {
 			// Redirect to ranked by default
 			window.location.href = '/ranked';
 		}
 	});
 </script>
+</html>
