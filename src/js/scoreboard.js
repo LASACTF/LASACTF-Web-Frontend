@@ -67,6 +67,12 @@ $.ajax({
   type: 'GET'
 });
 $(function() {
+  if (window.location.href.includes("unranked")){
+    $('#unrankedTab').addClas('active');
+  }
+  else{
+    $('#rankedTab').addClas('active');
+  }
   $('#headerScoreboard').addClass('active');
   $('.navbar').addClass('scoreboard');
   $('.navbar').addClass('profile');
