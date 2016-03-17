@@ -68,10 +68,10 @@ $.ajax({
 });
 $(function() {
   if (window.location.href.includes("unranked")){
-    $('#unrankedTab').addClas('active');
+    $('#unrankedTab').addClass('active');
   }
   else{
-    $('#rankedTab').addClas('active');
+    $('#rankedTab').addClass('active');
   }
   $('#headerScoreboard').addClass('active');
   $('.navbar').addClass('scoreboard');
