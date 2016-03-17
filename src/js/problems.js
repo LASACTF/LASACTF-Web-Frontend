@@ -99,10 +99,10 @@ $.ajax({
             }
           };
           for (var i = 0; i < result.data.length; i++) {
-            categories[convert[result.data[i].category.toLowerCase()]].total++;
+            categories[convert[result.data[i].category.toLowerCase()]].total += result.data[i].score;
           }
           for (var j = 0; j < teamresult.data.solved_problems.length; j++) {
-            categories[convert[teamresult.data.solved_problems[j].category.toLowerCase()]].solved++;
+            categories[convert[teamresult.data.solved_problems[j].category.toLowerCase()]].solved += teamresult.data.solved_problems[j].score;
           }
           $('#progressbarweb .progress .progress-bar').width(categories.web.solved / categories.web.total * 100 + "%");
           $('#progressbarcrypto .progress .progress-bar').width(categories.crypto.solved / categories.crypto.total * 100 + "%");
