@@ -75,5 +75,5 @@ $(function() {
   }
   $('#headerScoreboard').addClass('active');
   $('.navbar').addClass('scoreboard');
-  $('.navbar').addClass('profile');
+  //$('.navbar').addClass('profile');
 });
