@@ -18,6 +18,9 @@
   box-shadow: none;
   z-index: 1;
 }
+.navbar.scoreboard {
+  margin: 0px !important;
+}
 .navbar.scoreboard .container-fluid {
   border-bottom: 4px solid material-color('orange','500');
 }
@@ -287,6 +290,9 @@ a.noselect {
 .breadbar.orange {
   background-color: material-color('orange','500');
   color: $white;
+}
+.breadbar.black {
+  background-color: #212121;
 }
 .breadbar .tab {
   width: 200px;
