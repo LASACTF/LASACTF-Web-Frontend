@@ -13,13 +13,16 @@
 {
   background-color: material-color("purple", "500")!important;
 }
-.navbar.profile {
+// .navbar.profile {
+//   margin: 0;
+//   box-shadow: none;
+//   z-index: 1;
+// }
+// .navbar.profile .container-fluid {
+//   border-bottom: 0!important;
+// }
+.navbar.scoreboard, .navbar.profile {
   margin: 0;
-  box-shadow: none;
-  z-index: 1;
-}
-.navbar.scoreboard {
-  margin: 0px !important;
 }
 .navbar.scoreboard .container-fluid {
   border-bottom: 4px solid material-color('orange','500');
@@ -36,15 +39,12 @@
 .navbar.register .container-fluid {
   border-bottom: 4px solid material-color('green','500');
 }
-.navbar.login .container-fluid {
+.navbar.login .container-fluid,.navbar.profile .container-fluid {
   border-bottom: 4px solid material-color('purple','500');
 }
 .navbar .container-fluid {
   //border-bottom: 4px solid #9c27b0;
   height: 66px;
-}
-.navbar.profile .container-fluid {
-  border-bottom: 0!important;
 }
 .navbar .navbar-header .navbar-brand {
   width: 200px;
