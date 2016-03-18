@@ -2,6 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A national computer science and security competition run by students at LASA High School in Austin, Texas.">
+<meta property="og:title" content="LASACTF" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://lasactf.com/img/banner.png" />      
+<meta property="og:url" content="https://lasactf.com" />
 <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
