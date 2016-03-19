@@ -32,6 +32,11 @@ $.ajax({
         $('#headerUsername').css("font-size", getProfileFontSize(result.data.username).toString() + "px");
         localStorage.setItem("username", result.data.username);
         $('.loggedout').addClass('hidden');
+        if(result.data.competition_active) {
+          $('.competitionactive').removeClass('hidden');
+        } else {
+          $('.competitionactive').addClass('hidden');
+        }
       }
       else if ( result.status == 1 && result.data.logged_in === false){
         $('.loggedin').addClass('hidden');
