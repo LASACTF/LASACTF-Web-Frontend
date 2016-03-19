@@ -4,14 +4,15 @@
 <head>
   {{> partial-compiled/head.html}}
   <title>LASACTF - Shell</title>
-  <!-- JS --->
+  <!-- JS -->
   <script src="js/shell.js" async></script>
 </head>
 
 <body class="compete">
   <div class="primarycontainer">
     {{> partial/header.html}}
-    <h4>Your account credentials are the same for the website and shell server.</h4>
+    <h4>Your account credentials are the same for the website and shell server.</h4><h5>If you're feeling fancy, you can open a terminal and type "ssh your_username@shell.lasactf.com" to also connect to the shell server.</h5>
+
     <div class="content shell">
       <iframe src="http://web.lasactf.com/shell" style="border:0; width:100%; height:500px;"></iframe>
     </div>
