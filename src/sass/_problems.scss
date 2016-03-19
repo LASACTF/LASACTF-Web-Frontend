@@ -318,6 +318,27 @@
   border-color: $color-algo;
 }
 
+.problem.misc.complete,
+.problem.misc .icon,
+.misc .selectbox,
+.problem-slide.misc .select button,
+.problem-slide.misc .problem-submit .btn.active,
+.categorybar.misc .progress .progress-bar {
+  background-color: $color-misc;
+}
+.problem-slide.misc .select button:hover,
+.problem.misc.complete:hover,
+.problem.misc:hover .icon,
+.problem-slide.misc .problem-submit .btn.active:hover {
+  background-color: lighten($color-misc, 10%);
+}
+.problem-slide.misc .problem-submit .form-control:active,
+.problem-slide.misc .problem-submit .form-control:focus
+{
+  background-color: $color-misc;
+  border-color: $color-misc;
+}
+
 .problem-submit.has-success .help-block {
   color: material-color('green','a200');
 }
