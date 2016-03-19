@@ -165,6 +165,7 @@ $.ajax({
             "category": convert[problem.category.toLowerCase()],
             "percent": 1 / categories[convert[problem.category.toLowerCase()]] * 100,
             "name": problem.name,
+            "solves": problem.solves,
             "score": problem.score,
             "icon": icon[convert[problem.category.toLowerCase()]],
             "hint": hint,
