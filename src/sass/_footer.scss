@@ -1,16 +1,16 @@
-$footer-height: 210px;
-$footer-margin-top: 40px;
+$footer-height: 190px;
+$footer-margin-top: 32px;
 .footer {
   width: 100%;
   background-color: material-color('grey','900');
   color: material-color('grey','700');
-  padding: 16px 0;
+  padding: 8px 0;
   //margin-top: 48px;
   clear: both;
   //position: relative;
   //z-index: 10;
   vertical-align: middle;
-  height: $footer-height;
+  min-height: $footer-height;
 }
 .footer a {
   color: material-color('grey','700');

@@ -29,8 +29,12 @@ $.ajax({
             var table = $('#scoreTable');
             $('#textScore').text(teamresult.data.score);
             var inscoreboard = false;
-            for (var i = 0; i < result.data.public.length; i++) {
-              var team = result.data.public[i];
+            var scoreboard = result.data.public;
+            if (window.location.href.includes("unranked")){
+              scoreboard = result.data.ineligible;
+            }
+            for (var i = 0; i < scoreboard.length; i++) {
+              var team = scoreboard[i];
               var value = {
                 "name": team.name,
                 "affiliation": team.affiliation,
@@ -63,6 +67,13 @@ $.ajax({
   type: 'GET'
 });
 $(function() {
+  if (window.location.href.includes("unranked")){
+    $('#unrankedTab').addClass('active');
+  }
+  else{
+    $('#rankedTab').addClass('active');
+  }
   $('#headerScoreboard').addClass('active');
   $('.navbar').addClass('scoreboard');
+  //$('.navbar').addClass('profile');
 });

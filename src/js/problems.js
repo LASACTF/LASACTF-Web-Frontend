@@ -16,7 +16,7 @@ var icon = {
   "crypto": "&#xE897;",
   "algo": "&#xE155;",
   "asymptotic": "",
-  "misc": ""
+  "misc": "&#xE896;"
 };
 
 function ajaxSubmit(input, help, parent) {
@@ -46,6 +46,19 @@ function ajaxSubmit(input, help, parent) {
             var currentwidth = parseFloat($('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width());
             var updatedwidth = Math.min((currentwidth + parseFloat(root.attr('data-percent'))) * 100, 100);
             $('#progressbar' + root.attr('data-category') + ' .progress .progress-bar').width(updatedwidth);
+            $.ajax({
+              url: '/api/problems',
+              success: function(result) {
+                $.ajax({
+                  url: '/api/team',
+                  type: 'GET',
+                  success: function(teamresult) {
+                    generateCompletionBars(result, teamresult)
+                  }
+                });
+              },
+              type: 'GET'
+            });
           }, 1000);
       } else {
         help.addClass("failure-text");
@@ -56,6 +69,60 @@ function ajaxSubmit(input, help, parent) {
     type: 'POST'
   });
 }
+
+function generateCompletionBars(problems, teamProblems) {
+  $(function() {
+    var categories = {
+      "web": {
+        "solved": 0,
+        "total": 0
+      },
+      "crypto": {
+        "solved": 0,
+        "total": 0
+      },
+      "reverse": {
+        "solved": 0,
+        "total": 0
+      },
+      "forensics": {
+        "solved": 0,
+        "total": 0
+      },
+      "binary": {
+        "solved": 0,
+        "total": 0
+      },
+      "algo": {
+        "solved": 0,
+        "total": 0
+      },
+      "asymptotic": {
+        "solved": 0,
+        "total": 0
+      },
+      "misc": {
+        "solved": 0,
+        "total": 0
+      }
+    };
+    for (var i = 0; i < problems.data.length; i++) {
+      categories[convert[problems.data[i].category.toLowerCase()]].total += problems.data[i].score;
+    }
+    for (var j = 0; j < teamProblems.data.solved_problems.length; j++) {
+      categories[convert[teamProblems.data.solved_problems[j].category.toLowerCase()]].solved += teamProblems.data.solved_problems[j].score;
+    }
+    $('#progressbarweb .progress .progress-bar').width(categories.web.solved / categories.web.total * 100 + "%");
+    $('#progressbarcrypto .progress .progress-bar').width(categories.crypto.solved / categories.crypto.total * 100 + "%");
+    $('#progressbarforensics .progress .progress-bar').width(categories.forensics.solved / categories.forensics.total * 100 + "%");
+    $('#progressbarreverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
+    $('#progressbarbinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
+    $('#progressbaralgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
+    $('#progressbarmisc .progress .progress-bar').width(categories.misc.solved / categories.misc.total * 100 + "%");
+  });
+}
+
+
 $.ajax({
   url: '/api/problems',
   success: function(result) {
@@ -63,54 +130,7 @@ $.ajax({
       url: '/api/team',
       type: 'GET',
       success: function(teamresult) {
-        $(function() {
-          var categories = {
-            "web": {
-              "solved": 0,
-              "total": 0
-            },
-            "crypto": {
-              "solved": 0,
-              "total": 0
-            },
-            "reverse": {
-              "solved": 0,
-              "total": 0
-            },
-            "forensics": {
-              "solved": 0,
-              "total": 0
-            },
-            "binary": {
-              "solved": 0,
-              "total": 0
-            },
-            "algo": {
-              "solved": 0,
-              "total": 0
-            },
-            "asymptotic": {
-              "solved": 0,
-              "total": 0
-            },
-            "misc": {
-              "solved": 0,
-              "total": 0
-            }
-          };
-          for (var i = 0; i < result.data.length; i++) {
-            categories[convert[result.data[i].category.toLowerCase()]].total++;
-          }
-          for (var j = 0; j < teamresult.data.solved_problems.length; j++) {
-            categories[convert[teamresult.data.solved_problems[j].category.toLowerCase()]].solved++;
-          }
-          $('#progressbarweb .progress .progress-bar').width(categories.web.solved / categories.web.total * 100 + "%");
-          $('#progressbarcrypto .progress .progress-bar').width(categories.crypto.solved / categories.crypto.total * 100 + "%");
-          $('#progressbarforensics .progress .progress-bar').width(categories.forensics.solved / categories.forensics.total * 100 + "%");
-          $('#progressbarreverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
-          $('#progressbarbinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
-          $('#progressbaralgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
-        });
+        generateCompletionBars(result, teamresult)
       }
     });
 
@@ -192,7 +212,6 @@ $.ajax({
             button.removeClass('active');
           }
         });
-
         $('.sliderTime').slider();
         $(".sliderTime").on("slide", function(slideEvt) {
           var value = slideEvt.value;
@@ -248,6 +267,34 @@ $.ajax({
               $(".sliderInterestDisplay").text("Unknown");
               break;
           }
+        });
+        $('.feedback-button').click(function() {
+          var pid = $(this).attr('data-pid');
+          var time = $('#' + pid + "time").val();
+          var difficulty = $('#' + pid + "difficulty").val();
+          var interest = $('#' + pid + "interest").val();
+          var yes = $('#' + pid + "yes").is(":checked");
+          var no = $('#' + pid + "no").is(":checked");
+          var like = yes && !no;
+          var help = $('#'+pid+"help");
+          $.ajax({
+            url: '/api/problems/feedback',
+            data: {
+              "pid":pid,
+              "feedback": JSON.stringify({"liked":like,"timeSpent":time,"comment": "" + difficulty +" "+ interest}),
+              "token": $.cookie('token'),
+            },
+            success: function(result) {
+              if (result.status == 1) {
+                help.removeClass("failure-text").addClass("success-text");
+                help.text(result.message);
+              } else {
+                help.addClass("failure-text");
+                help.text(result.message);
+              }
+            },
+            type: 'POST'
+          });
         });
       }
     });

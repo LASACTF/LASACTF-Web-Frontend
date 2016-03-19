@@ -46,7 +46,7 @@
             <h4 class="text">How much time did you spend?</h4>
           </div>
           <div class="col-sm-6 vert-middle" style="margin-top: 0px">
-            <input class="sliderTime" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="240" data-slider-step="15" data-slider-value="0" />
+            <input id="{{pid}}time" class="sliderTime" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="240" data-slider-step="15" data-slider-value="0" />
             <text class="h4 sliderTimeDisplay">0:00</text>
           </div>
         </div>
@@ -56,7 +56,7 @@
             <h4 class="text">How easy or challenging was the problem?</h4>
           </div>
           <div class="col-sm-6 vert-middle" style="margin-top: 0px">
-            <input class="sliderDifficulty" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
+            <input id="{{pid}}difficulty" class="sliderDifficulty" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
             <text class="h4 sliderDifficultyDisplay">Average</text>
           </div>
         </div>
@@ -66,7 +66,7 @@
             <h4 class="text">Rate your overall interest in the problem.</h4>
           </div>
           <div class="col-sm-6 vert-middle" style="margin-top: 0px">
-            <input class="sliderInterest" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
+            <input id="{{pid}}interest" class="sliderInterest" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" />
             <text class="h4 sliderInterestDisplay">Average</text>
           </div>
         </div>
@@ -78,10 +78,10 @@
           <div class="col-sm-6 vert-middle" style="margin-top: 0px">
             <div class="btn-group radio" data-toggle="buttons">
               <label class="btn btn-primary">
-                <input type="radio" name="options" autocomplete="off" checked>Yes
+                <input type="radio" name="options" autocomplete="off" checked id="{{pid}}yes">Yes
               </label>
               <label class="btn btn-primary">
-                <input type="radio" name="options" autocomplete="off">No
+                <input type="radio" name="options" autocomplete="off" id="{{pid}}no">No
               </label>
             </div>
           </div>
@@ -90,7 +90,8 @@
         <div class="row">
           <div class="col-sm-2"></div>
           <div class="col-sm-8">
-            <button type="submit" class="btn purple sm expand centerpad"><i class="material-icons">&#xE0B7;</i>SEND FEEDBACK</button>
+            <button type="submit" class="btn purple sm expand centerpad feedback-button" data-pid="{{pid}}"><i class="material-icons">&#xE0B7;</i>SEND FEEDBACK</button>
+            <span class="help-block" id="{{pid}}help"><h4></h4></span>
           </div>
           <div class="col-sm-2"></div>
         </div>

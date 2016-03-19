@@ -13,10 +13,16 @@
 {
   background-color: material-color("purple", "500")!important;
 }
-.navbar.profile {
+// .navbar.profile {
+//   margin: 0;
+//   box-shadow: none;
+//   z-index: 1;
+// }
+// .navbar.profile .container-fluid {
+//   border-bottom: 0!important;
+// }
+.navbar.scoreboard, .navbar.profile {
   margin: 0;
-  box-shadow: none;
-  z-index: 1;
 }
 .navbar.scoreboard .container-fluid {
   border-bottom: 4px solid material-color('orange','500');
@@ -33,15 +39,12 @@
 .navbar.register .container-fluid {
   border-bottom: 4px solid material-color('green','500');
 }
-.navbar.login .container-fluid {
+.navbar.login .container-fluid,.navbar.profile .container-fluid {
   border-bottom: 4px solid material-color('purple','500');
 }
 .navbar .container-fluid {
   //border-bottom: 4px solid #9c27b0;
   height: 66px;
-}
-.navbar.profile .container-fluid {
-  border-bottom: 0!important;
 }
 .navbar .navbar-header .navbar-brand {
   width: 200px;
@@ -180,7 +183,7 @@
 .navbar.profile .nav li.button .btn.profile,
 .navbar .nav li.button .btn.profile:hover,
 .navbar .nav li.button .btn.profile.open {
-  height: 67px;
+  height: 66px;
 }
 .navbar .nav li.button .btn.profile:hover,
 .navbar .nav li.button .btn.profile.open {
@@ -288,6 +291,9 @@ a.noselect {
   background-color: material-color('orange','500');
   color: $white;
 }
+.breadbar.black {
+  background-color: #212121;
+}
 .breadbar .tab {
   width: 200px;
   display: inline-block;
@@ -307,7 +313,7 @@ a.noselect {
 .breadbar .tab.active,
 .breadbar .tab.active:hover,
 .breadbar.purple .tab.active:hover,
-.breadbar.red .tab.active:hover {
+.breadbar.orange .tab.active:hover {
   background-color: material-color('grey','800')!important;
   height: 53px;
 }
@@ -315,7 +321,7 @@ a.noselect {
   background-color: material-color('purple','400')!important;
   height: 52px;
 }
-.breadbar.red .tab:hover {
+.breadbar.orange .tab:hover {
   background-color: material-color('orange','a200')!important;
   height: 52px;
 }

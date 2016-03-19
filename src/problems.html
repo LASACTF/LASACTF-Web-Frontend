@@ -3,8 +3,10 @@
 
 <head>
   {{> partial-compiled/head.html}}
-  <script src="js/templates.js"></script>
   <title>LASACTF - Problems</title>
+  <script src="js/templates.js"></script>
+  <!-- JS --->
+  <script src="js/problems.js"async></script>
 </head>
 
 <body class="compete">
@@ -67,12 +69,19 @@
             <div class="name">Algorithm</div>
           </div>
         </div>
+        <div class="categorybar misc">
+          <div id="progressbarmisc" class="category">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <i class="material-icons">&#xE896;</i>
+            <div class="name">Miscellaneous</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   {{> partial/footer.html}}
-  <!-- JS --->
-  <script src="js/problems.js"></script>
 
 </body>
 
