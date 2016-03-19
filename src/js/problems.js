@@ -118,6 +118,7 @@ function generateCompletionBars(problems, teamProblems) {
     $('#progressbarreverse .progress .progress-bar').width(categories.reverse.solved / categories.reverse.total * 100 + "%");
     $('#progressbarbinary .progress .progress-bar').width(categories.binary.solved / categories.binary.total * 100 + "%");
     $('#progressbaralgo .progress .progress-bar').width(categories.algo.solved / categories.algo.total * 100 + "%");
+    $('#progressbarmisc .progress .progress-bar').width(categories.misc.solved / categories.misc.total * 100 + "%");
   });
 }
 
