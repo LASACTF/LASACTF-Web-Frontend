@@ -16,7 +16,7 @@ var icon = {
   "crypto": "&#xE897;",
   "algo": "&#xE155;",
   "asymptotic": "",
-  "misc": ""
+  "misc": "&#xE896;"
 };
 
 function ajaxSubmit(input, help, parent) {
