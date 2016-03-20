@@ -3,7 +3,7 @@ var convert = {
   "reverse engineering": "reverse",
   "binary exploitation": "binary",
   "forensics": "forensics",
-  "cryptographgy": "crypto",
+  "cryptography": "crypto",
   "algorithm": "algo",
   "asymptotic": "asymptotic",
   "miscellaneous": "misc"
