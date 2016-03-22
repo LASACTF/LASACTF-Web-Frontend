@@ -82,7 +82,7 @@ $(function() {
     }, countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS | countdown.MILLISECONDS);
   } else {
     $('#ttext').text(' left');
-    countdown(new Date("March 26, 2016 12:00:00 CDT"), function(ts) {
+    countdown(new Date("March 26, 2016 15:00:00 CDT"), function(ts) {
       $('#tdays').text(padDigits(ts.days, 2));
       $('#thours').text(padDigits(ts.hours, 2));
       $('#tmins').text(padDigits(ts.minutes, 2));
