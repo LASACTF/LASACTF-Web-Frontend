@@ -29,4 +29,28 @@ $(function() {
       type: 'POST'
     });
   });
+
+  $("#reset-team-form").submit(function(event) {
+    event.preventDefault();
+    var password = $('#reset-team-form').find('input[id="inputPassword"]').val();
+
+    $.ajax({
+      url: '/api/team/update_team_password',
+      data: {
+        "new-password": password
+      },
+      success: function(data) {
+        if (data.status == 1) {
+          $('#helpBlock').addClass("success-text");
+          $('#inputGroup').removeClass('has-failure').addClass('has-success');
+          $('#helpBlock').text(data.message);
+        } else {
+          $('#helpBlock').removeClass("success-text");
+          $('#inputGroup').removeClass('has-success').addClass('has-failure');
+          $('#helpBlock').text(data.message);
+        }
+      },
+      type: 'POST'
+    });
+  });
 });
