@@ -10,7 +10,8 @@ $(function() {
       data: {
         "current-password": currentpassword,
         "new-password": newpassword,
-        "new-password-confirmation": newpasswordconfirmation
+        "new-password-confirmation": newpasswordconfirmation,
+        "token": $.cookie('token')
       },
       success: function(data) {
         if (data.status == 1) {
