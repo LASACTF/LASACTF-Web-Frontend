@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> partial-compiled/head.html}}
+  <title>LASACTF - Reset Password</title>
+  <!-- JS -->
+  <script src="js/reset.js" async></script>
+</head>
+
+<body>
+  <div class="container" id="cont-super">
+    <div class="row" style="text-align: center">
+      <h1>Reset Password</h1>
+    </div>
+    <br>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <form class="form-horizontal" id="reset-form">
+        <div class="form-group" id="inputGroup">
+          <h3>Set a new password.</h3>
+          <input type="password" class="form-control" id="current-password" placeholder="Current Password">
+          <input type="password" class="form-control" id="new-password" placeholder="New Password">
+          <input type="password" class="form-control spacetop" id="new-password-confirmation" placeholder="Confirm Password">
+          <span id="helpBlock" class="help-block"></span>
+          <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>RESET PASSWORD</button>
+        </div>
+        <br>
+      </form>
+    </div>
+
+    <div class="row" style="text-align: center">
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="text-align: center">
+      <form class="form-horizontal" id="reset-team-form">
+        <div class="form-group" id="inputGroup1">
+          <h1>Reset Team Password</h1>
+          <h3>Set a new team password.</h3>
+          <input type="password" class="form-control" id="inputPassword" placeholder="New Password">
+          <span id="helpBlock1" class="help-block"></span>
+          <button type="submit" class="btn purple sm expand centerpad" id="inputSubmit"><i class="material-icons">&#xE5C8;</i>RESET PASSWORD</button>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+
+  {{> partial/footer.html}}
+</body>
+
+</html>

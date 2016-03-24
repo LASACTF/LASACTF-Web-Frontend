@@ -1,3 +1,15 @@
+$.ajax({
+  url: '/api/user/firstlogin',
+  type:'GET',
+  success: function(result) {
+    if(result.status == 1) {
+      if(result.data.firstlogin) {
+        window.location.href = '/reset';
+      }
+    }
+  }
+});
+
 function padDigits(number, digits) {
   return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }
