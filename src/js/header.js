@@ -4,7 +4,7 @@ $.ajax({
   success: function(result) {
     if(result.status == 1) {
       if(result.data.firstlogin) {
-        window.location.href = '/reset';
+        window.location.href = '/change';
       }
     }
   }
