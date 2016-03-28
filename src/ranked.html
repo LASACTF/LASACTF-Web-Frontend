@@ -1,17 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A national computer science and security competition run by students at LASA High School in Austin, Texas.">
+<meta property="og:title" content="LASACTF">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lasactf.com/img/banner.png">
+<meta property="og:url" content="https://lasactf.com">
+<link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="manifest" href="img/manifest.json">
+<meta name="msapplication-TileColor" content="#D500F9">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#7b1fa2">
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<head>
-  {{> partial-compiled/head.html}}
+  ga('create', 'UA-73538936-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<link rel="stylesheet" href="css/libs.css">
+<link href="css/ctf.css" rel="stylesheet" type="text/css">
+
+<script src="js/libs.js"></script><style type="text/css"></style>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
   <title>LASACTF - Ranked Scoreboard</title>
   <!-- JS -->
-  <script async src="js/templates.js"></script>
-  <script src="js/scoreboard.js" async></script>
+  <script async="" src="js/templates.js"></script>
+  <script src="js/scoreboard.js" async=""></script>
 </head>
 
 <body class="compete">
   <div class="primarycontainer">
-    {{> partial/header.html}} {{> partial/scoreboardbar.html}}
+<script src="js/header.js" async=""></script>
+<nav class="navbar scoreboard">
+
+  <div class="container-fluid" id="cont-measure">
+    <div class="navbar-header">
+      <text class="headway"><span id="HW_badge_cont" class="HW_visible"><span id="HW_badge" class="HW_visible">6</span></span></text>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-collapse" aria-expanded="false">
+        <i class="material-icons"></i>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand headway" href="/">
+        <img alt="LASACTF" src="img/LASA-CTF-Logo-v3-3x-trans-nohighlight.png">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="header-collapse">
+      <ul class="nav navbar-nav smish-invisible nav-countdown" id="countdown">
+        <li class="text xs-invisible"><h5 class="text color-grey-400"><div class="h4 text color-grey-200" id="tdays">01</div><text class="lg-invisible"> <div class="text color-grey-200">days</div> and </text><span class="hidden lg-visible-inline">:</span><div class="h4 text" id="thours">09</div>:<div class="h4 text" id="tmins">12</div>:<div class="h4 text" id="tsecs">23</div><text class="sm-invisible" id="ttext"> left</text></h5></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" style="text-align: center;">
+        <li class="navbuttonwrapper loggedout"><a href="/login"><button class="navbutton navbutton-purple" id="headerLogin"><i class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> LOGIN</text></button></a></li>
+        <li class="navbuttonwrapper loggedout"><a href="/register"><button class="navbutton navbutton-green" id="headerRegister"><i class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> REGISTER</text></button></a></li>
+        <li class="navbuttonwrapper loggedin competitionactive hidden"><a href="/problems"><button class="navbutton navbutton-blue" id="headerProblems"><i id="problemicon" class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> PROBLEMS</text></button></a></li>
+        <li class="navbuttonwrapper"><a href="/scoreboard"><button class="navbutton navbutton-orange active" id="headerScoreboard"><i class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> SCOREBOARD</text></button></a></li>
+        <li class="navbuttonwrapper loggedin competitionactive hidden"><a href="/shell"><button class="navbutton navbutton-green" id="headerShell"><i class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> SHELL</text></button></a></li>
+        <li class="navbuttonwrapper loggedin hidden"><a href="/chat"><button class="navbutton navbutton-cyan last" id="headerChat"><i class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> CHAT</text></button></a></li>
+        <li class="navbuttonwrapper loggedout"><a href="/about"><button class="navbutton navbutton-blue last" id="headerAbout"><i class="material-icons material"></i><text class="inner header-md-invisible smish-visible"> ABOUT</text></button></a></li>
+
+        <li class="dropdown">
+          </li><li class="dropdown-toggle button smish-invisible loggedin hidden" id="desktop-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button type="submit" class="btn profile" id="headerProfile"><i class="material-icons"></i><text class="header-sm-invisible" id="headerUsername"> username</text></button>
+            <ul class="dropdown-menu user-dropdown" id="desktop-dropdown">
+              <a class="btn" href="/account"><i class="material-icons"></i> YOUR ACCOUNT</a>
+              <a href="/team" class="btn"><i class="material-icons"></i> YOUR TEAM</a>
+              <a href="mailto:team@lasactf.com" class="btn"><div class="col-xs-8"><i class="material-icons"></i> CONTACT US</div><div class="col-xs-4 right"><i class="material-icons color-grey-400"></i></div></a>
+              <a href="/about" class="btn"><i class="material-icons"></i> ABOUT LASACTF</a>
+              <a onclick="onLogout()" class="btn" id="actionLogout"><i class="material-icons"></i> LOG OUT</a>
+            </ul>
+          </li>
+
+        <li class="navbuttonwrapper hidden smish-visible"><a href="/account"><button class="navbutton navbutton-purple loggedin hidden" id="headerProfileMobile"><i class="material-icons material"></i><text class="inner md-invisible smish-visible"> PROFILE</text></button></a></li>
+        <li class="navbuttonwrapper hidden smish-visible"><a onclick="onLogout()"><button class="navbutton navbutton-logout sm loggedin hidden"><i class="material-icons material"></i><text class="inner md-invisible smish-visible"> LOG OUT</text></button></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var HW_config = {
+    selector: ".headway", // CSS selector where to inject the badge
+    account: "PJr0bx" // your account ID
+  };
+</script>
+<script async="" src="//cdn.headwayapp.co/widget.js"></script>
+<div class="breadbar black">
+  <span class="tab active" id="rankedTab">
+    <a href="/ranked" class="clickable button full">
+      <i class="material-icons"></i><text class="header-md-invisible"> Ranked</text>
+    </a>
+  </span>
+  <span class="tab" id="unrankedTab">
+    <a href="/unranked" class="clickable button full">
+      <i class="material-icons"></i><text class="header-md-invisible"> Unranked</text>
+    </a>
+  </span>
+  <!--<span class="tab" id="hallOfFameTab">
+    <a href="/halloffame" class="clickable button full">
+      <i class="material-icons">&#xE84F;</i><text class="header-md-invisible"> Hall of Fame</text>
+    </a>
+  </span>
+  <span class="tab" id="teamStatsTab">
+    <a href="/teamstats" class="clickable button full">
+      <i class="material-icons">&#xE922;</i><text class="header-md-invisible"> Team Stats</text>
+    </a>
+  </span>
+  <span class="tab" id="globalStats">
+    <a href="/globalstats" class="clickable button full">
+      <i class="material-icons">&#xE894;</i><text class="header-md-invisible"> Global Stats</text>
+    </a>
+  </span>-->
+</div>
     <div class="content">
       <div class="row">
         <div class="col-sm-8 nopad hidden" id="divScored">
@@ -36,12 +158,4597 @@
       <br>
       <div class="scorestable" id="scoreTable">
 
-      </div>
+      <div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">1<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Second Semester Seniors </h2></div>
+  <div class="col">
+    <h4 class="text">Beavers </h4></div>
+  <div class="col">
+    <h2 class="text">3640<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">2<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 1064CBread </h2></div>
+  <div class="col">
+    <h4 class="text">Dos Pueblos High School </h4></div>
+  <div class="col">
+    <h2 class="text">3240<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">3<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS Absol </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School (mostly) </h4></div>
+  <div class="col">
+    <h2 class="text">2770<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">4<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CCACompsci </h2></div>
+  <div class="col">
+    <h4 class="text">Canyon Crest Academy </h4></div>
+  <div class="col">
+    <h2 class="text">2270<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">5<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Darkside </h2></div>
+  <div class="col">
+    <h4 class="text">Montgomery Blair High School </h4></div>
+  <div class="col">
+    <h2 class="text">2090<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">6<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Flaming Pandas </h2></div>
+  <div class="col">
+    <h4 class="text">Suncoast High School </h4></div>
+  <div class="col">
+    <h2 class="text">1840<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">7<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Algorithmic Armadillos </h2></div>
+  <div class="col">
+    <h4 class="text">West Windsor-Plainsboro HS South </h4></div>
+  <div class="col">
+    <h2 class="text">1570<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">8<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Mr Doc Moo </h2></div>
+  <div class="col">
+    <h4 class="text">Whitney Young Magnet High School </h4></div>
+  <div class="col">
+    <h2 class="text">1520<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">9<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Paskell </h2></div>
+  <div class="col">
+    <h4 class="text">Imperative Functionals </h4></div>
+  <div class="col">
+    <h2 class="text">1500<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">10<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> n0de </h2></div>
+  <div class="col">
+    <h4 class="text">Montgomery Blair High School </h4></div>
+  <div class="col">
+    <h2 class="text">1400<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">11<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> RedShield5 </h2></div>
+  <div class="col">
+    <h4 class="text">York High School </h4></div>
+  <div class="col">
+    <h2 class="text">1270<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">12<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> The Lemons </h2></div>
+  <div class="col">
+    <h4 class="text">Methacton High School </h4></div>
+  <div class="col">
+    <h2 class="text">1250<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">13<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS Vegasorus </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">1230<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">14<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> *NULL </h2></div>
+  <div class="col">
+    <h4 class="text">Darien High School </h4></div>
+  <div class="col">
+    <h2 class="text">1220<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">15<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> jowlMeme </h2></div>
+  <div class="col">
+    <h4 class="text">Bergen County Academies </h4></div>
+  <div class="col">
+    <h2 class="text">1180<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">16<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> trumpfanclub </h2></div>
+  <div class="col">
+    <h4 class="text">MAKE AMERICA GREAT AGAIN </h4></div>
+  <div class="col">
+    <h2 class="text">1130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">17<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> We fail Google CAPTCHAs </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">1120<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">18<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Deadliest Batch </h2></div>
+  <div class="col">
+    <h4 class="text">Freehold High School </h4></div>
+  <div class="col">
+    <h2 class="text">1100<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">19<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Anomalous Materials </h2></div>
+  <div class="col">
+    <h4 class="text">Sector C Test Labs </h4></div>
+  <div class="col">
+    <h2 class="text">1060<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">20<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Superari </h2></div>
+  <div class="col">
+    <h4 class="text">The Asians and another </h4></div>
+  <div class="col">
+    <h2 class="text">1050<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">21<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Nimble_Navigators </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">1040<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">22<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ^-^ </h2></div>
+  <div class="col">
+    <h4 class="text">Montgomery Blair </h4></div>
+  <div class="col">
+    <h2 class="text">1000<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">23<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> coocoo </h2></div>
+  <div class="col">
+    <h4 class="text">coocoo </h4></div>
+  <div class="col">
+    <h2 class="text">990<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">24<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 5molNaCN </h2></div>
+  <div class="col">
+    <h4 class="text">H2O </h4></div>
+  <div class="col">
+    <h2 class="text">980<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">25<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Team'); DROP TABLE Teams;-- </h2></div>
+  <div class="col">
+    <h4 class="text">Hendersonville High School </h4></div>
+  <div class="col">
+    <h2 class="text">970<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">26<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Client Side PHP </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">970<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">27<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> csquared </h2></div>
+  <div class="col">
+    <h4 class="text">Ddank world </h4></div>
+  <div class="col">
+    <h2 class="text">950<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">28<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Hax </h2></div>
+  <div class="col">
+    <h4 class="text">Lake Braddock Secondary School </h4></div>
+  <div class="col">
+    <h2 class="text">930<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">29<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> InformationPirates </h2></div>
+  <div class="col">
+    <h4 class="text">Lindenhurst High School </h4></div>
+  <div class="col">
+    <h2 class="text">890<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">30<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Westwood </h2></div>
+  <div class="col">
+    <h4 class="text">Westwood high school </h4></div>
+  <div class="col">
+    <h2 class="text">870<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">31<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> WSlatton </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">750<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">32<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> DDOS Attacks </h2></div>
+  <div class="col">
+    <h4 class="text">Suncoast Community High School </h4></div>
+  <div class="col">
+    <h2 class="text">750<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">33<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 0xNotHex </h2></div>
+  <div class="col">
+    <h4 class="text">St. John's Prep </h4></div>
+  <div class="col">
+    <h2 class="text">720<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">34<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Robert'); DROP TABLE Student;-- </h2></div>
+  <div class="col">
+    <h4 class="text">Arlington High School </h4></div>
+  <div class="col">
+    <h2 class="text">720<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">35<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Empier </h2></div>
+  <div class="col">
+    <h4 class="text">Hansei </h4></div>
+  <div class="col">
+    <h2 class="text">720<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">36<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Revenge of the Toaster Ovens </h2></div>
+  <div class="col">
+    <h4 class="text">Academy for Science and Design </h4></div>
+  <div class="col">
+    <h2 class="text">710<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">37<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ki0apa </h2></div>
+  <div class="col">
+    <h4 class="text">Lawrence High School </h4></div>
+  <div class="col">
+    <h2 class="text">700<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">38<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Jimmy and the Gills </h2></div>
+  <div class="col">
+    <h4 class="text">Freehold High School </h4></div>
+  <div class="col">
+    <h2 class="text">700<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">39<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Dangling Pointers </h2></div>
+  <div class="col">
+    <h4 class="text">Porter-Gaud School </h4></div>
+  <div class="col">
+    <h2 class="text">690<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">40<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> in/s/ane </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant High School </h4></div>
+  <div class="col">
+    <h2 class="text">650<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">41<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> mcneil </h2></div>
+  <div class="col">
+    <h4 class="text">McNeil High School </h4></div>
+  <div class="col">
+    <h2 class="text">650<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">42<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> AV1ct0r </h2></div>
+  <div class="col">
+    <h4 class="text">MEPHI </h4></div>
+  <div class="col">
+    <h2 class="text">630<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">43<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CatsInBags </h2></div>
+  <div class="col">
+    <h4 class="text">WT Woodson </h4></div>
+  <div class="col">
+    <h2 class="text">620<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">44<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Re:Coded </h2></div>
+  <div class="col">
+    <h4 class="text">Dulles High School </h4></div>
+  <div class="col">
+    <h2 class="text">610<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">45<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Black Mesa </h2></div>
+  <div class="col">
+    <h4 class="text">Mission San Jose High School </h4></div>
+  <div class="col">
+    <h2 class="text">590<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">46<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Westwood HS ayyy </h2></div>
+  <div class="col">
+    <h4 class="text">Westwood High School </h4></div>
+  <div class="col">
+    <h2 class="text">590<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">47<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Basement Children </h2></div>
+  <div class="col">
+    <h4 class="text">Interlake High School </h4></div>
+  <div class="col">
+    <h2 class="text">580<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">48<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sneakysneakyboys </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">570<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">49<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ronald Pagan </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">570<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">50<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> KORNITA_3 </h2></div>
+  <div class="col">
+    <h4 class="text">Kornita </h4></div>
+  <div class="col">
+    <h2 class="text">570<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">51<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> minimario </h2></div>
+  <div class="col">
+    <h4 class="text">Park Tudor </h4></div>
+  <div class="col">
+    <h2 class="text">550<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">52<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> {esotericjokehere} </h2></div>
+  <div class="col">
+    <h4 class="text">McKinney Boyd High School </h4></div>
+  <div class="col">
+    <h2 class="text">550<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">53<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> xSploit </h2></div>
+  <div class="col">
+    <h4 class="text">Todd Beamer High School </h4></div>
+  <div class="col">
+    <h2 class="text">550<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">54<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Cloud 9 </h2></div>
+  <div class="col">
+    <h4 class="text">University of Chicago Laboratory Schools </h4></div>
+  <div class="col">
+    <h2 class="text">540<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">55<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> memers </h2></div>
+  <div class="col">
+    <h4 class="text">California High School </h4></div>
+  <div class="col">
+    <h2 class="text">530<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">56<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CCQK </h2></div>
+  <div class="col">
+    <h4 class="text">Haynes Academy </h4></div>
+  <div class="col">
+    <h2 class="text">530<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">57<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> phucteam </h2></div>
+  <div class="col">
+    <h4 class="text">Duy tân </h4></div>
+  <div class="col">
+    <h2 class="text">520<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">58<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> KORNITA_2 </h2></div>
+  <div class="col">
+    <h4 class="text">High School </h4></div>
+  <div class="col">
+    <h2 class="text">500<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">59<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Phish &amp; Chips </h2></div>
+  <div class="col">
+    <h4 class="text">Sidwell Friends School </h4></div>
+  <div class="col">
+    <h2 class="text">490<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">60<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> r00ts </h2></div>
+  <div class="col">
+    <h4 class="text">El Firdaouss High School </h4></div>
+  <div class="col">
+    <h2 class="text">490<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">61<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> French Toast Mafia </h2></div>
+  <div class="col">
+    <h4 class="text">Montgomery Blair High School </h4></div>
+  <div class="col">
+    <h2 class="text">480<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">62<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Strexcorp </h2></div>
+  <div class="col">
+    <h4 class="text">Berthoud High School </h4></div>
+  <div class="col">
+    <h2 class="text">480<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">63<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> it's only smells </h2></div>
+  <div class="col">
+    <h4 class="text">Brooklyn Technical High School </h4></div>
+  <div class="col">
+    <h2 class="text">470<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">64<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ID10T Errors </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">470<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">65<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> BBHHS </h2></div>
+  <div class="col">
+    <h4 class="text">Brecksville Broadview Heights High School </h4></div>
+  <div class="col">
+    <h2 class="text">470<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">66<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> nothingelse </h2></div>
+  <div class="col">
+    <h4 class="text">nothing </h4></div>
+  <div class="col">
+    <h2 class="text">470<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">67<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 7/11 Was a Part Time Job </h2></div>
+  <div class="col">
+    <h4 class="text">East Brunswick </h4></div>
+  <div class="col">
+    <h2 class="text">470<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">68<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> WolfBirdBrewery </h2></div>
+  <div class="col">
+    <h4 class="text">Faith Lutheran HS </h4></div>
+  <div class="col">
+    <h2 class="text">470<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">69<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> parkchanjin </h2></div>
+  <div class="col">
+    <h4 class="text">GPA </h4></div>
+  <div class="col">
+    <h2 class="text">460<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">70<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Exact Estimates </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">450<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">71<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> hungry hippos </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">440<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">72<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> hjarrell </h2></div>
+  <div class="col">
+    <h4 class="text">Suncoast High School </h4></div>
+  <div class="col">
+    <h2 class="text">430<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">73<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 😂😂😂 U+1F602 😂😂😂 </h2></div>
+  <div class="col">
+    <h4 class="text">LASA High School </h4></div>
+  <div class="col">
+    <h2 class="text">430<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">74<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Perlperlperlperlperlperl </h2></div>
+  <div class="col">
+    <h4 class="text">Porter-Gaud </h4></div>
+  <div class="col">
+    <h2 class="text">420<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">75<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Omega </h2></div>
+  <div class="col">
+    <h4 class="text">Northwood HS </h4></div>
+  <div class="col">
+    <h2 class="text">410<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">76<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS Carried by Pears </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">410<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">77<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 0x00000000 </h2></div>
+  <div class="col">
+    <h4 class="text">Plano West Senior High </h4></div>
+  <div class="col">
+    <h2 class="text">410<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">78<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Sublime </h2></div>
+  <div class="col">
+    <h4 class="text">Wando High School </h4></div>
+  <div class="col">
+    <h2 class="text">380<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">79<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Desiprox </h2></div>
+  <div class="col">
+    <h4 class="text">al kindy high school </h4></div>
+  <div class="col">
+    <h2 class="text">370<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">80<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> TWICE </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">360<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">81<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CyberStone </h2></div>
+  <div class="col">
+    <h4 class="text">Faith Lutheran </h4></div>
+  <div class="col">
+    <h2 class="text">360<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">82<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Eagle Squad </h2></div>
+  <div class="col">
+    <h4 class="text">Enloe High School </h4></div>
+  <div class="col">
+    <h2 class="text">360<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">83<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> BCCHack </h2></div>
+  <div class="col">
+    <h4 class="text">Bethesda-Chevy Chase High School </h4></div>
+  <div class="col">
+    <h2 class="text">360<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">84<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> WackMC </h2></div>
+  <div class="col">
+    <h4 class="text">Hey yo, MIC check one two. </h4></div>
+  <div class="col">
+    <h2 class="text">360<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">85<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ahrevertthi </h2></div>
+  <div class="col">
+    <h4 class="text">Goooooooooood </h4></div>
+  <div class="col">
+    <h2 class="text">360<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">86<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Auphish2 </h2></div>
+  <div class="col">
+    <h4 class="text">Highland Park Sr </h4></div>
+  <div class="col">
+    <h2 class="text">350<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">87<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Salted Rutabaga Pie </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">340<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">88<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CyberWolves </h2></div>
+  <div class="col">
+    <h4 class="text">RBR </h4></div>
+  <div class="col">
+    <h2 class="text">340<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">89<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> noob@lulz </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant HS- thats right </h4></div>
+  <div class="col">
+    <h2 class="text">310<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">90<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> mars </h2></div>
+  <div class="col">
+    <h4 class="text">abcdef </h4></div>
+  <div class="col">
+    <h2 class="text">310<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">91<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ¯\_(ツ)_/¯ </h2></div>
+  <div class="col">
+    <h4 class="text">South River High School </h4></div>
+  <div class="col">
+    <h2 class="text">300<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">92<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Bread_nuts </h2></div>
+  <div class="col">
+    <h4 class="text">Lakeside Highschool </h4></div>
+  <div class="col">
+    <h2 class="text">300<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">93<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Keyboard Warriors </h2></div>
+  <div class="col">
+    <h4 class="text">Westwood High School </h4></div>
+  <div class="col">
+    <h2 class="text">290<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">94<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> AuPhishYellow </h2></div>
+  <div class="col">
+    <h4 class="text">Highland Park Senior High </h4></div>
+  <div class="col">
+    <h2 class="text">290<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">95<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> wiz827 </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">290<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">96<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> alert(0) </h2></div>
+  <div class="col">
+    <h4 class="text">Several Different Schools </h4></div>
+  <div class="col">
+    <h2 class="text">280<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">97<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> baller24s </h2></div>
+  <div class="col">
+    <h4 class="text">North </h4></div>
+  <div class="col">
+    <h2 class="text">280<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">98<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ronyx </h2></div>
+  <div class="col">
+    <h4 class="text">Merrill F. West High School </h4></div>
+  <div class="col">
+    <h2 class="text">280<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">100<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> A Team </h2></div>
+  <div class="col">
+    <h4 class="text">Colorado </h4></div>
+  <div class="col">
+    <h2 class="text">270<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">101<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ayase </h2></div>
+  <div class="col">
+    <h4 class="text">Krangkeng High School Florida </h4></div>
+  <div class="col">
+    <h2 class="text">270<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">102<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Renee </h2></div>
+  <div class="col">
+    <h4 class="text">george c marshall high school </h4></div>
+  <div class="col">
+    <h2 class="text">260<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">103<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Anime Fan Club </h2></div>
+  <div class="col">
+    <h4 class="text">Livonia Technical Career Center </h4></div>
+  <div class="col">
+    <h2 class="text">250<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">104<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HackCat1 </h2></div>
+  <div class="col">
+    <h4 class="text">Seocho </h4></div>
+  <div class="col">
+    <h2 class="text">250<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">105<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Jugaad </h2></div>
+  <div class="col">
+    <h4 class="text">High School </h4></div>
+  <div class="col">
+    <h2 class="text">250<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">106<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> f1end </h2></div>
+  <div class="col">
+    <h4 class="text">High School </h4></div>
+  <div class="col">
+    <h2 class="text">250<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">107<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> despair </h2></div>
+  <div class="col">
+    <h4 class="text">Minitrue, Airstrip One, Ingsoc </h4></div>
+  <div class="col">
+    <h2 class="text">240<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">108<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> MilWestA </h2></div>
+  <div class="col">
+    <h4 class="text">Millard West High School </h4></div>
+  <div class="col">
+    <h2 class="text">240<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">109<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> The Meme Time </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">230<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">110<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> vnn </h2></div>
+  <div class="col">
+    <h4 class="text">Univecity </h4></div>
+  <div class="col">
+    <h2 class="text">230<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">111<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> khalludi123 </h2></div>
+  <div class="col">
+    <h4 class="text">WTWoodson </h4></div>
+  <div class="col">
+    <h2 class="text">220<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">112<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> haiku </h2></div>
+  <div class="col">
+    <h4 class="text">other </h4></div>
+  <div class="col">
+    <h2 class="text">210<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">113<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> swytch_ </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">200<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">114<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HTCPCP:// </h2></div>
+  <div class="col">
+    <h4 class="text">Deep Run High School </h4></div>
+  <div class="col">
+    <h2 class="text">200<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">115<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> aaronvigal </h2></div>
+  <div class="col">
+    <h4 class="text">Millard West </h4></div>
+  <div class="col">
+    <h2 class="text">200<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">116<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> RDHS CyberHawks </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell High School </h4></div>
+  <div class="col">
+    <h2 class="text">200<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">117<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> GarbanzoBeans </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton </h4></div>
+  <div class="col">
+    <h2 class="text">200<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">118<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PinkUnicorns </h2></div>
+  <div class="col">
+    <h4 class="text">Mission San Jose High School </h4></div>
+  <div class="col">
+    <h2 class="text">200<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">119<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> rip </h2></div>
+  <div class="col">
+    <h4 class="text">Walnut Valley USD </h4></div>
+  <div class="col">
+    <h2 class="text">190<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">120<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> android22 </h2></div>
+  <div class="col">
+    <h4 class="text">hongcheon </h4></div>
+  <div class="col">
+    <h2 class="text">190<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">121<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Enigma </h2></div>
+  <div class="col">
+    <h4 class="text">Naperville North </h4></div>
+  <div class="col">
+    <h2 class="text">190<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">122<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS Freshies </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville HS </h4></div>
+  <div class="col">
+    <h2 class="text">190<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">123<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Griftor05 </h2></div>
+  <div class="col">
+    <h4 class="text">Whitney Young </h4></div>
+  <div class="col">
+    <h2 class="text">180<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">124<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> phoenix </h2></div>
+  <div class="col">
+    <h4 class="text">THS </h4></div>
+  <div class="col">
+    <h2 class="text">160<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">125<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HoaDTU </h2></div>
+  <div class="col">
+    <h4 class="text">abc </h4></div>
+  <div class="col">
+    <h2 class="text">160<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">126<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Pair of Shoes </h2></div>
+  <div class="col">
+    <h4 class="text">St. Dominic Savio </h4></div>
+  <div class="col">
+    <h2 class="text">160<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">127<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> luusmt2012 </h2></div>
+  <div class="col">
+    <h4 class="text">kma </h4></div>
+  <div class="col">
+    <h2 class="text">160<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">128<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> RAGRETS </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">160<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">129<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> C-x M-c M-butterfly </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant </h4></div>
+  <div class="col">
+    <h2 class="text">150<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">130<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Bob Ross </h2></div>
+  <div class="col">
+    <h4 class="text">Bob Ross University </h4></div>
+  <div class="col">
+    <h2 class="text">150<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">131<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> null </h2></div>
+  <div class="col">
+    <h4 class="text">Brooklyn Technical High School </h4></div>
+  <div class="col">
+    <h2 class="text">150<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">132<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> shtarkraft </h2></div>
+  <div class="col">
+    <h4 class="text">Coolest High School </h4></div>
+  <div class="col">
+    <h2 class="text">150<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">133<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> minininho </h2></div>
+  <div class="col">
+    <h4 class="text">Other </h4></div>
+  <div class="col">
+    <h2 class="text">150<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">134<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> riparoni </h2></div>
+  <div class="col">
+    <h4 class="text">N/A </h4></div>
+  <div class="col">
+    <h2 class="text">150<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">135<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Borg </h2></div>
+  <div class="col">
+    <h4 class="text">Saint Johnsbury Academy </h4></div>
+  <div class="col">
+    <h2 class="text">140<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">136<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> boot </h2></div>
+  <div class="col">
+    <h4 class="text">other </h4></div>
+  <div class="col">
+    <h2 class="text">140<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">137<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> no123 </h2></div>
+  <div class="col">
+    <h4 class="text">No School </h4></div>
+  <div class="col">
+    <h2 class="text">140<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">138<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> bob1's team </h2></div>
+  <div class="col">
+    <h4 class="text">jordon </h4></div>
+  <div class="col">
+    <h2 class="text">130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">139<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Green Eggs and Sam </h2></div>
+  <div class="col">
+    <h4 class="text">LASA  </h4></div>
+  <div class="col">
+    <h2 class="text">130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">140<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Your Eternal Reward </h2></div>
+  <div class="col">
+    <h4 class="text">Barrington High School </h4></div>
+  <div class="col">
+    <h2 class="text">130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">141<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 0xb0b0 </h2></div>
+  <div class="col">
+    <h4 class="text">Other </h4></div>
+  <div class="col">
+    <h2 class="text">130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">142<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> BaseZero </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant High School </h4></div>
+  <div class="col">
+    <h2 class="text">130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">143<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CompSquad </h2></div>
+  <div class="col">
+    <h4 class="text">Arlington High School </h4></div>
+  <div class="col">
+    <h2 class="text">130<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">144<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> John2143 </h2></div>
+  <div class="col">
+    <h4 class="text">Albert Einstein High School </h4></div>
+  <div class="col">
+    <h2 class="text">120<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">145<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Songoten </h2></div>
+  <div class="col">
+    <h4 class="text">HVKTMM </h4></div>
+  <div class="col">
+    <h2 class="text">120<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">146<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Bring on the Fyre </h2></div>
+  <div class="col">
+    <h4 class="text">Mount Hebron High School </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">147<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> DELSYS32 </h2></div>
+  <div class="col">
+    <h4 class="text">BCCHs </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">148<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> NC Alliance </h2></div>
+  <div class="col">
+    <h4 class="text">Enloe HS, Raleigh Charter </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">149<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> P_FEXs </h2></div>
+  <div class="col">
+    <h4 class="text">Buhach Colony  </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">150<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> butts </h2></div>
+  <div class="col">
+    <h4 class="text">Bergen County Academies </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">151<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Wolfpack </h2></div>
+  <div class="col">
+    <h4 class="text">West Morris Central High School </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">152<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> NO  </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">153<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> OneMoreTimeTwo </h2></div>
+  <div class="col">
+    <h4 class="text">Alpharetta High School </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">154<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS Blank </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">155<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> FlyingBacon </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton </h4></div>
+  <div class="col">
+    <h2 class="text">110<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">156<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> I Don't Have a Team Name </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">157<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Magical Unicorn Ponies (admin) </h2></div>
+  <div class="col">
+    <h4 class="text">Cerritos High School </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">158<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Pirate-Ninjas </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">159<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Marsellus Wallace </h2></div>
+  <div class="col">
+    <h4 class="text">Prairie Ridge High School </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">160<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> jpaik7 </h2></div>
+  <div class="col">
+    <h4 class="text">Santa Margarita Catholic HS </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">161<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> avikj </h2></div>
+  <div class="col">
+    <h4 class="text">Monta Vista High School </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">162<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CAMSCTF </h2></div>
+  <div class="col">
+    <h4 class="text">CAMS </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">163<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> #thedream </h2></div>
+  <div class="col">
+    <h4 class="text">Vandegrift High School </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">164<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> NEOCTF </h2></div>
+  <div class="col">
+    <h4 class="text">Brecksville Broadview Heights </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">165<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Okonkwo's Yams </h2></div>
+  <div class="col">
+    <h4 class="text">South River High School </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">166<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Andrew's Run </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">90<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">167<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CrazyMilkman </h2></div>
+  <div class="col">
+    <h4 class="text">Lawrence High School </h4></div>
+  <div class="col">
+    <h2 class="text">80<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">168<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> OM3G4 </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">80<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">169<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Rockhead173 </h2></div>
+  <div class="col">
+    <h4 class="text">United States Military Academy </h4></div>
+  <div class="col">
+    <h2 class="text">80<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">170<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CowPi </h2></div>
+  <div class="col">
+    <h4 class="text">Upper Arlington High School </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">171<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> zerocolorteam </h2></div>
+  <div class="col">
+    <h4 class="text">Mission  </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">172<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> BEARFORCEONE </h2></div>
+  <div class="col">
+    <h4 class="text">George C. Marshall High School </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">173<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Flux </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">174<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> jberger </h2></div>
+  <div class="col">
+    <h4 class="text">Pine Crest School </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">175<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ... </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville HS and one Richard Montgomery HS </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">176<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> nafix </h2></div>
+  <div class="col">
+    <h4 class="text">QHS </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">177<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> whidyldev </h2></div>
+  <div class="col">
+    <h4 class="text">Ponderosa </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">178<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> GMO </h2></div>
+  <div class="col">
+    <h4 class="text">Lejeune High School </h4></div>
+  <div class="col">
+    <h2 class="text">70<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">179<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> brook2 </h2></div>
+  <div class="col">
+    <h4 class="text">brook </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">180<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Mav Champions </h2></div>
+  <div class="col">
+    <h4 class="text">McNeil High School </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">181<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> hydroluke402 </h2></div>
+  <div class="col">
+    <h4 class="text">Central High School </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">182<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Team Solo Code </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant High School </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">183<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Joe </h2></div>
+  <div class="col">
+    <h4 class="text">McFarland High School </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">184<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ELI'S COMPUTER GUYS </h2></div>
+  <div class="col">
+    <h4 class="text">MCVTS </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">185<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> northhax </h2></div>
+  <div class="col">
+    <h4 class="text">WWP High School North </h4></div>
+  <div class="col">
+    <h2 class="text">60<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">186<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> rmza7 </h2></div>
+  <div class="col">
+    <h4 class="text">Albemarle High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">187<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> TempAccess </h2></div>
+  <div class="col">
+    <h4 class="text">Adlai E. Stevenson </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">188<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> tjburns </h2></div>
+  <div class="col">
+    <h4 class="text">Moorestown High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">189<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Cerritos HS </h2></div>
+  <div class="col">
+    <h4 class="text">Cerritos High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">190<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Archal </h2></div>
+  <div class="col">
+    <h4 class="text">Lincoln Park </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">191<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> madguko </h2></div>
+  <div class="col">
+    <h4 class="text">alger </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">192<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Vaqueros </h2></div>
+  <div class="col">
+    <h4 class="text">Irvine High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">193<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> nihaleg </h2></div>
+  <div class="col">
+    <h4 class="text">Monta Vista High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">194<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Spec Ops </h2></div>
+  <div class="col">
+    <h4 class="text">Chaminade Julienne High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">195<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> dupeman99 </h2></div>
+  <div class="col">
+    <h4 class="text">Darien </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">196<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> LOMA lif hax </h2></div>
+  <div class="col">
+    <h4 class="text">Logan Magnolia High School </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">197<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ASzampias </h2></div>
+  <div class="col">
+    <h4 class="text">Baldwin Wallace </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">198<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> RocketPurple </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">50<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">199<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS Iliad </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">200<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CedarRidgeTeam1 </h2></div>
+  <div class="col">
+    <h4 class="text">Cedar Ridge High School </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">201<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHSThreeInchCliffs </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">202<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> IGuessSo </h2></div>
+  <div class="col">
+    <h4 class="text">Mira Mesa High School </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">203<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> hoang </h2></div>
+  <div class="col">
+    <h4 class="text">University </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">204<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Cows </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">205<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sting1410 </h2></div>
+  <div class="col">
+    <h4 class="text">Lynbrook </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">206<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> demoniuh </h2></div>
+  <div class="col">
+    <h4 class="text">iuh </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">207<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Free Burgers on Fridays </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">208<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PrettyPrincess107 </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School  </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">209<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> nopster2016 </h2></div>
+  <div class="col">
+    <h4 class="text">N. Las Vegas High </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">210<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ahiya </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">211<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> AKAL1 </h2></div>
+  <div class="col">
+    <h4 class="text">Whitney Young </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">212<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> hackforus.net CTF squad </h2></div>
+  <div class="col">
+    <h4 class="text">Lawrence High School </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">213<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Binary </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">40<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">214<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> IAMATEST </h2></div>
+  <div class="col">
+    <h4 class="text">SOMEWHERE KEWL </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">215<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> muzicman </h2></div>
+  <div class="col">
+    <h4 class="text">Brookwood High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">216<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Christopher312 </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">217<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> System 42.0 </h2></div>
+  <div class="col">
+    <h4 class="text">Doral Academy High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">218<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Rmills </h2></div>
+  <div class="col">
+    <h4 class="text">Thomas Jefferson  </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">219<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 3quick5u </h2></div>
+  <div class="col">
+    <h4 class="text">Langley High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">220<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> bunny </h2></div>
+  <div class="col">
+    <h4 class="text">HVKTMM </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">221<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> The Inquisitions </h2></div>
+  <div class="col">
+    <h4 class="text">Thomas Jefferson High School  </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">222<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> mandie58 </h2></div>
+  <div class="col">
+    <h4 class="text">Clements High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">223<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PHS E1337 </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">224<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> JoeWHoward </h2></div>
+  <div class="col">
+    <h4 class="text">Midway </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">225<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> varuniyer </h2></div>
+  <div class="col">
+    <h4 class="text">Monta Vista </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">226<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Network Shadow </h2></div>
+  <div class="col">
+    <h4 class="text">Lake Braddock </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">227<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ruby </h2></div>
+  <div class="col">
+    <h4 class="text">Reseda High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">228<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> machshev </h2></div>
+  <div class="col">
+    <h4 class="text">Ezra Academy </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">229<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ♥☻♥ </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">230<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Sub Human Filth </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">231<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> GrayerPossibilities </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">232<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Scrubs </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham highschool </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">233<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ADHDPotato </h2></div>
+  <div class="col">
+    <h4 class="text">Naperville North </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">234<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> babbages cabbages </h2></div>
+  <div class="col">
+    <h4 class="text">brenham high school </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">235<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ettiespagheddi23 </h2></div>
+  <div class="col">
+    <h4 class="text">Morris County School of Tech </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">236<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> SmartIntro </h2></div>
+  <div class="col">
+    <h4 class="text">Alpharetta High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">237<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Meme Team </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">238<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> TheAllPowerfulEhsan </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">239<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> walle </h2></div>
+  <div class="col">
+    <h4 class="text">poolesville high school </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">240<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> MCDS/LASACTF </h2></div>
+  <div class="col">
+    <h4 class="text">Marin Country Day School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">241<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> AGentleMan </h2></div>
+  <div class="col">
+    <h4 class="text">DBHS </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">242<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Soup </h2></div>
+  <div class="col">
+    <h4 class="text">Canyon Crest Academy </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">243<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Cupcakes </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">244<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> RyanCTF </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">20<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">245<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> linschooloflogic1 </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">246<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Newton High </h2></div>
+  <div class="col">
+    <h4 class="text">Newton High </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">247<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Vandegrift </h2></div>
+  <div class="col">
+    <h4 class="text">Vandegrift High School </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">248<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Codecat </h2></div>
+  <div class="col">
+    <h4 class="text">Lakeside </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">249<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> gralvarek </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">250<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Elite Haxxor </h2></div>
+  <div class="col">
+    <h4 class="text">Algonquin </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">251<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Girls Rule </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">252<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> DJKHALED </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">253<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Michal Pasierb </h2></div>
+  <div class="col">
+    <h4 class="text">Morris County Technology School </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">254<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> FaZeFupaLord </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">255<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HelloAmPaz </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">256<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> abeckm4420 </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">257<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> BENZOGANG </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">258<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Dream Commando Squad </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">259<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> my I.Q. is one of the highest </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">10<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">260<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> /dev/null </h2></div>
+  <div class="col">
+    <h4 class="text">Naperville Central </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">261<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> atleast3characters </h2></div>
+  <div class="col">
+    <h4 class="text">Niwot High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">262<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> lessthan3characters </h2></div>
+  <div class="col">
+    <h4 class="text">Niwot High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">263<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ulfingrad </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">264<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Team Ready </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">265<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> maya3128 </h2></div>
+  <div class="col">
+    <h4 class="text">Canyon Crest Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">266<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> vector124 </h2></div>
+  <div class="col">
+    <h4 class="text">The Gatton Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">267<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> saem </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">268<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Palahace </h2></div>
+  <div class="col">
+    <h4 class="text">Fossil Ridge </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">269<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> TheCraigs </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">270<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> frog </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">271<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> flamingpandas </h2></div>
+  <div class="col">
+    <h4 class="text">Suncoast Community High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">272<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Jitz </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">273<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> helloquat </h2></div>
+  <div class="col">
+    <h4 class="text">Mission San Jose </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">274<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> #freethegeese </h2></div>
+  <div class="col">
+    <h4 class="text">IMSA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">275<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> All Da Tidaliks 3.0 </h2></div>
+  <div class="col">
+    <h4 class="text">LASA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">276<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Colincat9 </h2></div>
+  <div class="col">
+    <h4 class="text">South River High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">277<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> MoonShine </h2></div>
+  <div class="col">
+    <h4 class="text">South River High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">278<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> m.A.A.d c.O.D.e </h2></div>
+  <div class="col">
+    <h4 class="text">American Heritage </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">279<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> m.A.A.d C.o.d.E </h2></div>
+  <div class="col">
+    <h4 class="text">American Heritage </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">280<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> rocketrice </h2></div>
+  <div class="col">
+    <h4 class="text">Vandegrift High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">281<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> mikeob </h2></div>
+  <div class="col">
+    <h4 class="text">Thomas Jefferson </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">282<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> daws00 </h2></div>
+  <div class="col">
+    <h4 class="text">American Heritage </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">283<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Box o' noobs </h2></div>
+  <div class="col">
+    <h4 class="text">Thomas Jefferson High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">284<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Galligher </h2></div>
+  <div class="col">
+    <h4 class="text">Vandegrift </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">285<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> eguthan </h2></div>
+  <div class="col">
+    <h4 class="text">Cedar Ridge </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">286<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> eLEMONators </h2></div>
+  <div class="col">
+    <h4 class="text">Homestead High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">287<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> drdinosaur </h2></div>
+  <div class="col">
+    <h4 class="text">Lutheran High School of Hawaii </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">288<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Arshad </h2></div>
+  <div class="col">
+    <h4 class="text">Mather High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">289<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> For While Do Loops </h2></div>
+  <div class="col">
+    <h4 class="text">Thomas Jefferson High School, PA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">290<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> kaiwenworld1 </h2></div>
+  <div class="col">
+    <h4 class="text">TJHSST </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">291<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> StealthIsPower </h2></div>
+  <div class="col">
+    <h4 class="text">John Jay </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">292<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> SlamDewey </h2></div>
+  <div class="col">
+    <h4 class="text">Springfield Township High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">293<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Aervtas </h2></div>
+  <div class="col">
+    <h4 class="text">Randolph High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">294<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Meeecle </h2></div>
+  <div class="col">
+    <h4 class="text">George C. Marshall </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">295<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> PaziMD </h2></div>
+  <div class="col">
+    <h4 class="text">Algonquin Regional High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">296<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Beefy </h2></div>
+  <div class="col">
+    <h4 class="text">Algonquin </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">297<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HidDen </h2></div>
+  <div class="col">
+    <h4 class="text">Thomas Jefferson Hill School  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">298<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> *insert team name here* </h2></div>
+  <div class="col">
+    <h4 class="text">Daniel Wright JHS </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">299<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> nahjeek </h2></div>
+  <div class="col">
+    <h4 class="text">Red Bank Regional High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">300<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> adithyas04 </h2></div>
+  <div class="col">
+    <h4 class="text">McNeil High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">301<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Benji </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">302<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> acort0780 </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">303<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 1234567890098765321 </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">304<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> n8thagr8 </h2></div>
+  <div class="col">
+    <h4 class="text">pro memer </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">305<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sapphire </h2></div>
+  <div class="col">
+    <h4 class="text">Reseda High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">306<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HPlazerjet </h2></div>
+  <div class="col">
+    <h4 class="text">Reseda </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">307<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HPLazerjet </h2></div>
+  <div class="col">
+    <h4 class="text">Reseda </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">308<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> rooted </h2></div>
+  <div class="col">
+    <h4 class="text">Penn State </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">309<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> HPLAZERJET </h2></div>
+  <div class="col">
+    <h4 class="text">Reseda </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">310<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Акаланес Донс </h2></div>
+  <div class="col">
+    <h4 class="text">Acalanes High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">311<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Major </h2></div>
+  <div class="col">
+    <h4 class="text">Queen Anne's County High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">312<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Excursive </h2></div>
+  <div class="col">
+    <h4 class="text">ORANGE ULSTER BOCES </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">313<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> champfish </h2></div>
+  <div class="col">
+    <h4 class="text">McKinney Boyd </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">314<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> chicken chicken chicken  </h2></div>
+  <div class="col">
+    <h4 class="text">Darien High School  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">315<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> GIAMC </h2></div>
+  <div class="col">
+    <h4 class="text">Lejeune High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">316<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> theawkwardturtle </h2></div>
+  <div class="col">
+    <h4 class="text">High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">317<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> aye_must_always_be_followed_by_lmao </h2></div>
+  <div class="col">
+    <h4 class="text">South River High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">318<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> catdestroyer </h2></div>
+  <div class="col">
+    <h4 class="text">South River </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">319<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Triple Entente </h2></div>
+  <div class="col">
+    <h4 class="text">ECTA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">320<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> firejake308 </h2></div>
+  <div class="col">
+    <h4 class="text">Central High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">321<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> delorenzos16 </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">322<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> franky </h2></div>
+  <div class="col">
+    <h4 class="text">Franky High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">323<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Joelo4 </h2></div>
+  <div class="col">
+    <h4 class="text">Patrick Henry High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">324<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> gamegk1002 </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">325<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> lyrei </h2></div>
+  <div class="col">
+    <h4 class="text">Poolsville  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">326<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> NAnBlasters42 </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">327<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> NanDESTROYER </h2></div>
+  <div class="col">
+    <h4 class="text">Poolesville </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">328<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CLASHofNANS </h2></div>
+  <div class="col">
+    <h4 class="text">poolesville </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">329<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> katkat </h2></div>
+  <div class="col">
+    <h4 class="text">Bergen County Academies </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">330<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> niralidevgan </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">331<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> niralidevgan00 </h2></div>
+  <div class="col">
+    <h4 class="text">Liberal Arts and Science Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">332<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> theurerjohn3 </h2></div>
+  <div class="col">
+    <h4 class="text">eastside </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">333<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> CTFlearner </h2></div>
+  <div class="col">
+    <h4 class="text">Cambr </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">334<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 1000011-team </h2></div>
+  <div class="col">
+    <h4 class="text">UT-freshmen </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">335<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> 123qweASD </h2></div>
+  <div class="col">
+    <h4 class="text">IUH </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">336<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> chicken </h2></div>
+  <div class="col">
+    <h4 class="text">other </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">337<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> b14ck </h2></div>
+  <div class="col">
+    <h4 class="text">Redacted </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">338<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> OneMoreTime </h2></div>
+  <div class="col">
+    <h4 class="text">Alpharetta High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">339<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Ascend </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">340<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> rishj09 </h2></div>
+  <div class="col">
+    <h4 class="text">Marshall High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">341<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Gigablaster101 </h2></div>
+  <div class="col">
+    <h4 class="text">Richard montgomery </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">342<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Gigablaster </h2></div>
+  <div class="col">
+    <h4 class="text">RichRD MONTGOMERY </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">343<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> The Grease Beast of the Musty East </h2></div>
+  <div class="col">
+    <h4 class="text">Pocono Mountain East High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">344<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> JulianW </h2></div>
+  <div class="col">
+    <h4 class="text">ETA @ Roosevelt </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">345<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sodium </h2></div>
+  <div class="col">
+    <h4 class="text">H2O </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">346<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Davidwu2140 </h2></div>
+  <div class="col">
+    <h4 class="text">BCCHS </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">347<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> jinxedlegend101 </h2></div>
+  <div class="col">
+    <h4 class="text">Oxford Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">348<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> shadow99 </h2></div>
+  <div class="col">
+    <h4 class="text">Stuyvesant High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">349<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sarad </h2></div>
+  <div class="col">
+    <h4 class="text">Beckman High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">350<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> The Knights of Beck </h2></div>
+  <div class="col">
+    <h4 class="text">Engineering &amp; Technolgies Academy </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">351<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> lybka2493 </h2></div>
+  <div class="col">
+    <h4 class="text">KXTI </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">352<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Eagle07 </h2></div>
+  <div class="col">
+    <h4 class="text">High school </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">353<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> anhdai97 </h2></div>
+  <div class="col">
+    <h4 class="text">act </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">354<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> cm901 </h2></div>
+  <div class="col">
+    <h4 class="text">korea </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">355<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> carentan </h2></div>
+  <div class="col">
+    <h4 class="text">Lynbrook </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">356<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Greg </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell Regional High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">357<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> GregSarafian </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell Regional High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">358<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> SarafianG18 </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">359<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> test12345 </h2></div>
+  <div class="col">
+    <h4 class="text">test </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">360<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> kgupta99 </h2></div>
+  <div class="col">
+    <h4 class="text">Harker </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">361<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> kgupta999 </h2></div>
+  <div class="col">
+    <h4 class="text">Harker </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">362<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> tyluudinh </h2></div>
+  <div class="col">
+    <h4 class="text">UIT </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">363<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> atxarib99 </h2></div>
+  <div class="col">
+    <h4 class="text">Vandegrift </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">364<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> BYKM </h2></div>
+  <div class="col">
+    <h4 class="text">Newton South </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">365<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> GSarafian </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">366<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> amin </h2></div>
+  <div class="col">
+    <h4 class="text">scholllli </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">367<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> amini </h2></div>
+  <div class="col">
+    <h4 class="text">amniiiiii </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">368<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> FaheemQuazi </h2></div>
+  <div class="col">
+    <h4 class="text">TAMS </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">369<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> kmon </h2></div>
+  <div class="col">
+    <h4 class="text">seoul </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">370<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Layer7 </h2></div>
+  <div class="col">
+    <h4 class="text">Sunrin Internet </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">371<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> takobee </h2></div>
+  <div class="col">
+    <h4 class="text">Octor </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">372<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Kieran </h2></div>
+  <div class="col">
+    <h4 class="text">Highland Park Senior High </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">373<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> phantom1775 </h2></div>
+  <div class="col">
+    <h4 class="text">GPA </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">374<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sud0r00t </h2></div>
+  <div class="col">
+    <h4 class="text">Texas High </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">375<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Spacious </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">376<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> ChelseaConner1 </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">377<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> cmart123 </h2></div>
+  <div class="col">
+    <h4 class="text">Brenham High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">378<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Wileyroemer </h2></div>
+  <div class="col">
+    <h4 class="text">Highland park senior highschool </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">379<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> tungtt </h2></div>
+  <div class="col">
+    <h4 class="text">hihi </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">380<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> pooljk101 </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">381<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> kkkkk </h2></div>
+  <div class="col">
+    <h4 class="text">brenham high school </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">382<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> SankeerthK </h2></div>
+  <div class="col">
+    <h4 class="text">Alphareta High school  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">383<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> AndrewC </h2></div>
+  <div class="col">
+    <h4 class="text">Team High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">384<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> olhsmsa13 </h2></div>
+  <div class="col">
+    <h4 class="text">GMU </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">385<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> EttieSpagheddi </h2></div>
+  <div class="col">
+    <h4 class="text">Morris County School of Tech </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">386<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> OneMoreTimeThree </h2></div>
+  <div class="col">
+    <h4 class="text">Alpharetta High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">387<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> supersaiyanshdwfx </h2></div>
+  <div class="col">
+    <h4 class="text">Lakeside School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">388<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> zaheen </h2></div>
+  <div class="col">
+    <h4 class="text">other </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">389<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> zaheen123 </h2></div>
+  <div class="col">
+    <h4 class="text">other </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">390<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Umbra </h2></div>
+  <div class="col">
+    <h4 class="text">Omaha North </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">391<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> kmason </h2></div>
+  <div class="col">
+    <h4 class="text">River Dell High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">392<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> sollos </h2></div>
+  <div class="col">
+    <h4 class="text">ntust </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">393<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Taylor </h2></div>
+  <div class="col">
+    <h4 class="text">Highland Park </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">394<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Xiong </h2></div>
+  <div class="col">
+    <h4 class="text">CICP High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">395<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> chshrct </h2></div>
+  <div class="col">
+    <h4 class="text">West Morris Central  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">396<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> daba </h2></div>
+  <div class="col">
+    <h4 class="text">LASA high school  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">397<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> yolo48 </h2></div>
+  <div class="col">
+    <h4 class="text">trolololol </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">398<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> trunghuuktmm </h2></div>
+  <div class="col">
+    <h4 class="text">hoc vien ky thuat mat ma </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">399<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> jackg </h2></div>
+  <div class="col">
+    <h4 class="text">Algonquin </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">400<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> nogl </h2></div>
+  <div class="col">
+    <h4 class="text">Montgomery Blair </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">401<text class="ligature">st</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> serena159 </h2></div>
+  <div class="col">
+    <h4 class="text">none </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">402<text class="ligature">nd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> curious </h2></div>
+  <div class="col">
+    <h4 class="text">Algonquin Regional  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">403<text class="ligature">rd</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> beginner </h2></div>
+  <div class="col">
+    <h4 class="text">Algonquin Regional  </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">404<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> zachreda </h2></div>
+  <div class="col">
+    <h4 class="text">MCST </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">405<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> Zacherman </h2></div>
+  <div class="col">
+    <h4 class="text">MCVTS </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">406<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> miao </h2></div>
+  <div class="col">
+    <h4 class="text">ahfc </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">407<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> gripz </h2></div>
+  <div class="col">
+    <h4 class="text">N/A </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">408<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> vass0 </h2></div>
+  <div class="col">
+    <h4 class="text">Atholton High School </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+<div class="scorerow white ">
+  <div class="col">
+    <h2 class="text">409<text class="ligature">th</text></h2> </div>
+  <div class="col">
+    <h2 class="text"> hrdnme </h2></div>
+  <div class="col">
+    <h4 class="text">High School DxD </h4></div>
+  <div class="col">
+    <h2 class="text">0<text class="h5 color-grey-600"> XP </text></h2>
+  </div>
+</div>
+</div>
     </div>
   </div>
 
-  {{> partial/footer.html}}
+<div class="footer">
+  <h3 class="color-grey-400 media-icons">Check us out on<a href="https://twitter.com/lasactf"><i class="fa fa-twitter color-grey-400 twitter-icon"></i></a>and<a href="https://www.facebook.com/lasactf"><i class="fa fa-facebook-official color-grey-400 facebook-icon"></i></a></h3><br>
+  Copyright (C) 2015-<text id="copyrightYear">2016</text> The LASACTF Team. All rights reserved, except when otherwise noted.<br>Logos and brands not affiliated with LASACTF are copyright of their respective owners.<br>Special thanks to the <a href="https://github.com/picoCTF/picoCTF-Platform" class="nomarg nospace">PicoCTF platform</a>.<br>Website design licensed under MIT.<br><br>
+  <a href="/about">About</a><a href="mailto:team@lasactf.com">Contact Us</a><br><br>
+</div>
 
-</body>
 
-</html>
+
+
+<div id="HW_frame_cont" style="height: 516px;"><div id="HW_frame_peak"></div><iframe id="HW_frame" src="http://headwayapp.co/widgets/PJr0bx" style="height: 516px;"></iframe></div><style>#HW_badge_cont {
+  display: none;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  position: relative;
+}
+
+#HW_badge_cont.HW_visible {
+  display: block;
+}
+
+#HW_badge {
+  display: block;
+  border-radius: 20px;
+  background: #CD4B5B;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+#HW_badge.HW_softHidden {
+  background: #d4d4d4;
+  opacity: 1;
+  transform: scale(0.6);
+}
+
+#HW_badge.HW_hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#HW_badge.HW_visible {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+#HW_frame_cont {
+  visibility: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  border: none;
+  position: absolute;
+  z-index: 999;
+  width: 300px;
+  height: 300px;
+  transition: height 0.3s;
+}
+
+#HW_frame_cont.HW_visible {
+  visibility: visible;
+}
+
+#HW_frame_peak {
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  z-index: 888;
+  top: -10px;
+  left: 22px;
+  background: #fff;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
+  transform: rotate(45deg);
+}
+
+#HW_frame_peak.HW_rightAlign {
+  left: auto;
+  right: 22px;
+}
+
+#HW_frame {
+  background: #fff;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  z-index: 900;
+  transition: height 0.3s;
+}</style></body></html>
