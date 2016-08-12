@@ -1,5 +1,5 @@
-# LASACTF-Web
-This repository contains the frontend behind LASACTF, run March 2016.
+# LASACTF-Web-Frontend
+This repository contains the front end web code behind LASACTF, run March 2016.
 
 ## How it Works
 LASACTF was built so that minimal server-side code was needed other than minor modifications to the PicoCTF Api.
@@ -14,4 +14,4 @@ sudo npm install
 gulp build
 ```
 
-Front end assets should be updated automatically by `gulp` on page refresh.
+Static assets should be updated automatically by `gulp` on page refresh.
